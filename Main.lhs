@@ -1,4 +1,5 @@
 \documentclass{easychair}
+%include polycode.fmt
 \usepackage{amssymb}
 
 % ------------------------------------------------------------------------------
@@ -14,12 +15,25 @@
 
 \institute{
   Chalmers University of Technology
-  \email{\{koen,annl\}@chalmers.se}
+  \email{\{koen,annl\}@@chalmers.se}
 }
 
 \begin{document}
 
 \maketitle
+
+% ------------------------------------------------------------------------------
+% - some symbols
+
+%format flip    (r) = r "^{\smallfrown}"
+%format neg     (r) = r "^{\neg{}}"
+%format negflip (r) = r "^{\neg{}\smallfrown}"
+
+%format ^^  = "^{\smallfrown}"
+%format ^~  = "^{\neg{}}"
+%format ^~^ = "^{\neg{}\smallfrown}"
+
+%format <=> = "\leftrightarrow "
 
 % ------------------------------------------------------------------------------
 % - abstract
@@ -57,6 +71,8 @@ The audience is both:
 % - properties of binary relations
 
 \section{Common properties of binary relations}
+
+%include Implications/equivalences.tex
 
 list of properties we use + neg + flip
 
