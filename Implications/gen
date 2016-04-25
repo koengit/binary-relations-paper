@@ -13,6 +13,7 @@ echo '\\begin{code}' > equivalences.tex
 cat implications \
   | grep ' <=> ' \
   | texify \
+  | column -t \
   >> equivalences.tex
 echo '\\end{code}' >> equivalences.tex
 
@@ -20,5 +21,6 @@ echo '\\begin{code}' > implications.tex
 cat implications \
   | grep ' <= ' \
   | texify \
+  | column -t \
   >> implications.tex
 echo '\\end{code}' >> implications.tex
