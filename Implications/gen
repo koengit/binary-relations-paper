@@ -1,0 +1,24 @@
+#!/bin/sh
+
+texify()
+{
+  sed 's/\_neg\_flip/^~^/g' \
+    | sed 's/\_neg/^~/g' \
+    | sed 's/\_flip/^^/g' \
+    | sed 's/{/\\{/g' \
+    | sed 's/}/\\}/g'
+}
+
+echo '\\begin{code}' > equivalences.tex
+cat implications \
+  | grep ' <=> ' \
+  | texify \
+  >> equivalences.tex
+echo '\\end{code}' >> equivalences.tex
+
+echo '\\begin{code}' > implications.tex
+cat implications \
+  | grep ' <= ' \
+  | texify \
+  >> implications.tex
+echo '\\end{code}' >> implications.tex
