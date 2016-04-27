@@ -5,8 +5,7 @@ texify()
   sed 's/\_neg\_flip/^~^/g' \
     | sed 's/\_neg/^~/g' \
     | sed 's/\_flip/^^/g' \
-    | sed 's/{/\\{/g' \
-    | sed 's/}/\\}/g'
+    | sed 's/right\_//g'
 }
 
 echo '\\begin{code}' > equivalences.tex
@@ -21,6 +20,7 @@ echo '\\begin{code}' > implications.tex
 cat implications \
   | grep ' <= ' \
   | texify \
-  | column -t \
+  | sed 's/<=/X<=/g' \
+  | column -t -sX \
   >> implications.tex
 echo '\\end{code}' >> implications.tex

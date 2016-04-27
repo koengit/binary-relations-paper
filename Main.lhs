@@ -1,17 +1,21 @@
 \documentclass{easychair}
-%include polycode.fmt
 \usepackage{amssymb}
+\usepackage{mathabx}
+%include polycode.fmt
 
 % ------------------------------------------------------------------------------
 % - title and stuff
 
-\title{Dealing with Common Binary Relations in a First-Order Setting}
+\title{Dealing with Common Binary Relations\\in First-Order Automated Reasoning}
+\titlerunning{Dealing with Common Binary Relations}
 
 \author{
   Koen Claessen
   \and 
   Ann Lilliestr{\"o}m
 }
+
+\authorrunning{Claessen, Lilliestr{\"o}m}
 
 \institute{
   Chalmers University of Technology
@@ -25,15 +29,23 @@
 % ------------------------------------------------------------------------------
 % - some symbols
 
-%format flip    (r) = r "^{\smallfrown}"
+%format flip    (r) = r "^{\curvearrowleftright}"
 %format neg     (r) = r "^{\neg{}}"
-%format negflip (r) = r "^{\neg{}\smallfrown}"
+%format negflip (r) = r "^{\neg{}\curvearrowleftright}"
 
-%format ^^  = "^{\smallfrown}"
+%format ^^  = "^{\curvearrowleftright}"
 %format ^~  = "^{\neg{}}"
-%format ^~^ = "^{\neg{}\smallfrown}"
+%format ^~^ = "^{\neg{}\curvearrowleftright}"
 
-%format <=> = "\leftrightarrow "
+%format forall = "\forall{}\hspace{-0.1cm}"
+%format exists = "\exists{}\hspace{-0.1cm}"
+%format .      = ".\;"
+%format not    = "\neg{}\hspace{-0.1cm}"
+%format ~      = "\neg{}"
+%format =>     = "\Rightarrow "
+%format <=>    = "\Leftrightarrow "
+
+%format R = "R\hspace{-0.1cm}"
 
 % ------------------------------------------------------------------------------
 % - abstract
@@ -70,9 +82,43 @@ The audience is both:
 % ------------------------------------------------------------------------------
 % - properties of binary relations
 
-\section{Common properties of binary relations}
+\section{Common properties of binary relations} \label{sec:properties}
 
+\begin{figure}[t]
+\begin{code}
+reflexive      ==  forall x             . R(x,x)
+euclidean      ==  forall x,y,z         . R(x,y) && R(x,z) => R(y,z)
+antisymmetric  ==  forall x,y           . R(x,y) && R(y,x) => x=y
+transitive     ==  forall x,y,z         . R(x,y) && R(y,z) => R(x,z)
+asymmetric     ==  forall x,y           . ~R(x,y) || ~R(y,x)
+total          ==  forall x,y           . R(x,y) || R(y,x)
+symmetric      ==  forall x,y           . R(x,y) => R(y,x)
+coreflexive    ==  forall x,y           . R(x,y) => x=y
+\end{code}
+\caption{Definitions of common properties of binary relations}
+\end{figure}
+
+\begin{figure}[t]
+\begin{tabular}{rl}
+4945 & reflexive \\
+2082 & euclidean \\
+1874 & antisymmetric \\
+1567 & transitive \\
+784  & asymmetric \\
+784  & total \\
+388  & symmetric \\
+3    & coreflexive \\
+(163 & other)
+\end{tabular}
+\caption{Number of occurrences of properties in TPTP}
+\end{figure}
+
+\begin{figure}[t]
 %include Implications/equivalences.tex
+\caption{Properties that are equivalent}
+\end{figure}
+
+implications: described in Appendix \ref{sec:implications}.
 
 list of properties we use + neg + flip
 
@@ -190,6 +236,20 @@ chaining \cite{bachmair1998ordered}
 
 \bibliographystyle{plain}
 \bibliography{main}
+
+% ------------------------------------------------------------------------------
+% - appendix
+
+\appendix
+\section{Implications between properties} \label{sec:implications}
+Here follows the complete list of implications between properties that we discovered using the method described in Sect. \ref{sec:properties}.
+
+{\small
+%{
+%format <= = "\Leftarrow"
+%include Implications/implications.tex
+%}
+}
 
 \end{document}
 
