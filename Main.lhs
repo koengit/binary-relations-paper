@@ -60,28 +60,15 @@ We present a number of alternative ways of axiomatizing binary relations that co
 
 \section{Introduction}
 
+Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is an extremely common binary relation, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
+Other common concepts for which there exists built-in support in many tools are associative/commutative operators; real-valued, rational-valued, and integer-valued arithmetic; and binary relations with transitivity-like axioms \cite{chaining}. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
+This paper is concerned with investigating what kind of special treatment we could give to commonly appearing binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
-binary relations are common in F-O problems
+For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) equivalence relations and partial equivalence relations, (2) total orderings and strict total orderings, and (3) reflexive transitive relations. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
-how to deal with them (axiomatize, code them) is a natural question
-
-some binary relations have built-in support in some/most theorem provers
-
-Questions we want to help answer:
-
-- how should certain common binary relations be expressed / coded / dealt with in a theory?
-
-- how should certain common binary relations be dealt with in a prover?
-
-- is it good idea to add more built-in support in provers for certain binary relations? (Good idea means: is this common enough, and is the pay-off big enough?)
-
-The audience is both:
-
-- writers of theories and problems
-
-- implementors of tools
+The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
 % ------------------------------------------------------------------------------
 % - properties of binary relations
