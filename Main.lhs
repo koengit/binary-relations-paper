@@ -6,9 +6,9 @@
 % ------------------------------------------------------------------------------
 % - title and stuff
 
-\title{Dealing with Common Binary Relations\\in First-Order Automated Reasoning}
+\title{Alternative Treatments of Common Binary Relations\\in First-Order Automated Reasoning}
 
-\titlerunning{Dealing with Common Binary Relations}
+\titlerunning{Treatments of Common Binary Relations}
 
 \author{
   Koen Claessen
@@ -58,7 +58,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of treating binary relations that commonly occur in first-order problems, in particular {\em equivalence relations} and {\em total orderings}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to considering different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
+We present a number of alternative ways of treating binary relations that commonly occur in first-order problems, in particular {\em equivalence relations} and {\em total orderings}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
