@@ -141,6 +141,20 @@ reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
 As a side note, in mathematics, strict total orderings are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, there seems to be no standard name for the property |antisymmetric^~|.
 
+\begin{figure}[t]
+\begin{center}
+\begin{tabular}{rl}
+429+19 & equivalence relations \\
+117+72 & partial equivalence relations (excluding true equivalence relations) \\
+327+8 & total orderings / strict total orderings \\
+872+4 & reflexive and transitive relations (excluding equivalence relations)\\
+\end{tabular}
+\end{center}
+\vspace{-0.5cm}
+\caption{Number of occurrences of common combinations of basic binary relation properties in TPTP}
+\label{fig:occurs2}
+\end{figure}
+
 ((( TODO: Ann, can you add a table of how often these relations appear in the TPTP? )))
 
 % ------------------------------------------------------------------------------
@@ -165,6 +179,8 @@ Rather than by hand enumerating all possible ways to axiomatize certain relation
 
 Let's explain how this table was generated. We start with a list of 32 basic properties (the 8 original basic properties, plus their negated, flipped, and negated flipped versions). Firstly, we use an automated theorem prover (we used E \cite{eprover}) to discover which of these are equivalent with other such properties. The result is displayed in Fig.\ \ref{fig:equivs}. Thus, 17 basic properties can be removed from the list, because they can be expressed using other properties. The list of basic properties now has 15 elements left.
 
+(TODO: Add that  prop1....propn must not be unsat )
+
 Secondly, we want to generate all implications of the form |{prop1, .., propn} => prop| where the set |{prop1, .., propn}| is minimal (as displayed in Appendix \ref{sec:implications}). We do this separately for each |prop|. The procedure uses a simple constraint solver (SAT-solver) to keep track of all implications it has tried so far, and consists of one main loop. At every loop iteration, the constraint solver guesses a set |{prop1, .., propn}| from the set of all properties |P-{prop}|. The procedure then asks E whether or not |{prop1, .., propn} => prop| is valid. If it is, then we look at the proof that E produces, and print the implication |{propa, .., propb} => prop|, where |{propa, .., propb}| is the subset of properties that were used in the proof. We then also tell the constraint solver never to guess a superset of |{propa, .., propb}|. If the guessed implication can not be proven, we tell the constraint solver to never guess a subset of |{prop1, .., propn}|. The procedure stops when no guesses that satisfy all constraints can be made anymore. After the loop terminates, we may need to clean up the implications somewhat because some implications may subsume others. This procedure works well in practice, especially if all guesses are maximized according to their size.
 
 To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_|, and compute which other properties they imply, using the pre-generated table. In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties.
@@ -188,6 +204,14 @@ discover, how common
 
 how to encode + proof)
 
+\section{Dealing with transitive and reflexive relations}
+
+transitive and reflexive relations
+
+how to discover transitive and reflexive relations
+
+how to encode transitive and reflexive relations + correctness proof
+
 % ------------------------------------------------------------------------------
 % - dealing with total orderings
 
@@ -207,28 +231,65 @@ encoding total orderings using ordering on the reals + proof
 % - experimental results
 
 \section{Experimental results}
+We evaluate the effects of the different axiomatizations using four different theorem provers: E, Vampire, Z3 and CVC4. 
+(TODO: Why did we choose them?) We use a timeout of 5 minutes on each problem. (For Vampire, no timeout is set, but the prover is simply interrupted after 5 minutes if it has not yet terminated.)
 
 \subsection{Equivalence relations}
 
-original vs. equalified for E
+We detected 429 problems with equivalence relations among the TPTP problems listed as Unsatisfiable and Theorem. The majority of problems appear in the GEO and SYN categories.
 
-original vs. equalified for Vampire
+Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. 
 
-original vs. equalified for Z3
+In our evaluations, there is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. The initial axiomatisation of the equivalence relation (transitive or euclidean) does not have any notable effect either.
+TODO check if this is the case also for Z3.
 
-original vs. equalified for CVC4
+\paragraph{Original vs. Equalified for E}
+E manages to solve 4 problems that it did not solve before the transformation. At the same time, it times out on 33 problems that it was previously able to solve.
 
-original vs. equalified for Paradox - Satisfiable and Unsatisfiable
+\paragraph{Original vs. Equalified for Vampire}
+4 problems that were easily solved by Vampire become unsolvable after the transformation.
 
-(original vs. p-equalified for E
+\paragraph{Original vs. Equalified for Z3}
+For Z3, the effect is reversed.  Z3 solves 50 new problems after the transformation, while it times out on 3 problems that it previously solved.
 
-original vs. p-equalified for Vampire
+\paragraph{Original vs. Equalified for CVC4}
+With CVC4, 18 new problems are solved after the transformation, while 39 problems become unsolvable.
 
-original vs. p-equalified for Z3
+%original vs. equalified for Paradox - Satisfiable and Unsatisfiable
 
-original vs. p-equalified for CVC4
+\paragraph{Original vs. P-equalified for E}
+good for none, bad for 34 problems
 
-original vs. p-equalified for Paradox - Satisfiable and Unsatisfiable)
+\paragraph{Original vs. P-equalified for Vampire}
+good for 5 problems, bad for 8
+
+\paragraph{Original vs. P-equalified for Z3}
+good for 4, bad for 9
+
+\paragraph{Original vs. P-equalified for CVC4}
+good for 1, bad for 11
+
+
+%original vs. p-equalified for Paradox - Satisfiable and Unsatisfiable)
+
+Conclusion: "Equalification" is generally bad for E and Vampire, gives mixed results for CVC4 and works very well for Z3.
+
+Partial equalification seems to have a negative effect for all the provers used in our evaluation. While it does allow three of the provers to solve a few additional problems, this could be due to reasons unrelated to the axiomatisation of the partial equivalence relation. Simply shuffling the axioms of a theory can sometimes have the effect of a problem becoming solvable or unsolvable. We did an experiment where we shuffled the axioms of 11646 TPTP problems. After randomly shuffling the axioms, 72 problems became unsolvable, while 71 problems became solvable, using E with a timeout of 1 minute.
+
+\subsection{Transitive and Reflexive relations}
+
+original vs. transified for E
+good for 4, bad for 60
+
+original vs. transified for Vampire
+good for 32, bad for 20
+
+original vs. transified for Z3
+good for 10  bad for 121
+
+original vs. transified for CVC4
+good for 14, bad for 103
+
 
 \subsection{Total orderings}
 
@@ -241,14 +302,20 @@ total ordering vs. strict total ordering for Vampire
 or some other comparisons)
 
 total ordering vs. $\leq_\mathbb{R}$ for Z3
+solves 41 new problems, times out on 21
 
 total ordering vs. $\leq_\mathbb{R}$ for CVC4
+solves 12 new, times out on 29
+
+total ordering vs. $\leq_\mathbb{R}$ for Vampire
+solves 13 new problems, times out on 33 new problems.
 
 (Should we show
 
 strict-total ordering vs. $\leq_\mathbb{R}$ for Z3
 
 strict-total ordering vs. $\leq_\mathbb{R}$ for CVC4
+
 
 separately? Only if the results differ.)
 
