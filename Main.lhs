@@ -278,24 +278,24 @@ Partial equalification seems to have a negative effect for all the provers used 
 
 \subsection{Transitive and Reflexive relations}
 
-original vs. transified for E
+\paragraph{Original vs. Transified for E}
 good for 4, bad for 60
 
-original vs. transified for Vampire
+\paragraph{Original vs. Transified for Vampire}
 good for 32, bad for 20
 
-original vs. transified for Z3
+\paragraph{Original vs. Transified for Z3}
 good for 10  bad for 121
 
-original vs. transified for CVC4
+\paragraph{Original vs. Transified for CVC4}
 good for 14, bad for 103
 
 
 \subsection{Total orderings}
 
-total ordering vs. strict total ordering for E
+\paragraph{Total ordering vs. strict total ordering for E}
 
-total ordering vs. strict total ordering for Vampire
+\paragraph{Total ordering vs. strict total ordering for Vampire}
 
 (total ordering/neg vs. strict total ordering/neg for E, Vampire
 
