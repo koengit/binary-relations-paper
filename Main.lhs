@@ -6,9 +6,9 @@
 % ------------------------------------------------------------------------------
 % - title and stuff
 
-\title{Alternative Treatments of Common Binary Relations\\in First-Order Automated Reasoning}
+\title{Alternative Treatments of Common Transitive Relations\\in First-Order Automated Reasoning}
 
-\titlerunning{Treatments of Common Binary Relations}
+\titlerunning{Treatments of Common Transitive Relations}
 
 \author{
   Koen Claessen
