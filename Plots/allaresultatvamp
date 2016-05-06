@@ -1,0 +1,876 @@
+ALG223+1.p success 6.85 0.20system 0:07.71elapsed 91%CPU (0avgtext+0avgdata 445568maxresident)k
+ALG224+1.p success 7.86 0.17system 0:08.64elapsed 93%CPU (0avgtext+0avgdata 395024maxresident)k
+ALG234+1.p % SZS status Timeout for ALG234+1
+ANA002-1.p % SZS status Timeout for ANA002-1
+ANA002-2.p % SZS status Timeout for ANA002-2
+ANA002-3.p % SZS status Timeout for ANA002-3
+ANA002-4.p % SZS status Timeout for ANA002-4
+ANA003-3.p % SZS status Timeout for ANA003-3
+ANA004-3.p % SZS status Timeout for ANA004-3
+ANA004-5.p % SZS status Timeout for ANA004-5
+CAT021+1.p % SZS status Timeout for CAT021+1
+COL088-2.p success 54.91 1.72system 0:57.06elapsed 99%CPU (0avgtext+0avgdata 2688400maxresident)k
+COL089-2.p success 6.17 0.14system 0:06.59elapsed 95%CPU (0avgtext+0avgdata 378352maxresident)k
+COL090-2.p success 12.98 0.26system 0:13.69elapsed 96%CPU (0avgtext+0avgdata 446528maxresident)k
+COL091-2.p success 1.68 0.04system 0:01.90elapsed 90%CPU (0avgtext+0avgdata 232208maxresident)k
+COL092-2.p success 13.31 0.27system 0:13.99elapsed 97%CPU (0avgtext+0avgdata 395728maxresident)k
+COL093-2.p % SZS status Timeout for COL093-2
+COL094-2.p % SZS status Timeout for COL094-2
+COL095-2.p % SZS status Timeout for COL095-2
+COL098-2.p success 16.36 0.26system 0:17.18elapsed 96%CPU (0avgtext+0avgdata 329840maxresident)k
+COL099-2.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16784maxresident)k
+COL100-2.p % SZS status Timeout for COL100-2
+HWV009-1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14192maxresident)k
+HWV009-2.p success 0.01 0.00system 0:00.15elapsed 10%CPU (0avgtext+0avgdata 14080maxresident)k
+HWV009-3.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13744maxresident)k
+HWV009-4.p success 0.00 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13744maxresident)k
+HWV010-1.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 14288maxresident)k
+HWV010-2.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14080maxresident)k
+HWV010-3.p success 0.00 0.00system 0:00.13elapsed 11%CPU (0avgtext+0avgdata 14064maxresident)k
+HWV011-1.p success 0.01 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 14288maxresident)k
+HWV011-2.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14048maxresident)k
+HWV011-3.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14112maxresident)k
+HWV012-1.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 14272maxresident)k
+HWV012-2.p success 0.00 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 14672maxresident)k
+HWV013-1.p success 0.00 0.01system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14272maxresident)k
+HWV013-2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+HWV014-1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14288maxresident)k
+HWV014-2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14752maxresident)k
+HWV015-1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14272maxresident)k
+HWV015-2.p success 0.00 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14752maxresident)k
+HWV016-1.p success 1.39 0.00system 0:01.57elapsed 89%CPU (0avgtext+0avgdata 24896maxresident)k
+HWV016-2.p success 1.94 0.02system 0:02.14elapsed 91%CPU (0avgtext+0avgdata 83776maxresident)k
+HWV017-1.p success 0.06 0.00system 0:00.17elapsed 34%CPU (0avgtext+0avgdata 20864maxresident)k
+HWV017-2.p success 0.74 0.03system 0:00.87elapsed 88%CPU (0avgtext+0avgdata 90128maxresident)k
+HWV018-1.p success 0.02 0.00system 0:00.23elapsed 12%CPU (0avgtext+0avgdata 17488maxresident)k
+HWV018-2.p success 0.06 0.00system 0:00.26elapsed 25%CPU (0avgtext+0avgdata 23056maxresident)k
+HWV018-3.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14640maxresident)k
+HWV019-1.p success 0.01 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 14272maxresident)k
+HWV019-2.p success 0.01 0.00system 0:00.13elapsed 11%CPU (0avgtext+0avgdata 14672maxresident)k
+HWV019-3.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14576maxresident)k
+HWV020-1.p success 0.02 0.00system 0:00.22elapsed 12%CPU (0avgtext+0avgdata 16928maxresident)k
+HWV020-2.p success 0.04 0.00system 0:00.25elapsed 18%CPU (0avgtext+0avgdata 20352maxresident)k
+HWV020-3.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14640maxresident)k
+HWV021-1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14544maxresident)k
+HWV021-2.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 14832maxresident)k
+HWV022-1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 15712maxresident)k
+HWV022-2.p success 0.04 0.00system 0:00.15elapsed 30%CPU (0avgtext+0avgdata 20432maxresident)k
+HWV023-1.p success 0.08 0.00system 0:00.27elapsed 28%CPU (0avgtext+0avgdata 22288maxresident)k
+HWV023-2.p success 0.05 0.00system 0:00.23elapsed 25%CPU (0avgtext+0avgdata 21440maxresident)k
+HWV024-1.p success 0.01 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 14128maxresident)k
+HWV024-2.p % SZS status Timeout for HWV024-2
+HWV025-1.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 14144maxresident)k
+HWV025-2.p success 0.01 0.00system 0:00.12elapsed 13%CPU (0avgtext+0avgdata 14608maxresident)k
+HWV025-3.p success 0.01 0.00system 0:00.12elapsed 13%CPU (0avgtext+0avgdata 14576maxresident)k
+HWV026-1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14128maxresident)k
+HWV026-2.p success 0.00 0.01system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14576maxresident)k
+HWV026-3.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14560maxresident)k
+HWV027-1.p success 0.01 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 14160maxresident)k
+HWV027-2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14608maxresident)k
+HWV028-1.p success 0.02 0.01system 0:00.25elapsed 12%CPU (0avgtext+0avgdata 17744maxresident)k
+HWV028-2.p success 0.04 0.00system 0:00.22elapsed 20%CPU (0avgtext+0avgdata 20352maxresident)k
+HWV029-1.p % SZS status Timeout for HWV029-1
+HWV029-2.p success 0.38 0.02system 0:00.51elapsed 77%CPU (0avgtext+0avgdata 46528maxresident)k
+HWV030-1.p success 0.00 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 14288maxresident)k
+HWV030-2.p success 0.01 0.00system 0:00.12elapsed 13%CPU (0avgtext+0avgdata 14624maxresident)k
+HWV031-1.p % SZS status Timeout for HWV031-1
+HWV031-2.p % SZS status Timeout for HWV031-2
+HWV032-1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14432maxresident)k
+HWV032-2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14608maxresident)k
+HWV033-1.p success 0.55 0.02system 0:00.70elapsed 82%CPU (0avgtext+0avgdata 69456maxresident)k
+HWV033-2.p % SZS status Timeout for HWV033-2
+LAT258+1.p % SZS status Timeout for LAT258+1
+LAT310+1.p success 0.04 0.01system 0:00.17elapsed 32%CPU (0avgtext+0avgdata 21824maxresident)k
+LAT348+1.p % SZS status Timeout for LAT348+1
+LAT365+1.p % SZS status Timeout for LAT365+1
+LCL888+1.p % SZS status Timeout for LCL888+1
+LCL889+1.p % SZS status Timeout for LCL889+1
+LCL890+1.p % SZS status Timeout for LCL890+1
+LCL891+1.p % SZS status Timeout for LCL891+1
+LCL892+1.p 
+LCL893+1.p success 0.03 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 17152maxresident)k
+LCL894+1.p success 53.46 1.02system 0:54.90elapsed 99%CPU (0avgtext+0avgdata 1971648maxresident)k
+LCL896+1.p 
+LCL898+1.p % SZS status Timeout for LCL898+1
+LCL899+1.p success 2.27 0.04system 0:02.54elapsed 91%CPU (0avgtext+0avgdata 268496maxresident)k
+LCL900+1.p 
+LCL901+1.p success 2.33 4.77system 0:07.22elapsed 98%CPU (0avgtext+0avgdata 526960maxresident)k
+LCL902+1.p success 2.31 0.04system 0:02.56elapsed 91%CPU (0avgtext+0avgdata 271520maxresident)k
+LCL903+1.p success 6.36 0.06system 0:06.60elapsed 97%CPU (0avgtext+0avgdata 468528maxresident)k
+LDA005-1.p % SZS status Timeout for LDA005-1
+LDA006-1.p % SZS status Timeout for LDA006-1
+LDA007-1.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 16320maxresident)k
+LDA008-1.p % SZS status Timeout for LDA008-1
+LDA009-1.p % SZS status Timeout for LDA009-1
+LDA010-1.p % SZS status Timeout for LDA010-1
+LDA011-1.p % SZS status Timeout for LDA011-1
+LDA012-1.p % SZS status Timeout for LDA012-1
+LDA013-1.p % SZS status Timeout for LDA013-1
+LDA014-1.p % SZS status Timeout for LDA014-1
+NUM001-1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 12896maxresident)k
+NUM002-1.p success 0.00 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13744maxresident)k
+NUM003-1.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 13888maxresident)k
+NUM004-1.p success 0.00 0.00system 0:00.13elapsed 6%CPU (0avgtext+0avgdata 12944maxresident)k
+NUM005-1.p % SZS status Timeout for NUM005-1
+NUM007-1.p % SZS status Timeout for NUM007-1
+NUM015-1.p success 0.01 0.00system 0:00.15elapsed 7%CPU (0avgtext+0avgdata 13120maxresident)k
+NUM016-1.p success 0.00 0.00system 0:00.13elapsed 5%CPU (0avgtext+0avgdata 12976maxresident)k
+NUM390+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14096maxresident)k
+NUM396+1.p % SZS status Timeout for NUM396+1
+NUM411+1.p success 0.01 0.00system 0:00.22elapsed 7%CPU (0avgtext+0avgdata 14352maxresident)k
+NUM858+1.p success 2.27 0.02system 0:02.49elapsed 92%CPU (0avgtext+0avgdata 99760maxresident)k
+NUM859+1.p success 4.65 0.12system 0:04.99elapsed 95%CPU (0avgtext+0avgdata 196528maxresident)k
+NUM860+1.p % SZS status Timeout for NUM860+1
+NUM861+1.p % SZS status Timeout for NUM861+1
+NUM862+1.p % SZS status Timeout for NUM862+1
+NUM924+1.p success 0.54 0.01system 0:00.74elapsed 75%CPU (0avgtext+0avgdata 82160maxresident)k
+NUM924+2.p success 2.87 0.08system 0:03.12elapsed 95%CPU (0avgtext+0avgdata 213376maxresident)k
+NUM926+1.p success 1.27 0.00system 0:01.48elapsed 86%CPU (0avgtext+0avgdata 108128maxresident)k
+NUM926+2.p success 15.07 0.33system 0:15.90elapsed 96%CPU (0avgtext+0avgdata 430224maxresident)k
+RNG039-2.p success 0.98 0.02system 0:01.21elapsed 82%CPU (0avgtext+0avgdata 91520maxresident)k
+SET016-7.p success 0.04 0.00system 0:00.18elapsed 26%CPU (0avgtext+0avgdata 20640maxresident)k
+SET017-7.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 17568maxresident)k
+SET018-7.p success 7.56 0.15system 0:08.01elapsed 96%CPU (0avgtext+0avgdata 315504maxresident)k
+SET020-7.p success 6.44 0.12system 0:06.89elapsed 95%CPU (0avgtext+0avgdata 336560maxresident)k
+SET021-7.p success 6.46 0.12system 0:06.89elapsed 95%CPU (0avgtext+0avgdata 394992maxresident)k
+SET024-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+SET025-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+SET055-7.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13376maxresident)k
+SET056-7.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+SET057-7.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 15680maxresident)k
+SET058-7.p success 0.00 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15680maxresident)k
+SET059-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15728maxresident)k
+SET060-7.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14688maxresident)k
+SET061-7.p success 0.01 0.00system 0:00.18elapsed 10%CPU (0avgtext+0avgdata 14608maxresident)k
+SET062-7.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 14976maxresident)k
+SET063-7.p success 0.01 0.00system 0:00.12elapsed 13%CPU (0avgtext+0avgdata 15744maxresident)k
+SET064-7.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+SET065-7.p success 0.02 0.00system 0:00.18elapsed 13%CPU (0avgtext+0avgdata 14816maxresident)k
+SET066-7.p success 3.30 0.07system 0:03.58elapsed 94%CPU (0avgtext+0avgdata 284432maxresident)k
+SET067-7.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15584maxresident)k
+SET068-7.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15664maxresident)k
+SET069-7.p success 3.34 0.04system 0:03.59elapsed 94%CPU (0avgtext+0avgdata 270960maxresident)k
+SET070-7.p success 3.33 0.06system 0:03.60elapsed 94%CPU (0avgtext+0avgdata 282192maxresident)k
+SET071-7.p success 0.02 0.01system 0:00.21elapsed 16%CPU (0avgtext+0avgdata 16656maxresident)k
+SET072-7.p success 0.03 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 19248maxresident)k
+SET073-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15712maxresident)k
+SET074-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15712maxresident)k
+SET075-7.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15728maxresident)k
+SET076-7.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15776maxresident)k
+SET077-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14624maxresident)k
+SET078-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15616maxresident)k
+SET079-7.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 16544maxresident)k
+SET080-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+SET081-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+SET082-7.p success 0.01 0.00system 0:00.14elapsed 11%CPU (0avgtext+0avgdata 14704maxresident)k
+SET083-7.p success 0.02 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 18400maxresident)k
+SET084-7.p success 0.03 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 18384maxresident)k
+SET085-7.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 17536maxresident)k
+SET090-7.p success 0.04 0.00system 0:00.23elapsed 20%CPU (0avgtext+0avgdata 18480maxresident)k
+SET093-7.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 16688maxresident)k
+SET094-7.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 17600maxresident)k
+SET095-7.p success 0.02 0.00system 0:00.22elapsed 14%CPU (0avgtext+0avgdata 16208maxresident)k
+SET096-7.p success 1.40 0.04system 0:01.61elapsed 89%CPU (0avgtext+0avgdata 118960maxresident)k
+SET097-7.p success 7.14 0.10system 0:07.50elapsed 96%CPU (0avgtext+0avgdata 271744maxresident)k
+SET098-7.p success 0.68 0.02system 0:00.89elapsed 79%CPU (0avgtext+0avgdata 84480maxresident)k
+SET099-7.p success 1.33 0.04system 0:01.60elapsed 86%CPU (0avgtext+0avgdata 107632maxresident)k
+SET101-7.p success 0.01 0.00system 0:00.14elapsed 11%CPU (0avgtext+0avgdata 15728maxresident)k
+SET102-7.p success 0.00 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15744maxresident)k
+SET103-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15728maxresident)k
+SET104-7.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 15728maxresident)k
+SET105-7.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15712maxresident)k
+SET108-7.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16640maxresident)k
+SET117-7.p success 0.02 0.00system 0:00.13elapsed 17%CPU (0avgtext+0avgdata 16640maxresident)k
+SET118-7.p success 0.15 0.00system 0:00.35elapsed 45%CPU (0avgtext+0avgdata 34608maxresident)k
+SET119-7.p success 5.53 0.12system 0:05.95elapsed 94%CPU (0avgtext+0avgdata 381680maxresident)k
+SET120-7.p success 5.44 0.20system 0:05.91elapsed 95%CPU (0avgtext+0avgdata 354016maxresident)k
+SET121-7.p success 5.49 0.11system 0:05.86elapsed 95%CPU (0avgtext+0avgdata 375312maxresident)k
+SET122-7.p success 5.46 0.14system 0:05.89elapsed 95%CPU (0avgtext+0avgdata 360224maxresident)k
+SET585+3.p success 0.02 0.00system 0:00.21elapsed 15%CPU (0avgtext+0avgdata 15904maxresident)k
+SET589+3.p success 0.01 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 13376maxresident)k
+SET787-2.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14992maxresident)k
+SET932+1.p success 0.01 0.00system 0:00.20elapsed 7%CPU (0avgtext+0avgdata 13504maxresident)k
+SET934+1.p success 3.40 0.05system 0:03.67elapsed 94%CPU (0avgtext+0avgdata 448912maxresident)k
+SET936+1.p % SZS status Timeout for SET936+1
+SET937+1.p % SZS status Timeout for SET937+1
+SET952+1.p % SZS status Timeout for SET952+1
+SEU099+1.p % SZS status Timeout for SEU099+1
+SEU100+1.p % SZS status Timeout for SEU100+1
+SEU110+1.p success 5.11 0.08system 0:05.39elapsed 96%CPU (0avgtext+0avgdata 287504maxresident)k
+SEU122+2.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13840maxresident)k
+SEU123+2.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13744maxresident)k
+SEU124+2.p success 3.31 0.06system 0:03.59elapsed 94%CPU (0avgtext+0avgdata 457248maxresident)k
+SEU125+2.p success 13.69 0.22system 0:14.43elapsed 96%CPU (0avgtext+0avgdata 444960maxresident)k
+SEU126+2.p success 2.62 0.04system 0:02.82elapsed 94%CPU (0avgtext+0avgdata 344544maxresident)k
+SEU127+2.p success 0.84 0.00system 0:01.01elapsed 82%CPU (0avgtext+0avgdata 51568maxresident)k
+SEU128+2.p success 13.87 0.18system 0:14.54elapsed 96%CPU (0avgtext+0avgdata 451104maxresident)k
+SEU129+2.p success 6.68 0.10system 0:07.05elapsed 96%CPU (0avgtext+0avgdata 438496maxresident)k
+SEU130+2.p success 3.24 0.11system 0:03.55elapsed 94%CPU (0avgtext+0avgdata 439488maxresident)k
+SEU131+2.p success 0.59 0.00system 0:00.76elapsed 77%CPU (0avgtext+0avgdata 78384maxresident)k
+SEU132+2.p success 57.81 1.85system 1:00.05elapsed 99%CPU (0avgtext+0avgdata 1754784maxresident)k
+SEU133+2.p success 13.72 0.25system 0:14.41elapsed 96%CPU (0avgtext+0avgdata 431280maxresident)k
+SEU134+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14176maxresident)k
+SEU135+2.p success 28.88 0.78system 0:30.16elapsed 98%CPU (0avgtext+0avgdata 1111744maxresident)k
+SEU136+2.p success 3.34 0.04system 0:03.59elapsed 94%CPU (0avgtext+0avgdata 350464maxresident)k
+SEU137+2.p success 0.00 0.01system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13808maxresident)k
+SEU138+2.p success 25.28 0.54system 0:26.21elapsed 98%CPU (0avgtext+0avgdata 956560maxresident)k
+SEU139+2.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14032maxresident)k
+SEU140+2.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 18608maxresident)k
+SEU141+2.p success 0.88 0.04system 0:01.03elapsed 89%CPU (0avgtext+0avgdata 107200maxresident)k
+SEU142+2.p success 3.26 0.09system 0:03.55elapsed 94%CPU (0avgtext+0avgdata 403120maxresident)k
+SEU143+2.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13600maxresident)k
+SEU144+2.p success 1.18 0.04system 0:01.38elapsed 88%CPU (0avgtext+0avgdata 161952maxresident)k
+SEU145+2.p success 5.92 0.12system 0:06.31elapsed 95%CPU (0avgtext+0avgdata 404912maxresident)k
+SEU146+2.p success 1.40 0.03system 0:01.60elapsed 89%CPU (0avgtext+0avgdata 93664maxresident)k
+SEU147+2.p success 3.27 0.07system 0:03.58elapsed 93%CPU (0avgtext+0avgdata 391264maxresident)k
+SEU148+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14144maxresident)k
+SEU149+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13728maxresident)k
+SEU150+2.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13776maxresident)k
+SEU151+2.p success 0.00 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14672maxresident)k
+SEU152+2.p success 0.54 0.02system 0:00.67elapsed 84%CPU (0avgtext+0avgdata 64304maxresident)k
+SEU153+2.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14128maxresident)k
+SEU154+2.p success 0.02 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 14608maxresident)k
+SEU155+2.p success 15.06 0.19system 0:15.72elapsed 97%CPU (0avgtext+0avgdata 393824maxresident)k
+SEU156+2.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 15648maxresident)k
+SEU157+2.p % SZS status Timeout for SEU157+2
+SEU158+2.p success 0.58 0.02system 0:00.72elapsed 84%CPU (0avgtext+0avgdata 79424maxresident)k
+SEU159+2.p % SZS status Timeout for SEU159+2
+SEU160+2.p success 0.04 0.01system 0:00.17elapsed 29%CPU (0avgtext+0avgdata 19616maxresident)k
+SEU161+2.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13840maxresident)k
+SEU162+2.p success 0.30 0.01system 0:00.43elapsed 71%CPU (0avgtext+0avgdata 49024maxresident)k
+SEU163+2.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14528maxresident)k
+SEU164+2.p success 54.89 1.01system 0:56.27elapsed 99%CPU (0avgtext+0avgdata 1542720maxresident)k
+SEU165+2.p success 1.70 0.04system 0:01.92elapsed 90%CPU (0avgtext+0avgdata 121952maxresident)k
+SEU166+2.p % SZS status Timeout for SEU166+2
+SEU167+1.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 12880maxresident)k
+SEU167+2.p success 6.30 0.11system 0:06.73elapsed 95%CPU (0avgtext+0avgdata 383824maxresident)k
+SEU167+3.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 12912maxresident)k
+SEU168+2.p % SZS status Timeout for SEU168+2
+SEU169+2.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14672maxresident)k
+SEU170+2.p success 1.46 0.02system 0:01.65elapsed 90%CPU (0avgtext+0avgdata 123072maxresident)k
+SEU171+2.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15696maxresident)k
+SEU172+2.p success 0.00 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+SEU173+2.p success 1.35 0.02system 0:01.54elapsed 89%CPU (0avgtext+0avgdata 134944maxresident)k
+SEU174+2.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15728maxresident)k
+SEU175+2.p % SZS status Timeout for SEU175+2
+SEU176+2.p success 8.00 0.16system 0:08.50elapsed 95%CPU (0avgtext+0avgdata 384480maxresident)k
+SEU177+2.p success 7.59 0.11system 0:07.99elapsed 96%CPU (0avgtext+0avgdata 390176maxresident)k
+SEU178+2.p % SZS status Timeout for SEU178+2
+SEU179+2.p % SZS status Timeout for SEU179+2
+SEU180+2.p success 7.62 0.17system 0:08.09elapsed 96%CPU (0avgtext+0avgdata 390320maxresident)k
+SEU181+2.p % SZS status Timeout for SEU181+2
+SEU182+2.p % SZS status Timeout for SEU182+2
+SEU183+2.p % SZS status Timeout for SEU183+2
+SEU184+2.p % SZS status Timeout for SEU184+2
+SEU185+2.p % SZS status Timeout for SEU185+2
+SEU186+2.p success 0.03 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 17824maxresident)k
+SEU187+2.p success 1.40 0.01system 0:01.58elapsed 89%CPU (0avgtext+0avgdata 49792maxresident)k
+SEU188+2.p success 0.11 0.00system 0:00.22elapsed 53%CPU (0avgtext+0avgdata 28192maxresident)k
+SEU189+2.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15744maxresident)k
+SEU190+2.p % SZS status Timeout for SEU190+2
+SEU191+2.p % SZS status Timeout for SEU191+2
+SEU192+2.p % SZS status Timeout for SEU192+2
+SEU193+2.p % SZS status Timeout for SEU193+2
+SEU194+2.p success 0.02 0.00system 0:00.15elapsed 15%CPU (0avgtext+0avgdata 15744maxresident)k
+SEU195+2.p % SZS status Timeout for SEU195+2
+SEU196+2.p success 6.26 0.20system 0:06.78elapsed 95%CPU (0avgtext+0avgdata 444016maxresident)k
+SEU197+2.p % SZS status Timeout for SEU197+2
+SEU198+2.p % SZS status Timeout for SEU198+2
+SEU199+2.p % SZS status Timeout for SEU199+2
+SEU200+2.p success 6.27 0.17system 0:06.81elapsed 94%CPU (0avgtext+0avgdata 435456maxresident)k
+SEU201+2.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 16640maxresident)k
+SEU202+2.p % SZS status Timeout for SEU202+2
+SEU203+2.p % SZS status Timeout for SEU203+2
+SEU204+2.p % SZS status Timeout for SEU204+2
+% SZS status Timeout for SEU204+2
+SEU205+2.p % SZS status Timeout for SEU205+2
+SEU206+2.p % SZS status Timeout for SEU206+2
+SEU207+2.p % SZS status Timeout for SEU207+2
+SEU208+2.p % SZS status Timeout for SEU208+2
+SEU209+2.p % SZS status Timeout for SEU209+2
+SEU210+2.p % SZS status Timeout for SEU210+2
+SEU211+2.p % SZS status Timeout for SEU211+2
+SEU212+2.p success 7.52 0.19system 0:08.05elapsed 95%CPU (0avgtext+0avgdata 415808maxresident)k
+SEU213+2.p % SZS status Timeout for SEU213+2
+SEU214+2.p % SZS status Timeout for SEU214+2
+SEU215+2.p success 0.02 0.00system 0:00.13elapsed 17%CPU (0avgtext+0avgdata 16848maxresident)k
+SEU216+2.p % SZS status Timeout for SEU216+2
+SEU217+2.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16752maxresident)k
+SEU218+2.p % SZS status Timeout for SEU218+2
+SEU219+2.p success 0.03 0.00system 0:00.14elapsed 21%CPU (0avgtext+0avgdata 17936maxresident)k
+SEU220+2.p success 0.03 0.00system 0:00.13elapsed 23%CPU (0avgtext+0avgdata 17904maxresident)k
+SEU221+2.p success 30.28 0.51system 0:31.23elapsed 98%CPU (0avgtext+0avgdata 1511552maxresident)k
+SEU222+2.p % SZS status Timeout for SEU222+2
+SEU223+2.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16880maxresident)k
+SEU224+2.p success 0.02 0.00system 0:00.15elapsed 17%CPU (0avgtext+0avgdata 16880maxresident)k
+SEU225+2.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16832maxresident)k
+SEU226+2.p % SZS status Timeout for SEU226+2
+SEU227+2.p % SZS status Timeout for SEU227+2
+SEU228+2.p % SZS status Timeout for SEU228+2
+SEU229+2.p % SZS status Timeout for SEU229+2
+SEU230+2.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16864maxresident)k
+SEU231+2.p % SZS status Timeout for SEU231+2
+SEU232+2.p % SZS status Timeout for SEU232+2
+SEU233+2.p % SZS status Timeout for SEU233+2
+SEU234+2.p success 4.62 0.17system 0:05.01elapsed 95%CPU (0avgtext+0avgdata 401008maxresident)k
+SEU235+2.p % SZS status Timeout for SEU235+2
+SEU236+2.p success 0.60 0.04system 0:00.75elapsed 84%CPU (0avgtext+0avgdata 91536maxresident)k
+SEU237+2.p % SZS status Timeout for SEU237+2
+SEU238+2.p % SZS status Timeout for SEU238+2
+SEU239+2.p success 0.01 0.03system 0:00.15elapsed 27%CPU (0avgtext+0avgdata 20992maxresident)k
+SEU240+2.p % SZS status Timeout for SEU240+2
+SEU241+2.p % SZS status Timeout for SEU241+2
+SEU242+2.p % SZS status Timeout for SEU242+2
+SEU243+2.p success 0.50 0.02system 0:00.72elapsed 71%CPU (0avgtext+0avgdata 86160maxresident)k
+SEU244+2.p success 0.03 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 17904maxresident)k
+SEU245+2.p success 7.61 0.10system 0:08.06elapsed 95%CPU (0avgtext+0avgdata 396032maxresident)k
+SEU246+2.p % SZS status Timeout for SEU246+2
+SEU247+2.p success 0.02 0.01system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 17968maxresident)k
+SEU248+2.p success 6.31 0.14system 0:06.80elapsed 94%CPU (0avgtext+0avgdata 434048maxresident)k
+SEU249+2.p % SZS status Timeout for SEU249+2
+SEU250+2.p % SZS status Timeout for SEU250+2
+SEU251+2.p % SZS status Timeout for SEU251+2
+SEU252+2.p % SZS status Timeout for SEU252+2
+SEU253+2.p % SZS status Timeout for SEU253+2
+SEU254+2.p % SZS status Timeout for SEU254+2
+SEU255+2.p % SZS status Timeout for SEU255+2
+SEU256+1.p % SZS status Timeout for SEU256+1
+SEU256+2.p % SZS status Timeout for SEU256+2
+SEU257+2.p success 0.12 0.00system 0:00.29elapsed 43%CPU (0avgtext+0avgdata 30640maxresident)k
+SEU258+2.p % SZS status Timeout for SEU258+2
+SEU259+2.p % SZS status Timeout for SEU259+2
+SEU260+2.p % SZS status Timeout for SEU260+2
+SEU261+2.p success 0.03 0.00system 0:00.15elapsed 22%CPU (0avgtext+0avgdata 18976maxresident)k
+SEU262+2.p % SZS status Timeout for SEU262+2
+SEU263+1.p success 0.28 0.01system 0:00.47elapsed 63%CPU (0avgtext+0avgdata 77664maxresident)k
+SEU263+2.p % SZS status Timeout for SEU263+2
+SEU264+1.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 12928maxresident)k
+SEU264+2.p success 0.03 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 18992maxresident)k
+SEU265+2.p % SZS status Timeout for SEU265+2
+SEU266+2.p % SZS status Timeout for SEU266+2
+SEU267+2.p success 7.06 0.19system 0:07.59elapsed 95%CPU (0avgtext+0avgdata 420096maxresident)k
+SEU268+2.p success 0.63 0.02system 0:00.85elapsed 76%CPU (0avgtext+0avgdata 91488maxresident)k
+SEU269+1.p success 0.12 0.00system 0:00.30elapsed 43%CPU (0avgtext+0avgdata 27904maxresident)k
+SEU269+2.p % SZS status Timeout for SEU269+2
+SEU270+2.p % SZS status Timeout for SEU270+2
+SEU271+2.p % SZS status Timeout for SEU271+2
+SEU272+2.p % SZS status Timeout for SEU272+2
+SEU273+2.p % SZS status Timeout for SEU273+2
+SEU274+2.p % SZS status Timeout for SEU274+2
+SEU275+2.p success 0.75 0.01system 0:00.97elapsed 79%CPU (0avgtext+0avgdata 103312maxresident)k
+SEU276+2.p % SZS status Timeout for SEU276+2
+SEU277+2.p % SZS status Timeout for SEU277+2
+SEU278+2.p % SZS status Timeout for SEU278+2
+SEU279+2.p % SZS status Timeout for SEU279+2
+SEU280+2.p % SZS status Timeout for SEU280+2
+SEU281+2.p % SZS status Timeout for SEU281+2
+SEU282+2.p % SZS status Timeout for SEU282+2
+SEU283+2.p % SZS status Timeout for SEU283+2
+SEU284+2.p % SZS status Timeout for SEU284+2
+SEU285+2.p % SZS status Timeout for SEU285+2
+SEU286+2.p % SZS status Timeout for SEU286+2
+SEU287+2.p % SZS status Timeout for SEU287+2
+SEU288+2.p % SZS status Timeout for SEU288+2
+SEU289+2.p % SZS status Timeout for SEU289+2
+SEU290+2.p success 1.72 0.03system 0:01.93elapsed 90%CPU (0avgtext+0avgdata 140800maxresident)k
+SEU291+2.p success 2.52 0.05system 0:02.75elapsed 93%CPU (0avgtext+0avgdata 167584maxresident)k
+SEU292+2.p success 16.25 1.19system 0:17.99elapsed 96%CPU (0avgtext+0avgdata 672080maxresident)k
+SEU293+2.p % SZS status Timeout for SEU293+2
+SEU294+2.p success 0.11 0.01system 0:00.33elapsed 36%CPU (0avgtext+0avgdata 26368maxresident)k
+SEU295+2.p success 0.07 0.00system 0:00.20elapsed 38%CPU (0avgtext+0avgdata 26768maxresident)k
+SEU296+2.p % SZS status Timeout for SEU296+2
+SEU297+2.p % SZS status Timeout for SEU297+2
+SEU298+2.p % SZS status Timeout for SEU298+2
+SEU299+2.p % SZS status Timeout for SEU299+2
+SEU300+2.p % SZS status Timeout for SEU300+2
+SEU301+2.p % SZS status Timeout for SEU301+2
+SEU302+1.p % SZS status Timeout for SEU302+1
+SEU302+2.p % SZS status Timeout for SEU302+2
+SEU302+3.p % SZS status Timeout for SEU302+3
+SEU303+2.p success 6.32 0.15system 0:06.83elapsed 94%CPU (0avgtext+0avgdata 321344maxresident)k
+SEU304+2.p success 7.63 0.14system 0:08.09elapsed 96%CPU (0avgtext+0avgdata 359760maxresident)k
+SEU305+2.p success 14.16 0.29system 0:14.75elapsed 97%CPU (0avgtext+0avgdata 441136maxresident)k
+SEU306+2.p success 0.09 0.00system 0:00.21elapsed 47%CPU (0avgtext+0avgdata 27920maxresident)k
+SEU307+2.p success 7.56 0.14system 0:08.07elapsed 95%CPU (0avgtext+0avgdata 359344maxresident)k
+SEU308+2.p success 2.99 0.14system 0:03.30elapsed 94%CPU (0avgtext+0avgdata 252496maxresident)k
+SEU309+2.p success 7.54 0.21system 0:08.06elapsed 96%CPU (0avgtext+0avgdata 360544maxresident)k
+SEU310+2.p % SZS status Timeout for SEU310+2
+SEU311+2.p % SZS status Timeout for SEU311+2
+SEU312+2.p % SZS status Timeout for SEU312+2
+SEU313+2.p % SZS status Timeout for SEU313+2
+SEU314+2.p % SZS status Timeout for SEU314+2
+SEU315+2.p % SZS status Timeout for SEU315+2
+SEU316+2.p % SZS status Timeout for SEU316+2
+SEU317+2.p % SZS status Timeout for SEU317+2
+SEU318+2.p % SZS status Timeout for SEU318+2
+SEU319+2.p % SZS status Timeout for SEU319+2
+SEU320+2.p success 7.57 0.14system 0:08.05elapsed 95%CPU (0avgtext+0avgdata 374176maxresident)k
+SEU321+2.p success 0.12 0.00system 0:00.24elapsed 53%CPU (0avgtext+0avgdata 36064maxresident)k
+SEU322+2.p success 10.14 0.25system 0:10.75elapsed 96%CPU (0avgtext+0avgdata 381920maxresident)k
+SEU323+2.p success 7.68 0.19system 0:08.22elapsed 95%CPU (0avgtext+0avgdata 376128maxresident)k
+SEU324+2.p success 7.81 0.21system 0:08.38elapsed 95%CPU (0avgtext+0avgdata 378400maxresident)k
+SEU325+2.p success 2.97 0.09system 0:03.22elapsed 95%CPU (0avgtext+0avgdata 243152maxresident)k
+SEU326+2.p success 7.55 0.14system 0:08.05elapsed 95%CPU (0avgtext+0avgdata 327136maxresident)k
+SEU327+2.p success 7.62 0.18system 0:08.17elapsed 95%CPU (0avgtext+0avgdata 380368maxresident)k
+SEU328+2.p success 7.54 0.22system 0:08.12elapsed 95%CPU (0avgtext+0avgdata 377072maxresident)k
+SEU329+2.p % SZS status Timeout for SEU329+2
+SEU330+2.p % SZS status Timeout for SEU330+2
+SEU331+2.p % SZS status Timeout for SEU331+2
+SEU332+2.p % SZS status Timeout for SEU332+2
+SEU333+2.p % SZS status Timeout for SEU333+2
+SEU334+2.p % SZS status Timeout for SEU334+2
+SEU335+2.p % SZS status Timeout for SEU335+2
+SEU336+2.p % SZS status Timeout for SEU336+2
+SEU337+2.p success 7.58 0.20system 0:08.14elapsed 95%CPU (0avgtext+0avgdata 378432maxresident)k
+SEU338+1.p % SZS status Timeout for SEU338+1
+SEU338+2.p % SZS status Timeout for SEU338+2
+SEU339+2.p success 11.92 0.23system 0:12.51elapsed 97%CPU (0avgtext+0avgdata 356896maxresident)k
+SEU340+2.p % SZS status Timeout for SEU340+2
+SEU341+2.p success 0.68 0.03system 0:00.87elapsed 81%CPU (0avgtext+0avgdata 137056maxresident)k
+SEU342+2.p % SZS status Timeout for SEU342+2
+SEU343+2.p % SZS status Timeout for SEU343+2
+SEU344+2.p success 7.80 0.19system 0:08.36elapsed 95%CPU (0avgtext+0avgdata 346576maxresident)k
+SEU345+2.p % SZS status Timeout for SEU345+2
+SEU346+2.p % SZS status Timeout for SEU346+2
+SEU347+2.p % SZS status Timeout for SEU347+2
+SEU348+2.p % SZS status Timeout for SEU348+2
+SEU349+2.p % SZS status Timeout for SEU349+2
+SEU350+2.p success 7.64 0.20system 0:08.20elapsed 95%CPU (0avgtext+0avgdata 389392maxresident)k
+SEU351+2.p % SZS status Timeout for SEU351+2
+SEU352+2.p % SZS status Timeout for SEU352+2
+SEU353+2.p success 7.61 0.17system 0:08.14elapsed 95%CPU (0avgtext+0avgdata 378640maxresident)k
+SEU354+2.p success 1.48 0.04system 0:01.70elapsed 90%CPU (0avgtext+0avgdata 199008maxresident)k
+SEU355+2.p success 5.28 0.16system 0:05.70elapsed 95%CPU (0avgtext+0avgdata 354544maxresident)k
+SEU356+2.p % SZS status Timeout for SEU356+2
+SEU357+2.p % SZS status Timeout for SEU357+2
+SEU358+2.p % SZS status Timeout for SEU358+2
+SEU359+2.p success 14.35 0.18system 0:14.85elapsed 97%CPU (0avgtext+0avgdata 366704maxresident)k
+SEU360+2.p % SZS status Timeout for SEU360+2
+SEU361+2.p success 7.51 0.23system 0:08.10elapsed 95%CPU (0avgtext+0avgdata 353008maxresident)k
+SEU362+2.p success 7.69 0.18system 0:08.20elapsed 96%CPU (0avgtext+0avgdata 354256maxresident)k
+SEU363+2.p % SZS status Timeout for SEU363+2
+SEU364+2.p % SZS status Timeout for SEU364+2
+SEU365+2.p % SZS status Timeout for SEU365+2
+% SZS status Timeout for SEU365+2
+SEU366+2.p % SZS status Timeout for SEU366+2
+SEU367+2.p % SZS status Timeout for SEU367+2
+SEU368+2.p % SZS status Timeout for SEU368+2
+SEU369+2.p % SZS status Timeout for SEU369+2
+SEU370+2.p % SZS status Timeout for SEU370+2
+SEU371+2.p success 20.38 0.42system 0:21.32elapsed 97%CPU (0avgtext+0avgdata 1183120maxresident)k
+SEU372+2.p success 9.41 0.26system 0:09.98elapsed 96%CPU (0avgtext+0avgdata 393152maxresident)k
+SEU373+2.p success 4.33 0.17system 0:04.71elapsed 95%CPU (0avgtext+0avgdata 388976maxresident)k
+SEU374+2.p success 0.18 0.00system 0:00.31elapsed 61%CPU (0avgtext+0avgdata 44304maxresident)k
+SEU375+2.p success 0.19 0.00system 0:00.30elapsed 65%CPU (0avgtext+0avgdata 45232maxresident)k
+SEU376+2.p % SZS status Timeout for SEU376+2
+SEU377+2.p % SZS status Timeout for SEU377+2
+SEU378+2.p % SZS status Timeout for SEU378+2
+SEU379+2.p % SZS status Timeout for SEU379+2
+SEU380+2.p % SZS status Timeout for SEU380+2
+SEU381+2.p % SZS status Timeout for SEU381+2
+SEU382+2.p success 0.18 0.00system 0:00.30elapsed 62%CPU (0avgtext+0avgdata 44352maxresident)k
+SEU383+2.p % SZS status Timeout for SEU383+2
+SEU384+2.p % SZS status Timeout for SEU384+2
+SEU385+2.p % SZS status Timeout for SEU385+2
+SEU386+2.p % SZS status Timeout for SEU386+2
+SEU387+2.p success 14.22 0.40system 0:15.02elapsed 97%CPU (0avgtext+0avgdata 475088maxresident)k
+SEU388+2.p % SZS status Timeout for SEU388+2
+SEU389+2.p % SZS status Timeout for SEU389+2
+SEU390+2.p % SZS status Timeout for SEU390+2
+% SZS status Timeout for SEU390+2
+SEU391+2.p % SZS status Timeout for SEU391+2
+SEU392+2.p % SZS status Timeout for SEU392+2
+SEU393+2.p % SZS status Timeout for SEU393+2
+SEU394+2.p success 0.22 0.00system 0:00.35elapsed 65%CPU (0avgtext+0avgdata 51744maxresident)k
+SEU395+2.p success 7.93 0.15system 0:08.42elapsed 95%CPU (0avgtext+0avgdata 395504maxresident)k
+SEU396+2.p % SZS status Timeout for SEU396+2
+SEU397+2.p % SZS status Timeout for SEU397+2
+SEU398+2.p % SZS status Timeout for SEU398+2
+SEU399+2.p % SZS status Timeout for SEU399+2
+SEU400+2.p % SZS status Timeout for SEU400+2
+SEU401+2.p % SZS status Timeout for SEU401+2
+SEU402+2.p % SZS status Timeout for SEU402+2
+SEU403+2.p % SZS status Timeout for SEU403+2
+% SZS status Timeout for SEU403+2
+SEU404+2.p % SZS status Timeout for SEU404+2
+SEU405+2.p % SZS status Timeout for SEU405+2
+SEU445+1.p % SZS status Timeout for SEU445+1
+SEU446+1.p success 4.47 0.10system 0:04.75elapsed 96%CPU (0avgtext+0avgdata 411552maxresident)k
+SWV001-1.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 13808maxresident)k
+SWV002-1.p success 0.11 0.01system 0:00.24elapsed 53%CPU (0avgtext+0avgdata 26128maxresident)k
+SWV003-1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14240maxresident)k
+SWV005-1.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 14752maxresident)k
+SWV006-1.p success 0.20 0.00system 0:00.30elapsed 64%CPU (0avgtext+0avgdata 29104maxresident)k
+SWV007-1.p success 1.86 0.04system 0:02.08elapsed 91%CPU (0avgtext+0avgdata 98896maxresident)k
+SWV008-1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13904maxresident)k
+SWV022+1.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV023+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV024+1.p success 0.38 0.01system 0:00.57elapsed 70%CPU (0avgtext+0avgdata 58432maxresident)k
+SWV025+1.p success 0.11 0.01system 0:00.25elapsed 52%CPU (0avgtext+0avgdata 28288maxresident)k
+SWV026+1.p success 0.14 0.00system 0:00.28elapsed 55%CPU (0avgtext+0avgdata 32240maxresident)k
+SWV027+1.p success 0.12 0.01system 0:00.26elapsed 52%CPU (0avgtext+0avgdata 30080maxresident)k
+SWV028+1.p success 0.10 0.01system 0:00.26elapsed 45%CPU (0avgtext+0avgdata 27184maxresident)k
+SWV029+1.p success 0.28 0.01system 0:00.42elapsed 69%CPU (0avgtext+0avgdata 41824maxresident)k
+SWV030+1.p success 0.06 0.00system 0:00.17elapsed 38%CPU (0avgtext+0avgdata 20928maxresident)k
+SWV031+1.p success 0.05 0.00system 0:00.15elapsed 34%CPU (0avgtext+0avgdata 20896maxresident)k
+SWV032+1.p success 0.10 0.00system 0:00.20elapsed 48%CPU (0avgtext+0avgdata 25152maxresident)k
+SWV033+1.p success 0.07 0.00system 0:00.18elapsed 41%CPU (0avgtext+0avgdata 23104maxresident)k
+SWV034+1.p success 0.10 0.00system 0:00.25elapsed 46%CPU (0avgtext+0avgdata 28112maxresident)k
+SWV035+1.p % SZS status Timeout for SWV035+1
+SWV036+1.p % SZS status Timeout for SWV036+1
+SWV037+1.p success 0.58 0.03system 0:00.78elapsed 78%CPU (0avgtext+0avgdata 74192maxresident)k
+SWV038+1.p success 0.06 0.00system 0:00.20elapsed 38%CPU (0avgtext+0avgdata 23456maxresident)k
+SWV039+1.p success 0.06 0.00system 0:00.21elapsed 29%CPU (0avgtext+0avgdata 21920maxresident)k
+SWV040+1.p % SZS status Timeout for SWV040+1
+SWV041+1.p success 0.04 0.00system 0:00.15elapsed 26%CPU (0avgtext+0avgdata 18752maxresident)k
+SWV042+1.p success 0.04 0.01system 0:00.23elapsed 24%CPU (0avgtext+0avgdata 19728maxresident)k
+SWV043+1.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV044+1.p % SZS status Timeout for SWV044+1
+SWV045+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV046+1.p success 0.06 0.00system 0:00.19elapsed 35%CPU (0avgtext+0avgdata 21904maxresident)k
+SWV047+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV048+1.p success 0.06 0.00system 0:00.17elapsed 38%CPU (0avgtext+0avgdata 21984maxresident)k
+SWV049+1.p % SZS status Timeout for SWV049+1
+SWV050+1.p success 0.01 0.01system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15088maxresident)k
+SWV051+1.p % SZS status Timeout for SWV051+1
+SWV052+1.p % SZS status Timeout for SWV052+1
+SWV053+1.p success 0.14 0.00system 0:00.25elapsed 58%CPU (0avgtext+0avgdata 29184maxresident)k
+SWV054+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV055+1.p success 0.02 0.00system 0:00.12elapsed 22%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV056+1.p success 0.03 0.00system 0:00.13elapsed 27%CPU (0avgtext+0avgdata 17808maxresident)k
+SWV057+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV058+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV059+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV060+1.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV061+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV062+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV063+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV064+1.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV065+1.p success 0.01 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15792maxresident)k
+SWV066+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV067+1.p success 0.18 0.00system 0:00.30elapsed 62%CPU (0avgtext+0avgdata 35520maxresident)k
+SWV068+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13632maxresident)k
+SWV069+1.p success 0.02 0.00system 0:00.15elapsed 15%CPU (0avgtext+0avgdata 15712maxresident)k
+SWV070+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV071+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV072+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV073+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV074+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV075+1.p success 0.01 0.00system 0:00.15elapsed 12%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV076+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV077+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV078+1.p success 0.02 0.00system 0:00.15elapsed 16%CPU (0avgtext+0avgdata 15744maxresident)k
+SWV079+1.p % SZS status Timeout for SWV079+1
+SWV080+1.p success 0.02 0.00system 0:00.14elapsed 13%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV081+1.p success 0.02 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV082+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV083+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV084+1.p success 0.01 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV085+1.p success 0.01 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV086+1.p success 0.02 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV087+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV088+1.p success 0.01 0.00system 0:00.12elapsed 15%CPU (0avgtext+0avgdata 13680maxresident)k
+SWV089+1.p success 1.32 0.03system 0:01.52elapsed 88%CPU (0avgtext+0avgdata 124224maxresident)k
+SWV090+1.p success 1.31 0.02system 0:01.50elapsed 88%CPU (0avgtext+0avgdata 122368maxresident)k
+SWV091+1.p success 1.30 0.03system 0:01.50elapsed 88%CPU (0avgtext+0avgdata 126560maxresident)k
+SWV092+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV093+1.p success 0.10 0.00system 0:00.25elapsed 41%CPU (0avgtext+0avgdata 26080maxresident)k
+SWV094+1.p success 0.13 0.02system 0:00.27elapsed 56%CPU (0avgtext+0avgdata 28064maxresident)k
+SWV095+1.p success 0.13 0.00system 0:00.25elapsed 55%CPU (0avgtext+0avgdata 27200maxresident)k
+SWV096+1.p success 0.13 0.00system 0:00.25elapsed 54%CPU (0avgtext+0avgdata 27152maxresident)k
+SWV097+1.p success 0.09 0.00system 0:00.22elapsed 40%CPU (0avgtext+0avgdata 24016maxresident)k
+SWV098+1.p success 0.07 0.00system 0:00.19elapsed 37%CPU (0avgtext+0avgdata 22112maxresident)k
+SWV099+1.p success 0.06 0.00system 0:00.18elapsed 38%CPU (0avgtext+0avgdata 22144maxresident)k
+SWV100+1.p % SZS status Timeout for SWV100+1
+SWV101+1.p % SZS status Timeout for SWV101+1
+SWV102+1.p success 0.12 0.00system 0:00.24elapsed 54%CPU (0avgtext+0avgdata 26096maxresident)k
+SWV103+1.p success 1.32 0.02system 0:01.51elapsed 89%CPU (0avgtext+0avgdata 131008maxresident)k
+SWV104+1.p success 0.12 0.00system 0:00.23elapsed 53%CPU (0avgtext+0avgdata 25104maxresident)k
+SWV105+1.p success 0.01 0.00system 0:00.12elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV106+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13696maxresident)k
+SWV107+1.p success 0.00 0.02system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV108+1.p % SZS status Timeout for SWV108+1
+SWV109+1.p success 0.18 0.00system 0:00.31elapsed 56%CPU (0avgtext+0avgdata 30208maxresident)k
+SWV110+1.p % SZS status Timeout for SWV110+1
+SWV111+1.p % SZS status Timeout for SWV111+1
+SWV112+1.p success 0.30 0.00system 0:00.41elapsed 73%CPU (0avgtext+0avgdata 37440maxresident)k
+SWV113+1.p % SZS status Timeout for SWV113+1
+SWV114+1.p success 0.25 0.00system 0:00.39elapsed 65%CPU (0avgtext+0avgdata 35472maxresident)k
+SWV115+1.p success 0.11 0.00system 0:00.23elapsed 49%CPU (0avgtext+0avgdata 25984maxresident)k
+SWV116+1.p success 0.15 0.02system 0:00.30elapsed 55%CPU (0avgtext+0avgdata 31312maxresident)k
+SWV117+1.p success 0.18 0.01system 0:00.32elapsed 61%CPU (0avgtext+0avgdata 34320maxresident)k
+SWV118+1.p % SZS status Timeout for SWV118+1
+SWV119+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV120+1.p % SZS status Timeout for SWV120+1
+SWV121+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV122+1.p success 0.14 0.02system 0:00.29elapsed 54%CPU (0avgtext+0avgdata 29184maxresident)k
+SWV123+1.p success 0.02 0.00system 0:00.15elapsed 12%CPU (0avgtext+0avgdata 13648maxresident)k
+SWV124+1.p % SZS status Timeout for SWV124+1
+SWV125+1.p % SZS status Timeout for SWV125+1
+SWV126+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV127+1.p % SZS status Timeout for SWV127+1
+SWV128+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
+SWV130+1.p % SZS status Timeout for SWV130+1
+SWV131+1.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15488maxresident)k
+SWV132+1.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15536maxresident)k
+SWV133+1.p success 0.06 0.00system 0:00.18elapsed 37%CPU (0avgtext+0avgdata 21872maxresident)k
+SWV134+1.p success 0.06 0.00system 0:00.18elapsed 37%CPU (0avgtext+0avgdata 21856maxresident)k
+SWV135+1.p success 0.05 0.00system 0:00.16elapsed 35%CPU (0avgtext+0avgdata 21056maxresident)k
+SWV136+1.p success 0.06 0.00system 0:00.18elapsed 31%CPU (0avgtext+0avgdata 20912maxresident)k
+SWV137+1.p success 0.06 0.00system 0:00.19elapsed 35%CPU (0avgtext+0avgdata 21920maxresident)k
+SWV138+1.p success 0.05 0.00system 0:00.17elapsed 34%CPU (0avgtext+0avgdata 20912maxresident)k
+SWV139+1.p success 0.02 0.00system 0:00.23elapsed 12%CPU (0avgtext+0avgdata 15856maxresident)k
+SWV140+1.p success 0.02 0.00system 0:00.21elapsed 12%CPU (0avgtext+0avgdata 15904maxresident)k
+SWV141+1.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15856maxresident)k
+SWV142+1.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15888maxresident)k
+SWV143+1.p success 0.02 0.00system 0:00.21elapsed 13%CPU (0avgtext+0avgdata 15696maxresident)k
+SWV144+1.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15856maxresident)k
+SWV145+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14656maxresident)k
+SWV146+1.p success 0.01 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 14688maxresident)k
+SWV147+1.p success 0.02 0.00system 0:00.14elapsed 13%CPU (0avgtext+0avgdata 14672maxresident)k
+SWV148+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14672maxresident)k
+SWV149+1.p success 0.01 0.00system 0:00.17elapsed 11%CPU (0avgtext+0avgdata 14672maxresident)k
+SWV150+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14688maxresident)k
+SWV151+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 16720maxresident)k
+SWV152+1.p success 0.02 0.00system 0:00.15elapsed 17%CPU (0avgtext+0avgdata 16752maxresident)k
+SWV153+1.p success 0.08 0.00system 0:00.19elapsed 40%CPU (0avgtext+0avgdata 22064maxresident)k
+SWV154+1.p success 0.06 0.00system 0:00.17elapsed 36%CPU (0avgtext+0avgdata 21760maxresident)k
+SWV155+1.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16848maxresident)k
+SWV156+1.p success 0.02 0.00system 0:00.15elapsed 18%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV157+1.p success 0.07 0.00system 0:00.19elapsed 41%CPU (0avgtext+0avgdata 22960maxresident)k
+SWV158+1.p success 0.06 0.00system 0:00.17elapsed 38%CPU (0avgtext+0avgdata 22048maxresident)k
+SWV159+1.p success 0.01 0.01system 0:00.13elapsed 24%CPU (0avgtext+0avgdata 17760maxresident)k
+SWV160+1.p success 0.02 0.00system 0:00.17elapsed 16%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV161+1.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16800maxresident)k
+SWV162+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 16800maxresident)k
+SWV163+1.p success 0.04 0.00system 0:00.15elapsed 30%CPU (0avgtext+0avgdata 18896maxresident)k
+SWV164+1.p success 0.04 0.00system 0:00.15elapsed 30%CPU (0avgtext+0avgdata 18832maxresident)k
+SWV165+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 16768maxresident)k
+SWV166+1.p success 0.02 0.00system 0:00.12elapsed 22%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV167+1.p success 0.09 0.00system 0:00.22elapsed 42%CPU (0avgtext+0avgdata 24080maxresident)k
+SWV168+1.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV169+1.p success 0.03 0.00system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV170+1.p success 0.02 0.00system 0:00.15elapsed 15%CPU (0avgtext+0avgdata 16832maxresident)k
+SWV171+1.p success 0.02 0.00system 0:00.22elapsed 14%CPU (0avgtext+0avgdata 16512maxresident)k
+SWV172+1.p success 0.10 0.00system 0:00.29elapsed 38%CPU (0avgtext+0avgdata 26976maxresident)k
+SWV173+1.p success 0.00 0.02system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV174+1.p success 7.48 0.34system 0:08.09elapsed 96%CPU (0avgtext+0avgdata 391056maxresident)k
+SWV175+1.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV176+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV177+1.p success 0.01 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV178+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV179+1.p success 0.10 0.00system 0:00.29elapsed 35%CPU (0avgtext+0avgdata 25904maxresident)k
+SWV180+1.p success 0.10 0.00system 0:00.30elapsed 35%CPU (0avgtext+0avgdata 26272maxresident)k
+SWV181+1.p success 2.35 0.06system 0:02.60elapsed 92%CPU (0avgtext+0avgdata 125872maxresident)k
+SWV182+1.p success 0.30 0.01system 0:00.44elapsed 73%CPU (0avgtext+0avgdata 41760maxresident)k
+SWV183+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15744maxresident)k
+SWV184+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15792maxresident)k
+SWV185+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV186+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15648maxresident)k
+SWV187+1.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 15792maxresident)k
+SWV188+1.p success 0.03 0.00system 0:00.13elapsed 24%CPU (0avgtext+0avgdata 16800maxresident)k
+SWV189+1.p success 0.02 0.00system 0:00.13elapsed 24%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV190+1.p success 0.02 0.00system 0:00.12elapsed 22%CPU (0avgtext+0avgdata 15760maxresident)k
+SWV191+1.p success 0.02 0.00system 0:00.12elapsed 22%CPU (0avgtext+0avgdata 15728maxresident)k
+SWV192+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 17808maxresident)k
+SWV193+1.p success 0.02 0.00system 0:00.13elapsed 20%CPU (0avgtext+0avgdata 17824maxresident)k
+SWV194+1.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV195+1.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 17808maxresident)k
+SWV196+1.p success 0.02 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 17840maxresident)k
+SWV197+1.p success 0.02 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 17824maxresident)k
+SWV198+1.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV199+1.p success 0.03 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 17808maxresident)k
+SWV200+1.p success 0.05 0.00system 0:00.18elapsed 31%CPU (0avgtext+0avgdata 21984maxresident)k
+SWV201+1.p success 0.04 0.01system 0:00.17elapsed 34%CPU (0avgtext+0avgdata 22000maxresident)k
+SWV202+1.p success 16.78 0.30system 0:17.56elapsed 97%CPU (0avgtext+0avgdata 433056maxresident)k
+SWV203+1.p success 16.60 0.49system 0:17.61elapsed 97%CPU (0avgtext+0avgdata 292464maxresident)k
+SWV204+1.p success 0.02 0.00system 0:00.14elapsed 16%CPU (0avgtext+0avgdata 15808maxresident)k
+SWV205+1.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16768maxresident)k
+SWV206+1.p success 0.04 0.00system 0:00.15elapsed 32%CPU (0avgtext+0avgdata 20912maxresident)k
+SWV208+1.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 16784maxresident)k
+SWV209+1.p success 0.02 0.00system 0:00.15elapsed 16%CPU (0avgtext+0avgdata 16768maxresident)k
+SWV210+1.p success 0.03 0.02system 0:00.16elapsed 31%CPU (0avgtext+0avgdata 20944maxresident)k
+SWV211+1.p success 0.02 0.00system 0:00.12elapsed 15%CPU (0avgtext+0avgdata 14688maxresident)k
+SWV212+1.p success 0.00 0.01system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV213+1.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14704maxresident)k
+SWV214+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV215+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14704maxresident)k
+SWV216+1.p success 0.02 0.00system 0:00.12elapsed 15%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV217+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14704maxresident)k
+SWV218+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV219+1.p success 0.02 0.00system 0:00.12elapsed 15%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV220+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV221+1.p success 0.98 0.00system 0:01.11elapsed 88%CPU (0avgtext+0avgdata 46704maxresident)k
+SWV222+1.p success 0.02 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14704maxresident)k
+SWV223+1.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 14688maxresident)k
+SWV224+1.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV225+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV226+1.p success 0.02 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV227+1.p success 0.02 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV228+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV229+1.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV230+1.p success 0.02 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV231+1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14736maxresident)k
+SWV232+1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14720maxresident)k
+SWV365+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13472maxresident)k
+SWV366+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14304maxresident)k
+SWV367+1.p success 0.00 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 13584maxresident)k
+SWV369+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14176maxresident)k
+SWV370+1.p success 0.00 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14416maxresident)k
+SWV371+1.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 16032maxresident)k
+SWV372+1.p success 0.02 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 16816maxresident)k
+SWV372+2.p % SZS status Timeout for SWV372+2
+SWV373+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14016maxresident)k
+SWV374+1.p success 0.22 0.00system 0:00.41elapsed 52%CPU (0avgtext+0avgdata 24448maxresident)k
+SWV376+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14128maxresident)k
+SWV377+1.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14208maxresident)k
+SWV378+1.p success 54.54 0.87system 0:55.73elapsed 99%CPU (0avgtext+0avgdata 1359520maxresident)k
+SWV379+1.p success 4.57 0.04system 0:04.81elapsed 95%CPU (0avgtext+0avgdata 150208maxresident)k
+SWV380+1.p success 6.50 0.10system 0:06.92elapsed 95%CPU (0avgtext+0avgdata 178448maxresident)k
+SWV381+1.p success 0.08 0.00system 0:00.25elapsed 34%CPU (0avgtext+0avgdata 21088maxresident)k
+SWV381+2.p % SZS status Timeout for SWV381+2
+SWV381+3.p % SZS status Timeout for SWV381+3
+SWV381+4.p % SZS status Timeout for SWV381+4
+SWV383+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13920maxresident)k
+SWV384+1.p success 0.00 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14624maxresident)k
+SWV385+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13872maxresident)k
+SWV386+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13312maxresident)k
+SWV387+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13920maxresident)k
+SWV388+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13280maxresident)k
+SWV389+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14080maxresident)k
+SWV390+1.p success 0.07 0.00system 0:00.25elapsed 30%CPU (0avgtext+0avgdata 18768maxresident)k
+SWV391+1.p success 0.20 0.00system 0:00.39elapsed 54%CPU (0avgtext+0avgdata 29936maxresident)k
+SWV392+1.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 12976maxresident)k
+SWV393+1.p % SZS status Timeout for SWV393+1
+SWV394+1.p % SZS status Timeout for SWV394+1
+SWV395+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13248maxresident)k
+SWV396+1.p % SZS status Timeout for SWV396+1
+SWV397+1.p success 0.01 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 13888maxresident)k
+SWV398+1.p % SZS status Timeout for SWV398+1
+SWV399+1.p success 0.04 0.00system 0:00.21elapsed 20%CPU (0avgtext+0avgdata 17296maxresident)k
+SWV400+1.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 13056maxresident)k
+SWV401+1.p success 2.69 0.02system 0:02.88elapsed 94%CPU (0avgtext+0avgdata 80592maxresident)k
+SWV402+1.p success 0.00 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13088maxresident)k
+SWV403+1.p success 0.17 0.00system 0:00.34elapsed 49%CPU (0avgtext+0avgdata 22976maxresident)k
+SWV404+1.p % SZS status Timeout for SWV404+1
+SWV405+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13824maxresident)k
+SWV406+1.p success 0.02 0.00system 0:00.23elapsed 15%CPU (0avgtext+0avgdata 16832maxresident)k
+SWV407+1.p % SZS status Timeout for SWV407+1
+SWV408+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14432maxresident)k
+SWV408+2.p success 2.31 0.02system 0:02.50elapsed 93%CPU (0avgtext+0avgdata 83408maxresident)k
+SWV409+1.p success 0.53 0.00system 0:00.74elapsed 71%CPU (0avgtext+0avgdata 45664maxresident)k
+SWV410+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 12992maxresident)k
+SWV411+1.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 13792maxresident)k
+SWV412+1.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13120maxresident)k
+SWV413+1.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 13136maxresident)k
+SWV414+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13488maxresident)k
+SWV415+1.p success 0.04 0.00system 0:00.23elapsed 19%CPU (0avgtext+0avgdata 18368maxresident)k
+SWV415+2.p success 0.04 0.00system 0:00.22elapsed 19%CPU (0avgtext+0avgdata 18736maxresident)k
+SWV416+1.p success 0.03 0.00system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 17936maxresident)k
+SWV416+2.p % SZS status Timeout for SWV416+2
+SWV417+1.p success 0.02 0.00system 0:00.25elapsed 12%CPU (0avgtext+0avgdata 16224maxresident)k
+SWV448+1.p success 31.10 0.72system 0:32.17elapsed 98%CPU (0avgtext+0avgdata 277232maxresident)k
+SWV449+1.p success 1.56 0.05system 0:01.79elapsed 90%CPU (0avgtext+0avgdata 134416maxresident)k
+SWV450+1.p success 1.85 0.03system 0:02.05elapsed 91%CPU (0avgtext+0avgdata 146368maxresident)k
+SWV451+1.p success 2.84 0.06system 0:03.08elapsed 94%CPU (0avgtext+0avgdata 168544maxresident)k
+SWV452+1.p success 1.34 0.02system 0:01.53elapsed 89%CPU (0avgtext+0avgdata 136080maxresident)k
+SWV453+1.p success 2.34 0.07system 0:02.56elapsed 94%CPU (0avgtext+0avgdata 128528maxresident)k
+SWV454+1.p success 0.86 0.02system 0:00.99elapsed 89%CPU (0avgtext+0avgdata 106720maxresident)k
+SWV455+1.p success 1.26 0.05system 0:01.47elapsed 89%CPU (0avgtext+0avgdata 135920maxresident)k
+SWV456+1.p success 1.93 0.03system 0:02.13elapsed 92%CPU (0avgtext+0avgdata 133920maxresident)k
+SWV457+1.p success 7.57 0.20system 0:08.10elapsed 96%CPU (0avgtext+0avgdata 286032maxresident)k
+SWV458+1.p % SZS status Timeout for SWV458+1
+SWV459+1.p % SZS status Timeout for SWV459+1
+SWV460+1.p success 10.03 0.26system 0:10.57elapsed 97%CPU (0avgtext+0avgdata 364128maxresident)k
+SWV461+1.p success 0.31 0.02system 0:00.45elapsed 74%CPU (0avgtext+0avgdata 49952maxresident)k
+SWV462+1.p success 11.95 0.23system 0:12.50elapsed 97%CPU (0avgtext+0avgdata 208544maxresident)k
+SWV463+1.p success 0.10 0.00system 0:00.20elapsed 50%CPU (0avgtext+0avgdata 27024maxresident)k
+SWV464+1.p success 0.15 0.00system 0:00.25elapsed 58%CPU (0avgtext+0avgdata 31280maxresident)k
+SWV465+1.p success 10.76 0.12system 0:11.16elapsed 97%CPU (0avgtext+0avgdata 225568maxresident)k
+SWV466+1.p success 8.93 0.13system 0:09.41elapsed 96%CPU (0avgtext+0avgdata 253904maxresident)k
+SWV467+1.p % SZS status Timeout for SWV467+1
+SWV468+1.p success 8.50 0.12system 0:08.99elapsed 96%CPU (0avgtext+0avgdata 241824maxresident)k
+SWV469+1.p success 2.71 0.04system 0:02.90elapsed 94%CPU (0avgtext+0avgdata 144080maxresident)k
+SWV470+1.p % SZS status Timeout for SWV470+1
+SWV471+1.p % SZS status Timeout for SWV471+1
+SWV472+1.p % SZS status Timeout for SWV472+1
+SWV473+1.p success 3.90 0.11system 0:04.18elapsed 96%CPU (0avgtext+0avgdata 229152maxresident)k
+SWV474+1.p % SZS status Timeout for SWV474+1
+SWV475+1.p success 4.09 0.10system 0:04.32elapsed 97%CPU (0avgtext+0avgdata 236720maxresident)k
+SWV476+1.p success 1.34 0.04system 0:01.59elapsed 87%CPU (0avgtext+0avgdata 142144maxresident)k
+SWV477+1.p success 1.36 0.02system 0:01.55elapsed 89%CPU (0avgtext+0avgdata 164208maxresident)k
+SWV478+1.p success 1.90 0.02system 0:02.09elapsed 92%CPU (0avgtext+0avgdata 152256maxresident)k
+SWV479+1.p success 1.34 0.04system 0:01.55elapsed 89%CPU (0avgtext+0avgdata 144608maxresident)k
+SWV480+1.p success 1.37 0.03system 0:01.59elapsed 88%CPU (0avgtext+0avgdata 143632maxresident)k
+SWV481+1.p success 2.08 0.04system 0:02.30elapsed 92%CPU (0avgtext+0avgdata 158064maxresident)k
+SWV919-1.p % SZS status Timeout for SWV919-1
+SWV921-1.p success 6.47 0.12system 0:06.94elapsed 95%CPU (0avgtext+0avgdata 396576maxresident)k
+SWV922-1.p % SZS status Timeout for SWV922-1
+SWV923-1.p % SZS status Timeout for SWV923-1
+SWV924-1.p % SZS status Timeout for SWV924-1
+SWV926-1.p success 0.12 0.00system 0:00.24elapsed 49%CPU (0avgtext+0avgdata 27264maxresident)k
+SWV934-1.p % SZS status Timeout for SWV934-1
+SWV935-1.p % SZS status Timeout for SWV935-1
+SWV936-1.p % SZS status Timeout for SWV936-1
+SWV938-1.p success 6.28 0.14system 0:06.74elapsed 95%CPU (0avgtext+0avgdata 332880maxresident)k
+SWV939-1.p success 0.04 0.00system 0:00.17elapsed 30%CPU (0avgtext+0avgdata 17792maxresident)k
+SWV940-1.p % SZS status Timeout for SWV940-1
+SWV941-1.p % SZS status Timeout for SWV941-1
+SWV942-1.p % SZS status Timeout for SWV942-1
+SWV943-1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 15776maxresident)k
+SWV944-1.p % SZS status Timeout for SWV944-1
+SWV945-1.p % SZS status Timeout for SWV945-1
+SWV946-1.p % SZS status Timeout for SWV946-1
+SWV947-1.p % SZS status Timeout for SWV947-1
+SWV948-1.p success 0.96 0.01system 0:01.17elapsed 83%CPU (0avgtext+0avgdata 141600maxresident)k
+SWV949-1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15216maxresident)k
+SWV950-1.p % SZS status Timeout for SWV950-1
+SWV951-1.p success 0.02 0.00system 0:00.14elapsed 13%CPU (0avgtext+0avgdata 15872maxresident)k
+SWV952-1.p % SZS status Timeout for SWV952-1
+SWV954-1.p success 0.19 0.01system 0:00.39elapsed 52%CPU (0avgtext+0avgdata 50752maxresident)k
+SWV955-1.p success 0.26 0.00system 0:00.45elapsed 59%CPU (0avgtext+0avgdata 80048maxresident)k
+SWV956-1.p % SZS status Timeout for SWV956-1
+SWV957-1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14240maxresident)k
+SWV958-1.p success 0.26 0.01system 0:00.48elapsed 57%CPU (0avgtext+0avgdata 81936maxresident)k
+SWV959-1.p success 2.18 0.05system 0:02.64elapsed 84%CPU (0avgtext+0avgdata 191136maxresident)k
+SWV960-1.p % SZS status Timeout for SWV960-1
+SWV961-1.p success 0.08 0.00system 0:00.26elapsed 34%CPU (0avgtext+0avgdata 19408maxresident)k
+SWV962-1.p success 0.02 0.00system 0:00.14elapsed 16%CPU (0avgtext+0avgdata 16864maxresident)k
+SWV963-1.p success 0.09 0.01system 0:00.27elapsed 37%CPU (0avgtext+0avgdata 25968maxresident)k
+SWV964-1.p % SZS status Timeout for SWV964-1
+SWV965-1.p % SZS status Timeout for SWV965-1
+SWV966-1.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 14816maxresident)k
+SWV967-1.p % SZS status Timeout for SWV967-1
+SWV968-1.p success 0.02 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14784maxresident)k
+SWV969-1.p % SZS status Timeout for SWV969-1
+SWV970-1.p % SZS status Timeout for SWV970-1
+SWV971-1.p % SZS status Timeout for SWV971-1
+SWV972-1.p success 0.15 0.01system 0:00.34elapsed 49%CPU (0avgtext+0avgdata 34000maxresident)k
+SWV974-1.p % SZS status Timeout for SWV974-1
+SWV975-1.p % SZS status Timeout for SWV975-1
+SWV976-1.p % SZS status Timeout for SWV976-1
+SWV977-1.p % SZS status Timeout for SWV977-1
+SWV978-1.p % SZS status Timeout for SWV978-1
+SWV979-1.p % SZS status Timeout for SWV979-1
+SWV980-1.p % SZS status Timeout for SWV980-1
+SWV981-1.p % SZS status Timeout for SWV981-1
+SWV982-1.p success 0.01 0.01system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16912maxresident)k
+SWV983-1.p % SZS status Timeout for SWV983-1
+SWV984-1.p % SZS status Timeout for SWV984-1
+SWV987-1.p % SZS status Timeout for SWV987-1
+SWV988-1.p % SZS status Timeout for SWV988-1
+SWV989-1.p success 33.37 0.56system 0:34.57elapsed 98%CPU (0avgtext+0avgdata 1275792maxresident)k
+SWV990-1.p success 33.31 0.54system 0:34.41elapsed 98%CPU (0avgtext+0avgdata 949424maxresident)k
+SWV992-1.p % SZS status Timeout for SWV992-1
+SWV993-1.p % SZS status Timeout for SWV993-1
+SWV994-1.p % SZS status Timeout for SWV994-1
+SWV995-1.p success 0.07 0.00system 0:00.18elapsed 41%CPU (0avgtext+0avgdata 19120maxresident)k
+SYN548+1.p success 0.06 0.00system 0:00.19elapsed 39%CPU (0avgtext+0avgdata 25008maxresident)k
+SYN549+1.p success 0.19 0.00system 0:00.31elapsed 63%CPU (0avgtext+0avgdata 29200maxresident)k
+SYN550+1.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 14432maxresident)k
+SYN553-1.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13456maxresident)k
+SYN563-1.p success 9.37 0.12system 0:09.63elapsed 98%CPU (0avgtext+0avgdata 205888maxresident)k
+SYN585-1.p success 0.00 0.00system 0:00.10elapsed 7%CPU (0avgtext+0avgdata 13152maxresident)k
+TOP030+1.p % SZS status Timeout for TOP030+1
+TOP031+1.p % SZS status Timeout for TOP031+1
+TOP044+1.p % SZS status Timeout for TOP044+1

@@ -1,6 +1,7 @@
 \documentclass{easychair}
 \usepackage{amssymb}
 \usepackage{mathabx}
+\usepackage{subcaption}
 %include polycode.fmt
 
 % ------------------------------------------------------------------------------
@@ -245,6 +246,17 @@ TODO check if this is the case also for Z3.
 
 \paragraph{Original vs. Equalified for E}
 E manages to solve 4 problems that it did not solve before the transformation. At the same time, it times out on 33 problems that it was previously able to solve.
+\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/vampire/test_original_vampire_equalified_vampire_300.eps}\\
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
+\caption{Effects of equalification, using E, Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\end{figure}
 
 \paragraph{Original vs. Equalified for Vampire}
 4 problems that were easily solved by Vampire become unsolvable after the transformation.
@@ -257,20 +269,7 @@ With CVC4, 18 new problems are solved after the transformation, while 39 problem
 
 %original vs. equalified for Paradox - Satisfiable and Unsatisfiable
 
-\paragraph{Original vs. P-equalified for E}
-good for none, bad for 34 problems
 
-\paragraph{Original vs. P-equalified for Vampire}
-good for 5 problems, bad for 8
-
-\paragraph{Original vs. P-equalified for Z3}
-good for 4, bad for 9
-
-\paragraph{Original vs. P-equalified for CVC4}
-good for 1, bad for 11
-
-
-%original vs. p-equalified for Paradox - Satisfiable and Unsatisfiable)
 
 Conclusion: "Equalification" is generally bad for E and Vampire, gives mixed results for CVC4 and works very well for Z3.
 
@@ -278,20 +277,56 @@ Partial equalification seems to have a negative effect for all the provers used 
 
 \subsection{Transitive and Reflexive relations}
 
-\paragraph{Original vs. Transified for E}
-good for 4, bad for 60
+We present here the results of transification on problems with transitive and reflexive relations excluding equivalence relations and total orders. For equivalence relations and total orders the corresponding methods equalification and ordification work better and should be used exclusively.
 
+\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/vampire/test_original_vampire_transified_vampire_300.eps}\\
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/Z3/test_original_z3_transified_z3_300.eps} 
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/CVC4/test_original_cvc4_transified_cvc4_300.eps}
+\caption{Effects of transification, using E, Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\end{figure}
+
+
+\paragraph{Original vs. Transified for E}
+Win 2, lose 26
+% on eqrels: lose 5 win 5
+%good for 4, bad for 60
 \paragraph{Original vs. Transified for Vampire}
-good for 32, bad for 20
+Win 32, lose 10.
+% on eqrels: lose 9 win 0. compared to equalification: win 2, lose 7.
+%good for 32, bad for 20 
 
 \paragraph{Original vs. Transified for Z3}
-good for 10  bad for 121
+Win 10, lose 46
+%on eqrels: win 46 lose 27) comparing to equalification, it wins 4 and loses 32.
+%on tos + trans: good for 10  bad for 121
 
 \paragraph{Original vs. Transified for CVC4}
-good for 14, bad for 103
+Win 13, lose 42
+%good for 14, bad for 103
+
+\subsection{Equalification and Transification}
+Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improves the results for Z3, but equalification does so significantly. (equalification: win 50 lose 3, transification: win 46, lose 27)
 
 
 \subsection{Total orderings}
+
+\begin{figure}[t]
+%\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
+\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_z3_ordified_z3_300.eps}
+\includegraphics[scale=0.40,trim=5mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_cvc4_ordified_cvc4_300.eps}
+\caption{Effects of ordification, using Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\end{figure}
 
 \paragraph{Total ordering vs. strict total ordering for E}
 
@@ -308,7 +343,7 @@ total ordering vs. $\leq_\mathbb{R}$ for CVC4
 solves 12 new, times out on 29
 
 total ordering vs. $\leq_\mathbb{R}$ for Vampire
-solves 13 new problems, times out on 33 new problems.
+solves 13 new problems, times out on 34 new problems.
 
 (Should we show
 
@@ -318,6 +353,10 @@ strict-total ordering vs. $\leq_\mathbb{R}$ for CVC4
 
 
 separately? Only if the results differ.)
+
+\subsection{Maxification}
+
+
 
 % ------------------------------------------------------------------------------
 % - discussion and related work
