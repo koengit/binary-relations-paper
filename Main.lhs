@@ -47,8 +47,11 @@
 %format =>     = "\Rightarrow "
 %format <=>    = "\Leftrightarrow "
 
+%format -->    = "\;\;\rightarrowtriangle\;\;"
+
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
+%format rep(x) = rep" "(x)
 
 %format prop1 = "prop_1"
 %format propa = "prop_a"
@@ -59,7 +62,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of treating transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations} and {\em total orders}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
+We present a number of alternative ways of treating transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em reflexive, transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
@@ -69,13 +72,23 @@ We present a number of alternative ways of treating transitive binary relations 
 
 Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is an extremely common binary relation, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
-Other common concepts for which there exists built-in support in many tools are associative/commutative operators; real-valued, rational-valued, and integer-valued arithmetic; and binary relations with transitivity-like axioms \cite{chaining}. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
+Other common concepts for which there exists built-in support in many tools are associative/commutative operators; real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
-This paper is concerned with investigating what kind of special treatment we could give to commonly appearing binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
+This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
 By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
 
-For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive} relations. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
+As an example, consider a theory |T| in which an equivalence relation |R_| occurs. One way to deal with |R_| is to simply axiomatize it, by means of reflexivity, symmetry, and transitivity:
+\begin{code}
+(forall x . R(x,x)) && (forall x,y . R(x,y) => R(y,x)) && (forall x,y,z . R(x,y) && R(y,z) => R(x,z))
+\end{code}
+Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep|, and replacing all occurrences of |R_| by a formula:
+\begin{code}
+R(x,y)  -->  rep(x)=rep(y)
+\end{code}
+No axioms are needed. As we shall see, the above treatment of equivalence relations is satisfiability-equivalent with the original one, and may be beneficial in practice in certain cases.
+
+For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
@@ -182,9 +195,9 @@ Let's explain how this table was generated. We start with a list of 32 basic pro
 
 (TODO: Add that  prop1....propn must not be unsat )
 
-Secondly, we want to generate all implications of the form |{prop1, .., propn} => prop| where the set |{prop1, .., propn}| is minimal (as displayed in Appendix \ref{sec:implications}). We do this separately for each |prop|. The procedure uses a simple constraint solver (SAT-solver) to keep track of all implications it has tried so far, and consists of one main loop. At every loop iteration, the constraint solver guesses a set |{prop1, .., propn}| from the set of all properties |P-{prop}|. The procedure then asks E whether or not |{prop1, .., propn} => prop| is valid. If it is, then we look at the proof that E produces, and print the implication |{propa, .., propb} => prop|, where |{propa, .., propb}| is the subset of properties that were used in the proof. We then also tell the constraint solver never to guess a superset of |{propa, .., propb}|. If the guessed implication can not be proven, we tell the constraint solver to never guess a subset of |{prop1, .., propn}|. The procedure stops when no guesses that satisfy all constraints can be made anymore. After the loop terminates, we may need to clean up the implications somewhat because some implications may subsume others. This procedure works well in practice, especially if all guesses are maximized according to their size.
+Secondly, we want to generate all implications of the form |{prop1, .., propn} => prop| where the set |{prop1, .., propn}| is minimal (as displayed in Appendix \ref{sec:implications}). We do this separately for each |prop|. The procedure uses a simple constraint solver (SAT-solver) to keep track of all implications it has tried so far, and consists of one main loop. At every loop iteration, the constraint solver guesses a set |{prop1, .., propn}| from the set of all properties |P-{prop}|. The procedure then asks E whether or not |{prop1, .., propn} => prop| is valid. If it is, then we look at the proof that E produces, and print the implication |{propa, .., propb} => prop|, where |{propa, .., propb}| is the subset of properties that were used in the proof. We then also tell the constraint solver never to guess a superset of |{propa, .., propb}| again. If the guessed implication can not be proven, we tell the constraint solver to never guess a subset of |{prop1, .., propn}| again. The procedure stops when no guesses that satisfy all constraints can be made anymore. After the loop terminates, we may need to clean up the implications somewhat because some implications may subsume others. This procedure generates a complete list of minimal implications. It works well in practice (it takes about 1 minute), especially if all guesses are maximized according to their size.
 
-To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_|, and compute which other properties they imply, using the pre-generated table. In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties.
+To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and compute which other properties they imply, using the pre-generated table. In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties.
 
 % ------------------------------------------------------------------------------
 % - equivalence relations
@@ -205,14 +218,6 @@ discover, how common
 
 how to encode + proof)
 
-\section{Dealing with transitive and reflexive relations}
-
-transitive and reflexive relations
-
-how to discover transitive and reflexive relations
-
-how to encode transitive and reflexive relations + correctness proof
-
 % ------------------------------------------------------------------------------
 % - dealing with total orders
 
@@ -227,6 +232,17 @@ how common are total orders, strict total orders
 possible axiomatizations + correctness proof
 
 encoding total orders using order on the reals + proof
+
+% ------------------------------------------------------------------------------
+% - transitive reflexive
+
+\section{Dealing with reflexive, transitive relations}
+
+transitive and reflexive relations
+
+how to discover transitive and reflexive relations
+
+how to encode transitive and reflexive relations + correctness proof
 
 % ------------------------------------------------------------------------------
 % - experimental results
@@ -250,7 +266,7 @@ E manages to solve 4 problems that it did not solve before the transformation. A
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
-\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/vampire/test_original_vampire_equalified_vampire_300.eps}\\
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
 \caption{Effects of equalification, using E, Vampire, Z3 and CVC4 }
@@ -283,7 +299,7 @@ We present here the results of transification on problems with transitive and re
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
-\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/vampire/test_original_vampire_transified_vampire_300.eps}\\
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/Vampire/test_original_vampire_transified_vampire_300.eps}\\
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/Z3/test_original_z3_transified_z3_300.eps} 
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/CVC4/test_original_cvc4_transified_cvc4_300.eps}
 \caption{Effects of transification, using E, Vampire, Z3 and CVC4 }
@@ -321,8 +337,8 @@ Since all equivalence relations are transitive and reflexive, the method for tra
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
-\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_z3_ordified_z3_300.eps}
-\includegraphics[scale=0.40,trim=5mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_cvc4_ordified_cvc4_300.eps}
+\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
+\includegraphics[scale=0.40,trim=5mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}
 \caption{Effects of ordification, using Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
