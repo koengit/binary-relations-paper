@@ -470,7 +470,7 @@ separately? Only if the results differ.)
 
 \section{Discussion and Related Work}
 
-chaining \cite{bachmair1998ordered}
+Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
 
 ...
 
@@ -479,13 +479,21 @@ chaining \cite{bachmair1998ordered}
 
 \section{Conclusions and Future Work}
 
-...
+We have developed 5 transformations that treat common transformation binary relations in alternative ways, namely equalification (for equivalence relations), pequalification (for partial equivalence relations), ordification and maxification (for total orders), and transification (for reflexive, transitive relations). 
+
+Each of these methods (except for perhaps pequalification) seems to be beneficial for use in certain practical situations for certain automated reasoning tools.
+
+We have also developing a method for syntactically discovering the presence of these relations in a given theory.
 
 Future work:
 
-Investigating what happens for satisfiable problems.
+More binary relations (not only transitive ones).
+
+Investigating what happens for satisfiable problems. This is hard because there are not so many satisfiable problems that have these kinds of relations. However, we can measure the time it takes to show that there doesn't exist a model of size N, for a fixed N.
 
 Generalizing maxification to other orders than total orders.
+
+Suggesting ways of adding these techniques to provers so that they become built-in. Other ways of primitively supporting these in provers.
 
 % ------------------------------------------------------------------------------
 % - references
