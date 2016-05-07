@@ -7,9 +7,9 @@
 % ------------------------------------------------------------------------------
 % - title and stuff
 
-\title{Alternative Treatments of Common Transitive Relations\\in First-Order Automated Reasoning}
+\title{Alternative Treatments\\of Common Transitive Relations\\in First-Order Automated Reasoning}
 
-\titlerunning{Treatments of Common Transitive Relations}
+\titlerunning{Alternative Treatments of Common Transitive Relations}
 
 \author{
   Koen Claessen
@@ -27,6 +27,11 @@
 \begin{document}
 
 \maketitle
+
+% ------------------------------------------------------------------------------
+% - some commands
+
+\newcommand{\parag}[1]{\vspace{0.2cm}\noindent {\bf #1} $\;\;$}
 
 % ------------------------------------------------------------------------------
 % - some symbols
@@ -47,16 +52,29 @@
 %format =>     = "\Rightarrow "
 %format <=>    = "\Leftrightarrow "
 
+%format §      = " "
+%format **     = "\times"
+%format RR     = "\mathbb{R}"
+%format QQ     = "\mathbb{Q}"
 %format -->    = "\;\;\rightarrowtriangle\;\;"
 
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
-%format rep(x) = rep" "(x)
 
-%format prop1 = "prop_1"
-%format propa = "prop_a"
-%format propb = "prop_b"
-%format propn = "prop_n"
+%format rep0 = "rep"
+%format rep  = rep0"\hspace{-0.1cm}"
+%format rep_ = rep0
+
+%format prop1 = prop"_1"
+%format propa = prop"_a"
+%format propb = prop"_b"
+%format propn = prop"_n"
+
+%format a0 = a"_0"
+%format a1 = a"_1"
+%format a2 = a"_2"
+%format ai = a"_i"
+%format an = a"_n"
 
 % ------------------------------------------------------------------------------
 % - abstract
@@ -72,7 +90,7 @@ We present a number of alternative ways of treating transitive binary relations 
 
 Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is an extremely common binary relation, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
-Other common concepts for which there exists built-in support in many tools are associative/commutative operators; real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
+Other common concepts for which there exists built-in support in many tools are associative/commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
 This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
@@ -82,11 +100,11 @@ As an example, consider a theory |T| in which an equivalence relation |R_| occur
 \begin{code}
 (forall x . R(x,x)) && (forall x,y . R(x,y) => R(y,x)) && (forall x,y,z . R(x,y) && R(y,z) => R(x,z))
 \end{code}
-Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep|, and replacing all occurrences of |R_| by a formula:
+Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R_| by a formula:
 \begin{code}
 R(x,y)  -->  rep(x)=rep(y)
 \end{code}
-No axioms are needed. As we shall see, the above treatment of equivalence relations is satisfiability-equivalent with the original one, and may be beneficial in practice in certain cases.
+(The intuition here is that |rep_| is now the representative function of the relation |R_|.) No axioms are needed. As we shall see, this alternative treatment of equivalence relations is satisfiability-equivalent with the original one, and actually is beneficial in practice in certain cases.
 
 For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
@@ -153,7 +171,7 @@ total order                     ==  {total, antisymmetric, transitive}
 strict total order              ==  {antisymmetric^~, asymmetric, transitive}
 reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
-As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, there seems to be no standard name for the property |antisymmetric^~|.
+As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
 
 \begin{figure}[t]
 \begin{center}
@@ -168,8 +186,6 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \caption{Number of occurrences of common combinations of basic binary relation properties in TPTP}
 \label{fig:occurs2}
 \end{figure}
-
-((( TODO: Ann, can you add a table of how often these relations appear in the TPTP? )))
 
 % ------------------------------------------------------------------------------
 % - discovering relations
@@ -210,34 +226,71 @@ To detect a binary relation |R_| with certain properties in a given theory, we s
 
 \section{Dealing with equivalence relations}
 
-equivalence relations
+\parag{Equalification} As mentioned in the introduction, an alternative way of dealing with equivalence relations |R_| is to create a new symbol |rep_| and replace all occurrences of |R_| with a formula involving |rep_|:
+\begin{code}
+R_ reflexive     §    
+R_ symmetric     -->   §
+R_ transitive    §
+T[.. R(x,y) ..]  §     T[.. rep(x)=rep(y) ..]
+\end{code}
+To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactally.
 
-how to discover equivalence relations
+We call this transformation {\em equalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
 
-how common are equivalence relations
+The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
 
-how to encode equivalence relations + correctness proof
+In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (in Appendix \ref{sec:implications}).
 
-(partial equivalence relations
+\parag{Pequalification} There are commonly occurring binary relations called {\em partial equivalence relations} that almost behave as equivalence relations, but not quite. In particular, they do not have to obey the axiom of reflexivity. Can we do something for these too?
 
-discover, how common
+It turns out that a set with a partial equivalence relation |R_| can be partitioned into two subsets: (1) one subset on which |R_| is an actual equivalence relation, and (2) one subset of elements which are not related to anything, not even themselves.
 
-how to encode + proof)
+Thus, an alternative way of dealing with partial equivalence relations |R_| is to create two new symbols, |rep_| and |P|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
+\begin{code}
+R_ symmetric     §  
+R_ transitive    -->   §
+T[.. R(x,y) ..]  §     T[.. (P(x) && P(y) && rep(x)=rep(y)) ..]
+\end{code}
+Here, |P| is the predicate that indicates the subset on which |R_| behaves as an equivalence relation.
+
+We call this transformation {\em pequalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
 % ------------------------------------------------------------------------------
 % - dealing with total orders
 
 \section{Dealing with total orders}
 
-total orders, strict total orders
+\parag{Orderification} Many reasoning tools have built-in support for arithmetic, in particular |<=|. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
+\begin{code}
+R_ : A ** A -> Bool
+\end{code}
+We can now create a new symbol
+\begin{code}
+rep_ : A -> RR
+\end{code}
+We then replace all occurrences of |R_| with a formula involving |rep_| in the following way:
+\begin{code}
+R_ total          §
+R_ antisymmetric  -->   §
+R_ transitive     §
+T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
+\end{code}
+(Here, |<=| is of course the ordering on reals.) We call this transformation {\em orderification}. Doing so may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
-how to discover total orders
+The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new element between any two distinct values of |RR|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
-how common are total orders, strict total orders
+\parag{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. However, reasoning about real arithmetic in 
+tools is often much cheaper than reasoning about rational arithmetic, which is why we chose |RR|. Integer arithmetic would not have been correct.
 
-possible axiomatizations + correctness proof
+\parag{Note on strict total orders} One may have expected to have a transformation specifically targeted to strict total orders, i.e. something like:
+\begin{code}
+R_ antisymmetric^~  §          
+R_ asymmetric       -->   §
+R_ transitive       §
+T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
+\end{code}
+However, the transformation for total orders already covers this case! Any strict total order |R_| is recognized as a total order |~R_|, and orderification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent.
 
-encoding total orders using order on the reals + proof
 
 % ------------------------------------------------------------------------------
 % - transitive reflexive
