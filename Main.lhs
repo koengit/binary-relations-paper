@@ -61,6 +61,9 @@
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
 
+%format Q  = "Q\hspace{-0.1cm}"
+%format Q_ = "Q"
+
 %format rep  = "rep\hspace{-0.1cm}"
 %format rep_ = "rep"
 
@@ -299,8 +302,8 @@ However, the transformation for total orders already covers this case! Any stric
 
 For such a tool, one alternative way of dealing with total orders |R_| is to create a new symbol |max_| and replace all occurrences of |R_| with a formula involving |max_|:
 \begin{code}
-R_ total          §     max associative
-R_ antisymmetric  -->   max commutative
+R_ total          §     max_ associative
+R_ antisymmetric  -->   max_ commutative
 R_ transitive     §     forall x,y . max(x,y)=x || max(x,y)=y
 T[.. R(x,y) ..]   §     T[.. max(x,y)=y ..]
 \end{code}
@@ -315,11 +318,22 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 
 \section{Dealing with reflexive, transitive relations}
 
-transitive and reflexive relations
+The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each positive occurrence of the relational symbol.
 
-how to discover transitive and reflexive relations
+As such, an alternative way of dealing with reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |Q_|:
+\begin{code}
+R_ reflexive        §     Q_ reflexive
+R_ transitive       -->   
+T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
+      ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
+\end{code}
+Doing so may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because there are many possible conclusions to draw that trigger each other ``recursively''.
 
-how to encode transitive and reflexive relations + correctness proof
+Note that the resulting theory does not blow-up; every clause with a positive occurrence of |R_| gets one extra literal per occurrence.
+
+What is going on here? We replace any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivily axiom for every positive occurrence of |R_|.
+
+The correctness proof is made difficult by the fact that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) ...(difficult)...
 
 % ------------------------------------------------------------------------------
 % - experimental results
@@ -449,7 +463,7 @@ separately? Only if the results differ.)
 
 \subsection{Maxification}
 
-
+(( ANN: How many rating 1 problems can be proven now? ))
 
 % ------------------------------------------------------------------------------
 % - discussion and related work
@@ -466,6 +480,12 @@ chaining \cite{bachmair1998ordered}
 \section{Conclusions and Future Work}
 
 ...
+
+Future work:
+
+Investigating what happens for satisfiable problems.
+
+Generalizing maxification to other orders than total orders.
 
 % ------------------------------------------------------------------------------
 % - references
