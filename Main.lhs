@@ -61,9 +61,11 @@
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
 
-%format rep0 = "rep"
-%format rep  = rep0"\hspace{-0.1cm}"
-%format rep_ = rep0
+%format rep  = "rep\hspace{-0.1cm}"
+%format rep_ = "rep"
+
+%format max  = "max\hspace{-0.1cm}"
+%format max_ = "max"
 
 %format prop1 = prop"_1"
 %format propa = prop"_a"
@@ -90,7 +92,7 @@ We present a number of alternative ways of treating transitive binary relations 
 
 Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is an extremely common binary relation, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
-Other common concepts for which there exists built-in support in many tools are associative/commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
+Other common concepts for which there exists built-in support in many tools are associative, commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
 This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
@@ -105,6 +107,8 @@ Another way is to ``borrow'' the built-in equality treatment that exists in most
 R(x,y)  -->  rep(x)=rep(y)
 \end{code}
 (The intuition here is that |rep_| is now the representative function of the relation |R_|.) No axioms are needed. As we shall see, this alternative treatment of equivalence relations is satisfiability-equivalent with the original one, and actually is beneficial in practice in certain cases.
+
+In general, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
 
 For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
@@ -291,6 +295,20 @@ T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
 However, the transformation for total orders already covers this case! Any strict total order |R_| is recognized as a total order |~R_|, and orderification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent.
 
+\parag{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
+
+For such a tool, one alternative way of dealing with total orders |R_| is to create a new symbol |max_| and replace all occurrences of |R_| with a formula involving |max_|:
+\begin{code}
+R_ total          §     max associative
+R_ antisymmetric  -->   max commutative
+R_ transitive     §     forall x,y . max(x,y)=x || max(x,y)=y
+T[.. R(x,y) ..]   §     T[.. max(x,y)=y ..]
+\end{code}
+We call this transformation {\em maxification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning with AC unification (and one extra axiom) instead of reasoning about an unknown relational symbol (using three axioms).
+
+The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a total order. Let |max_| be the maximum function associated with this order. CLearly, it must be associative and commutative, and the third axiom also holds. Moreover, we have  |R(x,y) <=> max(x,y)=y|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=max(x,y)=y|. Given the axioms in the RHS theory, |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
+
+(It may be the case that maxification can also be used to express orders that are weaker than total orders. At the time of this writing, we have not figured out how to do this.)
 
 % ------------------------------------------------------------------------------
 % - transitive reflexive
