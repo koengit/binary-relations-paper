@@ -13,6 +13,11 @@ coreflexive_neg <=> coreflexive_neg_flip
 antisymmetric <=> antisymmetric_flip
 antisymmetric_neg <=> antisymmetric_neg_flip
 
+false <= {reflexive, reflexive_neg}
+false <= {reflexive, asymmetric}
+false <= {total, reflexive_neg}
+false <= {total, asymmetric}
+
 reflexive <= {total}
 
 euclidean <= {symmetric, asymmetric}
