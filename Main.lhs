@@ -318,7 +318,7 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 
 \section{Dealing with reflexive, transitive relations}
 
-The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each positive occurrence of the relational symbol.
+\parag{Transification} The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each positive occurrence of the relational symbol.
 
 As such, an alternative way of dealing with reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |Q_|:
 \begin{code}
@@ -327,7 +327,7 @@ R_ transitive       -->
 T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
-Doing so may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because there are many possible conclusions to draw that trigger each other ``recursively''.
+We call this transformation {\em transification}. Doing so may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because there are many possible conclusions to draw that trigger each other ``recursively''.
 
 Note that the resulting theory does not blow-up; every clause with a positive occurrence of |R_| gets one extra literal per occurrence.
 
