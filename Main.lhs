@@ -58,7 +58,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of treating binary relations that commonly occur in first-order problems, in particular {\em equivalence relations} and {\em total orderings}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
+We present a number of alternative ways of treating transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations} and {\em total orders}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ This paper is concerned with investigating what kind of special treatment we cou
 
 By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
 
-For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orderings} and {\em strict total orderings}, and (3) {\em reflexive, transitive} relations. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
+For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive} relations. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
@@ -135,18 +135,18 @@ This paper will look at 5 kinds of different relations, which can be defined as 
 \begin{code}
 equivalence relation            ==  {reflexive, symmetric, transitive}
 partial equivalence relation    ==  {symmetric, transitive}
-total ordering                  ==  {total, antisymmetric, transitive}
-strict total ordering           ==  {antisymmetric^~, asymmetric, transitive}
+total order                     ==  {total, antisymmetric, transitive}
+strict total order              ==  {antisymmetric^~, asymmetric, transitive}
 reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
-As a side note, in mathematics, strict total orderings are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, there seems to be no standard name for the property |antisymmetric^~|.
+As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, there seems to be no standard name for the property |antisymmetric^~|.
 
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
 429+19 & equivalence relations \\
 117+72 & partial equivalence relations (excluding true equivalence relations) \\
-327+8 & total orderings / strict total orderings \\
+327+8 & total orders / strict total orders \\
 872+4 & reflexive and transitive relations (excluding equivalence relations)\\
 \end{tabular}
 \end{center}
@@ -162,7 +162,7 @@ As a side note, in mathematics, strict total orderings are sometimes defined usi
 
 \section{Syntactic discovery of binary relations} \label{sec:discovery}
 
-If our goal is to automatically choose the right treatment of equivalence relations, total orderings, etc., we must have an automatic way of identifying them in a given theory. It is easy to discover for example an equivalence relation in a theory by means of syntactic inspection. If we find the presence of the axioms |reflexive|, |symmetric|, and |transitive|, for the same relational symbol |R_|, we know that |R_| is a binary relation.
+If our goal is to automatically choose the right treatment of equivalence relations, total orders, etc., we must have an automatic way of identifying them in a given theory. It is easy to discover for example an equivalence relation in a theory by means of syntactic inspection. If we find the presence of the axioms |reflexive|, |symmetric|, and |transitive|, for the same relational symbol |R_|, we know that |R_| is a binary relation.
 
 But there is a problem. There are other ways of axiomatizing equivalence relations. For example, a much more common way to axiomatize equivalence relations in the TPTP is to state the two properties |reflexive| and |euclidean| for |R_|\footnote{A possible reason for this is a paper written in the 1990s that argued for this alternative axiomatization. The first author of this paper has at one point seen this paper, but at the time of the writing, we have not been able to find it. If any reviewer knows which paper we are talking about, help would be appreciated.}. 
 
@@ -213,19 +213,19 @@ how to discover transitive and reflexive relations
 how to encode transitive and reflexive relations + correctness proof
 
 % ------------------------------------------------------------------------------
-% - dealing with total orderings
+% - dealing with total orders
 
-\section{Dealing with total orderings}
+\section{Dealing with total orders}
 
-total orderings, strict total orderings
+total orders, strict total orders
 
-how to discover total orderings
+how to discover total orders
 
-how common are total orderings, strict total orderings
+how common are total orders, strict total orders
 
 possible axiomatizations + correctness proof
 
-encoding total orderings using ordering on the reals + proof
+encoding total orders using order on the reals + proof
 
 % ------------------------------------------------------------------------------
 % - experimental results
