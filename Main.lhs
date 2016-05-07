@@ -4,6 +4,9 @@
 \usepackage{subcaption}
 %include polycode.fmt
 
+ \def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
+
+
 % ------------------------------------------------------------------------------
 % - title and stuff
 
@@ -66,8 +69,8 @@ We present a number of alternative ways of treating binary relations that common
 % - introduction
 
 \section{Introduction}
-
-Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is an extremely common binary relation, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
+\comment{ann changed "extremely" to "one of the most common"}
+Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
 Other common concepts for which there exists built-in support in many tools are associative/commutative operators; real-valued, rational-valued, and integer-valued arithmetic; and binary relations with transitivity-like axioms \cite{chaining}. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
@@ -124,11 +127,12 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \label{fig:occurs}
 \end{figure}
 
+\comment{Should we say here how the problems were chosen? (Lagom stora)}
 When we investigated the number of occurrences of these properties in an older version of the TPTP problem library \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained a binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties. These were all quite esoteric and did not seem to have a standard name in mathematics.
 
 The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and even occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of total relations is the same as for asymmetric relations; if a relation is total, its negated relation is asymmetric and vice-versa.
 
-We adopt the following notation. Given a property of binary relations |prop|, we define its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only |prop| holds for |~R_|. Similarly, we define the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only |prop| holds for the flipped version of |R_|. Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|.
+We adopt the following notation. Given a property of binary relations |prop|, we define its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we define the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|. Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|.
 
 Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. However, as we have already seen, some of these are equivalent to each other.
 
@@ -142,13 +146,14 @@ reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
 As a side note, in mathematics, strict total orderings are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, there seems to be no standard name for the property |antisymmetric^~|.
 
+\comment{Should I include sat/csat/unknown/open in the table?}
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
 429+19 & equivalence relations \\
 117+72 & partial equivalence relations (excluding true equivalence relations) \\
 327+8 & total orderings / strict total orderings \\
-872+4 & reflexive and transitive relations (excluding equivalence relations)\\
+545+4 & reflexive and transitive relations (excluding equivalence relations and total orderings)\\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -267,6 +272,8 @@ For Z3, the effect is reversed.  Z3 solves 50 new problems after the transformat
 \paragraph{Original vs. Equalified for CVC4}
 With CVC4, 18 new problems are solved after the transformation, while 39 problems become unsolvable.
 
+\paragraph{P-equalification}
+
 %original vs. equalified for Paradox - Satisfiable and Unsatisfiable
 
 
@@ -328,33 +335,51 @@ Since all equivalence relations are transitive and reflexive, the method for tra
 %\end{figure}
 \end{figure}
 
-\paragraph{Total ordering vs. strict total ordering for E}
+%\paragraph{Total ordering vs. strict total ordering for E}
 
-\paragraph{Total ordering vs. strict total ordering for Vampire}
+%\paragraph{Total ordering vs. strict total ordering for Vampire}
 
-(total ordering/neg vs. strict total ordering/neg for E, Vampire
+%(total ordering/neg vs. strict total ordering/neg for E, Vampire
 
-or some other comparisons)
+%or some other comparisons)
 
-total ordering vs. $\leq_\mathbb{R}$ for Z3
-solves 41 new problems, times out on 21
+%total ordering vs. $\leq_\mathbb{R}$ for Z3
+%solves 41 new problems, times out on 21
 
-total ordering vs. $\leq_\mathbb{R}$ for CVC4
-solves 12 new, times out on 29
+%total ordering vs. $\leq_\mathbb{R}$ for CVC4
+%solves 12 new, times out on 29
 
 total ordering vs. $\leq_\mathbb{R}$ for Vampire
-solves 13 new problems, times out on 34 new problems.
+win 6, lose 19 
 
-(Should we show
+%(Should we show
 
-strict-total ordering vs. $\leq_\mathbb{R}$ for Z3
+%strict-total ordering vs. $\leq_\mathbb{R}$ for Z3
 
-strict-total ordering vs. $\leq_\mathbb{R}$ for CVC4
+%strict-total ordering vs. $\leq_\mathbb{R}$ for CVC4
+
+vampire:
+win 13, lose 33
 
 
-separately? Only if the results differ.)
+
+
+%separately? Only if the results differ.)
 
 \subsection{Maxification}
+
+
+\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Maxified/E/test_original_e_maxified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Vampire/test_original_vampire_maxified_vampire_300.eps}\\
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Z3/test_original_z3_maxified_z3_300.eps} 
+\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/CVC4/test_original_cvc4_maxified_cvc4_300.eps}
+\caption{Effects of maxification, using E, Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\end{figure}
 
 
 
