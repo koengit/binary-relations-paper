@@ -194,7 +194,6 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 545+4 & reflexive and transitive relations (excluding equivalence relations and total orderings)\\
 327+8 & total orders / strict total orders \\
 872+4 & reflexive and transitive relations (excluding equivalence relations)\\
->>>>>>> 3f0f1fe01470a8998bee6a5d986bc9b0cf9079dd
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -491,7 +490,9 @@ win 13, lose 33
 %\end{figure}
 \end{figure}
 
-(( ANN: How many rating 1 problems can be proven now? ))
+(( ANN: How many rating 1 problems can be proven now?  ))
+
+Rating 1: Transifed Vampire 2 problem (SEU322+2.p,SEU372+2.p, Transified-E 1 problem (ROB025-1.p)  Väntar på resultat för ordified.
 
 
 % ------------------------------------------------------------------------------
