@@ -346,17 +346,20 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 % - experimental results
 
 \section{Experimental results}
-We evaluate the effects of the different axiomatizations using four different theorem provers: E, Vampire, Z3 and CVC4. 
-(TODO: Why did we choose them?) We use a timeout of 5 minutes on each problem. (For Vampire, no timeout is set, but the prover is simply interrupted after 5 minutes if it has not yet terminated.)
+We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E and Vampire, and two SMT solvers, Z3 and CVC4. 
+We use a time limit of 5 minutes on each problem. For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This is because Vampire uses the time limit to control the search strategy, which can affect the solving times negatively.
+
+We started from a set of 10788 test problems from the TPTP, listed as Unsatisfiable or Theorem (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. 
+
+Some transformations work well for some provers and bad for others, while a few turned out to almost always be a bad idea. 
+blahbalh square blah time slicing
+
+Below, we give an overview of how each transformation performed.
+
 
 \subsection{Equivalence relations}
 
-We detected 429 problems with equivalence relations among the TPTP problems listed as Unsatisfiable and Theorem. The majority of problems appear in the GEO and SYN categories.
-
-Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. 
-
-In our evaluations, there is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. The initial axiomatisation of the equivalence relation (transitive or euclidean) does not have any notable effect either.
-TODO check if this is the case also for Z3.
+Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Original vs. Equalified for E}
 E manages to solve 4 problems that it did not solve before the transformation. At the same time, it times out on 33 problems that it was previously able to solve.
@@ -452,14 +455,16 @@ Since all equivalence relations are transitive and reflexive, the method for tra
 
 %or some other comparisons)
 
-%total ordering vs. $\leq_\mathbb{R}$ for Z3
+total ordering vs. $\leq_\mathbb{R}$ for Z3
 %solves 41 new problems, times out on 21
 
 %total ordering vs. $\leq_\mathbb{R}$ for CVC4
 %solves 12 new, times out on 29
 
-total ordering vs. $\leq_\mathbb{R}$ for Vampire
-win 6, lose 19 
+%total ordering vs. $\leq_\mathbb{R}$ for Vampire
+%win 6, lose 19 
+
+
 
 %(Should we show
 
@@ -492,8 +497,7 @@ win 13, lose 33
 
 (( ANN: How many rating 1 problems can be proven now?  ))
 
-Rating 1: Transifed Vampire 2 problem (SEU322+2.p,SEU372+2.p, Transified-E 1 problem (ROB025-1.p)  Väntar på resultat för ordified.
-
+Rating 1: Transifed Vampire 2 problem (SEU322+2.p,SEU372+2.p, Transified-E 1 problem (ROB025-1.p) 
 
 % ------------------------------------------------------------------------------
 % - discussion and related work
