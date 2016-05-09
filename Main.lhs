@@ -346,7 +346,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 % ------------------------------------------------------------------------------
 % - experimental results
 
-tODO ANN: kolla hur man beskriver hårdvaran i clustret. vilken version av teorembevisarna (--help).
+tODO ANN: kolla hur man beskriver harvarna i clustret. vilken version av teorembevisarna (--help).
 
 hur mkt minne, vilken processor
 TPTP version
@@ -354,7 +354,7 @@ lagom stora problem
 
 slutsatser - sammanfatta.
 
-gör tabell och lägg in! 
+gor tabell och lagg in! 
 
 
 \section{Experimental results}
