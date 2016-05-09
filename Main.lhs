@@ -346,7 +346,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 % ------------------------------------------------------------------------------
 % - experimental results
 
-KOEN: what tptp version did you use to generate the lagom stora problems?
+%KOEN: what tptp version did you use to generate the lagom stora problems?
 
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 and Vampire 4.0, and two SMT solvers, Z3 4.4.2 and CVC4 1.4. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem. For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This is because Vampire uses the time limit to control the search strategy, which can affect the solving times negatively.
@@ -355,20 +355,21 @@ We started from a set of 10788 test problems from the TPTP, listed as Unsatisfia
 
 \begin{figure}[t]
 \begin{center}
+\setlength{\tabcolsep}{5.2pt}
 \begin{tabular}{ll||ccc||ccc||ccc||ccc}
- & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
+
+  & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
-%&& - & +& - & + & - & + & - & + \\
-equalification &(429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370 & +18 & -39 \\
-p-equalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
-transification & (545) & 324 & +2 & -26 & 274 & +32 & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
-orderification & (327) & 273 & n/a & n/a & 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
-maxification & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
+equalification & (429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370 & +18 & -39 \\
+pequalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
+transification  & (545) & 324 & +2 & -26 & 274 & +32 & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
+ordification  & (327) & 273 & n/a & n/a & 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
+maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation, and how many solved problems are gained after the transformation, how many solved problems are lost. (Total number of applicable problems for each transformation in parentheses)}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses)}
 \label{fig:overview}
 \end{figure}
 
@@ -376,8 +377,11 @@ maxification & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +
 
 Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
-As can be seen in Figure \ref{fig:overview}, equalification turns out to perform badly with resolution based provers, while it works very well with Z3, and somewhat well on CVC4. Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers in the evaluation.
-
+\paragraph{Equalification}
+As can be seen in Figure \ref{fig:overview}, equalification turns out to worsen the results of the resolution based provers, who already performed well on the original problems.%TODO : Koen - why may this be? 
+With Z3 however, it performs very well, and somewhat well on CVC4. Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers used in the evaluation. Figure \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
+%TODO: i don't know how to explain this well. The squares in the top right corners of the diagrams show that time-slicing is a good idea; when it is empty apart from the problems on which the prover times out both on the original and the transformed problem, it means that no problem was solved after that point in time.
+%TODO: for the camera ready version we should make the squares the biggest possible size.
 
 \begin{figure}[t]
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
@@ -392,17 +396,57 @@ As can be seen in Figure \ref{fig:overview}, equalification turns out to perform
 \label{fig:e_equalified}
 \end{figure}
 
-TODO KOEN: i don't like the word treatment. it sounds like a cream you put on your skin.
+%TODO KOEN: i don't like the word treatment. it sounds like a cream you put on your skin.
 
-\paragraph{Partial Equivalence Relations}
+\paragraph{Pequalification}
 
-Partial equalification turns out to be particularly bad for E, which solves 34 fewer problems after the transformation. Partial equalification makes Z3 perform only slightly better and Vampire and CVC4 slightly worse. It is hard to say if the effect on the results is due to the new axiomatisation, or to other reasons. For example, simply shuffling the axioms of a theory can cause the results to deviate in a similar way.
+In 117 of the test problems, relations that are transitive and symmetric, but not reflexive, were found. The majority of these problems are in the CAT and FLD categories of TPTP. All of the tested theorem provers perform worse on these problems compared to the problems with true equivalence relations. This is also the case after performing pequalification. Pequalification turns out to be particularly bad for E, which solves 34 fewer problems after the transformation. It makes Z3 perform only slightly better and Vampire and CVC4 slightly worse. 
+When the differences to the performance is small, it is hard to know if the effect is due to the new axiomatisation, or to other reasons. For example, we have observed that simply shuffling the axioms of a theory can cause the results to deviate in a similar way. 
+%TODO Koen can we say anything more here?
+
+\subsection{Total orderings}
+Total orders were found in 327 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 77 of the problems, the total order is positively axiomatised, and in the other 250 problems it is negative (and thus axiomatised as a strict total order). There is never more than one order present in any of the problems. 
+
+\paragraph{Ordification}
+For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format, and Z3 and CVC4 on a version in SMT format. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Figure \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
+\paragraph{Hard problems solved using Ordification}
+After Ordification, 14 problems from the SWV category with rating 1.0 are solved. (SWV035+1.p, SWV040+1.p, SWV044+1.p , SWV049+1.p, SWV079+1.p, SWV100+1, SWV101+1.p, SWV108+1.p, SWV110+1.p, SWV113+1.p, SWV118+1.p, SWV120+1.p, SWV124+1.p, SWV130+1.p)
+Vampire and Z3 each solve 13 hard problems and CVC4 solves 12 of them. Rating 1.0 means that no known current theorem prover solves the problem.
+
+\begin{figure}[t]
+%\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.55,trim=20mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
+\includegraphics[scale=0.55,trim=7mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
+\includegraphics[scale=0.55,trim=7mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}
+\caption{Effects of ordification, using Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\label{fig:ordified}
+\end{figure}
+\paragraph{Maxification}
+Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see figure \ref{fig:overview}).
+%TODO Koen what may be a reason for this?
+
+%\begin{figure}[t]
+%\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Maxified/E/test_original_e_maxified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+%\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Vampire/test_original_vampire_maxified_vampire_300.eps}\\
+%\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Z3/test_original_z3_maxified_z3_300.eps} 
+%\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/CVC4/test_original_cvc4_maxified_cvc4_300.eps}
+%\caption{Effects of maxification, using E, Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+%\end{figure}
+
 
 \subsection{Transitive and Reflexive relations}
 
 Transification is evaluated on problems with transitive and reflexive relations excluding equivalence relations and total orders. For problems that include equivalence relations and total orders, the corresponding methods equalification and ordification work better and should be preferred. Transification turns out to be good for Vampire, which solves an additional 32 problems after the transformation, while it loses 10 problems that it was previously able to solve. For E, the effect of transification is almost exclusively negative. Both Z3 and CVC4 perform significantly worse after the transformation, but time-slicing can be a good way to improve the results. 
 
-TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
+%TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
 
 \begin{figure}[t]
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
@@ -424,72 +468,6 @@ blah
 Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improves the results for Z3, but equalification does so significantly. (equalification: win 50 lose 3, transification: win 46, lose 27)
 
 
-\subsection{Total orderings}
-
-\paragraph{Hard problems solved using Ordification}
-
-After Ordification, 14 problems from the SWV category with rating 1.0 are solved. (SWV035+1.p, SWV040+1.p, SWV044+1.p , SWV049+1.p, SWV079+1.p, SWV100+1, SWV101+1.p, SWV108+1.p, SWV110+1.p, SWV113+1.p, SWV118+1.p, SWV120+1.p, SWV124+1.p, SWV130+1.p)
-Vampire and Z3 each solve 13 hard problems and CVC4 solves 12 of them.
-
-\begin{figure}[t]
-%\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
-%\includegraphics[scale=0.22]{Plots/Equalified/E/}
-%\begin{figure}[t]
-\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
-\includegraphics[scale=0.40,trim=5mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
-\includegraphics[scale=0.40,trim=5mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}
-\caption{Effects of ordification, using Vampire, Z3 and CVC4 }
-%\includegraphics[scale=0.22]{Plots/Equalified/E/}
-%\end{figure}
-\end{figure}
-
-%\paragraph{Total ordering vs. strict total ordering for E}
-
-%\paragraph{Total ordering vs. strict total ordering for Vampire}
-
-%(total ordering/neg vs. strict total ordering/neg for E, Vampire
-
-%or some other comparisons)
-
-total ordering vs. $\leq_\mathbb{R}$ for Z3
-%solves 41 new problems, times out on 21
-
-%total ordering vs. $\leq_\mathbb{R}$ for CVC4
-%solves 12 new, times out on 29
-
-%total ordering vs. $\leq_\mathbb{R}$ for Vampire
-%win 6, lose 19 
-
-
-
-%(Should we show
-
-%strict-total ordering vs. $\leq_\mathbb{R}$ for Z3
-
-%strict-total ordering vs. $\leq_\mathbb{R}$ for CVC4
-
-vampire:
-win 13, lose 33
-
-
-
-
-%separately? Only if the results differ.)
-
-\subsection{Maxification}
-
-
-\begin{figure}[t]
-\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Maxified/E/test_original_e_maxified_e_300.eps}
-%\includegraphics[scale=0.22]{Plots/Equalified/E/}
-%\begin{figure}[t]
-\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Vampire/test_original_vampire_maxified_vampire_300.eps}\\
-\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/Z3/test_original_z3_maxified_z3_300.eps} 
-\includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Maxified/CVC4/test_original_cvc4_maxified_cvc4_300.eps}
-\caption{Effects of maxification, using E, Vampire, Z3 and CVC4 }
-%\includegraphics[scale=0.22]{Plots/Equalified/E/}
-%\end{figure}
-\end{figure}
 
 
 

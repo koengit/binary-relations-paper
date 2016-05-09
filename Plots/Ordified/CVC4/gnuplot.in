@@ -15,7 +15,7 @@ set arrow from 0.001,300 to 600,300 nohead ls 3
 set arrow from 150,0.001 to 150,600 nohead ls 1
 set arrow from 0.001,150 to 600,150 nohead ls 1
 set xlabel 'original-CVC4'
-set ylabel 'ordified-CVC4'
+set ylabel 'ordified-CVC4' offset 3
 set size square
 plot [0.001:600][0.001:600] 'data_original_CVC4_ordified_CVC4' ls 2 with points title ''
 
