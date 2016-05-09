@@ -556,10 +556,10 @@ Suggesting ways of adding these techniques to provers so that they become built-
 \section{Implications between properties} \label{sec:implications}
 Here follows the complete list of implications between properties that we discovered using the method described in Sect. \ref{sec:discovery}.
 
-{\small
+{\tiny
 %{
 %format <= = "\Leftarrow"
-%include Implications/implications.tex
+%include Implications/implications2.tex
 %}
 }
 
