@@ -357,6 +357,20 @@ blahbalh square blah time slicing
 Below, we give an overview of how each transformation performed.
 
 
+\begin{figure}[t]
+\begin{center}
+\begin{tabular}{l||c||c||c||c}
+ & E & Vampire & Z3 & CVC4 \\
+\hline 
+equalification & - & 50/50 & + & - \\
+ 
+\end{tabular}
+\end{center}
+\vspace{-0.5cm}
+\caption{Number of occurrences of common combinations of basic binary relation properties in TPTP}
+\label{fig:occurs2}
+\end{figure}
+
 \subsection{Equivalence relations}
 
 Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
