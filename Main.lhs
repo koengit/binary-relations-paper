@@ -368,16 +368,17 @@ maxification & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation, how many solved problems are gained after the transformation, and how many solved problems are lost. (Total number of applicable problems for each transformation in parentheses)}
-\label{fig:occurs2}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation, and how many solved problems are gained after the transformation, how many solved problems are lost. (Total number of applicable problems for each transformation in parentheses)}
+\label{fig:overview}
 \end{figure}
 
 \subsection{Equivalence relations}
 
 Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
-\paragraph{Original vs. Equalified for E}
-E manages to solve 4 problems that it did not solve before the transformation. At the same time, it times out on 33 problems that it was previously able to solve.
+As can be seen in Figure \ref{fig:overview}, equalification turns out to perform badly with resolution based provers, while it works very well with Z3, and somewhat well on CVC4. Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers in the evaluation.
+
+
 \begin{figure}[t]
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
@@ -385,33 +386,23 @@ E manages to solve 4 problems that it did not solve before the transformation. A
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
 \includegraphics[scale=0.70,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
-\caption{Effects of equalification, using E, Vampire, Z3 and CVC4 }
+\caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
+\label{fig:e_equalified}
 \end{figure}
 
-\paragraph{Original vs. Equalified for Vampire}
-4 problems that were easily solved by Vampire become unsolvable after the transformation.
+TODO KOEN: i don't like the word treatment. it sounds like a cream you put on your skin.
 
-\paragraph{Original vs. Equalified for Z3}
-For Z3, the effect is reversed.  Z3 solves 50 new problems after the transformation, while it times out on 3 problems that it previously solved.
+\paragraph{Partial Equivalence Relations}
 
-\paragraph{Original vs. Equalified for CVC4}
-With CVC4, 18 new problems are solved after the transformation, while 39 problems become unsolvable.
-
-\paragraph{P-equalification}
-
-%original vs. equalified for Paradox - Satisfiable and Unsatisfiable
-
-
-
-Conclusion: "Equalification" is generally bad for E and Vampire, gives mixed results for CVC4 and works very well for Z3.
-
-Partial equalification seems to have a negative effect for all the provers used in our evaluation. While it does allow three of the provers to solve a few additional problems, this could be due to reasons unrelated to the axiomatisation of the partial equivalence relation. Simply shuffling the axioms of a theory can sometimes have the effect of a problem becoming solvable or unsolvable. We did an experiment where we shuffled the axioms of 11646 TPTP problems. After randomly shuffling the axioms, 72 problems became unsolvable, while 71 problems became solvable, using E with a timeout of 1 minute.
+Partial equalification turns out to be particularly bad for E, which solves 34 fewer problems after the transformation. Partial equalification makes Z3 perform only slightly better and Vampire and CVC4 slightly worse. It is hard to say if the effect on the results is due to the new axiomatisation, or to other reasons. For example, simply shuffling the axioms of a theory can cause the results to deviate in a similar way.
 
 \subsection{Transitive and Reflexive relations}
 
-We present here the results of transification on problems with transitive and reflexive relations excluding equivalence relations and total orders. For equivalence relations and total orders the corresponding methods equalification and ordification work better and should be used exclusively.
+Transification is evaluated on problems with transitive and reflexive relations excluding equivalence relations and total orders. For problems that include equivalence relations and total orders, the corresponding methods equalification and ordification work better and should be preferred. Transification turns out to be good for Vampire, which solves an additional 32 problems after the transformation, while it loses 10 problems that it was previously able to solve. For E, the effect of transification is almost exclusively negative. Both Z3 and CVC4 perform significantly worse after the transformation, but time-slicing can be a good way to improve the results. 
+
+TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
 
 \begin{figure}[t]
 \includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
@@ -426,29 +417,19 @@ We present here the results of transification on problems with transitive and re
 \end{figure}
 
 
-\paragraph{Original vs. Transified for E}
-Win 2, lose 26
-% on eqrels: lose 5 win 5
-%good for 4, bad for 60
-\paragraph{Original vs. Transified for Vampire}
-Win 32, lose 10.
-% on eqrels: lose 9 win 0. compared to equalification: win 2, lose 7.
-%good for 32, bad for 20 
-
-\paragraph{Original vs. Transified for Z3}
-Win 10, lose 46
-%on eqrels: win 46 lose 27) comparing to equalification, it wins 4 and loses 32.
-%on tos + trans: good for 10  bad for 121
-
-\paragraph{Original vs. Transified for CVC4}
-Win 13, lose 42
-%good for 14, bad for 103
+\paragraph{Hard problems solved using Transification}
+blah
 
 \subsection{Equalification and Transification}
 Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improves the results for Z3, but equalification does so significantly. (equalification: win 50 lose 3, transification: win 46, lose 27)
 
 
 \subsection{Total orderings}
+
+\paragraph{Hard problems solved using Ordification}
+
+After Ordification, 14 problems from the SWV category with rating 1.0 are solved. (SWV035+1.p, SWV040+1.p, SWV044+1.p , SWV049+1.p, SWV079+1.p, SWV100+1, SWV101+1.p, SWV108+1.p, SWV110+1.p, SWV113+1.p, SWV118+1.p, SWV120+1.p, SWV124+1.p, SWV130+1.p)
+Vampire and Z3 each solve 13 hard problems and CVC4 solves 12 of them.
 
 \begin{figure}[t]
 %\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
@@ -509,6 +490,8 @@ win 13, lose 33
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \end{figure}
+
+
 
 (( ANN: How many rating 1 problems can be proven now?  ))
 
