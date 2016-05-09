@@ -363,14 +363,12 @@ equalification &(429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370
 p-equalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
 transification & (545) & 324 & +2 & -26 & 274 & +32 & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
 orderification & (327) & 273 & n/a & n/a & 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
+maxification & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
 
-
-
- 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Number of occurrences of common combinations of basic binary relation properties in TPTP}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation, how many solved problems are gained after the transformation, and how many solved problems are lost. (Total number of applicable problems for each transformation in parentheses)}
 \label{fig:occurs2}
 \end{figure}
 
