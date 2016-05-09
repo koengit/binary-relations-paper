@@ -342,8 +342,20 @@ What is going on here? We replace any positive occurrence of |R(x,y)| with an im
 
 Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
 
+
 % ------------------------------------------------------------------------------
 % - experimental results
+
+tODO ANN: kolla hur man beskriver hårdvaran i clustret. vilken version av teorembevisarna (--help).
+
+hur mkt minne, vilken processor
+TPTP version
+lagom stora problem
+
+slutsatser - sammanfatta.
+
+gör tabell och lägg in! 
+
 
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E and Vampire, and two SMT solvers, Z3 and CVC4. 
@@ -534,6 +546,8 @@ Each of these methods (except for perhaps pequalification) seems to be beneficia
 We have also developing a method for syntactically discovering the presence of these relations in a given theory.
 
 Future work:
+
+Investigate difference between ordification and stordification
 
 More binary relations (not only transitive ones).
 
