@@ -374,7 +374,7 @@ maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses). A +value in {\bf boldface} indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover. An \underline{underlined} -value indicates that time slicing (running both methods in 50\% of the time each) solves strictly more problems with that combination of treatment and theorem prover.}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses). A {\bf +value} in boldface indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover. An underlined \underline{-value} indicates that time slicing (running both methods in 50\% of the time each) solves strictly more problems with that combination of treatment and theorem prover.}
 \label{fig:overview}
 \end{figure}
 
@@ -483,7 +483,13 @@ We compared ordification and transification on the 327 problems containing total
 
 \section{Discussion, Conclusions, and Future Work}
 
+<<<<<<< HEAD
 Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
+=======
+We have presented 5 transformations that can be applied to 
+
+Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
+>>>>>>> df254fb2a34fd7c967c8b84d8ea1d42c66cd7302
 
 We have developed 5 transformations that treat common transformation binary relations in alternative ways, namely equalification (for equivalence relations), pequalification (for partial equivalence relations), ordification and maxification (for total orders), and transification (for reflexive, transitive relations). 
 
