@@ -200,7 +200,7 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Number of occurrences of binary relations in TPTP, divided up into Unsatisfiable problems/Theorem + Satisfiable/CounterSatisfiable problems}
+\caption{Number of occurrences of binary relations in TPTP, divided up into Unsatisfiable problems/Theorem + Satisfiable/CounterSatisfiable/Unknown problems}
 \label{fig:occurs2}
 \end{figure}
 
@@ -254,7 +254,7 @@ T[.. R(x,y) ..]  §     T[.. rep(x)=rep(y) ..]
 \end{code}
 To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactically; in the transformation, all occurrences of |e| should be replaced.
 
-We call the above transformation {\em equalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
+We call the above transformation {\em equalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -272,7 +272,7 @@ T[.. R(x,y) ..]  §     T[.. (P(x) && P(y) && rep(x)=rep(y)) ..]
 \end{code}
 Here, |P| is the predicate that indicates the subset on which |R_| behaves as an equivalence relation.
 
-We call this transformation {\em pequalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
+We call this transformation {\em pequalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be the representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. It is clear that |R_| is symmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -296,7 +296,7 @@ R_ antisymmetric  -->   §
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
-(Here, |<=| is of course the ordering on reals.) We call this transformation {\em ordification}. Doing so may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
+(Here, |<=| is of course the ordering on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new element between any two distinct values of |RR|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -320,7 +320,7 @@ R_ antisymmetric  -->   max_ commutative
 R_ transitive     §     forall x,y . max(x,y)=x || max(x,y)=y
 T[.. R(x,y) ..]   §     T[.. max(x,y)=y ..]
 \end{code}
-We call this transformation {\em maxification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning with AC unification (and one extra axiom) instead of reasoning about an unknown relational symbol (using three axioms).
+We call this transformation {\em maxification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning with AC unification (and one extra axiom) instead of reasoning about an unknown relational symbol (using three axioms).
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a total order. Let |max_| be the maximum function associated with this order. CLearly, it must be associative and commutative, and the third axiom also holds. Moreover, we have  |R(x,y) <=> max(x,y)=y|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=max(x,y)=y|. Given the axioms in the RHS theory, |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -340,7 +340,7 @@ R_ transitive       -->
 T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
-We call this transformation {\em transification}. Doing so may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''.
+We call this transformation {\em transification}. This transformation may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''.
 
 Note that the resulting theory does not blow-up; only clauses with a positive occurrence of |R_| gets one extra literal per occurrence.
 
@@ -383,8 +383,8 @@ maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & 
 Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
-As can be seen in Figure \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
-Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers used in the evaluation. Figure \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
+As can be seen in Fig. \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
+Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers used in the evaluation. Fig. \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
 %TODO: for the camera ready version we should make the time slicing squares the biggest possible size.
 
 \begin{figure}[t]
@@ -412,7 +412,7 @@ When the differences to the performance is small, it is hard to know if the effe
 Total orders were found in 327 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 77 of the problems, the total order is positively axiomatised, and in the other 250 problems it is negative (and thus axiomatised as a strict total order). There is never more than one order present in any of the problems. 
 
 \paragraph{Ordification}
-For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Figure \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
+For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Fig. \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
 \paragraph{Hard problems solved using Ordification}
 After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it.
 
@@ -429,7 +429,7 @@ After Ordification, 15 problems, all from the SWV category, with rating 1.0 are 
 \label{fig:ordified}
 \end{figure}
 \paragraph{Maxification}
-Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see figure \ref{fig:overview}).
+Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see Fig. \ref{fig:overview}).
 %TODO Koen what may be a reason for this?
 
 %\begin{figure}[t]
