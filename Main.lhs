@@ -200,7 +200,7 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Number of occurrences of common combinations of basic binary relation properties in TPTP}
+\caption{Number of occurrences of binary relations in TPTP, divided up into Unsatisfiable problems/Theorem + Satisfiable/CounterSatisfiable problems}
 \label{fig:occurs2}
 \end{figure}
 
@@ -512,7 +512,7 @@ Lastly, we would like to look at how these ideas could be used inside a theorem 
 \section{Implications between properties} \label{sec:implications}
 Here follows the complete list of implications between properties that we discovered using the method described in Sect. \ref{sec:discovery}.
 
-{\footnotesize
+{\tiny
 %{
 %format <= = "\Leftarrow"
 %include Implications/implications2.tex
