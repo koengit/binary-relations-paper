@@ -30,7 +30,7 @@
 \begin{document}
 
 \maketitle
-which
+
 % ------------------------------------------------------------------------------
 % - some commands
 
@@ -383,7 +383,7 @@ maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & 
 
 \subsection{Equivalence relations}
 
-Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
+Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
 As can be seen in Figure \ref{fig:overview}, equalification turns out to worsen the results of the resolution based provers, who already performed well on the original problems. %TODO : Koen - why may this be? 
@@ -475,6 +475,10 @@ After transification, three new problems with rating 1.0 are solved. Two by Vamp
 
 \paragraph{Equalification and Transification}
 Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improves the results for Z3, but equalification does so significantly. 
+
+\paragraph{Ordification and Transification}
+We compared ordification and transification on the 327 problems containing total orders. Transification seems to make these problems generally more difficult for theorem provers to solve, while ordification instead improved the results on many of the problems.  Transification makes the theorem prover perform worse on these problems also for E, which cannot make use of ordification since it doesn't provide support for arithmetic.
+
 %(equalification: win 50 lose 3, transification: win 46, lose 27)
 
 %Conlcusion?
