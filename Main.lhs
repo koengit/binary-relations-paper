@@ -378,10 +378,9 @@ maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & 
 Equivalence relations were present in 429 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 429 problems, there are only 22 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
-As can be seen in Figure \ref{fig:overview}, equalification turns out to worsen the results of the resolution based provers, who already performed well on the original problems. %TODO : Koen - why may this be? 
-With Z3 however, it performs very well, and somewhat well on CVC4. Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers used in the evaluation. Figure \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
-%TODO: i don't know how to explain this well. The squares in the top right corners of the diagrams show that time-slicing is a good idea; when it is empty apart from the problems on which the prover times out both on the original and the transformed problem, it means that no problem was solved after that point in time.
-%TODO: for the camera ready version we should make the squares the biggest possible size.
+As can be seen in Figure \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
+Using a time-slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, would solve strictly more problems than the original for all of the theorem provers used in the evaluation. Figure \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
+%TODO: for the camera ready version we should make the time slicing squares the biggest possible size.
 
 \begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
@@ -466,10 +465,10 @@ Both Z3 and CVC4 perform worse after the transformation, but time-slicing can be
 After transification, three new problems with rating 1.0 are solved. Two by Vampire (SEU322+2 and SEU372+2) and one by E (ROB025-1).
 
 \paragraph{Equalification and Transification}
-Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improves the results for Z3, but equalification does so significantly. 
+Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 429 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improve the results for Z3, but equalification does so significantly. 
 
 \paragraph{Ordification and Transification}
-We compared ordification and transification on the 327 problems containing total orders. Transification seems to make these problems generally more difficult for theorem provers to solve, while ordification instead improved the results on many of the problems.  Transification makes the theorem prover perform worse on these problems also for E, which cannot make use of ordification since it doesn't provide support for arithmetic.
+We compared ordification and transification on the 327 problems containing total orders. Transification seems to make these problems generally more difficult for theorem provers to solve, while ordification instead improved the results on many of the problems.  Transification makes the theorem prover perform worse on these problems also for E, which cannot make use of ordification since it does not provide support for arithmetic.
 
 %(equalification: win 50 lose 3, transification: win 46, lose 27)
 
