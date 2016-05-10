@@ -59,7 +59,7 @@
 %format **     = "\times"
 %format RR     = "\mathbb{R}"
 %format QQ     = "\mathbb{Q}"
-%format -->    = "\;\;\;\rightarrowtriangle\;\;\;"
+%format -->    = "~~~~~\rightarrowtriangle~~~~~"
 
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
@@ -209,7 +209,7 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \label{fig:occurs2}
 \end{figure}
 
-In Fig.\ \cite{fig_occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
+In Fig.\ \ref{fig:occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
 
 % ------------------------------------------------------------------------------
 % - discovering relations
@@ -257,13 +257,13 @@ R_ symmetric     -->   §
 R_ transitive    §
 T[.. R(x,y) ..]  §     T[.. rep(x)=rep(y) ..]
 \end{code}
-To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactally.
+To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactically; in the transformation, all occurrences of |e| should be replaced.
 
-We call this transformation {\em equalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
+We call the above transformation {\em equalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
 
-The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
+The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
 
-In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (in Appendix \ref{sec:implications}).
+In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Appendix \ref{sec:implications}).
 
 \parag{Pequalification} There are commonly occurring binary relations called {\em partial equivalence relations} that almost behave as equivalence relations, but not quite. In particular, they do not have to obey the axiom of reflexivity. Can we do something for these too?
 
@@ -278,6 +278,8 @@ T[.. R(x,y) ..]  §     T[.. (P(x) && P(y) && rep(x)=rep(y)) ..]
 Here, |P| is the predicate that indicates the subset on which |R_| behaves as an equivalence relation.
 
 We call this transformation {\em pequalification}. Doing so may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
+
+The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be the representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. It is clear that |R_| is symmetric, and transitive, and therefore we have model of the LHS theory.
 
 % ------------------------------------------------------------------------------
 % - dealing with total orders
