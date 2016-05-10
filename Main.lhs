@@ -368,18 +368,20 @@ We started from a set of 10788 test problems from the TPTP, listed as Unsatisfia
 \setlength{\tabcolsep}{5.2pt}
 \begin{tabular}{ll||ccc||ccc||ccc||ccc}
 
+
+
   & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
 equalification & (429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370 & +18 & -39 \\
 pequalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
-transification  & (545) & 324 & +2 & -26 & 274 & +32 & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (327) & \multicolumn{3}{c}{n/a}& 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
+transification  & (545) & 324 & +2\solveshard & -26 & 274 & +32\solveshard & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
+ordification  & (327) & \multicolumn{3}{c}{n/a}& 292 & +19\solveshard &  -29 & 238 & +41\solveshard & -21 & 267 & +12\bf{!} & -29  \\
 maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses)}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation.  (Total number of applicable problems for each transformation in parentheses). An exclamation mark (\bf{!}) next to a value indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover.}
 \label{fig:overview}
 \end{figure}
 
