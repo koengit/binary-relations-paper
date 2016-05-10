@@ -162,7 +162,8 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 2082 & euclidean \\
 1874 & antisymmetric \\
 1567 & transitive \\
-784  & asymmetric / total \\
+784  & asymmetric \\
+784  & total \\
 388  & symmetric \\
 3    & coreflexive \\
 (163 & other)
@@ -173,15 +174,17 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \label{fig:occurs}
 \end{figure}
 
-When we investigated the number of occurrences of these properties in a subset of the TPTP problem library\footnote{For the statistics in this paper, we decided to only look at TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained a binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties. These were all quite esoteric and did not seem to have a standard name in mathematics.
+When we investigated the number of occurrences of these properties in a subset of the TPTP problem library\footnote{For the statistics in this paper, we decided to only look at unsorted TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained one binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties, but were instead instances of two new properties. Both of these were quite esoteric and did not seem to have a standard name in mathematics.
 
-The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and even occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of total relations is the same as for asymmetric relations; if a relation is total, its negated relation is asymmetric and vice-versa.
+The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and also occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of {\em total} relations is the same as for {\em asymmetric} relations; if a relation is total, the negated relation is asymmetric and vice-versa.
 
-We adopt the following notation. Given a property of binary relations |prop|, we define its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we define the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|. Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|.
+We adopt the following notation. Given a property of binary relations |prop|, we introduce its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we introduce the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|.
 
-Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. However, as we have already seen, some of these are equivalent to each other.
+Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|. Note that |prop^~| is not the same as |~prop|! For example, a relation |R_| can be |reflexive|, or |reflexive^~| (which means that |~R_| is reflexive), or |~reflexive|, which means that |R_| is not reflexive.
 
-This paper will look at 5 kinds of different relations, which can be defined as combinations of basic properties:
+Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. (However, as we have already seen, some of these are equivalent to others.)
+
+This paper will look at 5 kinds of different binary relations, which are defined as combinations of basic properties:
 \begin{code}
 equivalence relation            ==  {reflexive, symmetric, transitive}
 partial equivalence relation    ==  {symmetric, transitive}
@@ -191,16 +194,14 @@ reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
 As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
 
-\comment{Should I include sat/csat/unknown/open in the table?}
+% \comment{Should I include sat/csat/unknown/open in the table?}
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
 429+19 & equivalence relations \\
-117+72 & partial equivalence relations (excluding true equivalence relations) \\
-327+8 & total orderings / strict total orderings \\
-545+4 & reflexive and transitive relations (excluding equivalence relations and total orderings)\\
-327+8 & total orders / strict total orders \\
-872+4 & reflexive and transitive relations (excluding equivalence relations)\\
+117+72 & partial equivalence relations \\
+327+8 & (strict) total orders \\
+545+4 & reflexive, transitive relations (excluding the above)\\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -208,10 +209,12 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \label{fig:occurs2}
 \end{figure}
 
+In Fig.\ \cite{fig_occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
+
 % ------------------------------------------------------------------------------
 % - discovering relations
 
-\section{Syntactic discovery of binary relations} \label{sec:discovery}
+\section{Syntactic discovery of common binary relations} \label{sec:discovery}
 
 If our goal is to automatically choose the right treatment of equivalence relations, total orders, etc., we must have an automatic way of identifying them in a given theory. It is easy to discover for example an equivalence relation in a theory by means of syntactic inspection. If we find the presence of the axioms |reflexive|, |symmetric|, and |transitive|, for the same relational symbol |R_|, we know that |R_| is a binary relation.
 
