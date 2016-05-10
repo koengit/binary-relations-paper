@@ -356,7 +356,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options) and Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), and two SMT-solvers, Z3 4.4.2 \cite{Z3} and CVC4 1.4 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem. For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses the time limit to control its search strategies.
 
-We started from a set of 10788 test problems from the TPTP, listed as Unsatisfiable or Theorem (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. 
+We started from a set of 10788 test problems from the TPTP, listed as Unsatisfiable or Theorem (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work.
 
 \begin{figure}[t]
 \begin{center}
@@ -481,27 +481,23 @@ We compared ordification and transification on the 327 problems containing total
 
 \section{Discussion, Conclusions, and Future Work}
 
-We have presented 5 transformations that can be applied to 
+We have presented 5 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, transification, ordification, and maxification. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
 
-Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
+For users of reasoning tools that create their own theories, it is clear that they should consider using one of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, for transification and ordification, there exist 15 TPTP problems that are now solvable that weren't previously.
 
-We have developed 5 transformations that treat common transformation binary relations in alternative ways, namely equalification (for equivalence relations), pequalification (for partial equivalence relations), ordification and maxification (for total orders), and transification (for reflexive, transitive relations). 
+For implementers of reasoning tools, our conclusions are less clear. For some combinations of treatments and provers (such as transification for Vampire, and equalification for Z3), overall results are clearly better, and we would thus recommend these treatments as preprocessors for these provers. Some more combinations of treatments and provers lend themselves to a time slicing strategy that can solve strictly more problems, and could thusly be integrated in a natural way in provers that already have the time slicing machinery in place.
 
-Each of these methods (except for perhaps pequalification) seems to be beneficial for use in certain practical situations for certain automated reasoning tools.
+\paragraph{Related Work} Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper. In personal communication with some of the authors, chaining-like techniques have not been deemed important enough to be considered for implementation, and preliminary experimental results were mostly negative.
 
-We have also developing a method for syntactically discovering the presence of these relations in a given theory.
+\paragraph{Future Work} There is a lot of room for improvements and other future work. There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective than it is now on total orders. But there are also other, non-transitive relations that are of interest.
 
-Future work:
+Ordification uses total orders as the base-transformation, and treats strict total orders as negated total orders. We would like to investigate more in which cases it may be beneficial to treat strict total orders differently from total orders, and when to use $<$ on |RR| instead of |<=|.
 
-Investigate difference between ordification and stordification
+We would also like to investigate the effect of our transformations on Satisfiable and CounterSatisfiable problems. What would be the effect on finite model finders? Some transformations change the number of variables per clause, which will influence the performance of finite model finders. What happens to saturation-based tools? Is it easier or harder to saturate a problem after transformation? Evaluating these questions is hard, because we did not find many satisfiable problems in the TPTP that contained relevant relations (see Fig.\ \ref{fig:occurs2}). Instead, we considered using Unsatisfiable problems, and measuring the time it takes to show the absence of models up to a certain size.
 
-More binary relations (not only transitive ones).
+There are other kinds of relations than binary relations. For example, we can have an ternary relation that behaves as an equivalence relation in its 2nd and 3rd argument. An alternative treatment of this relation would be to introduce a binary function symbol |rep_|. We do not know whether or not this occurs often, and if it is a good idea to treat higher-arity relational symbols specially in this way.
 
-Investigating what happens for satisfiable problems. This is hard because there are not so many satisfiable problems that have these kinds of relations. However, we can measure the time it takes to show that there doesn't exist a model of size N, for a fixed N.
-
-Generalizing maxification to other orders than total orders.
-
-Suggesting ways of adding these techniques to provers so that they become built-in. Other ways of primitively supporting these in provers.
+Lastly, we would like to look at how these ideas could be used inside a theorem prover; as soon as the prover discovers that a relation is an equivalence relation or a total order, one of our transformations could be applied, on the fly. The details of how to do this remain to be investigated.
 
 % ------------------------------------------------------------------------------
 % - references
