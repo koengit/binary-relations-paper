@@ -359,7 +359,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 %KOEN: what tptp version did you use to generate the lagom stora problems?
 
 \section{Experimental results}
-We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 \cite{E} and Vampire 4.0 \cite{Vampire}, and two SMT solvers, Z3 4.4.2 \cite{Z3} and CVC4 1.4 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem. For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This is because Vampire uses the time limit to control the search strategy, which can affect the solving times negatively.
+We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options and Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), and two SMT solvers, Z3 4.4.2 \cite{Z3} and CVC4 1.4 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem. For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This is because Vampire uses the time limit to control the search strategy, which can affect the solving times negatively.
 
 We started from a set of 10788 test problems from the TPTP, listed as Unsatisfiable or Theorem (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. 
 
@@ -373,7 +373,7 @@ We started from a set of 10788 test problems from the TPTP, listed as Unsatisfia
 equalification & (429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370 & +18 & -39 \\
 pequalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
 transification  & (545) & 324 & +2 & -26 & 274 & +32 & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (327) & 273 & n/a & n/a & 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
+ordification  & (327) & \multicolumn{3}{c}{n/a}& 292 & +19 &  -29 & 238 & +41 & -21 & 267 & +12 & -29  \\
 maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
 
 \end{tabular}
