@@ -196,7 +196,7 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 429+19 & equivalence relations \\
 117+72 & partial equivalence relations \\
 327+8 & (strict) total orders \\
-545+4 & reflexive, transitive relations (excluding the above)\\
+545+48 & reflexive, transitive relations (excluding the above)\\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -361,6 +361,7 @@ We started from a set of 10788 test problems from the TPTP, listed as Unsatisfia
 \begin{figure}[t]
 \begin{center}
 \setlength{\tabcolsep}{5.2pt}
+
 \begin{tabular}{lr||rrr||rrr||rrr||rrr}
   & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
@@ -369,6 +370,7 @@ pequalification & (117) & 96 & +0 & -34 & 87 & +5 & \underline{-8}  & 38 & +9 & 
 transification  & (545) & 324 & {\bf +2} & -26 & 274 & {\bf +32} & \underline{-10} & 234 & +10 & -46 & 255 & +13 & -42 \\
 ordification  & (327) & & n/a & & 292 & {\bf +19} & \underline{-29} & 238 & {\bf +41} & \underline{-21} & 267 & {\bf +12} & -29  \\
 maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
+
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
