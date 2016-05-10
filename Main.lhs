@@ -483,7 +483,7 @@ We compared ordification and transification on the 327 problems containing total
 
 \section{Discussion, Conclusions, and Future Work}
 
-Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
+Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
 
 We have developed 5 transformations that treat common transformation binary relations in alternative ways, namely equalification (for equivalence relations), pequalification (for partial equivalence relations), ordification and maxification (for total orders), and transification (for reflexive, transitive relations). 
 
