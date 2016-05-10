@@ -59,7 +59,7 @@
 %format **     = "\times"
 %format RR     = "\mathbb{R}"
 %format QQ     = "\mathbb{Q}"
-%format -->    = "\;\;\rightarrowtriangle\;\;"
+%format -->    = "\;\;\;\rightarrowtriangle\;\;\;"
 
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
@@ -95,28 +95,36 @@ We present a number of alternative ways of treating transitive binary relations 
 % - introduction
 
 \section{Introduction}
-\comment{ann changed "extremely" to "one of the most common"}
+
 Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
 Other common concepts for which there exists built-in support in many tools are associative, commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
-This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. For now, we are mainly looking at (1) what a user of a reasoning tool may do herself to optimize the treatment of these binary relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
+This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. Adding special treatment of transitive relations to reasoning tools has been the subject of study before, in particular by means of {\em chaining} \cite{chaining}. The transitivity axiom
+\begin{code}
+forall x,y,z . R(x,y) && R(y,z) => R(x,z)
+\end{code}
+can lead to an expensive proof exploration in resolution and superposition based theorem provers, and can generate a huge number of instances in instance-based provers and SMT-solvers. Transitive relations are also common enough to motivate special built-in support. However, as far as we know, chaining is not implemented in any of the major first-order reasoning tools (at least not in E \cite{E}, Vampire \cite{Vampire}, Z3 \cite{Z3}, and CVC4 \cite{CVC4}, which were used in this paper).
+
+As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the treatment of these relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
 By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
 
 As an example, consider a theory |T| in which an equivalence relation |R_| occurs. One way to deal with |R_| is to simply axiomatize it, by means of reflexivity, symmetry, and transitivity:
 \begin{code}
-(forall x . R(x,x)) && (forall x,y . R(x,y) => R(y,x)) && (forall x,y,z . R(x,y) && R(y,z) => R(x,z))
+forall x      . R(x,x)
+forall x,y    . R(x,y) => R(y,x)
+forall x,y,z  . R(x,y) && R(y,z) => R(x,z)
 \end{code}
-Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R_| by a formula:
+Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R_| by the formula:
 \begin{code}
-R(x,y)  -->  rep(x)=rep(y)
+rep(x)=rep(y)
 \end{code}
-(The intuition here is that |rep_| is now the representative function of the relation |R_|.) No axioms are needed. As we shall see, this alternative treatment of equivalence relations is satisfiability-equivalent with the original one, and actually is beneficial in practice in certain cases.
+The intuition here is that |rep_| is now the representative function of the relation |R_|. No axioms are needed. As we shall see, this alternative treatment of equivalence relations is satisfiability-equivalent with the original one, and actually is beneficial in practice in certain cases.
 
-In general, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
+In general, when considering alternative treatments, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
 
-For the purpose of this paper, we have decided to concentrate on three different kinds of relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
+For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
@@ -154,7 +162,8 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 2082 & euclidean \\
 1874 & antisymmetric \\
 1567 & transitive \\
-784  & asymmetric / total \\
+784  & asymmetric \\
+784  & total \\
 388  & symmetric \\
 3    & coreflexive \\
 (163 & other)
@@ -165,16 +174,17 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \label{fig:occurs}
 \end{figure}
 
-\comment{Should we say here how the problems were chosen? (Lagom stora)}
-When we investigated the number of occurrences of these properties in an older version of the TPTP problem library \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained a binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties. These were all quite esoteric and did not seem to have a standard name in mathematics.
+When we investigated the number of occurrences of these properties in a subset of the TPTP problem library\footnote{For the statistics in this paper, we decided to only look at unsorted TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained one binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties, but were instead instances of two new properties. Both of these were quite esoteric and did not seem to have a standard name in mathematics.
 
-The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and even occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of total relations is the same as for asymmetric relations; if a relation is total, its negated relation is asymmetric and vice-versa.
+The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and also occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of {\em total} relations is the same as for {\em asymmetric} relations; if a relation is total, the negated relation is asymmetric and vice-versa.
 
-We adopt the following notation. Given a property of binary relations |prop|, we define its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we define the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|. Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|.
+We adopt the following notation. Given a property of binary relations |prop|, we introduce its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we introduce the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|.
 
-Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. However, as we have already seen, some of these are equivalent to each other.
+Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|. Note that |prop^~| is not the same as |~prop|! For example, a relation |R_| can be |reflexive|, or |reflexive^~| (which means that |~R_| is reflexive), or |~reflexive|, which means that |R_| is not reflexive.
 
-This paper will look at 5 kinds of different relations, which can be defined as combinations of basic properties:
+Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. (However, as we have already seen, some of these are equivalent to others.)
+
+This paper will look at 5 kinds of different binary relations, which are defined as combinations of basic properties:
 \begin{code}
 equivalence relation            ==  {reflexive, symmetric, transitive}
 partial equivalence relation    ==  {symmetric, transitive}
@@ -184,16 +194,14 @@ reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
 As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
 
-\comment{Should I include sat/csat/unknown/open in the table?}
+% \comment{Should I include sat/csat/unknown/open in the table?}
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
 429+19 & equivalence relations \\
-117+72 & partial equivalence relations (excluding true equivalence relations) \\
-327+8 & total orderings / strict total orderings \\
-545+4 & reflexive and transitive relations (excluding equivalence relations and total orderings)\\
-327+8 & total orders / strict total orders \\
-872+4 & reflexive and transitive relations (excluding equivalence relations)\\
+117+72 & partial equivalence relations \\
+327+8 & (strict) total orders \\
+545+4 & reflexive, transitive relations (excluding the above)\\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -201,10 +209,12 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \label{fig:occurs2}
 \end{figure}
 
+In Fig.\ \cite{fig_occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
+
 % ------------------------------------------------------------------------------
 % - discovering relations
 
-\section{Syntactic discovery of binary relations} \label{sec:discovery}
+\section{Syntactic discovery of common binary relations} \label{sec:discovery}
 
 If our goal is to automatically choose the right treatment of equivalence relations, total orders, etc., we must have an automatic way of identifying them in a given theory. It is easy to discover for example an equivalence relation in a theory by means of syntactic inspection. If we find the presence of the axioms |reflexive|, |symmetric|, and |transitive|, for the same relational symbol |R_|, we know that |R_| is a binary relation.
 
