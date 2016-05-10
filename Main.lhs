@@ -286,7 +286,7 @@ The transformation is correct, meaning that it preserves (non-)satisfiability: (
 
 \section{Dealing with total orders}
 
-\parag{Orderification} Many reasoning tools have built-in support for arithmetic, in particular |<=|. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
+\parag{Orderification} Many reasoning tools have built-in support for arithmetic, in particular they support an ordering |<=| on numbers. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
 \begin{code}
 R_ : A ** A -> Bool
 \end{code}
@@ -305,8 +305,7 @@ T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new element between any two distinct values of |RR|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
-\parag{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. However, reasoning about real arithmetic in 
-tools is often much cheaper than reasoning about rational arithmetic, which is why we chose |RR|. Integer arithmetic would not have been correct.
+\parag{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. However, reasoning about real arithmetic in tools is often much cheaper than reasoning about rational arithmetic, which is why we chose |RR|. Using integer arithmetic would however not have been correct.
 
 \parag{Note on strict total orders} One may have expected to have a transformation specifically targeted to strict total orders, i.e. something like:
 \begin{code}
@@ -315,7 +314,7 @@ R_ asymmetric       -->   §
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
-However, the transformation for total orders already covers this case! Any strict total order |R_| is recognized as a total order |~R_|, and orderification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent.
+However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and orderification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (There may be a practical performance difference, which is not something we have investigated.)
 
 \parag{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
 
