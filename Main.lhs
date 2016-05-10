@@ -286,7 +286,7 @@ The transformation is correct, meaning that it preserves (non-)satisfiability: (
 
 \section{Dealing with total orders}
 
-\parag{Orderification} Many reasoning tools have built-in support for arithmetic, in particular they support an ordering |<=| on numbers. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
+\parag{Ordification} Many reasoning tools have built-in support for arithmetic, in particular they support an ordering |<=| on numbers. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
 \begin{code}
 R_ : A ** A -> Bool
 \end{code}
@@ -301,7 +301,7 @@ R_ antisymmetric  -->   §
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
-(Here, |<=| is of course the ordering on reals.) We call this transformation {\em orderification}. Doing so may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
+(Here, |<=| is of course the ordering on reals.) We call this transformation {\em ordification}. Doing so may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new element between any two distinct values of |RR|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -314,7 +314,7 @@ R_ asymmetric       -->   §
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
-However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and orderification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (There may be a practical performance difference, which is not something we have investigated.)
+However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and ordification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (There may be a practical performance difference, which is not something we have investigated.)
 
 \parag{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
 
@@ -374,7 +374,6 @@ pequalification & (117) & 96 & +0 & -34 & 87 & +5 & \underline{-8}  & 38 & +9 & 
 transification  & (545) & 324 & {\bf +2} & -26 & 274 & {\bf +32} & \underline{-10} & 234 & +10 & -46 & 255 & +13 & -42 \\
 ordification  & (327) & & n/a & & 292 & {\bf +19} & \underline{-29} & 238 & {\bf +41} & \underline{-21} & 267 & {\bf +12} & -29  \\
 maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
-
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
@@ -418,7 +417,7 @@ Total orders were found in 327 problems. The majority are in the SWV category, a
 \paragraph{Ordification}
 For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Figure \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
 \paragraph{Hard problems solved using Ordification}
-After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1 , SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it.
+After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it.
 
 \begin{figure}[t]
 %\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
