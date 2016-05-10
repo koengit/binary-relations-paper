@@ -196,7 +196,7 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 429+19 & equivalence relations \\
 117+72 & partial equivalence relations \\
 327+8 & (strict) total orders \\
-545+4 & reflexive, transitive relations (excluding the above)\\
+545+48 & reflexive, transitive relations (excluding the above)\\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
