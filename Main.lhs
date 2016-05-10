@@ -366,22 +366,19 @@ We started from a set of 10788 test problems from the TPTP, listed as Unsatisfia
 \begin{figure}[t]
 \begin{center}
 \setlength{\tabcolsep}{5.2pt}
-\begin{tabular}{ll||ccc||ccc||ccc||ccc}
-
-
-
+\begin{tabular}{lr||rrr||rrr||rrr||rrr}
   & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
-equalification & (429) & 422 & +4  & -33  & 428 & +0  & -4 & 362 & +50 & -3 & 370 & +18 & -39 \\
-pequalification & (117) & 96 & +0 & -34 & 87 & +5 & -8  & 38 & +9 & -4 & 59 & +1  &  -11 \\
-transification  & (545) & 324 & +2\solveshard & -26 & 274 & +32\solveshard & -10 & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (327) & \multicolumn{3}{c}{n/a}& 292 & +19\solveshard &  -29 & 238 & +41\solveshard & -21 & 267 & +12\bf{!} & -29  \\
-maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & -0 \\
+equalification & (429) & 422 & +4  & \underline{-33} & 428 & +0  & -4 & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
+pequalification & (117) & 96 & +0 & -34 & 87 & +5 & \underline{-8}  & 38 & +9 & \underline{-4} & 59 & +1  &  \underline{-11} \\
+transification  & (545) & 324 & {\bf +2} & -26 & 274 & {\bf +32} & \underline{-10} & 234 & +10 & -46 & 255 & +13 & -42 \\
+ordification  & (327) & & n/a & & 292 & {\bf +19} & \underline{-29} & 238 & {\bf +41} & \underline{-21} & 267 & {\bf +12} & -29  \\
+maxification  & (327) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
 
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation.  (Total number of applicable problems for each transformation in parentheses). An exclamation mark (\bf{!}) next to a value indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover.}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses). A +value in {\bf boldface} indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover. An \underline{underlined} -value indicates that time slicing (running both methods in 50\% of the time each) solves strictly more problems with that combination of treatment and theorem prover.}
 \label{fig:overview}
 \end{figure}
 
@@ -421,7 +418,7 @@ Total orders were found in 327 problems. The majority are in the SWV category, a
 \paragraph{Ordification}
 For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Figure \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
 \paragraph{Hard problems solved using Ordification}
-After Ordification, 14 problems from the SWV category with rating 1.0 are solved. (SWV035+1, SWV040+1, SWV044+1 , SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 13 hard problems and CVC4 solves 12 of them. Rating 1.0 means that no known current theorem prover solves the problem.
+After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1 , SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it.
 
 \begin{figure}[t]
 %\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
