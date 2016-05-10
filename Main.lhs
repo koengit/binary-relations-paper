@@ -451,9 +451,9 @@ Maxification, the second possible treatment of total orders, turned out to be di
 
 
 \subsection{Transitive and Reflexive relations}
-545 test problems include relations that are transitive and reflexive, excluding equivalence relations and total orders. In all of them, transitivity occurs syntactically as an axiom. The problems come from a variety of categories, but a vast majority are in SET, SEU and SWV.  Only about half of the original problems were solved by each theorem prover, which indicates that transitivity axioms are difficult for current theorem provers to deal with.  We evaluate the performance of the theorem provers before and after transification. Problems that include equivalence relations and total orders are excluded, as the corresponding methods equalification and ordification give better results and should be preferred. Vampire benefits the most from transification, and solves 32 new problems after the transformation, while 10 previously solvable problems become unsolvable within the time limit. For E, the effect of transification is almost exclusively negative.  A reason why transification works well for Vampire but not for E could be because E has better built in support for transitive relations, i.e. chaining \cite(...)
+545 test problems include relations that are transitive and reflexive, excluding equivalence relations and total orders. In all of them, transitivity occurs syntactically as an axiom. The problems come from a variety of categories, but a vast majority are in SET, SEU and SWV.  Only about half of the original problems were solved by each theorem prover, which may indicate that transitivity axioms are difficult for current theorem provers to deal with.  We evaluate the performance of the theorem provers before and after transification. Problems that include equivalence relations and total orders are excluded, as the corresponding methods equalification and ordification give better results and should be preferred. Vampire benefits the most from transification, and solves 32 new problems after the transformation, while 10 previously solvable problems become unsolvable within the time limit. For E, the effect of transification is almost exclusively negative.
 %TODO what to write here?? 
-while Vampire does not implement chaining. Vampire also has a significantly worse performance than E overall on the original problems that include relations that are transitive and reflexive.
+Vampire also has a significantly worse performance than E overall on the original problems that include relations that are transitive and reflexive.
 Both Z3 and CVC4 perform worse after the transformation, but time-slicing can be a good way to improve the results. 
 
 %TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
@@ -482,21 +482,13 @@ We compared ordification and transification on the 327 problems containing total
 
 %(equalification: win 50 lose 3, transification: win 46, lose 27)
 
-%Conlcusion?
-
 % ------------------------------------------------------------------------------
 % - discussion and related work
-
-\section{Discussion and Related Work}
-
-Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
-
-...
-
-% ------------------------------------------------------------------------------
 % - conclusions and future work
 
-\section{Conclusions and Future Work}
+\section{Discussion, Conclusions, and Future Work}
+
+Chaining \cite{bachmair1998ordered} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper.
 
 We have developed 5 transformations that treat common transformation binary relations in alternative ways, namely equalification (for equivalence relations), pequalification (for partial equivalence relations), ordification and maxification (for total orders), and transification (for reflexive, transitive relations). 
 
