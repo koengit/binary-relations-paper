@@ -56,6 +56,9 @@
 %format QQ     = "\mathbb{Q}"
 %format -->    = "~~~~~\rightarrowtriangle~~~~~"
 
+%format P  = "P\hspace{-0.1cm}"
+%format P_ = "P"
+
 %format R  = "R\hspace{-0.1cm}"
 %format R_ = "R"
 
@@ -264,17 +267,17 @@ In the transformation, we also remove the axioms for reflexivity, symmetry, and 
 
 It turns out that a set with a partial equivalence relation |R_| can be partitioned into two subsets: (1) one subset on which |R_| is an actual equivalence relation, and (2) one subset of elements which are not related to anything, not even themselves.
 
-Thus, an alternative way of dealing with partial equivalence relations |R_| is to create two new symbols, |rep_| and |P|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
+Thus, an alternative way of dealing with partial equivalence relations |R_| is to create two new symbols, |rep_| and |P_|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
 \begin{code}
 R_ symmetric     §  
 R_ transitive    -->   §
 T[.. R(x,y) ..]  §     T[.. (P(x) && P(y) && rep(x)=rep(y)) ..]
 \end{code}
-Here, |P| is the predicate that indicates the subset on which |R_| behaves as an equivalence relation.
+Here, |P_| is the predicate that indicates the subset on which |R_| behaves as an equivalence relation.
 
 We call this transformation {\em pequalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
-The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be the representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. It is clear that |R_| is symmetric, and transitive, and therefore we have model of the LHS theory.
+The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be the representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. This |R_| is symmetric and transitive, and therefore we have model of the LHS theory.
 
 % ------------------------------------------------------------------------------
 % - dealing with total orders
