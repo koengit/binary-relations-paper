@@ -325,3 +325,4 @@ SWV478+1.p success 7.83 0.23system 0:08.59elapsed 93%CPU (0avgtext+0avgdata 2873
 SWV479+1.p success 1.32 0.02system 0:01.61elapsed 83%CPU (0avgtext+0avgdata 112352maxresident)k
 SWV480+1.p success 1.30 0.04system 0:01.58elapsed 85%CPU (0avgtext+0avgdata 117376maxresident)k
 SWV481+1.p success 1.42 0.03system 0:01.70elapsed 85%CPU (0avgtext+0avgdata 136608maxresident)k
+SWV004-1.p fail
