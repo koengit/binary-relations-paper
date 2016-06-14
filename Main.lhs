@@ -86,7 +86,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of treating transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em reflexive, transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
+We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em reflexive, transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ forall x,y,z . R(x,y) && R(y,z) => R(x,z)
 \end{code}
 can lead to an expensive proof exploration in resolution and superposition based theorem provers, and can generate a huge number of instances in instance-based provers and SMT-solvers. Transitive relations are also common enough to motivate special built-in support. However, as far as we know, chaining is not implemented in any of the major first-order reasoning tools (at least not in E \cite{E}, Vampire \cite{Vampire}, Z3 \cite{Z3}, and CVC4 \cite{CVC4}, which were used in this paper).
 
-As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the treatment of these relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
+As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the handling of these relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
 
 By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
 
@@ -295,20 +295,20 @@ rep_ : A -> RR
 We then replace all occurrences of |R_| with a formula involving |rep_| in the following way:
 \begin{code}
 R_ total          §
-R_ antisymmetric  -->   §
+R_ antisymmetric  -->   forall x,y. rep(x)=rep(y) => x=y
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
 (Here, |<=| is of course the ordering on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
-The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new element between any two distinct values of |RR|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
+The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |rep_| is injective and we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
-\paragraph{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. However, reasoning about real arithmetic in tools is often much cheaper than reasoning about rational arithmetic, which is why we chose |RR|. Using integer arithmetic would however not have been correct.
+\paragraph{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. The transformation can therefore be used for any tool that supports |QQ| or |RR| or both, and should choose whichever comparison operator is cheapest if there is a choice. (For the fragment we use in the transformation, there should not really be any implementation difference between |QQ| and |RR|.) Using integer arithmetic would however not have been correct.
 
 \paragraph{Note on strict total orders} One may have expected to have a transformation specifically targeted to strict total orders, i.e. something like:
 \begin{code}
 R_ antisymmetric^~  §          
-R_ asymmetric       -->   §
+R_ asymmetric       -->   forall x,y. rep(x)=rep(y) => x=y
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
@@ -343,11 +343,11 @@ R_ transitive       -->
 T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
-We call this transformation {\em transification}. This transformation may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''.
+We call this transformation {\em transification}. This transformation may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''. The transformation only works on problems where any occurrence of |R_| is either positive or negative. If this is not the case, the problem has to be translated into one where this is the case (for example by means of clausification, although full clausification is unnecesary).
 
 Note that the resulting theory does not blow-up; only clauses with a positive occurrence of |R_| gets one extra literal per occurrence.
 
-What is going on here? We replace any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
+We replace any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
 
 Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
 
