@@ -1,18 +1,19 @@
-\documentclass{easychair}
+\documentclass{article}
+\usepackage{onecolceurws}
 \usepackage{amssymb}
 \usepackage{mathabx}
 \usepackage{subcaption}
+\usepackage{graphicx}
 %include polycode.fmt
 
- \def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
-
+\def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
 
 % ------------------------------------------------------------------------------
 % - title and stuff
 
 \title{Handling Common Transitive Relations\\in First-Order Automated Reasoning}
 
-\titlerunning{Handling Common Transitive Relations}
+%\titlerunning{Handling Common Transitive Relations}
 
 \author{
   Koen Claessen
@@ -20,11 +21,11 @@
   Ann Lilliestr{\"o}m
 }
 
-\authorrunning{Claessen, Lilliestr{\"o}m}
+%\authorrunning{Claessen, Lilliestr{\"o}m}
 
-\institute{
+\institution{
   Chalmers University of Technology
-  \email{\{koen,annl\}@@chalmers.se}
+  {\sf \{koen,annl\}@@chalmers.se}
 }
 
 \begin{document}
@@ -216,7 +217,8 @@ In Fig.\ \ref{fig:occurs2}, we display the number of binary relations we have fo
 
 If our goal is to automatically choose the right treatment of equivalence relations, total orders, etc., we must have an automatic way of identifying them in a given theory. It is easy to discover for example an equivalence relation in a theory by means of syntactic inspection. If we find the presence of the axioms |reflexive|, |symmetric|, and |transitive|, for the same relational symbol |R_|, we know that |R_| is an equivalence relation.
 
-But there is a problem. There are other ways of axiomatizing equivalence relations. For example, a much more common way to axiomatize equivalence relations in the TPTP is to state the two properties |reflexive| and |euclidean| for |R_|\footnote{A possible reason for this is a paper written in the 1990s that argued for this alternative axiomatization. The first author of this paper has at one point seen this paper, but at the time of the writing, we have not been able to find it again! If any reviewer knows which paper we are talking about, help would be appreciated.}. 
+But there is a problem. There are other ways of axiomatizing equivalence relations. For example, a much more common way to axiomatize equivalence relations in the TPTP is to state the two properties |reflexive| and |euclidean| for |R_|.
+%\footnote{A possible reason for this is a paper written in the 1990s that argued for this alternative axiomatization. The first author of this paper has at one point seen this paper, but at the time of the writing, we have not been able to find it again! If any reviewer knows which paper we are talking about, help would be appreciated.}
 
 Rather than enumerating all possible ways to axiomatize certain relations by hand, we wrote a program that computes all possible ways for any combination of basic properties to imply any other combination of basic properties. Our program generates a table (shown in Appendix \ref{sec:implications}) that can be precomputed in a minute or so and used to very quickly detect any alternative axiomatization of binary relations using basic properties.
 
