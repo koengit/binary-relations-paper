@@ -410,7 +410,6 @@ Using a time slicing strategy, which runs the prover on the original problem for
 %TODO KOEN: i don't like the word treatment. it sounds like a cream you put on your skin.
 
 \paragraph{Pequalification}
-
 In 181 of the test problems, relations that are transitive and symmetric, but not reflexive, were found. The majority of these problems are in the CAT and FLD categories of TPTP. All of the tested theorem provers perform worse on these problems compared to the problems with true equivalence relations. This is also the case after performing pequalification. Pequalification turns out to be particularly bad for E, which solves 34 fewer problems after the transformation. Pequalification makes Z3 perform only slightly better and Vampire and CVC4 slightly worse. 
 When the differences to the performance is small, it is hard to know if the effect is due to the new axiomatisation, or to other reasons. For example, we have observed that simply shuffling the axioms of a theory can cause the results to deviate in a similar way. 
 %TODO Koen can we say anything more here?
