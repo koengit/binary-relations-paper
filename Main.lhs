@@ -222,7 +222,7 @@ If our goal is to automatically choose the right treatment of equivalence relati
 But there is a problem. There are other ways of axiomatizing equivalence relations. For example, a much more common way to axiomatize equivalence relations in the TPTP is to state the two properties |reflexive| and |euclidean| for |R_|.
 %\footnote{A possible reason for this is a paper written in the 1990s that argued for this alternative axiomatization. The first author of this paper has at one point seen this paper, but at the time of the writing, we have not been able to find it again! If any reviewer knows which paper we are talking about, help would be appreciated.}
 
-Rather than enumerating all possible ways to axiomatize certain relations by hand, we wrote a program that computes all possible ways for any combination of basic properties to imply any other combination of basic properties. Our program generates a table (shown in Appendix \ref{sec:implications}) that can be precomputed in a minute or so and used to very quickly detect any alternative axiomatization of binary relations using basic properties.
+Rather than enumerating all possible ways to axiomatize certain relations by hand, we wrote a program that computes all possible ways for any combination of basic properties to imply any other combination of basic properties. Our program generates a table that can be precomputed in a minute or so and used to very quickly detect any alternative axiomatization of binary relations using basic properties.
 
 \begin{figure}[t]
 \begin{center}
@@ -235,7 +235,20 @@ Rather than enumerating all possible ways to axiomatize certain relations by han
 
 Let's explain how this table was generated. We start with a list of 32 basic properties (the 8 original basic properties, plus their negated, flipped, and negated flipped versions). Firstly, we use an automated theorem prover (we used E \cite{E}) to discover which of these are equivalent with other such properties. The result is displayed in Fig.\ \ref{fig:equivs}. Thus, 17 basic properties can be removed from the list, because they can be expressed using other properties. The list of basic properties now has 15 elements left.
 
-Secondly, we want to generate all implications of the form |{prop1, .., propn} => prop| where the set |{prop1, .., propn}| is minimal. We do this separately for each |prop|. (The results are displayed in Appendix \ref{sec:implications}.)
+\begin{figure}
+\begin{center}
+{\tiny
+%{
+%format <= = "\Leftarrow"
+%include Implications/implications2.tex
+%}
+}
+\end{center}
+\caption{The complete list of implications between properties}
+\label{fig:imps}
+\end{figure}
+
+Secondly, we want to generate all implications of the form |{prop1, .., propn} => prop| where the set |{prop1, .., propn}| is minimal. We do this separately for each |prop|. The results are displayed in Fig.\ \ref{fig:imps}.
 
 The procedure uses a simple constraint solver (a SAT-solver) to keep track of all implications it has tried so far, and consists of one main loop. At every loop iteration, the constraint solver guesses a set |{prop1, .., propn}| from the set of all properties |P-{prop}|. The procedure then asks E whether or not |{prop1, .., propn} => prop| is valid. If it is, then we look at the proof that E produces, and print the implication |{propa, .., propb} => prop|, where |{propa, .., propb}| is the subset of properties that were used in the proof. We then also tell the constraint solver never to guess a superset of |{propa, .., propb}| again. If the guessed implication can not be proven, we tell the constraint solver to never guess a subset of |{prop1, .., propn}| again. The procedure stops when no guesses that satisfy all constraints can be made anymore.
 
@@ -265,7 +278,7 @@ We call the above transformation {\em equalification}. This transformation may b
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
 
-In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Appendix \ref{sec:implications}).
+In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Fig.\ \ref{fig:imps}).
 
 \paragraph{Pequalification} There are commonly occurring binary relations called {\em partial equivalence relations} that almost behave as equivalence relations, but not quite. In particular, they do not have to obey the axiom of reflexivity. Can we do something for these too?
 
@@ -511,20 +524,6 @@ Lastly, we would like to look at how these ideas could be used inside a theorem 
 
 \bibliographystyle{plain}
 \bibliography{main}
-
-% ------------------------------------------------------------------------------
-% - appendix
-
-\appendix
-\section{Implications between properties} \label{sec:implications}
-Here follows the complete list of implications between properties that we discovered using the method described in Sect. \ref{sec:discovery}.
-
-{\tiny
-%{
-%format <= = "\Leftarrow"
-%include Implications/implications2.tex
-%}
-}
 
 \end{document}
 
