@@ -114,7 +114,7 @@ forall x      . R(x,x)
 forall x,y    . R(x,y) => R(y,x)
 forall x,y,z  . R(x,y) && R(y,z) => R(x,z)
 \end{code}
-Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R_| by the formula:
+Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R(x,y)| by the formula:
 \begin{code}
 rep(x)=rep(y)
 \end{code}
