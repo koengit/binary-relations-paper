@@ -284,7 +284,7 @@ The transformation is correct, meaning that it preserves (non-)satisfiability: (
 
 \section{Dealing with total orders}
 
-\paragraph{Ordification} Many reasoning tools have built-in support for arithmetic, in particular they support an ordering |<=| on numbers. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
+\paragraph{Ordification} Many reasoning tools have built-in support for arithmetic, in particular they support an order |<=| on numbers. Can we ``borrow'' this operator when dealing with general total orders? It turns out we can. Suppose we have a total order
 \begin{code}
 R_ : A ** A -> Bool
 \end{code}
@@ -299,7 +299,7 @@ R_ antisymmetric  -->   forall x,y. rep(x)=rep(y) => x=y
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
-(Here, |<=| is of course the ordering on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
+(Here, |<=| is of course the order on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |rep_| is injective and we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total, antisymmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -411,7 +411,7 @@ In 181 of the test problems, relations that are transitive and symmetric, but no
 When the differences to the performance is small, it is hard to know if the effect is due to the new axiomatisation, or to other reasons. For example, we have observed that simply shuffling the axioms of a theory can cause the results to deviate in a similar way. 
 %TODO Koen can we say anything more here?
 
-\subsection{Total orderings}
+\subsection{Total orders}
 Total orders were found in 328 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 77 of the problems, the total order is positively axiomatized, and in the other 251 problems it is negative (and thus axiomatized as a strict total order). There is never more than one order present in any of the problems. 
 
 \paragraph{Ordification}
