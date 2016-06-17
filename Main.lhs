@@ -97,7 +97,7 @@ We present a number of alternative ways of handling transitive binary relations 
 
 \section{Introduction}
 
-Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Why? Because equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
+Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
 
 Other common concepts for which there exists built-in support in many tools are associative, commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
@@ -222,7 +222,7 @@ If our goal is to automatically choose the right treatment of equivalence relati
 But there is a problem. There are other ways of axiomatizing equivalence relations. For example, a much more common way to axiomatize equivalence relations in the TPTP is to state the two properties |reflexive| and |euclidean| for |R_|.
 %\footnote{A possible reason for this is a paper written in the 1990s that argued for this alternative axiomatization. The first author of this paper has at one point seen this paper, but at the time of the writing, we have not been able to find it again! If any reviewer knows which paper we are talking about, help would be appreciated.}
 
-Rather than enumerating all possible ways to axiomatize certain relations by hand, we wrote a program that computes all possible ways for any combination of basic properties to imply any other combination of basic properties. Our program generates a table that can be precomputed in a minute or so and used to very quickly detect any alternative axiomatization of binary relations using basic properties.
+Rather than enumerating all possible ways to axiomatize certain relations by hand, we wrote a program that computes all possible ways for any combination of basic properties to imply any other combination of basic properties. Our program generates a table that can be precomputed in a minute or so and then used to very quickly detect any alternative axiomatization of binary relations using basic properties.
 
 \begin{figure}[t]
 \begin{center}
@@ -233,7 +233,7 @@ Rather than enumerating all possible ways to axiomatize certain relations by han
 \label{fig:equivs}
 \end{figure}
 
-Let's explain how this table was generated. We start with a list of 32 basic properties (the 8 original basic properties, plus their negated, flipped, and negated flipped versions). Firstly, we use an automated theorem prover (we used E \cite{E}) to discover which of these are equivalent with other such properties. The result is displayed in Fig.\ \ref{fig:equivs}. Thus, 17 basic properties can be removed from the list, because they can be expressed using other properties. The list of basic properties now has 15 elements left.
+Let us explain how this table was generated. We start with a list of 32 basic properties (the 8 original basic properties, plus their negated, flipped, and negated flipped versions). Firstly, we use an automated theorem prover (we used E \cite{E}) to discover which of these are equivalent with other such properties. The result is displayed in Fig.\ \ref{fig:equivs}. Thus, 17 basic properties can be removed from the list, because they can be expressed using other properties. The list of basic properties now has 15 elements left.
 
 \begin{figure}
 \begin{center}
@@ -265,7 +265,7 @@ To detect a binary relation |R_| with certain properties in a given theory, we s
 
 \section{Dealing with equivalence relations}
 
-\paragraph{Equalification} As mentioned in the introduction, an alternative way of dealing with equivalence relations |R_| is to create a new symbol |rep_| and replace all occurrences of |R_| with a formula involving |rep_|:
+\paragraph{Equalification} As mentioned in the introduction, an alternative way of handling equivalence relations |R_| is to create a new symbol |rep_| and replace all occurrences of |R_| with a formula involving |rep_|:
 \begin{code}
 R_ reflexive     §    
 R_ symmetric     -->   §
@@ -284,7 +284,7 @@ In the transformation, we also remove the axioms for reflexivity, symmetry, and 
 
 It turns out that a set with a partial equivalence relation |R_| can be partitioned into two subsets: (1) one subset on which |R_| is an actual equivalence relation, and (2) one subset of elements which are not related to anything, not even themselves.
 
-Thus, an alternative way of dealing with partial equivalence relations |R_| is to create two new symbols, |rep_| and |P_|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
+Thus, an alternative way of handling partial equivalence relations |R_| is to create two new symbols, |rep_| and |P_|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
 \begin{code}
 R_ symmetric     §  
 R_ transitive    -->   §
@@ -299,9 +299,9 @@ The transformation is correct, meaning that it preserves (non-)satisfiability: (
 % ------------------------------------------------------------------------------
 % - dealing with total orders
 
-\section{Dealing with total orders}
+\section{Handling total orders}
 
-\paragraph{Ordification} Many reasoning tools have built-in support for arithmetic, in particular they support an order |<=| on numbers. It turns out that we can ``borrow'' this operator when dealing with general total orders. Suppose we have a total order:
+\paragraph{Ordification} Many reasoning tools have built-in support for arithmetic, in particular they support an order |<=| on numbers. It turns out that we can ``borrow'' this operator when handling general total orders. Suppose we have a total order:
 \begin{code}
 R_ : A ** A -> Bool
 \end{code}
@@ -316,7 +316,7 @@ R_ antisymmetric  -->   forall x,y. rep(x)=rep(y) => x=y
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
-(Here, |<=| is of course the order on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
+(Here, |<=| is the order on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
 The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |rep_| is injective and we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total and transitive, and also antisymmetric because |rep_| is injective, and therefore we have model of the LHS theory.
 
@@ -333,7 +333,7 @@ However, the transformation for total orders already covers this case! Any stric
 
 \paragraph{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
 
-For such a tool, one alternative way of dealing with total orders |R_| is to create a new function symbol |max_| and replace all occurrences of |R_| with a formula involving |max_|:
+For such a tool, one alternative way of handling total orders |R_| is to create a new function symbol |max_| and replace all occurrences of |R_| with a formula involving |max_|:
 \begin{code}
 R_ total          §     max_ associative
 R_ antisymmetric  -->   max_ commutative
@@ -353,7 +353,7 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 
 \paragraph{Transification} The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each {\em positive occurrence} of the relational symbol.
 
-As such, an alternative way of dealing with reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |~Q_|:
+As such, an alternative way of handling reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |~Q_|:
 \begin{code}
 R_ reflexive        §     Q_ reflexive
 R_ transitive       -->   
@@ -518,7 +518,7 @@ For implementers of reasoning tools, our conclusions are less clear. For some co
 
 \paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper. In personal communication with some of the authors, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
 
-\paragraph{Future Work} There is a lot of room for improvements and other future work. There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective than it is now on total orders. But there are also other, non-transitive relations that are of interest.
+\paragraph{Future Work} There is a lot of room for improvements and other future work. There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective. But there are also other, non-transitive relations that are of interest.
 
 Ordification uses total orders as the base-transformation, and treats strict total orders as negated total orders. We would like to investigate more in which cases it may be beneficial to treat strict total orders differently from total orders, and when to use $<$ on |RR| instead of |<=|.
 
