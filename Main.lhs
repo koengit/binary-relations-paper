@@ -385,10 +385,10 @@ We started from a set of 11674 test problems from the TPTP, listed as Unsatisfia
 \begin{tabular}{lr||rrr||rrr||rrr||rrr}
   & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
-equalification & (430) & 422 & +4  & \underline{-33} & 428 & +0  & \underline{-4} & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
+equalification & (430) & 422 & +4  & \underline{-33} & 428 & +0  & -4 & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
 pequalification & (181) & 96 & +0 & -34 & 87 & +5 & \underline{-8}  & 38 & +9 & \underline{-4} & 59 & +1  &  \underline{-11} \\
 transification  & (573) & 324 & +2 & -26 & 274 & {\bf +32} & \underline{-10} & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (328) & & n/a & & 292 & {\bf +19} & \underline{-15} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} & -15  \\
+ordification  & (328) & & n/a & & 292 & {\bf +19} & \underline{-15} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} \\
 maxification  & (328) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
 
 \end{tabular}
@@ -403,7 +403,7 @@ maxification  & (328) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & 
 Equivalence relations were present in 430 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 430 problems, there are only 23 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
-As can be seen in Fig.\ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
+As can be seen in Fig. \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
 Using a time slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, solves a strict superset of problems than the original for all of the theorem provers used in the evaluation. Fig. \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
 %TODO: for the camera ready version we should make the time slicing squares the biggest possible size.
 
@@ -433,7 +433,7 @@ When the differences to the performance is small, it is hard to know if the effe
 Total orders were found in 328 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 77 of the problems, the total order is positively axiomatized, and in the other 251 problems it is negative (and thus axiomatized as a strict total order). There is never more than one order present in any of the problems. 
 
 \paragraph{Ordification}
-For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Fig. \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
+For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Fig.\ \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
 
 \paragraph{Hard problems solved using Ordification}
 After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem in reasonable time. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it. After ordification, all three provers were able to solve it in less than a second.
@@ -454,7 +454,7 @@ After Ordification, 15 problems, all from the SWV category, with rating 1.0 are 
 \end{figure}
 
 \paragraph{Maxification}
-Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see Fig. \ref{fig:overview}).
+Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see Fig.\ \ref{fig:overview}).
 %TODO Koen what may be a reason for this?
 
 %\begin{figure}[t]
