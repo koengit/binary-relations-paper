@@ -408,12 +408,14 @@ Using a time slicing strategy, which runs the prover on the original problem for
 %TODO: for the camera ready version we should make the time slicing squares the biggest possible size.
 
 \begin{figure}[t]
+\begin{center}
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
+\end{center}
 \caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
@@ -432,6 +434,7 @@ Total orders were found in 328 problems. The majority are in the SWV category, a
 
 \paragraph{Ordification}
 For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some. Fig. \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
+
 \paragraph{Hard problems solved using Ordification}
 After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. Rating 1.0 means that no known current theorem prover solves the problem in reasonable time. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it. After ordification, all three provers were able to solve it in less than a second.
 
@@ -439,14 +442,17 @@ After Ordification, 15 problems, all from the SWV category, with rating 1.0 are 
 %\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
+\begin{center}
 \includegraphics[scale=0.55,trim=20mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
 \includegraphics[scale=0.55,trim=7mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
 \includegraphics[scale=0.55,trim=7mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}
 \caption{Effects of ordification, using Vampire, Z3 and CVC4 }
+\end{center}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \label{fig:ordified}
 \end{figure}
+
 \paragraph{Maxification}
 Maxification, the second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having very little effect on Vampire and CVC4 (see Fig. \ref{fig:overview}).
 %TODO Koen what may be a reason for this?
@@ -473,12 +479,14 @@ Both Z3 and CVC4 perform worse after the transformation, but time slicing can be
 %TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
 
 \begin{figure}[t]
+\begin{center}
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/Vampire/test_original_vampire_transified_vampire_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/Z3/test_original_z3_transified_z3_300.eps} 
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/OnlyTransify/CVC4/test_original_cvc4_transified_cvc4_300.eps}
+\end{center}
 \caption{Effects of transification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
@@ -487,6 +495,7 @@ Both Z3 and CVC4 perform worse after the transformation, but time slicing can be
 
 \paragraph{Hard problems solved using Transification}
 After transification, two new problems with rating 1.0 are solved, both by Vampire (SEU322+2 and SEU372+2).
+
 \paragraph{Equalification and Transification}
 Since all equivalence relations are transitive and reflexive, the method for transification works also on equivalence relations. Comparing the two methods on the 430 problems with equivalence relations, we concluded that equalification and transification work equally bad for E, Vampire and CVC4. Both transification and equalification improve the results for Z3, but equalification does so significantly. 
 
