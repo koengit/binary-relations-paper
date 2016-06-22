@@ -50,7 +50,7 @@ set arrow from $TINY,$TIMEOUT to $TIMEBORDER,$TIMEOUT nohead ls 3
 set arrow from $HALF,$TINY to $HALF,$TIMEBORDER nohead ls 1
 set arrow from $TINY,$HALF to $TIMEBORDER,$HALF nohead ls 1
 set xlabel '"`echo $1 | sed 's!\_!-!g'`"'
-set ylabel '"`echo $2 | sed 's!\_!-!g'`"' offset 3
+set ylabel '"`echo $2 | sed 's!\_!-!g'`"'
 set size square
 plot [$TINY:$TIMEBORDER][$TINY:$TIMEBORDER] '"$DATA"' ls 2 with points title ''
 " > gnuplot.in

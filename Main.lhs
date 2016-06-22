@@ -379,11 +379,11 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 \begin{tabular}{lr||rrr||rrr||rrr||rrr}
   & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
 \hline 
-equalification & (430) & 422 & +4  & \underline{-33} & 428 & +0  & -4 & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
-pequalification & (181) & 96 & +0 & -34 & 87 & +5 & \underline{-8}  & 38 & +9 & \underline{-4} & 59 & +1  &  \underline{-11} \\
-transification  & (573) & 324 & +2 & -26 & 274 & {\bf +32} & \underline{-10} & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (328) & & n/a & & 292 & {\bf +19} & \underline{-15} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} \\
-maxification  & (328) & 273 & +1 & -23 & 292 & +0 & -1 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
+equalification & (430) & 422 & +4  & \underline{-33} & 428 & +0  & -2 & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
+pequalification & (181) & 96 & +0 & -34 & 93 & +4 & \underline{-9}  & 38 & +9 & \underline{-4} & 59 & +1  &  \underline{-11} \\
+transification  & (573) & 324 & +2 & -26 & 308 & {\bf +26} & \underline{-11} & 234 & +10 & -46 & 255 & +13 & -42 \\
+ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} \\
+maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}

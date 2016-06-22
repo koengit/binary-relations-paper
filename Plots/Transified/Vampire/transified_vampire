@@ -1,872 +1,573 @@
-ALG223+1_Transify.p success 3.65 0.40system 0:21.57elapsed 18%CPU (0avgtext+0avgdata 208624maxresident)k
-ALG224+1_Transify.p success 5.98 0.33system 0:12.58elapsed 50%CPU (0avgtext+0avgdata 186736maxresident)k
-ALG234+1_Transify.p fail
-ANA002-1_Transify.p fail
-ANA002-2_Transify.p fail
-ANA002-3_Transify.p fail
-ANA002-4_Transify.p fail
-ANA003-3_Transify.p fail
-ANA004-3_Transify.p fail
-ANA004-5_Transify.p fail
-CAT021+1_Transify.p fail
-COL088-2_Transify.p fail
-COL089-2_Transify.p fail
-COL090-2_Transify.p fail
-COL091-2_Transify.p success 19.63 0.80system 0:23.82elapsed 85%CPU (0avgtext+0avgdata 1016640maxresident)k
-COL092-2_Transify.p fail
-COL093-2_Transify.p fail
-COL094-2_Transify.p fail
-COL095-2_Transify.p fail
-COL098-2_Transify.p fail
-COL099-2_Transify.p success 9.01 0.36system 0:20.41elapsed 45%CPU (0avgtext+0avgdata 451696maxresident)k
-COL100-2_Transify.p fail
-HWV009-1_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 14480maxresident)k
-HWV009-2_Transify.p success 0.01 0.00system 0:00.22elapsed 9%CPU (0avgtext+0avgdata 14688maxresident)k
-HWV009-3_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14416maxresident)k
-HWV009-4_Transify.p success 0.01 0.00system 0:00.18elapsed 13%CPU (0avgtext+0avgdata 14400maxresident)k
-HWV010-1_Transify.p success 0.01 0.00system 0:00.20elapsed 8%CPU (0avgtext+0avgdata 14464maxresident)k
-HWV010-2_Transify.p success 0.01 0.00system 0:00.21elapsed 9%CPU (0avgtext+0avgdata 14336maxresident)k
-HWV010-3_Transify.p success 0.01 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 14320maxresident)k
-HWV011-1_Transify.p success 0.01 0.00system 0:00.22elapsed 7%CPU (0avgtext+0avgdata 14480maxresident)k
-HWV011-2_Transify.p success 0.02 0.00system 0:00.20elapsed 10%CPU (0avgtext+0avgdata 14304maxresident)k
-HWV011-3_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14304maxresident)k
-HWV012-1_Transify.p fail
-HWV012-2_Transify.p success 0.10 0.00system 0:00.27elapsed 39%CPU (0avgtext+0avgdata 26480maxresident)k
-HWV013-1_Transify.p fail
-HWV013-2_Transify.p success 0.06 0.00system 0:00.24elapsed 29%CPU (0avgtext+0avgdata 23200maxresident)k
-HWV014-1_Transify.p fail
-HWV014-2_Transify.p success 0.05 0.00system 0:00.30elapsed 19%CPU (0avgtext+0avgdata 22064maxresident)k
-HWV015-1_Transify.p fail
-HWV015-2_Transify.p success 0.07 0.00system 0:00.24elapsed 31%CPU (0avgtext+0avgdata 24272maxresident)k
-HWV016-1_Transify.p fail
-HWV016-2_Transify.p success 0.10 0.00system 0:00.27elapsed 38%CPU (0avgtext+0avgdata 26800maxresident)k
-HWV017-1_Transify.p fail
-HWV017-2_Transify.p success 0.06 0.00system 0:00.26elapsed 25%CPU (0avgtext+0avgdata 21856maxresident)k
-HWV018-1_Transify.p fail
-HWV018-2_Transify.p success 0.04 0.00system 0:00.24elapsed 21%CPU (0avgtext+0avgdata 20048maxresident)k
-HWV018-3_Transify.p success 0.05 0.00system 0:00.22elapsed 26%CPU (0avgtext+0avgdata 21328maxresident)k
-HWV019-1_Transify.p fail
-HWV019-2_Transify.p success 0.07 0.00system 0:00.25elapsed 31%CPU (0avgtext+0avgdata 23408maxresident)k
-HWV019-3_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15536maxresident)k
-HWV020-1_Transify.p fail
-HWV020-2_Transify.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 19776maxresident)k
-HWV020-3_Transify.p success 0.05 0.00system 0:00.21elapsed 23%CPU (0avgtext+0avgdata 20656maxresident)k
-HWV021-1_Transify.p fail
-HWV021-2_Transify.p success 0.07 0.00system 0:00.27elapsed 29%CPU (0avgtext+0avgdata 24176maxresident)k
-HWV022-1_Transify.p fail
-HWV022-2_Transify.p success 2.36 0.08system 0:23.08elapsed 10%CPU (0avgtext+0avgdata 118464maxresident)k
-HWV023-1_Transify.p fail
-HWV023-2_Transify.p success 0.05 0.01system 0:00.26elapsed 25%CPU (0avgtext+0avgdata 22496maxresident)k
-HWV024-1_Transify.p success 0.01 0.00system 0:00.25elapsed 8%CPU (0avgtext+0avgdata 14928maxresident)k
-HWV024-2_Transify.p fail
-HWV025-1_Transify.p success 0.01 0.08system 0:16.13elapsed 0%CPU (0avgtext+0avgdata 14992maxresident)k
-HWV025-2_Transify.p success 0.04 0.00system 0:00.80elapsed 6%CPU (0avgtext+0avgdata 19648maxresident)k
-HWV025-3_Transify.p success 0.03 0.01system 0:01.50elapsed 3%CPU (0avgtext+0avgdata 15632maxresident)k
-HWV026-1_Transify.p success 0.00 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 14672maxresident)k
-HWV026-2_Transify.p success 0.03 0.00system 0:00.20elapsed 20%CPU (0avgtext+0avgdata 17808maxresident)k
-HWV026-3_Transify.p success 0.02 0.00system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 15600maxresident)k
-HWV027-1_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14608maxresident)k
-HWV027-2_Transify.p success 0.04 0.00system 0:00.20elapsed 19%CPU (0avgtext+0avgdata 18608maxresident)k
-HWV028-1_Transify.p fail
-HWV028-2_Transify.p success 0.03 0.00system 0:00.20elapsed 19%CPU (0avgtext+0avgdata 18672maxresident)k
-HWV029-1_Transify.p fail
-HWV029-2_Transify.p success 1.30 0.03system 0:01.52elapsed 88%CPU (0avgtext+0avgdata 137744maxresident)k
-HWV030-1_Transify.p fail
-HWV030-2_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 14992maxresident)k
-HWV031-1_Transify.p fail
-HWV031-2_Transify.p fail
-HWV032-1_Transify.p fail
-HWV032-2_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14928maxresident)k
-HWV033-1_Transify.p fail
-HWV033-2_Transify.p fail
-LAT258+1_Transify.p fail
-LAT310+1_Transify.p success 2.38 0.07system 0:12.93elapsed 19%CPU (0avgtext+0avgdata 194448maxresident)k
-LAT348+1_Transify.p fail
-LAT365+1_Transify.p fail
-LCL888+1_Transify.p fail
-LCL889+1_Transify.p fail
-LCL890+1_Transify.p fail
-LCL891+1_Transify.p fail
-LCL892+1_Transify.p fail
-LCL893+1_Transify.p success 0.04 0.00system 0:01.62elapsed 2%CPU (0avgtext+0avgdata 17216maxresident)k
-LCL894+1_Transify.p fail
-LCL896+1_Transify.p fail
-LCL898+1_Transify.p fail
-LCL899+1_Transify.p success 2.27 0.03system 0:02.54elapsed 90%CPU (0avgtext+0avgdata 269168maxresident)k
-LCL900+1_Transify.p fail
-LCL901+1_Transify.p success 6.90 0.14system 0:07.18elapsed 98%CPU (0avgtext+0avgdata 533104maxresident)k
-LCL902+1_Transify.p success 2.27 0.05system 0:02.51elapsed 92%CPU (0avgtext+0avgdata 267120maxresident)k
-LCL903+1_Transify.p success 6.29 0.12system 0:06.60elapsed 97%CPU (0avgtext+0avgdata 468000maxresident)k
-LDA005-1_Transify.p fail
-LDA006-1_Transify.p fail
-LDA007-1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 16432maxresident)k
-LDA008-1_Transify.p fail
-LDA009-1_Transify.p fail
-LDA010-1_Transify.p fail
-LDA011-1_Transify.p fail
-LDA012-1_Transify.p fail
-LDA013-1_Transify.p fail
-LDA014-1_Transify.p fail
-NUM001-1_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13168maxresident)k
-NUM002-1_Transify.p success 0.10 0.00system 0:00.30elapsed 38%CPU (0avgtext+0avgdata 31520maxresident)k
-NUM003-1_Transify.p success 0.24 0.02system 0:00.45elapsed 60%CPU (0avgtext+0avgdata 54720maxresident)k
-NUM004-1_Transify.p success 0.16 0.00system 0:00.33elapsed 49%CPU (0avgtext+0avgdata 34736maxresident)k
-NUM005-1_Transify.p fail
-NUM007-1_Transify.p fail
-NUM015-1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13120maxresident)k
-NUM016-1_Transify.p success 0.01 0.00system 0:00.19elapsed 6%CPU (0avgtext+0avgdata 13152maxresident)k
-NUM390+1_Transify.p success 0.01 0.00system 0:00.26elapsed 7%CPU (0avgtext+0avgdata 15472maxresident)k
-NUM396+1_Transify.p fail
-NUM411+1_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 14304maxresident)k
-NUM858+1_Transify.p success 0.93 0.02system 0:01.13elapsed 84%CPU (0avgtext+0avgdata 91552maxresident)k
-NUM859+1_Transify.p fail
-NUM860+1_Transify.p fail
-NUM861+1_Transify.p fail
-NUM862+1_Transify.p fail
-NUM924+1_Transify.p success 0.60 0.01system 0:00.82elapsed 74%CPU (0avgtext+0avgdata 89904maxresident)k
-NUM924+2_Transify.p success 2.17 0.04system 0:02.40elapsed 92%CPU (0avgtext+0avgdata 253344maxresident)k
-NUM926+1_Transify.p success 6.25 0.10system 0:06.99elapsed 90%CPU (0avgtext+0avgdata 402688maxresident)k
-NUM926+2_Transify.p success 6.44 0.15system 0:07.22elapsed 91%CPU (0avgtext+0avgdata 394144maxresident)k
-RNG039-2_Transify.p success 0.61 0.02system 0:00.82elapsed 76%CPU (0avgtext+0avgdata 90512maxresident)k
-SET016-7_Transify.p success 5.30 0.20system 0:05.80elapsed 94%CPU (0avgtext+0avgdata 298784maxresident)k
-SET017-7_Transify.p success 5.30 0.09system 0:05.67elapsed 95%CPU (0avgtext+0avgdata 319360maxresident)k
-SET018-7_Transify.p success 4.39 1.14system 0:05.84elapsed 94%CPU (0avgtext+0avgdata 275728maxresident)k
-SET020-7_Transify.p success 22.33 0.35system 0:23.32elapsed 97%CPU (0avgtext+0avgdata 808864maxresident)k
-SET021-7_Transify.p success 22.36 0.29system 0:23.28elapsed 97%CPU (0avgtext+0avgdata 808816maxresident)k
-SET024-7_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 14192maxresident)k
-SET025-7_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15648maxresident)k
-SET055-7_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 14848maxresident)k
-SET056-7_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 15392maxresident)k
-SET057-7_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 15184maxresident)k
-SET058-7_Transify.p success 0.01 0.01system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 15200maxresident)k
-SET059-7_Transify.p success 0.42 0.00system 0:00.61elapsed 70%CPU (0avgtext+0avgdata 61376maxresident)k
-SET060-7_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14480maxresident)k
-SET061-7_Transify.p success 0.01 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 14016maxresident)k
-SET062-7_Transify.p success 0.02 0.00system 0:00.22elapsed 10%CPU (0avgtext+0avgdata 14976maxresident)k
-SET063-7_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 14576maxresident)k
-SET064-7_Transify.p success 0.01 0.01system 0:00.25elapsed 9%CPU (0avgtext+0avgdata 15120maxresident)k
-SET065-7_Transify.p success 0.02 0.00system 0:00.23elapsed 10%CPU (0avgtext+0avgdata 14512maxresident)k
-SET066-7_Transify.p success 3.35 0.07system 0:03.67elapsed 93%CPU (0avgtext+0avgdata 316384maxresident)k
-SET067-7_Transify.p success 1.12 0.02system 0:01.32elapsed 86%CPU (0avgtext+0avgdata 142304maxresident)k
-SET068-7_Transify.p success 1.19 0.04system 0:01.42elapsed 87%CPU (0avgtext+0avgdata 144496maxresident)k
-SET069-7_Transify.p success 3.29 0.05system 0:03.56elapsed 93%CPU (0avgtext+0avgdata 313504maxresident)k
-SET070-7_Transify.p success 3.29 0.07system 0:03.59elapsed 93%CPU (0avgtext+0avgdata 254352maxresident)k
-SET071-7_Transify.p success 0.03 0.00system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 16832maxresident)k
-SET072-7_Transify.p success 3.34 0.03system 0:03.71elapsed 91%CPU (0avgtext+0avgdata 277120maxresident)k
-SET073-7_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14192maxresident)k
-SET074-7_Transify.p success 0.01 0.00system 0:00.18elapsed 10%CPU (0avgtext+0avgdata 14192maxresident)k
-SET075-7_Transify.p success 0.04 0.00system 0:00.22elapsed 23%CPU (0avgtext+0avgdata 19632maxresident)k
-SET076-7_Transify.p success 1.64 0.05system 0:01.86elapsed 91%CPU (0avgtext+0avgdata 168768maxresident)k
-SET077-7_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 13632maxresident)k
-SET078-7_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14352maxresident)k
-SET079-7_Transify.p success 0.02 0.00system 0:00.18elapsed 13%CPU (0avgtext+0avgdata 14192maxresident)k
-SET080-7_Transify.p success 0.02 0.00system 0:00.18elapsed 10%CPU (0avgtext+0avgdata 14160maxresident)k
-SET081-7_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15248maxresident)k
-SET082-7_Transify.p success 0.01 0.01system 0:00.22elapsed 12%CPU (0avgtext+0avgdata 15552maxresident)k
-SET083-7_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14752maxresident)k
-SET084-7_Transify.p success 0.02 0.00system 0:00.29elapsed 8%CPU (0avgtext+0avgdata 14784maxresident)k
-SET085-7_Transify.p success 0.02 0.00system 0:00.27elapsed 10%CPU (0avgtext+0avgdata 15808maxresident)k
-SET090-7_Transify.p success 0.20 0.00system 0:00.46elapsed 44%CPU (0avgtext+0avgdata 38016maxresident)k
-SET093-7_Transify.p success 0.00 0.01system 0:00.28elapsed 6%CPU (0avgtext+0avgdata 14128maxresident)k
-SET094-7_Transify.p success 0.01 0.01system 0:00.27elapsed 8%CPU (0avgtext+0avgdata 14720maxresident)k
-SET095-7_Transify.p success 0.20 0.00system 0:00.39elapsed 54%CPU (0avgtext+0avgdata 39968maxresident)k
-SET096-7_Transify.p success 0.45 0.02system 0:00.68elapsed 70%CPU (0avgtext+0avgdata 64496maxresident)k
-SET097-7_Transify.p fail
-SET098-7_Transify.p success 0.74 0.01system 0:00.95elapsed 79%CPU (0avgtext+0avgdata 82304maxresident)k
-SET099-7_Transify.p success 5.44 0.13system 0:05.87elapsed 94%CPU (0avgtext+0avgdata 326288maxresident)k
-SET101-7_Transify.p success 0.02 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 16400maxresident)k
-SET102-7_Transify.p success 0.02 0.02system 0:00.22elapsed 21%CPU (0avgtext+0avgdata 18176maxresident)k
-SET103-7_Transify.p success 0.06 0.01system 0:00.27elapsed 29%CPU (0avgtext+0avgdata 23952maxresident)k
-SET104-7_Transify.p success 0.09 0.00system 0:00.30elapsed 32%CPU (0avgtext+0avgdata 26032maxresident)k
-SET105-7_Transify.p success 0.05 0.00system 0:00.25elapsed 24%CPU (0avgtext+0avgdata 20176maxresident)k
-SET108-7_Transify.p success 5.45 0.12system 0:05.88elapsed 94%CPU (0avgtext+0avgdata 294688maxresident)k
-SET117-7_Transify.p success 0.06 0.00system 0:00.23elapsed 27%CPU (0avgtext+0avgdata 20928maxresident)k
-SET118-7_Transify.p success 0.02 0.00system 0:00.23elapsed 13%CPU (0avgtext+0avgdata 16176maxresident)k
-SET119-7_Transify.p success 7.16 0.25system 0:08.08elapsed 91%CPU (0avgtext+0avgdata 397376maxresident)k
-SET120-7_Transify.p success 7.27 0.21system 0:08.09elapsed 92%CPU (0avgtext+0avgdata 399280maxresident)k
-SET121-7_Transify.p success 5.62 0.08system 0:05.99elapsed 95%CPU (0avgtext+0avgdata 416752maxresident)k
-SET122-7_Transify.p success 5.61 0.10system 0:05.99elapsed 95%CPU (0avgtext+0avgdata 417824maxresident)k
-SET585+3_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13552maxresident)k
-SET589+3_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 13152maxresident)k
-SET787-2_Transify.p success 0.03 0.00system 0:00.21elapsed 18%CPU (0avgtext+0avgdata 20160maxresident)k
-SET932+1_Transify.p success 0.01 0.00system 0:00.21elapsed 7%CPU (0avgtext+0avgdata 13504maxresident)k
-SET934+1_Transify.p fail
-SET936+1_Transify.p fail
-SET937+1_Transify.p fail
-SET952+1_Transify.p fail
-SEU099+1_Transify.p fail
-SEU100+1_Transify.p fail
-SEU110+1_Transify.p success 3.23 0.10system 0:03.58elapsed 93%CPU (0avgtext+0avgdata 459008maxresident)k
-SEU122+2_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 13840maxresident)k
-SEU123+2_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13728maxresident)k
-SEU124+2_Transify.p success 3.29 0.06system 0:03.57elapsed 93%CPU (0avgtext+0avgdata 347472maxresident)k
-SEU125+2_Transify.p success 6.46 0.13system 0:07.17elapsed 92%CPU (0avgtext+0avgdata 378528maxresident)k
-SEU126+2_Transify.p success 0.71 0.03system 0:00.92elapsed 80%CPU (0avgtext+0avgdata 98672maxresident)k
-SEU127+2_Transify.p success 0.40 0.00system 0:00.57elapsed 70%CPU (0avgtext+0avgdata 55072maxresident)k
-SEU128+2_Transify.p fail
-SEU129+2_Transify.p success 5.28 0.07system 0:05.64elapsed 95%CPU (0avgtext+0avgdata 409744maxresident)k
-SEU130+2_Transify.p success 0.04 0.00system 0:00.25elapsed 20%CPU (0avgtext+0avgdata 19440maxresident)k
-SEU131+2_Transify.p success 0.90 0.02system 0:01.10elapsed 84%CPU (0avgtext+0avgdata 117072maxresident)k
-SEU132+2_Transify.p fail
-SEU133+2_Transify.p success 6.22 0.16system 0:06.98elapsed 91%CPU (0avgtext+0avgdata 382896maxresident)k
-SEU134+2_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 15312maxresident)k
-SEU135+2_Transify.p success 22.09 0.46system 0:23.19elapsed 97%CPU (0avgtext+0avgdata 1130800maxresident)k
-SEU136+2_Transify.p success 22.18 0.39system 0:23.17elapsed 97%CPU (0avgtext+0avgdata 1140944maxresident)k
-SEU137+2_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 15104maxresident)k
-SEU138+2_Transify.p success 18.60 0.32system 0:19.45elapsed 97%CPU (0avgtext+0avgdata 796016maxresident)k
-SEU139+2_Transify.p success 0.00 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14480maxresident)k
-SEU140+2_Transify.p success 0.08 0.00system 0:00.26elapsed 32%CPU (0avgtext+0avgdata 23936maxresident)k
-SEU141+2_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 16304maxresident)k
-SEU142+2_Transify.p success 3.25 0.08system 0:03.55elapsed 93%CPU (0avgtext+0avgdata 345376maxresident)k
-SEU143+2_Transify.p success 0.00 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13776maxresident)k
-SEU144+2_Transify.p success 1.56 0.04system 0:01.77elapsed 90%CPU (0avgtext+0avgdata 160352maxresident)k
-SEU145+2_Transify.p success 35.15 0.68system 0:36.53elapsed 98%CPU (0avgtext+0avgdata 621728maxresident)k
-SEU146+2_Transify.p success 0.02 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 16992maxresident)k
-SEU147+2_Transify.p success 3.33 0.07system 0:03.63elapsed 93%CPU (0avgtext+0avgdata 368240maxresident)k
-SEU148+2_Transify.p success 0.02 0.01system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 17296maxresident)k
-SEU149+2_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14448maxresident)k
-SEU150+2_Transify.p success 0.02 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14960maxresident)k
-SEU151+2_Transify.p success 0.03 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 16720maxresident)k
-SEU152+2_Transify.p success 1.53 0.04system 0:01.75elapsed 90%CPU (0avgtext+0avgdata 167936maxresident)k
-SEU153+2_Transify.p success 0.03 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 17536maxresident)k
-SEU154+2_Transify.p success 0.07 0.00system 0:00.25elapsed 28%CPU (0avgtext+0avgdata 22720maxresident)k
-SEU155+2_Transify.p success 6.23 0.20system 0:06.99elapsed 92%CPU (0avgtext+0avgdata 377184maxresident)k
-SEU156+2_Transify.p success 0.35 0.00system 0:00.63elapsed 57%CPU (0avgtext+0avgdata 60656maxresident)k
-SEU157+2_Transify.p fail
-SEU158+2_Transify.p success 0.03 0.00system 0:00.55elapsed 5%CPU (0avgtext+0avgdata 17088maxresident)k
-SEU159+2_Transify.p fail
-SEU160+2_Transify.p success 0.03 0.00system 0:00.75elapsed 4%CPU (0avgtext+0avgdata 17200maxresident)k
-SEU161+2_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 16304maxresident)k
-SEU162+2_Transify.p success 0.52 0.01system 0:00.77elapsed 69%CPU (0avgtext+0avgdata 79088maxresident)k
-SEU163+2_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 16320maxresident)k
-SEU164+2_Transify.p fail
-SEU165+2_Transify.p success 0.59 0.03system 0:03.06elapsed 20%CPU (0avgtext+0avgdata 90512maxresident)k
-SEU166+2_Transify.p fail
-SEU167+1_Transify.p success 0.01 0.01system 0:01.20elapsed 1%CPU (0avgtext+0avgdata 13136maxresident)k
-SEU167+2_Transify.p success 22.61 0.48system 0:33.02elapsed 69%CPU (0avgtext+0avgdata 574624maxresident)k
-SEU167+3_Transify.p success 0.00 0.01system 0:00.17elapsed 6%CPU (0avgtext+0avgdata 13168maxresident)k
-SEU168+2_Transify.p fail
-SEU169+2_Transify.p success 0.04 0.00system 0:00.21elapsed 24%CPU (0avgtext+0avgdata 20000maxresident)k
-SEU170+2_Transify.p success 25.69 0.57system 0:52.06elapsed 50%CPU (0avgtext+0avgdata 631632maxresident)k
-SEU171+2_Transify.p success 0.04 0.00system 0:00.21elapsed 23%CPU (0avgtext+0avgdata 21008maxresident)k
-SEU172+2_Transify.p success 0.04 0.00system 0:00.21elapsed 23%CPU (0avgtext+0avgdata 20224maxresident)k
-SEU173+2_Transify.p success 0.20 0.00system 0:00.40elapsed 52%CPU (0avgtext+0avgdata 43024maxresident)k
-SEU174+2_Transify.p success 0.10 0.00system 0:00.29elapsed 38%CPU (0avgtext+0avgdata 30912maxresident)k
-SEU175+2_Transify.p fail
-SEU176+2_Transify.p fail
-SEU177+2_Transify.p success 6.23 0.21system 0:07.74elapsed 83%CPU (0avgtext+0avgdata 472800maxresident)k
-SEU178+2_Transify.p fail
-SEU179+2_Transify.p fail
-SEU180+2_Transify.p fail
-SEU181+2_Transify.p fail
-SEU182+2_Transify.p fail
-SEU183+2_Transify.p fail
-SEU184+2_Transify.p fail
-SEU185+2_Transify.p fail
-SEU186+2_Transify.p success 2.32 0.24system 0:17.73elapsed 14%CPU (0avgtext+0avgdata 266528maxresident)k
-SEU187+2_Transify.p success 0.11 0.01system 0:00.30elapsed 44%CPU (0avgtext+0avgdata 34352maxresident)k
-SEU188+2_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15584maxresident)k
-SEU189+2_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 15648maxresident)k
-SEU190+2_Transify.p fail
-SEU191+2_Transify.p fail
-SEU192+2_Transify.p fail
-SEU193+2_Transify.p fail
-SEU194+2_Transify.p fail
-SEU195+2_Transify.p fail
-SEU196+2_Transify.p success 7.40 0.26system 0:13.54elapsed 56%CPU (0avgtext+0avgdata 386592maxresident)k
-SEU197+2_Transify.p fail
-SEU198+2_Transify.p fail
-SEU199+2_Transify.p fail
-SEU200+2_Transify.p fail
-SEU201+2_Transify.p fail
-SEU202+2_Transify.p fail
-SEU203+2_Transify.p fail
-SEU204+2_Transify.p fail
-SEU205+2_Transify.p fail
-SEU206+2_Transify.p fail
-SEU207+2_Transify.p fail
-SEU208+2_Transify.p fail
-SEU209+2_Transify.p fail
-SEU210+2_Transify.p fail
-SEU211+2_Transify.p fail
-SEU212+2_Transify.p fail
-SEU213+2_Transify.p fail
-SEU214+2_Transify.p fail
-SEU215+2_Transify.p fail
-SEU216+2_Transify.p fail
-SEU217+2_Transify.p success 0.06 0.02system 0:03.57elapsed 2%CPU (0avgtext+0avgdata 19696maxresident)k
-SEU218+2_Transify.p fail
-SEU219+2_Transify.p success 0.09 0.00system 0:01.16elapsed 8%CPU (0avgtext+0avgdata 25040maxresident)k
-SEU220+2_Transify.p success 7.42 0.19system 0:08.28elapsed 91%CPU (0avgtext+0avgdata 416640maxresident)k
-SEU221+2_Transify.p fail
-SEU222+2_Transify.p fail
-SEU223+2_Transify.p success 0.30 0.02system 0:01.45elapsed 22%CPU (0avgtext+0avgdata 58416maxresident)k
-SEU224+2_Transify.p success 0.79 0.02system 0:01.05elapsed 77%CPU (0avgtext+0avgdata 120720maxresident)k
-SEU225+2_Transify.p success 29.91 0.67system 0:50.68elapsed 60%CPU (0avgtext+0avgdata 767392maxresident)k
-SEU226+2_Transify.p fail
-SEU227+2_Transify.p fail
-SEU228+2_Transify.p fail
-SEU229+2_Transify.p fail
-SEU230+2_Transify.p success 0.04 0.00system 0:00.25elapsed 20%CPU (0avgtext+0avgdata 18864maxresident)k
-SEU231+2_Transify.p fail
-SEU232+2_Transify.p fail
-SEU233+2_Transify.p fail
-SEU234+2_Transify.p success 1.35 0.04system 0:04.58elapsed 30%CPU (0avgtext+0avgdata 166400maxresident)k
-SEU235+2_Transify.p fail
-SEU236+2_Transify.p fail
-SEU237+2_Transify.p fail
-SEU238+2_Transify.p fail
-SEU239+2_Transify.p fail
-SEU240+2_Transify.p fail
-SEU241+2_Transify.p fail
-SEU242+2_Transify.p fail
-SEU243+2_Transify.p fail
-SEU244+2_Transify.p success 0.28 0.02system 0:00.57elapsed 53%CPU (0avgtext+0avgdata 58672maxresident)k
-SEU245+2_Transify.p fail
-SEU246+2_Transify.p fail
-SEU247+2_Transify.p success 0.12 0.01system 0:00.34elapsed 41%CPU (0avgtext+0avgdata 34432maxresident)k
-SEU248+2_Transify.p fail
-SEU249+2_Transify.p fail
-SEU250+2_Transify.p fail
-SEU251+2_Transify.p fail
-SEU252+2_Transify.p fail
-SEU253+2_Transify.p fail
-SEU254+2_Transify.p fail
-SEU255+2_Transify.p fail
-SEU256+1_Transify.p fail
-SEU256+2_Transify.p fail
-SEU257+2_Transify.p success 0.14 0.02system 0:02.30elapsed 7%CPU (0avgtext+0avgdata 36224maxresident)k
-SEU258+2_Transify.p fail
-SEU259+2_Transify.p fail
-SEU260+2_Transify.p fail
-SEU261+2_Transify.p success 0.33 0.16system 0:20.54elapsed 2%CPU (0avgtext+0avgdata 30496maxresident)k
-SEU262+2_Transify.p fail
-SEU263+1_Transify.p success 0.50 0.17system 0:24.60elapsed 2%CPU (0avgtext+0avgdata 64592maxresident)k
-SEU263+2_Transify.p fail
-SEU264+1_Transify.p success 0.06 0.00system 0:06.60elapsed 0%CPU (0avgtext+0avgdata 13616maxresident)k
-SEU264+2_Transify.p success 0.69 0.04system 0:00.92elapsed 80%CPU (0avgtext+0avgdata 112560maxresident)k
-SEU265+2_Transify.p fail
-SEU266+2_Transify.p fail
-SEU267+2_Transify.p success 11.10 0.36system 0:20.07elapsed 57%CPU (0avgtext+0avgdata 753088maxresident)k
-SEU268+2_Transify.p success 9.95 1.17system 0:11.78elapsed 94%CPU (0avgtext+0avgdata 422816maxresident)k
-SEU269+1_Transify.p success 0.70 0.02system 0:00.96elapsed 75%CPU (0avgtext+0avgdata 94768maxresident)k
-SEU269+2_Transify.p fail
-SEU270+2_Transify.p fail
-SEU271+2_Transify.p fail
-SEU272+2_Transify.p fail
-SEU273+2_Transify.p fail
-SEU274+2_Transify.p fail
-SEU275+2_Transify.p success 2.50 0.07system 0:08.91elapsed 28%CPU (0avgtext+0avgdata 103296maxresident)k
-SEU276+2_Transify.p fail
-SEU277+2_Transify.p fail
-SEU278+2_Transify.p fail
-SEU279+2_Transify.p fail
-SEU280+2_Transify.p fail
-SEU281+2_Transify.p fail
-SEU282+2_Transify.p fail
-SEU283+2_Transify.p fail
-SEU284+2_Transify.p fail
-SEU285+2_Transify.p fail
-SEU286+2_Transify.p fail
-SEU287+2_Transify.p fail
-SEU288+2_Transify.p fail
-SEU289+2_Transify.p fail
-SEU290+2_Transify.p success 0.47 0.01system 0:00.68elapsed 71%CPU (0avgtext+0avgdata 83840maxresident)k
-SEU291+2_Transify.p fail
-SEU292+2_Transify.p fail
-SEU293+2_Transify.p fail
-SEU294+2_Transify.p success 0.16 0.07system 0:16.51elapsed 1%CPU (0avgtext+0avgdata 26304maxresident)k
-SEU295+2_Transify.p success 0.12 0.00system 0:00.30elapsed 44%CPU (0avgtext+0avgdata 28000maxresident)k
-SEU296+2_Transify.p fail
-SEU297+2_Transify.p fail
-SEU298+2_Transify.p fail
-SEU299+2_Transify.p fail
-SEU300+2_Transify.p fail
-SEU301+2_Transify.p fail
-SEU302+1_Transify.p fail
-SEU302+2_Transify.p fail
-SEU302+3_Transify.p fail
-SEU303+2_Transify.p success 8.84 0.19system 0:13.80elapsed 65%CPU (0avgtext+0avgdata 505360maxresident)k
-SEU304+2_Transify.p fail
-SEU305+2_Transify.p fail
-SEU306+2_Transify.p success 0.14 0.00system 0:00.33elapsed 42%CPU (0avgtext+0avgdata 29008maxresident)k
-SEU307+2_Transify.p success 14.13 0.30system 0:15.03elapsed 96%CPU (0avgtext+0avgdata 766288maxresident)k
-SEU308+2_Transify.p success 0.58 0.02system 0:00.80elapsed 76%CPU (0avgtext+0avgdata 101280maxresident)k
-SEU309+2_Transify.p fail
-SEU310+2_Transify.p fail
-SEU311+2_Transify.p fail
-SEU312+2_Transify.p fail
-SEU313+2_Transify.p fail
-SEU314+2_Transify.p fail
-SEU315+2_Transify.p fail
-SEU316+2_Transify.p fail
-SEU317+2_Transify.p fail
-SEU318+2_Transify.p fail
-SEU319+2_Transify.p fail
-SEU320+2_Transify.p fail
-SEU321+2_Transify.p success 0.32 0.00system 0:00.55elapsed 59%CPU (0avgtext+0avgdata 54672maxresident)k
-SEU322+2_Transify.p fail
-SEU323+2_Transify.p fail
-SEU324+2_Transify.p fail
-SEU325+2_Transify.p success 11.23 0.29system 0:12.10elapsed 95%CPU (0avgtext+0avgdata 439216maxresident)k
-SEU326+2_Transify.p success 1.87 0.06system 0:02.10elapsed 91%CPU (0avgtext+0avgdata 239600maxresident)k
-SEU327+2_Transify.p fail
-SEU328+2_Transify.p fail
-SEU329+2_Transify.p fail
-SEU330+2_Transify.p fail
-SEU331+2_Transify.p fail
-SEU332+2_Transify.p fail
-SEU333+2_Transify.p fail
-SEU334+2_Transify.p fail
-SEU335+2_Transify.p fail
-SEU336+2_Transify.p fail
-SEU337+2_Transify.p fail
-SEU338+1_Transify.p fail
-SEU338+2_Transify.p fail
-SEU339+2_Transify.p fail
-SEU340+2_Transify.p fail
-SEU341+2_Transify.p fail
-SEU342+2_Transify.p fail
-SEU343+2_Transify.p fail
-SEU344+2_Transify.p fail
-SEU345+2_Transify.p fail
-SEU346+2_Transify.p fail
-SEU347+2_Transify.p fail
-SEU348+2_Transify.p fail
-SEU349+2_Transify.p fail
-SEU350+2_Transify.p fail
-SEU351+2_Transify.p fail
-SEU352+2_Transify.p fail
-SEU353+2_Transify.p fail
-SEU354+2_Transify.p success 0.30 0.02system 0:00.49elapsed 65%CPU (0avgtext+0avgdata 49008maxresident)k
-SEU355+2_Transify.p success 4.38 0.09system 0:04.69elapsed 95%CPU (0avgtext+0avgdata 364528maxresident)k
-SEU356+2_Transify.p fail
-SEU357+2_Transify.p fail
-SEU358+2_Transify.p fail
-SEU359+2_Transify.p fail
-SEU360+2_Transify.p fail
-SEU361+2_Transify.p fail
-SEU362+2_Transify.p fail
-SEU363+2_Transify.p fail
-SEU364+2_Transify.p fail
-SEU365+2_Transify.p fail
-SEU366+2_Transify.p fail
-SEU367+2_Transify.p fail
-SEU368+2_Transify.p fail
-SEU369+2_Transify.p fail
-SEU370+2_Transify.p fail
-SEU371+2_Transify.p success 13.45 0.57system 0:23.13elapsed 60%CPU (0avgtext+0avgdata 589104maxresident)k
-SEU372+2_Transify.p fail
-SEU373+2_Transify.p success 45.21 0.82system 0:55.15elapsed 83%CPU (0avgtext+0avgdata 1205408maxresident)k
-SEU374+2_Transify.p fail
-SEU375+2_Transify.p fail
-SEU376+2_Transify.p fail
-SEU377+2_Transify.p fail
-SEU378+2_Transify.p fail
-SEU379+2_Transify.p fail
-SEU380+2_Transify.p fail
-SEU381+2_Transify.p fail
-SEU382+2_Transify.p success 0.35 0.01system 0:01.75elapsed 20%CPU (0avgtext+0avgdata 52928maxresident)k
-SEU383+2_Transify.p fail
-SEU384+2_Transify.p fail
-SEU385+2_Transify.p fail
-SEU386+2_Transify.p fail
-SEU387+2_Transify.p fail
-SEU388+2_Transify.p fail
-SEU389+2_Transify.p fail
-SEU390+2_Transify.p fail
-SEU391+2_Transify.p fail
-SEU392+2_Transify.p fail
-SEU393+2_Transify.p fail
-SEU394+2_Transify.p fail
-SEU395+2_Transify.p fail
-SEU396+2_Transify.p fail
-SEU397+2_Transify.p fail
-SEU398+2_Transify.p fail
-SEU399+2_Transify.p fail
-SEU400+2_Transify.p fail
-SEU401+2_Transify.p fail
-SEU402+2_Transify.p fail
-SEU403+2_Transify.p fail
-SEU404+2_Transify.p fail
-SEU405+2_Transify.p fail
-SEU445+1_Transify.p fail
-SEU446+1_Transify.p fail
-SWV001-1_Transify.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 13472maxresident)k
-SWV002-1_Transify.p fail
-SWV003-1_Transify.p fail
-SWV005-1_Transify.p fail
-SWV006-1_Transify.p fail
-SWV007-1_Transify.p fail
-SWV008-1_Transify.p fail
-SWV022+1_Transify.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV023+1_Transify.p success 0.02 0.00system 0:00.26elapsed 9%CPU (0avgtext+0avgdata 13744maxresident)k
-SWV024+1_Transify.p fail
-SWV025+1_Transify.p fail
-SWV026+1_Transify.p fail
-SWV027+1_Transify.p fail
-SWV028+1_Transify.p fail
-SWV029+1_Transify.p fail
-SWV030+1_Transify.p success 0.04 0.00system 0:05.28elapsed 0%CPU (0avgtext+0avgdata 19312maxresident)k
-SWV031+1_Transify.p success 0.05 0.00system 0:00.25elapsed 22%CPU (0avgtext+0avgdata 19936maxresident)k
-SWV032+1_Transify.p success 0.25 0.00system 0:00.44elapsed 58%CPU (0avgtext+0avgdata 37152maxresident)k
-SWV033+1_Transify.p success 1.09 0.02system 0:01.33elapsed 83%CPU (0avgtext+0avgdata 113472maxresident)k
-SWV034+1_Transify.p fail
-SWV035+1_Transify.p fail
-SWV036+1_Transify.p fail
-SWV037+1_Transify.p fail
-SWV038+1_Transify.p fail
-SWV039+1_Transify.p fail
-SWV040+1_Transify.p fail
-SWV041+1_Transify.p fail
-SWV042+1_Transify.p fail
-SWV043+1_Transify.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV044+1_Transify.p fail
-SWV045+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 13728maxresident)k
-SWV046+1_Transify.p success 0.06 0.00system 0:00.25elapsed 27%CPU (0avgtext+0avgdata 21888maxresident)k
-SWV047+1_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV048+1_Transify.p success 0.04 0.00system 0:00.20elapsed 19%CPU (0avgtext+0avgdata 17712maxresident)k
-SWV049+1_Transify.p fail
-SWV050+1_Transify.p success 0.04 0.01system 0:00.25elapsed 23%CPU (0avgtext+0avgdata 19392maxresident)k
-SWV051+1_Transify.p fail
-SWV052+1_Transify.p fail
-SWV053+1_Transify.p success 0.21 0.00system 0:00.40elapsed 55%CPU (0avgtext+0avgdata 38528maxresident)k
-SWV054+1_Transify.p success 0.01 0.01system 0:00.21elapsed 11%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV055+1_Transify.p fail
-SWV056+1_Transify.p success 0.02 0.01system 0:00.21elapsed 16%CPU (0avgtext+0avgdata 16144maxresident)k
-SWV057+1_Transify.p success 0.02 0.00system 0:00.21elapsed 11%CPU (0avgtext+0avgdata 13744maxresident)k
-SWV058+1_Transify.p success 0.02 0.00system 0:00.25elapsed 9%CPU (0avgtext+0avgdata 13776maxresident)k
-SWV059+1_Transify.p success 0.01 0.01system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 13744maxresident)k
-SWV060+1_Transify.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV061+1_Transify.p success 0.02 0.00system 0:00.22elapsed 10%CPU (0avgtext+0avgdata 13728maxresident)k
-SWV062+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
-SWV063+1_Transify.p success 0.01 0.00system 0:00.11elapsed 17%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV064+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15296maxresident)k
-SWV065+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15232maxresident)k
-SWV066+1_Transify.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13648maxresident)k
-SWV067+1_Transify.p success 0.04 0.00system 0:00.23elapsed 18%CPU (0avgtext+0avgdata 18176maxresident)k
-SWV068+1_Transify.p success 0.02 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV069+1_Transify.p success 0.03 0.00system 0:00.21elapsed 18%CPU (0avgtext+0avgdata 17760maxresident)k
-SWV070+1_Transify.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13680maxresident)k
-SWV071+1_Transify.p success 0.02 0.00system 0:00.13elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV072+1_Transify.p success 0.00 0.01system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 13648maxresident)k
-SWV073+1_Transify.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV074+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV075+1_Transify.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV076+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV077+1_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15248maxresident)k
-SWV078+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15232maxresident)k
-SWV079+1_Transify.p fail
-SWV080+1_Transify.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13680maxresident)k
-SWV081+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV082+1_Transify.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV083+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV084+1_Transify.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV085+1_Transify.p success 0.01 0.00system 0:00.14elapsed 14%CPU (0avgtext+0avgdata 13680maxresident)k
-SWV086+1_Transify.p success 0.01 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 13760maxresident)k
-SWV087+1_Transify.p success 0.01 0.00system 0:00.18elapsed 10%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV088+1_Transify.p success 0.01 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 13744maxresident)k
-SWV089+1_Transify.p fail
-SWV090+1_Transify.p fail
-SWV091+1_Transify.p fail
-SWV092+1_Transify.p fail
-SWV093+1_Transify.p success 22.46 0.36system 0:25.04elapsed 91%CPU (0avgtext+0avgdata 525808maxresident)k
-SWV094+1_Transify.p success 22.06 0.27system 0:23.35elapsed 95%CPU (0avgtext+0avgdata 483984maxresident)k
-SWV095+1_Transify.p success 0.04 0.02system 0:00.23elapsed 25%CPU (0avgtext+0avgdata 20256maxresident)k
-SWV096+1_Transify.p success 0.04 0.00system 0:00.27elapsed 20%CPU (0avgtext+0avgdata 19888maxresident)k
-SWV097+1_Transify.p success 20.52 0.25system 0:24.16elapsed 85%CPU (0avgtext+0avgdata 510480maxresident)k
-SWV098+1_Transify.p success 7.30 0.22system 0:08.66elapsed 86%CPU (0avgtext+0avgdata 531888maxresident)k
-SWV099+1_Transify.p success 0.05 0.00system 0:00.25elapsed 21%CPU (0avgtext+0avgdata 19664maxresident)k
-SWV100+1_Transify.p fail
-SWV101+1_Transify.p fail
-SWV102+1_Transify.p success 0.30 0.00system 0:00.50elapsed 62%CPU (0avgtext+0avgdata 48896maxresident)k
-SWV103+1_Transify.p fail
-SWV104+1_Transify.p success 5.40 0.12system 0:18.20elapsed 30%CPU (0avgtext+0avgdata 224128maxresident)k
-SWV105+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV106+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 13760maxresident)k
-SWV107+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 13744maxresident)k
-SWV108+1_Transify.p fail
-SWV109+1_Transify.p success 0.07 0.00system 0:00.25elapsed 32%CPU (0avgtext+0avgdata 23088maxresident)k
-SWV110+1_Transify.p fail
-SWV111+1_Transify.p fail
-SWV112+1_Transify.p fail
-SWV113+1_Transify.p fail
-SWV114+1_Transify.p success 0.09 0.00system 0:00.30elapsed 29%CPU (0avgtext+0avgdata 24352maxresident)k
-SWV115+1_Transify.p success 0.07 0.00system 0:00.29elapsed 27%CPU (0avgtext+0avgdata 22816maxresident)k
-SWV116+1_Transify.p success 0.15 0.01system 0:00.36elapsed 45%CPU (0avgtext+0avgdata 28672maxresident)k
-SWV117+1_Transify.p success 0.06 0.01system 0:00.25elapsed 30%CPU (0avgtext+0avgdata 22464maxresident)k
-SWV118+1_Transify.p fail
-SWV119+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 13728maxresident)k
-SWV120+1_Transify.p fail
-SWV121+1_Transify.p success 0.00 0.02system 0:00.23elapsed 10%CPU (0avgtext+0avgdata 13760maxresident)k
-SWV122+1_Transify.p success 12.62 0.30system 0:25.77elapsed 50%CPU (0avgtext+0avgdata 330368maxresident)k
-SWV123+1_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 13712maxresident)k
-SWV124+1_Transify.p fail
-SWV125+1_Transify.p fail
-SWV126+1_Transify.p success 0.01 0.00system 0:00.14elapsed 13%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV127+1_Transify.p fail
-SWV128+1_Transify.p success 0.02 0.00system 0:00.21elapsed 11%CPU (0avgtext+0avgdata 13776maxresident)k
-SWV130+1_Transify.p fail
-SWV131+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15520maxresident)k
-SWV132+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 15536maxresident)k
-SWV133+1_Transify.p success 0.04 0.00system 0:00.21elapsed 20%CPU (0avgtext+0avgdata 17776maxresident)k
-SWV134+1_Transify.p success 0.04 0.00system 0:00.25elapsed 18%CPU (0avgtext+0avgdata 17984maxresident)k
-SWV135+1_Transify.p success 0.04 0.00system 0:00.24elapsed 18%CPU (0avgtext+0avgdata 17584maxresident)k
-SWV136+1_Transify.p success 0.04 0.00system 0:00.20elapsed 19%CPU (0avgtext+0avgdata 17712maxresident)k
-SWV137+1_Transify.p success 0.04 0.00system 0:00.22elapsed 17%CPU (0avgtext+0avgdata 17248maxresident)k
-SWV138+1_Transify.p success 0.04 0.00system 0:00.21elapsed 18%CPU (0avgtext+0avgdata 17584maxresident)k
-SWV139+1_Transify.p fail
-SWV140+1_Transify.p fail
-SWV141+1_Transify.p fail
-SWV142+1_Transify.p fail
-SWV143+1_Transify.p fail
-SWV144+1_Transify.p fail
-SWV145+1_Transify.p success 0.02 0.00system 0:00.21elapsed 12%CPU (0avgtext+0avgdata 14224maxresident)k
-SWV146+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 14240maxresident)k
-SWV147+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 14208maxresident)k
-SWV148+1_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 14144maxresident)k
-SWV149+1_Transify.p success 0.02 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 14112maxresident)k
-SWV150+1_Transify.p success 0.02 0.00system 0:00.20elapsed 11%CPU (0avgtext+0avgdata 14112maxresident)k
-SWV151+1_Transify.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 18016maxresident)k
-SWV152+1_Transify.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 18016maxresident)k
-SWV153+1_Transify.p success 0.91 0.02system 0:01.14elapsed 82%CPU (0avgtext+0avgdata 143888maxresident)k
-SWV154+1_Transify.p success 0.34 0.01system 0:00.55elapsed 64%CPU (0avgtext+0avgdata 45376maxresident)k
-SWV155+1_Transify.p success 0.04 0.00system 0:00.24elapsed 18%CPU (0avgtext+0avgdata 18256maxresident)k
-SWV156+1_Transify.p fail
-SWV157+1_Transify.p success 0.23 0.01system 0:00.62elapsed 39%CPU (0avgtext+0avgdata 33824maxresident)k
-SWV158+1_Transify.p success 0.14 0.01system 0:00.40elapsed 40%CPU (0avgtext+0avgdata 31808maxresident)k
-SWV159+1_Transify.p success 0.03 0.01system 0:00.42elapsed 11%CPU (0avgtext+0avgdata 18432maxresident)k
-SWV160+1_Transify.p fail
-SWV161+1_Transify.p fail
-SWV162+1_Transify.p fail
-SWV163+1_Transify.p fail
-SWV164+1_Transify.p fail
-SWV165+1_Transify.p fail
-SWV166+1_Transify.p fail
-SWV167+1_Transify.p success 2.70 0.07system 0:04.49elapsed 61%CPU (0avgtext+0avgdata 465968maxresident)k
-SWV168+1_Transify.p success 0.04 0.00system 0:00.23elapsed 20%CPU (0avgtext+0avgdata 18720maxresident)k
-SWV169+1_Transify.p success 0.03 0.00system 0:00.21elapsed 16%CPU (0avgtext+0avgdata 16880maxresident)k
-SWV170+1_Transify.p fail
-SWV171+1_Transify.p success 0.02 0.02system 0:05.25elapsed 0%CPU (0avgtext+0avgdata 16864maxresident)k
-SWV172+1_Transify.p success 0.24 0.01system 0:00.44elapsed 59%CPU (0avgtext+0avgdata 41200maxresident)k
-SWV173+1_Transify.p fail
-SWV174+1_Transify.p fail
-SWV175+1_Transify.p success 0.03 0.01system 0:00.22elapsed 21%CPU (0avgtext+0avgdata 18528maxresident)k
-SWV176+1_Transify.p fail
-SWV177+1_Transify.p fail
-SWV178+1_Transify.p fail
-SWV179+1_Transify.p success 0.28 0.00system 0:05.39elapsed 5%CPU (0avgtext+0avgdata 38304maxresident)k
-SWV180+1_Transify.p success 0.22 0.01system 0:00.42elapsed 54%CPU (0avgtext+0avgdata 39344maxresident)k
-SWV181+1_Transify.p fail
-SWV182+1_Transify.p fail
-SWV183+1_Transify.p success 0.24 0.00system 0:00.43elapsed 55%CPU (0avgtext+0avgdata 39920maxresident)k
-SWV184+1_Transify.p fail
-SWV185+1_Transify.p fail
-SWV186+1_Transify.p success 0.23 0.00system 0:00.41elapsed 56%CPU (0avgtext+0avgdata 39232maxresident)k
-SWV187+1_Transify.p fail
-SWV188+1_Transify.p fail
-SWV189+1_Transify.p fail
-SWV190+1_Transify.p success 0.04 0.00system 0:02.74elapsed 1%CPU (0avgtext+0avgdata 18480maxresident)k
-SWV191+1_Transify.p fail
-SWV192+1_Transify.p success 0.04 0.00system 0:00.22elapsed 23%CPU (0avgtext+0avgdata 19600maxresident)k
-SWV193+1_Transify.p success 0.04 0.00system 0:00.22elapsed 21%CPU (0avgtext+0avgdata 19568maxresident)k
-SWV194+1_Transify.p success 0.30 0.00system 0:00.50elapsed 62%CPU (0avgtext+0avgdata 40608maxresident)k
-SWV195+1_Transify.p success 0.30 0.01system 0:00.49elapsed 63%CPU (0avgtext+0avgdata 42800maxresident)k
-SWV196+1_Transify.p success 0.15 0.01system 0:00.35elapsed 49%CPU (0avgtext+0avgdata 30880maxresident)k
-SWV197+1_Transify.p success 0.04 0.00system 0:00.23elapsed 22%CPU (0avgtext+0avgdata 19568maxresident)k
-SWV198+1_Transify.p success 0.28 0.01system 0:00.48elapsed 62%CPU (0avgtext+0avgdata 40672maxresident)k
-SWV199+1_Transify.p success 0.16 0.00system 0:00.35elapsed 49%CPU (0avgtext+0avgdata 30784maxresident)k
-SWV200+1_Transify.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 19392maxresident)k
-SWV201+1_Transify.p success 0.04 0.00system 0:00.22elapsed 21%CPU (0avgtext+0avgdata 19440maxresident)k
-SWV202+1_Transify.p fail
-SWV203+1_Transify.p fail
-SWV204+1_Transify.p success 0.06 0.00system 0:00.24elapsed 24%CPU (0avgtext+0avgdata 20080maxresident)k
-SWV205+1_Transify.p success 3.07 0.10system 0:06.28elapsed 50%CPU (0avgtext+0avgdata 481376maxresident)k
-SWV206+1_Transify.p success 6.28 0.18system 0:11.86elapsed 54%CPU (0avgtext+0avgdata 546736maxresident)k
-SWV208+1_Transify.p success 3.57 0.12system 0:03.90elapsed 94%CPU (0avgtext+0avgdata 602896maxresident)k
-SWV209+1_Transify.p success 3.67 0.10system 0:04.01elapsed 94%CPU (0avgtext+0avgdata 601664maxresident)k
-SWV210+1_Transify.p success 0.04 0.00system 0:00.23elapsed 20%CPU (0avgtext+0avgdata 18352maxresident)k
-SWV211+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15008maxresident)k
-SWV212+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14992maxresident)k
-SWV213+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14992maxresident)k
-SWV214+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14944maxresident)k
-SWV215+1_Transify.p success 0.00 0.02system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 14992maxresident)k
-SWV216+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14928maxresident)k
-SWV217+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14928maxresident)k
-SWV218+1_Transify.p success 0.02 0.00system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 14960maxresident)k
-SWV219+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14832maxresident)k
-SWV220+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14896maxresident)k
-SWV221+1_Transify.p success 0.08 0.00system 0:00.26elapsed 35%CPU (0avgtext+0avgdata 23328maxresident)k
-SWV222+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15152maxresident)k
-SWV223+1_Transify.p success 0.01 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15104maxresident)k
-SWV224+1_Transify.p success 0.02 0.00system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 15104maxresident)k
-SWV225+1_Transify.p success 0.02 0.00system 0:00.20elapsed 14%CPU (0avgtext+0avgdata 15088maxresident)k
-SWV226+1_Transify.p success 0.02 0.00system 0:00.21elapsed 12%CPU (0avgtext+0avgdata 15072maxresident)k
-SWV227+1_Transify.p success 0.01 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15040maxresident)k
-SWV228+1_Transify.p success 0.01 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 15408maxresident)k
-SWV229+1_Transify.p success 0.02 0.00system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 15088maxresident)k
-SWV230+1_Transify.p success 0.01 0.01system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14944maxresident)k
-SWV231+1_Transify.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14992maxresident)k
-SWV232+1_Transify.p success 0.02 0.00system 0:00.19elapsed 14%CPU (0avgtext+0avgdata 14768maxresident)k
-SWV365+1_Transify.p success 0.00 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 14336maxresident)k
-SWV366+1_Transify.p success 0.02 0.00system 0:00.21elapsed 12%CPU (0avgtext+0avgdata 16288maxresident)k
-SWV367+1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13872maxresident)k
-SWV369+1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 14368maxresident)k
-SWV370+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 16192maxresident)k
-SWV371+1_Transify.p success 0.02 0.00system 0:00.21elapsed 11%CPU (0avgtext+0avgdata 16080maxresident)k
-SWV372+1_Transify.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 16464maxresident)k
-SWV372+2_Transify.p fail
-SWV373+1_Transify.p success 0.03 0.06system 0:04.38elapsed 2%CPU (0avgtext+0avgdata 14288maxresident)k
-SWV374+1_Transify.p success 0.16 0.00system 0:01.10elapsed 14%CPU (0avgtext+0avgdata 22624maxresident)k
-SWV376+1_Transify.p success 0.02 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 15248maxresident)k
-SWV377+1_Transify.p success 0.01 0.00system 0:00.64elapsed 2%CPU (0avgtext+0avgdata 14176maxresident)k
-SWV378+1_Transify.p success 45.53 1.02system 0:48.90elapsed 95%CPU (0avgtext+0avgdata 1299360maxresident)k
-SWV379+1_Transify.p success 32.04 8.28system 0:57.78elapsed 69%CPU (0avgtext+0avgdata 1105856maxresident)k
-SWV380+1_Transify.p fail
-SWV381+1_Transify.p success 0.06 0.02system 0:01.24elapsed 6%CPU (0avgtext+0avgdata 20560maxresident)k
-SWV381+2_Transify.p fail
-SWV381+3_Transify.p fail
-SWV381+4_Transify.p fail
-SWV383+1_Transify.p success 0.02 0.00system 0:00.22elapsed 12%CPU (0avgtext+0avgdata 15088maxresident)k
-SWV384+1_Transify.p success 0.03 0.00system 0:00.21elapsed 20%CPU (0avgtext+0avgdata 17056maxresident)k
-SWV385+1_Transify.p success 0.02 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 14832maxresident)k
-SWV386+1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13808maxresident)k
-SWV387+1_Transify.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14528maxresident)k
-SWV388+1_Transify.p success 0.00 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13728maxresident)k
-SWV389+1_Transify.p success 0.02 0.00system 0:00.21elapsed 12%CPU (0avgtext+0avgdata 15616maxresident)k
-SWV390+1_Transify.p success 0.04 0.00system 0:00.21elapsed 22%CPU (0avgtext+0avgdata 17744maxresident)k
-SWV391+1_Transify.p success 0.11 0.00system 0:00.29elapsed 39%CPU (0avgtext+0avgdata 25440maxresident)k
-SWV392+1_Transify.p success 0.01 0.00system 0:00.20elapsed 6%CPU (0avgtext+0avgdata 13232maxresident)k
-SWV393+1_Transify.p fail
-SWV394+1_Transify.p success 42.51 0.60system 0:50.79elapsed 84%CPU (0avgtext+0avgdata 1162896maxresident)k
-SWV395+1_Transify.p success 0.00 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13328maxresident)k
-SWV396+1_Transify.p fail
-SWV397+1_Transify.p success 0.10 0.01system 0:13.52elapsed 0%CPU (0avgtext+0avgdata 13984maxresident)k
-SWV398+1_Transify.p fail
-SWV399+1_Transify.p success 0.06 0.00system 0:05.82elapsed 1%CPU (0avgtext+0avgdata 15904maxresident)k
-SWV400+1_Transify.p success 0.00 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13232maxresident)k
-SWV401+1_Transify.p success 1.12 0.02system 0:01.81elapsed 62%CPU (0avgtext+0avgdata 51600maxresident)k
-SWV402+1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13248maxresident)k
-SWV403+1_Transify.p success 0.54 0.00system 0:00.72elapsed 75%CPU (0avgtext+0avgdata 40512maxresident)k
-SWV404+1_Transify.p fail
-SWV405+1_Transify.p success 0.07 0.07system 0:20.70elapsed 0%CPU (0avgtext+0avgdata 14016maxresident)k
-SWV406+1_Transify.p fail
-SWV407+1_Transify.p fail
-SWV408+1_Transify.p success 0.10 0.02system 0:00.30elapsed 41%CPU (0avgtext+0avgdata 25296maxresident)k
-SWV408+2_Transify.p success 0.11 0.00system 0:00.28elapsed 39%CPU (0avgtext+0avgdata 24944maxresident)k
-SWV409+1_Transify.p success 0.34 0.00system 0:00.53elapsed 66%CPU (0avgtext+0avgdata 32672maxresident)k
-SWV410+1_Transify.p success 0.01 0.00system 0:00.20elapsed 6%CPU (0avgtext+0avgdata 13232maxresident)k
-SWV411+1_Transify.p success 0.00 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13680maxresident)k
-SWV412+1_Transify.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13664maxresident)k
-SWV413+1_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 13680maxresident)k
-SWV414+1_Transify.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13808maxresident)k
-SWV415+1_Transify.p success 0.04 0.00system 0:00.25elapsed 20%CPU (0avgtext+0avgdata 19616maxresident)k
-SWV415+2_Transify.p success 0.05 0.00system 0:00.23elapsed 22%CPU (0avgtext+0avgdata 20384maxresident)k
-SWV416+1_Transify.p success 0.03 0.00system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 17984maxresident)k
-SWV416+2_Transify.p fail
-SWV417+1_Transify.p success 0.07 0.00system 0:03.03elapsed 2%CPU (0avgtext+0avgdata 15952maxresident)k
-SWV448+1_Transify.p fail
-SWV449+1_Transify.p fail
-SWV450+1_Transify.p success 1.63 0.13system 0:11.19elapsed 15%CPU (0avgtext+0avgdata 147408maxresident)k
-SWV451+1_Transify.p fail
-SWV452+1_Transify.p success 2.90 0.08system 0:03.13elapsed 95%CPU (0avgtext+0avgdata 306640maxresident)k
-SWV453+1_Transify.p success 2.60 0.04system 0:02.83elapsed 93%CPU (0avgtext+0avgdata 302112maxresident)k
-SWV454+1_Transify.p success 0.13 0.00system 0:00.30elapsed 45%CPU (0avgtext+0avgdata 29728maxresident)k
-SWV455+1_Transify.p success 0.10 0.01system 0:00.29elapsed 41%CPU (0avgtext+0avgdata 27952maxresident)k
-SWV456+1_Transify.p fail
-SWV457+1_Transify.p success 9.87 0.22system 0:12.23elapsed 82%CPU (0avgtext+0avgdata 261568maxresident)k
-SWV458+1_Transify.p fail
-SWV459+1_Transify.p fail
-SWV460+1_Transify.p fail
-SWV461+1_Transify.p success 29.26 0.61system 0:56.12elapsed 53%CPU (0avgtext+0avgdata 344112maxresident)k
-SWV462+1_Transify.p success 35.22 0.40system 0:53.92elapsed 66%CPU (0avgtext+0avgdata 302288maxresident)k
-SWV463+1_Transify.p success 5.34 0.14system 0:09.53elapsed 57%CPU (0avgtext+0avgdata 281360maxresident)k
-SWV464+1_Transify.p success 5.00 0.14system 0:11.94elapsed 43%CPU (0avgtext+0avgdata 236912maxresident)k
-SWV465+1_Transify.p success 35.39 0.54system 0:51.83elapsed 69%CPU (0avgtext+0avgdata 427104maxresident)k
-SWV466+1_Transify.p success 46.29 0.70system 0:51.57elapsed 91%CPU (0avgtext+0avgdata 568992maxresident)k
-SWV467+1_Transify.p fail
-SWV468+1_Transify.p fail
-SWV469+1_Transify.p success 35.05 0.50system 0:57.33elapsed 62%CPU (0avgtext+0avgdata 482560maxresident)k
-SWV470+1_Transify.p fail
-SWV471+1_Transify.p fail
-SWV472+1_Transify.p fail
-SWV473+1_Transify.p fail
-SWV474+1_Transify.p fail
-SWV475+1_Transify.p fail
-SWV476+1_Transify.p success 1.21 0.03system 0:01.41elapsed 88%CPU (0avgtext+0avgdata 188624maxresident)k
-SWV477+1_Transify.p fail
-SWV478+1_Transify.p fail
-SWV479+1_Transify.p success 34.75 0.32system 0:50.97elapsed 68%CPU (0avgtext+0avgdata 424304maxresident)k
-SWV480+1_Transify.p success 31.30 0.50system 0:58.43elapsed 54%CPU (0avgtext+0avgdata 383008maxresident)k
-SWV481+1_Transify.p success 0.97 0.02system 0:01.17elapsed 85%CPU (0avgtext+0avgdata 106640maxresident)k
-SWV919-1_Transify.p fail
-SWV921-1_Transify.p fail
-SWV922-1_Transify.p fail
-SWV923-1_Transify.p fail
-SWV924-1_Transify.p fail
-SWV926-1_Transify.p success 1.30 0.02system 0:01.55elapsed 85%CPU (0avgtext+0avgdata 172608maxresident)k
-SWV934-1_Transify.p fail
-SWV935-1_Transify.p fail
-SWV936-1_Transify.p fail
-SWV938-1_Transify.p success 7.15 0.21system 0:17.61elapsed 41%CPU (0avgtext+0avgdata 554048maxresident)k
-SWV939-1_Transify.p success 3.09 0.07system 0:03.58elapsed 88%CPU (0avgtext+0avgdata 192944maxresident)k
-SWV940-1_Transify.p fail
-SWV941-1_Transify.p fail
-SWV942-1_Transify.p fail
-SWV943-1_Transify.p success 0.07 0.00system 0:00.27elapsed 27%CPU (0avgtext+0avgdata 20160maxresident)k
-SWV944-1_Transify.p fail
-SWV945-1_Transify.p fail
-SWV946-1_Transify.p fail
-SWV947-1_Transify.p fail
-SWV948-1_Transify.p fail
-SWV949-1_Transify.p success 0.23 0.02system 0:00.44elapsed 57%CPU (0avgtext+0avgdata 71680maxresident)k
-SWV950-1_Transify.p fail
-SWV951-1_Transify.p success 0.02 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 16240maxresident)k
-SWV952-1_Transify.p fail
-SWV954-1_Transify.p success 0.96 0.03system 0:08.86elapsed 11%CPU (0avgtext+0avgdata 47536maxresident)k
-SWV955-1_Transify.p success 0.85 0.06system 0:01.20elapsed 76%CPU (0avgtext+0avgdata 191024maxresident)k
-SWV956-1_Transify.p fail
-SWV957-1_Transify.p success 0.02 0.00system 0:00.34elapsed 7%CPU (0avgtext+0avgdata 13984maxresident)k
-SWV958-1_Transify.p success 0.28 0.01system 0:00.47elapsed 61%CPU (0avgtext+0avgdata 84416maxresident)k
-SWV959-1_Transify.p success 1.84 0.04system 0:02.26elapsed 82%CPU (0avgtext+0avgdata 189840maxresident)k
-SWV960-1_Transify.p fail
-SWV961-1_Transify.p success 0.09 0.00system 0:00.29elapsed 31%CPU (0avgtext+0avgdata 19440maxresident)k
-SWV962-1_Transify.p success 0.02 0.00system 0:00.20elapsed 18%CPU (0avgtext+0avgdata 16944maxresident)k
-SWV963-1_Transify.p success 0.29 0.02system 0:00.50elapsed 62%CPU (0avgtext+0avgdata 75456maxresident)k
-SWV964-1_Transify.p fail
-SWV965-1_Transify.p fail
-SWV966-1_Transify.p success 0.01 0.04system 0:13.06elapsed 0%CPU (0avgtext+0avgdata 15472maxresident)k
-SWV967-1_Transify.p fail
-SWV968-1_Transify.p success 0.02 0.00system 0:00.22elapsed 12%CPU (0avgtext+0avgdata 14864maxresident)k
-SWV969-1_Transify.p fail
-SWV970-1_Transify.p fail
-SWV971-1_Transify.p fail
-SWV972-1_Transify.p success 0.24 0.00system 0:00.45elapsed 55%CPU (0avgtext+0avgdata 41200maxresident)k
-SWV974-1_Transify.p fail
-SWV975-1_Transify.p fail
-SWV976-1_Transify.p fail
-SWV977-1_Transify.p fail
-SWV978-1_Transify.p fail
-SWV979-1_Transify.p fail
-SWV980-1_Transify.p fail
-SWV981-1_Transify.p fail
-SWV982-1_Transify.p success 0.04 0.01system 0:03.53elapsed 1%CPU (0avgtext+0avgdata 18544maxresident)k
-SWV983-1_Transify.p fail
-SWV984-1_Transify.p fail
-SWV987-1_Transify.p fail
-SWV988-1_Transify.p fail
-SWV989-1_Transify.p fail
-SWV990-1_Transify.p fail
-SWV992-1_Transify.p fail
-SWV993-1_Transify.p fail
-SWV994-1_Transify.p fail
-SWV995-1_Transify.p success 3.30 0.08system 0:12.82elapsed 26%CPU (0avgtext+0avgdata 214064maxresident)k
-SYN548+1_Transify.p success 5.28 0.03system 0:05.97elapsed 88%CPU (0avgtext+0avgdata 84448maxresident)k
-SYN549+1_Transify.p success 5.17 0.04system 0:05.80elapsed 89%CPU (0avgtext+0avgdata 67136maxresident)k
-SYN550+1_Transify.p success 0.01 0.00system 0:00.22elapsed 7%CPU (0avgtext+0avgdata 13440maxresident)k
-SYN553-1_Transify.p success 0.01 0.00system 0:00.19elapsed 8%CPU (0avgtext+0avgdata 13120maxresident)k
-SYN563-1_Transify.p success 9.05 0.02system 0:09.32elapsed 97%CPU (0avgtext+0avgdata 200080maxresident)k
-SYN585-1_Transify.p success 0.01 0.00system 0:00.21elapsed 7%CPU (0avgtext+0avgdata 13536maxresident)k
-TOP030+1_Transify.p fail
-TOP031+1_Transify.p fail
-TOP044+1_Transify.p fail
+../../Transified/ALG223+1.p success 6.89 0.13system 0:07.53elapsed 93%CPU (0avgtext+0avgdata 421472maxresident)k
+../../Transified/ALG224+1.p success 7.80 0.20system 0:08.61elapsed 92%CPU (0avgtext+0avgdata 387472maxresident)k
+../../Transified/ALG234+1.p fail
+../../Transified/ANA002-1.p fail
+../../Transified/ANA002-2.p fail
+../../Transified/ANA002-3.p fail
+../../Transified/ANA002-4.p fail
+../../Transified/ANA003-3.p fail
+../../Transified/ANA004-3.p fail
+../../Transified/ANA004-5.p fail
+../../Transified/CAT021+1.p fail
+../../Transified/COL088-2.p success 55.30 1.07system 0:57.04elapsed 98%CPU (0avgtext+0avgdata 2107392maxresident)k
+../../Transified/COL089-2.p success 6.12 0.14system 0:06.64elapsed 94%CPU (0avgtext+0avgdata 335632maxresident)k
+../../Transified/COL090-2.p success 12.90 0.18system 0:13.67elapsed 95%CPU (0avgtext+0avgdata 438128maxresident)k
+../../Transified/COL091-2.p success 1.78 0.02system 0:02.00elapsed 89%CPU (0avgtext+0avgdata 232224maxresident)k
+../../Transified/COL092-2.p success 13.21 0.18system 0:14.04elapsed 95%CPU (0avgtext+0avgdata 378400maxresident)k
+../../Transified/COL093-2.p success 163.77 2.67system 2:47.07elapsed 99%CPU (0avgtext+0avgdata 5136576maxresident)k
+../../Transified/COL094-2.p fail
+../../Transified/COL095-2.p fail
+../../Transified/COL098-2.p success 16.17 0.26system 0:17.24elapsed 95%CPU (0avgtext+0avgdata 328032maxresident)k
+../../Transified/COL099-2.p success 0.01 0.00system 0:00.14elapsed 16%CPU (0avgtext+0avgdata 16768maxresident)k
+../../Transified/COL100-2.p success 68.56 0.95system 1:10.24elapsed 98%CPU (0avgtext+0avgdata 1944880maxresident)k
+../../Transified/LAT258+1.p fail
+../../Transified/LAT310+1.p success 0.05 0.00system 0:00.16elapsed 36%CPU (0avgtext+0avgdata 21824maxresident)k
+../../Transified/LAT348+1.p fail
+../../Transified/LAT365+1.p fail
+../../Transified/LCL888+1.p fail
+../../Transified/LCL889+1.p fail
+../../Transified/LCL890+1.p fail
+../../Transified/LCL891+1.p fail
+../../Transified/LCL892+1.p fail
+../../Transified/LCL893+1.p success 0.03 0.00system 0:00.15elapsed 20%CPU (0avgtext+0avgdata 17152maxresident)k
+../../Transified/LCL894+1.p success 53.65 0.83system 0:54.85elapsed 99%CPU (0avgtext+0avgdata 1984448maxresident)k
+../../Transified/LCL896+1.p fail
+../../Transified/LCL898+1.p fail
+../../Transified/LCL899+1.p success 2.26 0.05system 0:02.51elapsed 92%CPU (0avgtext+0avgdata 268816maxresident)k
+../../Transified/LCL900+1.p fail
+../../Transified/LCL901+1.p success 6.90 0.12system 0:07.12elapsed 98%CPU (0avgtext+0avgdata 533696maxresident)k
+../../Transified/LCL902+1.p success 2.29 0.06system 0:02.50elapsed 93%CPU (0avgtext+0avgdata 269760maxresident)k
+../../Transified/LCL903+1.p success 6.32 0.08system 0:06.56elapsed 97%CPU (0avgtext+0avgdata 468256maxresident)k
+../../Transified/NUM001-1.p success 0.00 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 12880maxresident)k
+../../Transified/NUM002-1.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13728maxresident)k
+../../Transified/NUM003-1.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 13904maxresident)k
+../../Transified/NUM004-1.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 12944maxresident)k
+../../Transified/NUM005-1.p fail
+../../Transified/NUM007-1.p fail
+../../Transified/NUM015-1.p success 0.00 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13136maxresident)k
+../../Transified/NUM016-1.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 12960maxresident)k
+../../Transified/NUM390+1.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14112maxresident)k
+../../Transified/NUM396+1.p success 183.28 2.71system 3:05.30elapsed 100%CPU (0avgtext+0avgdata 2780624maxresident)k
+../../Transified/NUM411+1.p success 0.01 0.00system 0:00.21elapsed 7%CPU (0avgtext+0avgdata 14336maxresident)k
+../../Transified/RNG039-2.p success 0.96 0.04system 0:01.17elapsed 85%CPU (0avgtext+0avgdata 91520maxresident)k
+../../Transified/SET016-7.p success 0.04 0.00system 0:00.16elapsed 28%CPU (0avgtext+0avgdata 20640maxresident)k
+../../Transified/SET017-7.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 17648maxresident)k
+../../Transified/SET018-7.p success 7.47 0.21system 0:08.02elapsed 95%CPU (0avgtext+0avgdata 316016maxresident)k
+../../Transified/SET020-7.p success 6.34 0.23system 0:06.90elapsed 95%CPU (0avgtext+0avgdata 337024maxresident)k
+../../Transified/SET021-7.p success 6.44 0.13system 0:06.87elapsed 95%CPU (0avgtext+0avgdata 395680maxresident)k
+../../Transified/SET024-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+../../Transified/SET025-7.p success 0.00 0.00system 0:00.14elapsed 11%CPU (0avgtext+0avgdata 14704maxresident)k
+../../Transified/SET055-7.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13360maxresident)k
+../../Transified/SET056-7.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15680maxresident)k
+../../Transified/SET057-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SET058-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SET059-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15680maxresident)k
+../../Transified/SET060-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14656maxresident)k
+../../Transified/SET061-7.p success 0.01 0.00system 0:00.19elapsed 10%CPU (0avgtext+0avgdata 14592maxresident)k
+../../Transified/SET062-7.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 14960maxresident)k
+../../Transified/SET063-7.p success 0.01 0.00system 0:00.14elapsed 11%CPU (0avgtext+0avgdata 15744maxresident)k
+../../Transified/SET064-7.p success 0.01 0.00system 0:00.13elapsed 12%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SET065-7.p success 0.01 0.00system 0:00.20elapsed 12%CPU (0avgtext+0avgdata 14800maxresident)k
+../../Transified/SET066-7.p success 3.25 0.12system 0:03.65elapsed 92%CPU (0avgtext+0avgdata 283936maxresident)k
+../../Transified/SET067-7.p success 0.02 0.00system 0:00.22elapsed 12%CPU (0avgtext+0avgdata 15600maxresident)k
+../../Transified/SET068-7.p success 0.02 0.00system 0:00.20elapsed 13%CPU (0avgtext+0avgdata 15664maxresident)k
+../../Transified/SET069-7.p success 3.33 0.04system 0:03.61elapsed 93%CPU (0avgtext+0avgdata 270816maxresident)k
+../../Transified/SET070-7.p success 3.32 0.05system 0:03.59elapsed 93%CPU (0avgtext+0avgdata 278928maxresident)k
+../../Transified/SET071-7.p success 0.02 0.00system 0:00.20elapsed 17%CPU (0avgtext+0avgdata 16656maxresident)k
+../../Transified/SET072-7.p success 0.02 0.00system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 19264maxresident)k
+../../Transified/SET073-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15712maxresident)k
+../../Transified/SET074-7.p success 0.01 0.00system 0:00.15elapsed 10%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SET075-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15728maxresident)k
+../../Transified/SET076-7.p success 0.02 0.00system 0:00.26elapsed 10%CPU (0avgtext+0avgdata 15792maxresident)k
+../../Transified/SET077-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14656maxresident)k
+../../Transified/SET078-7.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 15600maxresident)k
+../../Transified/SET079-7.p success 0.01 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 16544maxresident)k
+../../Transified/SET080-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14704maxresident)k
+../../Transified/SET081-7.p success 0.01 0.00system 0:00.12elapsed 13%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SET082-7.p success 0.01 0.00system 0:00.15elapsed 10%CPU (0avgtext+0avgdata 14704maxresident)k
+../../Transified/SET083-7.p success 0.02 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 18384maxresident)k
+../../Transified/SET084-7.p success 0.02 0.00system 0:00.15elapsed 24%CPU (0avgtext+0avgdata 18368maxresident)k
+../../Transified/SET085-7.p success 0.02 0.00system 0:00.12elapsed 19%CPU (0avgtext+0avgdata 17536maxresident)k
+../../Transified/SET090-7.p success 0.04 0.00system 0:00.23elapsed 20%CPU (0avgtext+0avgdata 18480maxresident)k
+../../Transified/SET093-7.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 16704maxresident)k
+../../Transified/SET094-7.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 17600maxresident)k
+../../Transified/SET095-7.p success 0.02 0.00system 0:00.23elapsed 13%CPU (0avgtext+0avgdata 16224maxresident)k
+../../Transified/SET096-7.p success 1.42 0.02system 0:01.63elapsed 88%CPU (0avgtext+0avgdata 119264maxresident)k
+../../Transified/SET097-7.p success 7.09 0.12system 0:07.48elapsed 96%CPU (0avgtext+0avgdata 271872maxresident)k
+../../Transified/SET098-7.p success 0.69 0.01system 0:00.90elapsed 79%CPU (0avgtext+0avgdata 84480maxresident)k
+../../Transified/SET099-7.p success 1.36 0.01system 0:01.55elapsed 88%CPU (0avgtext+0avgdata 107664maxresident)k
+../../Transified/SET101-7.p success 0.01 0.00system 0:00.14elapsed 11%CPU (0avgtext+0avgdata 15728maxresident)k
+../../Transified/SET102-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15728maxresident)k
+../../Transified/SET103-7.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 15712maxresident)k
+../../Transified/SET104-7.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15712maxresident)k
+../../Transified/SET105-7.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15712maxresident)k
+../../Transified/SET108-7.p success 0.01 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 16624maxresident)k
+../../Transified/SET117-7.p success 0.02 0.00system 0:00.15elapsed 16%CPU (0avgtext+0avgdata 16656maxresident)k
+../../Transified/SET118-7.p success 0.15 0.00system 0:00.34elapsed 45%CPU (0avgtext+0avgdata 34608maxresident)k
+../../Transified/SET119-7.p success 5.52 0.14system 0:05.99elapsed 94%CPU (0avgtext+0avgdata 381632maxresident)k
+../../Transified/SET120-7.p success 5.52 0.12system 0:05.93elapsed 95%CPU (0avgtext+0avgdata 353696maxresident)k
+../../Transified/SET121-7.p success 5.49 0.11system 0:05.91elapsed 94%CPU (0avgtext+0avgdata 375728maxresident)k
+../../Transified/SET122-7.p success 5.52 0.10system 0:05.89elapsed 95%CPU (0avgtext+0avgdata 361248maxresident)k
+../../Transified/SET585+3.p success 0.02 0.00system 0:00.20elapsed 15%CPU (0avgtext+0avgdata 15888maxresident)k
+../../Transified/SET589+3.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13408maxresident)k
+../../Transified/SET787-2.p success 0.01 0.00system 0:00.20elapsed 8%CPU (0avgtext+0avgdata 15008maxresident)k
+../../Transified/SET932+1.p success 0.01 0.00system 0:00.18elapsed 8%CPU (0avgtext+0avgdata 13504maxresident)k
+../../Transified/SET934+1.p success 3.35 0.11system 0:03.73elapsed 92%CPU (0avgtext+0avgdata 450592maxresident)k
+../../Transified/SET936+1.p success 181.75 2.38system 3:03.39elapsed 100%CPU (0avgtext+0avgdata 1902736maxresident)k
+../../Transified/SET937+1.p fail
+../../Transified/SET952+1.p fail
+../../Transified/SEU099+1.p fail
+../../Transified/SEU100+1.p fail
+../../Transified/SEU110+1.p success 5.12 0.09system 0:05.43elapsed 96%CPU (0avgtext+0avgdata 287232maxresident)k
+../../Transified/SEU122+2.p success 0.01 0.00system 0:00.20elapsed 7%CPU (0avgtext+0avgdata 13872maxresident)k
+../../Transified/SEU123+2.p success 0.01 0.00system 0:00.18elapsed 6%CPU (0avgtext+0avgdata 13728maxresident)k
+../../Transified/SEU124+2.p success 3.28 0.08system 0:03.59elapsed 93%CPU (0avgtext+0avgdata 459792maxresident)k
+../../Transified/SEU125+2.p success 13.49 0.40system 0:14.44elapsed 96%CPU (0avgtext+0avgdata 448576maxresident)k
+../../Transified/SEU126+2.p success 2.62 0.02system 0:02.84elapsed 93%CPU (0avgtext+0avgdata 343520maxresident)k
+../../Transified/SEU127+2.p success 0.82 0.01system 0:01.03elapsed 80%CPU (0avgtext+0avgdata 51584maxresident)k
+../../Transified/SEU128+2.p success 13.79 0.27system 0:14.54elapsed 96%CPU (0avgtext+0avgdata 438656maxresident)k
+../../Transified/SEU129+2.p success 6.64 0.11system 0:07.03elapsed 96%CPU (0avgtext+0avgdata 436112maxresident)k
+../../Transified/SEU130+2.p success 3.22 0.14system 0:03.56elapsed 94%CPU (0avgtext+0avgdata 438064maxresident)k
+../../Transified/SEU131+2.p success 0.58 0.01system 0:00.76elapsed 78%CPU (0avgtext+0avgdata 78384maxresident)k
+../../Transified/SEU132+2.p success 58.83 0.74system 0:59.99elapsed 99%CPU (0avgtext+0avgdata 1780928maxresident)k
+../../Transified/SEU133+2.p success 13.69 0.22system 0:14.39elapsed 96%CPU (0avgtext+0avgdata 431248maxresident)k
+../../Transified/SEU134+2.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14192maxresident)k
+../../Transified/SEU135+2.p success 29.13 0.49system 0:30.13elapsed 98%CPU (0avgtext+0avgdata 1241696maxresident)k
+../../Transified/SEU136+2.p success 3.32 0.06system 0:03.61elapsed 93%CPU (0avgtext+0avgdata 350480maxresident)k
+../../Transified/SEU137+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13824maxresident)k
+../../Transified/SEU138+2.p success 25.48 0.33system 0:26.23elapsed 98%CPU (0avgtext+0avgdata 956560maxresident)k
+../../Transified/SEU139+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14048maxresident)k
+../../Transified/SEU140+2.p success 0.04 0.00system 0:00.22elapsed 21%CPU (0avgtext+0avgdata 18608maxresident)k
+../../Transified/SEU141+2.p success 0.89 0.02system 0:01.04elapsed 88%CPU (0avgtext+0avgdata 107200maxresident)k
+../../Transified/SEU142+2.p success 3.30 0.04system 0:03.54elapsed 94%CPU (0avgtext+0avgdata 402528maxresident)k
+../../Transified/SEU143+2.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13616maxresident)k
+../../Transified/SEU144+2.p success 1.18 0.03system 0:01.40elapsed 86%CPU (0avgtext+0avgdata 161984maxresident)k
+../../Transified/SEU145+2.p success 5.84 0.20system 0:06.32elapsed 95%CPU (0avgtext+0avgdata 406368maxresident)k
+../../Transified/SEU146+2.p success 1.37 0.04system 0:01.58elapsed 89%CPU (0avgtext+0avgdata 93680maxresident)k
+../../Transified/SEU147+2.p success 3.28 0.07system 0:03.55elapsed 94%CPU (0avgtext+0avgdata 391264maxresident)k
+../../Transified/SEU148+2.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14128maxresident)k
+../../Transified/SEU149+2.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13760maxresident)k
+../../Transified/SEU150+2.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13760maxresident)k
+../../Transified/SEU151+2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14672maxresident)k
+../../Transified/SEU152+2.p success 0.53 0.03system 0:00.66elapsed 85%CPU (0avgtext+0avgdata 64304maxresident)k
+../../Transified/SEU153+2.p success 0.01 0.00system 0:00.12elapsed 10%CPU (0avgtext+0avgdata 14128maxresident)k
+../../Transified/SEU154+2.p success 0.02 0.00system 0:00.20elapsed 9%CPU (0avgtext+0avgdata 14624maxresident)k
+../../Transified/SEU155+2.p success 15.07 0.18system 0:15.72elapsed 97%CPU (0avgtext+0avgdata 393760maxresident)k
+../../Transified/SEU156+2.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 15648maxresident)k
+../../Transified/SEU157+2.p fail
+../../Transified/SEU158+2.p success 0.57 0.04system 0:00.74elapsed 82%CPU (0avgtext+0avgdata 79392maxresident)k
+../../Transified/SEU159+2.p fail
+../../Transified/SEU160+2.p success 0.05 0.00system 0:00.17elapsed 29%CPU (0avgtext+0avgdata 19600maxresident)k
+../../Transified/SEU161+2.p success 0.00 0.00system 0:00.14elapsed 8%CPU (0avgtext+0avgdata 13856maxresident)k
+../../Transified/SEU162+2.p success 0.30 0.01system 0:00.43elapsed 72%CPU (0avgtext+0avgdata 48992maxresident)k
+../../Transified/SEU163+2.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14336maxresident)k
+../../Transified/SEU164+2.p success 55.17 0.69system 0:56.43elapsed 99%CPU (0avgtext+0avgdata 1542128maxresident)k
+../../Transified/SEU165+2.p success 1.67 0.04system 0:01.91elapsed 89%CPU (0avgtext+0avgdata 120912maxresident)k
+../../Transified/SEU166+2.p fail
+../../Transified/SEU167+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 12928maxresident)k
+../../Transified/SEU167+2.p success 6.25 0.14system 0:06.74elapsed 95%CPU (0avgtext+0avgdata 383632maxresident)k
+../../Transified/SEU167+3.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 12896maxresident)k
+../../Transified/SEU168+2.p fail
+../../Transified/SEU169+2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14688maxresident)k
+../../Transified/SEU170+2.p success 1.46 0.02system 0:01.65elapsed 89%CPU (0avgtext+0avgdata 118432maxresident)k
+../../Transified/SEU171+2.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15696maxresident)k
+../../Transified/SEU172+2.p success 0.01 0.00system 0:00.12elapsed 12%CPU (0avgtext+0avgdata 14720maxresident)k
+../../Transified/SEU173+2.p success 1.34 0.03system 0:01.54elapsed 89%CPU (0avgtext+0avgdata 136336maxresident)k
+../../Transified/SEU174+2.p success 0.02 0.00system 0:00.14elapsed 16%CPU (0avgtext+0avgdata 15728maxresident)k
+../../Transified/SEU175+2.p fail
+../../Transified/SEU176+2.p success 7.96 0.20system 0:08.47elapsed 96%CPU (0avgtext+0avgdata 384464maxresident)k
+../../Transified/SEU177+2.p success 7.55 0.16system 0:08.08elapsed 95%CPU (0avgtext+0avgdata 381456maxresident)k
+../../Transified/SEU178+2.p fail
+../../Transified/SEU179+2.p fail
+../../Transified/SEU180+2.p success 7.57 0.19system 0:08.08elapsed 96%CPU (0avgtext+0avgdata 390336maxresident)k
+../../Transified/SEU181+2.p fail
+../../Transified/SEU182+2.p fail
+../../Transified/SEU183+2.p fail
+../../Transified/SEU184+2.p fail
+../../Transified/SEU185+2.p fail
+../../Transified/SEU186+2.p success 0.02 0.00system 0:00.14elapsed 25%CPU (0avgtext+0avgdata 17792maxresident)k
+../../Transified/SEU187+2.p success 1.40 0.00system 0:01.57elapsed 89%CPU (0avgtext+0avgdata 49728maxresident)k
+../../Transified/SEU188+2.p success 0.11 0.00system 0:00.22elapsed 53%CPU (0avgtext+0avgdata 28192maxresident)k
+../../Transified/SEU189+2.p success 0.02 0.00system 0:00.12elapsed 16%CPU (0avgtext+0avgdata 15760maxresident)k
+../../Transified/SEU190+2.p fail
+../../Transified/SEU191+2.p fail
+../../Transified/SEU192+2.p success 230.11 3.45system 3:52.25elapsed 100%CPU (0avgtext+0avgdata 2006672maxresident)k
+../../Transified/SEU193+2.p fail
+../../Transified/SEU194+2.p success 0.02 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 15760maxresident)k
+../../Transified/SEU195+2.p fail
+../../Transified/SEU196+2.p success 6.26 0.10system 0:06.86elapsed 92%CPU (0avgtext+0avgdata 346624maxresident)k
+../../Transified/SEU197+2.p success 229.27 4.60system 3:54.24elapsed 99%CPU (0avgtext+0avgdata 2326960maxresident)k
+../../Transified/SEU198+2.p success 169.21 3.02system 2:52.51elapsed 99%CPU (0avgtext+0avgdata 3910544maxresident)k
+../../Transified/SEU199+2.p fail
+../../Transified/SEU200+2.p success 6.25 0.12system 0:06.83elapsed 93%CPU (0avgtext+0avgdata 410992maxresident)k
+../../Transified/SEU201+2.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 16656maxresident)k
+../../Transified/SEU202+2.p fail
+../../Transified/SEU203+2.p success 220.70 4.48system 3:45.26elapsed 99%CPU (0avgtext+0avgdata 2081344maxresident)k
+../../Transified/SEU204+2.p success 138.28 2.09system 2:20.57elapsed 99%CPU (0avgtext+0avgdata 3034512maxresident)k
+../../Transified/SEU205+2.p fail
+../../Transified/SEU206+2.p success 223.60 3.10system 3:46.97elapsed 99%CPU (0avgtext+0avgdata 2581232maxresident)k
+../../Transified/SEU207+2.p fail
+../../Transified/SEU208+2.p success 221.10 4.28system 3:45.60elapsed 99%CPU (0avgtext+0avgdata 2083168maxresident)k
+../../Transified/SEU209+2.p success 138.78 2.06system 2:21.15elapsed 99%CPU (0avgtext+0avgdata 3215584maxresident)k
+../../Transified/SEU210+2.p success 60.72 1.17system 1:02.59elapsed 98%CPU (0avgtext+0avgdata 1662368maxresident)k
+../../Transified/SEU211+2.p fail
+../../Transified/SEU212+2.p success 7.49 0.20system 0:08.08elapsed 95%CPU (0avgtext+0avgdata 413296maxresident)k
+../../Transified/SEU213+2.p fail
+../../Transified/SEU214+2.p fail
+../../Transified/SEU215+2.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 16864maxresident)k
+../../Transified/SEU216+2.p fail
+../../Transified/SEU217+2.p success 0.01 0.00system 0:00.13elapsed 18%CPU (0avgtext+0avgdata 16784maxresident)k
+../../Transified/SEU218+2.p fail
+../../Transified/SEU219+2.p success 0.03 0.00system 0:00.15elapsed 20%CPU (0avgtext+0avgdata 17936maxresident)k
+../../Transified/SEU220+2.p success 0.02 0.00system 0:00.14elapsed 19%CPU (0avgtext+0avgdata 17904maxresident)k
+../../Transified/SEU221+2.p success 30.02 0.62system 0:31.26elapsed 98%CPU (0avgtext+0avgdata 1502784maxresident)k
+../../Transified/SEU222+2.p fail
+../../Transified/SEU223+2.p success 0.02 0.00system 0:00.13elapsed 21%CPU (0avgtext+0avgdata 16864maxresident)k
+../../Transified/SEU224+2.p success 0.02 0.00system 0:00.16elapsed 16%CPU (0avgtext+0avgdata 16880maxresident)k
+../../Transified/SEU225+2.p success 0.02 0.01system 0:00.14elapsed 22%CPU (0avgtext+0avgdata 16832maxresident)k
+../../Transified/SEU226+2.p fail
+../../Transified/SEU227+2.p fail
+../../Transified/SEU228+2.p fail
+../../Transified/SEU229+2.p fail
+../../Transified/SEU230+2.p success 0.02 0.00system 0:00.14elapsed 18%CPU (0avgtext+0avgdata 16896maxresident)k
+../../Transified/SEU231+2.p fail
+../../Transified/SEU232+2.p fail
+../../Transified/SEU233+2.p fail
+../../Transified/SEU234+2.p success 4.67 0.09system 0:05.01elapsed 95%CPU (0avgtext+0avgdata 398256maxresident)k
+../../Transified/SEU235+2.p fail
+../../Transified/SEU236+2.p success 0.63 0.01system 0:00.75elapsed 86%CPU (0avgtext+0avgdata 91520maxresident)k
+../../Transified/SEU237+2.p fail
+../../Transified/SEU238+2.p fail
+../../Transified/SEU239+2.p success 0.04 0.00system 0:00.15elapsed 29%CPU (0avgtext+0avgdata 20992maxresident)k
+../../Transified/SEU240+2.p fail
+../../Transified/SEU241+2.p fail
+../../Transified/SEU242+2.p fail
+../../Transified/SEU243+2.p success 0.50 0.02system 0:00.81elapsed 64%CPU (0avgtext+0avgdata 86128maxresident)k
+../../Transified/SEU244+2.p success 0.03 0.00system 0:00.14elapsed 21%CPU (0avgtext+0avgdata 17920maxresident)k
+../../Transified/SEU245+2.p success 7.52 0.18system 0:08.12elapsed 94%CPU (0avgtext+0avgdata 391872maxresident)k
+../../Transified/SEU246+2.p fail
+../../Transified/SEU247+2.p success 0.03 0.00system 0:00.23elapsed 13%CPU (0avgtext+0avgdata 17968maxresident)k
+../../Transified/SEU248+2.p success 6.24 0.14system 0:06.82elapsed 93%CPU (0avgtext+0avgdata 440224maxresident)k
+../../Transified/SEU249+2.p fail
+../../Transified/SEU250+2.p fail
+../../Transified/SEU251+2.p fail
+../../Transified/SEU252+2.p fail
+../../Transified/SEU253+2.p fail
+../../Transified/SEU254+2.p fail
+../../Transified/SEU255+2.p fail
+../../Transified/SEU256+1.p fail
+../../Transified/SEU256+2.p fail
+../../Transified/SEU257+2.p success 0.11 0.01system 0:00.30elapsed 41%CPU (0avgtext+0avgdata 30656maxresident)k
+../../Transified/SEU258+2.p fail
+../../Transified/SEU259+2.p fail
+../../Transified/SEU260+2.p fail
+../../Transified/SEU261+2.p success 0.02 0.01system 0:00.21elapsed 16%CPU (0avgtext+0avgdata 18992maxresident)k
+../../Transified/SEU262+2.p fail
+../../Transified/SEU263+1.p success 0.29 0.01system 0:00.49elapsed 61%CPU (0avgtext+0avgdata 77664maxresident)k
+../../Transified/SEU263+2.p success 81.42 1.86system 1:23.74elapsed 99%CPU (0avgtext+0avgdata 1687280maxresident)k
+../../Transified/SEU264+1.p success 0.00 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 12944maxresident)k
+../../Transified/SEU264+2.p success 0.02 0.00system 0:00.15elapsed 24%CPU (0avgtext+0avgdata 18960maxresident)k
+../../Transified/SEU265+2.p fail
+../../Transified/SEU266+2.p fail
+../../Transified/SEU267+2.p success 7.10 0.13system 0:07.61elapsed 95%CPU (0avgtext+0avgdata 420240maxresident)k
+../../Transified/SEU268+2.p success 0.63 0.02system 0:00.80elapsed 81%CPU (0avgtext+0avgdata 91520maxresident)k
+../../Transified/SEU269+1.p success 0.11 0.01system 0:00.30elapsed 42%CPU (0avgtext+0avgdata 27920maxresident)k
+../../Transified/SEU269+2.p fail
+../../Transified/SEU270+2.p fail
+../../Transified/SEU271+2.p fail
+../../Transified/SEU272+2.p fail
+../../Transified/SEU273+2.p fail
+../../Transified/SEU274+2.p fail
+../../Transified/SEU275+2.p success 0.74 0.03system 0:00.96elapsed 80%CPU (0avgtext+0avgdata 103328maxresident)k
+../../Transified/SEU276+2.p fail
+../../Transified/SEU277+2.p fail
+../../Transified/SEU278+2.p fail
+../../Transified/SEU279+2.p fail
+../../Transified/SEU280+2.p fail
+../../Transified/SEU281+2.p fail
+../../Transified/SEU282+2.p fail
+../../Transified/SEU283+2.p fail
+../../Transified/SEU284+2.p fail
+../../Transified/SEU285+2.p fail
+../../Transified/SEU286+2.p fail
+../../Transified/SEU287+2.p fail
+../../Transified/SEU288+2.p fail
+../../Transified/SEU289+2.p fail
+../../Transified/SEU290+2.p success 1.72 0.03system 0:01.94elapsed 90%CPU (0avgtext+0avgdata 139408maxresident)k
+../../Transified/SEU291+2.p success 2.52 0.05system 0:02.76elapsed 93%CPU (0avgtext+0avgdata 167616maxresident)k
+../../Transified/SEU292+2.p success 17.10 0.32system 0:18.07elapsed 96%CPU (0avgtext+0avgdata 670144maxresident)k
+../../Transified/SEU293+2.p success 61.46 0.80system 1:02.94elapsed 98%CPU (0avgtext+0avgdata 1552960maxresident)k
+../../Transified/SEU294+2.p success 0.11 0.00system 0:00.28elapsed 43%CPU (0avgtext+0avgdata 26368maxresident)k
+../../Transified/SEU295+2.p success 0.08 0.00system 0:00.19elapsed 43%CPU (0avgtext+0avgdata 26784maxresident)k
+../../Transified/SEU296+2.p fail
+../../Transified/SEU297+2.p fail
+../../Transified/SEU298+2.p fail
+../../Transified/SEU299+2.p fail
+../../Transified/SEU300+2.p fail
+../../Transified/SEU301+2.p fail
+../../Transified/SEU302+1.p fail
+../../Transified/SEU302+2.p fail
+../../Transified/SEU302+3.p fail
+../../Transified/SEU303+2.p success 6.36 0.10system 0:06.83elapsed 94%CPU (0avgtext+0avgdata 319168maxresident)k
+../../Transified/SEU304+2.p success 7.58 0.16system 0:08.08elapsed 95%CPU (0avgtext+0avgdata 356880maxresident)k
+../../Transified/SEU305+2.p success 14.16 0.21system 0:14.74elapsed 97%CPU (0avgtext+0avgdata 438368maxresident)k
+../../Transified/SEU306+2.p success 0.09 0.00system 0:00.21elapsed 46%CPU (0avgtext+0avgdata 27920maxresident)k
+../../Transified/SEU307+2.p success 7.51 0.17system 0:08.02elapsed 95%CPU (0avgtext+0avgdata 355664maxresident)k
+../../Transified/SEU308+2.p success 3.07 0.07system 0:03.30elapsed 95%CPU (0avgtext+0avgdata 252544maxresident)k
+../../Transified/SEU309+2.p success 7.55 0.18system 0:08.09elapsed 95%CPU (0avgtext+0avgdata 358752maxresident)k
+../../Transified/SEU310+2.p fail
+../../Transified/SEU311+2.p fail
+../../Transified/SEU312+2.p fail
+../../Transified/SEU313+2.p fail
+../../Transified/SEU314+2.p fail
+../../Transified/SEU315+2.p fail
+../../Transified/SEU316+2.p fail
+../../Transified/SEU317+2.p fail
+../../Transified/SEU318+2.p fail
+../../Transified/SEU319+2.p success 59.87 0.81system 1:01.39elapsed 98%CPU (0avgtext+0avgdata 1401952maxresident)k
+../../Transified/SEU320+2.p success 7.53 0.16system 0:08.12elapsed 94%CPU (0avgtext+0avgdata 371936maxresident)k
+../../Transified/SEU321+2.p success 0.12 0.00system 0:00.23elapsed 52%CPU (0avgtext+0avgdata 36112maxresident)k
+../../Transified/SEU322+2.p success 10.13 0.20system 0:10.76elapsed 96%CPU (0avgtext+0avgdata 381088maxresident)k
+../../Transified/SEU323+2.p success 7.67 0.20system 0:08.19elapsed 96%CPU (0avgtext+0avgdata 375024maxresident)k
+../../Transified/SEU324+2.p success 7.64 0.31system 0:08.48elapsed 93%CPU (0avgtext+0avgdata 375712maxresident)k
+../../Transified/SEU325+2.p success 2.99 0.06system 0:03.22elapsed 94%CPU (0avgtext+0avgdata 243168maxresident)k
+../../Transified/SEU326+2.p success 7.60 0.14system 0:08.14elapsed 95%CPU (0avgtext+0avgdata 327328maxresident)k
+../../Transified/SEU327+2.p success 7.63 0.12system 0:08.16elapsed 95%CPU (0avgtext+0avgdata 378672maxresident)k
+../../Transified/SEU328+2.p success 7.64 0.14system 0:08.17elapsed 95%CPU (0avgtext+0avgdata 379664maxresident)k
+../../Transified/SEU329+2.p fail
+../../Transified/SEU330+2.p fail
+../../Transified/SEU331+2.p fail
+../../Transified/SEU332+2.p fail
+../../Transified/SEU333+2.p fail
+../../Transified/SEU334+2.p fail
+../../Transified/SEU335+2.p fail
+../../Transified/SEU336+2.p fail
+../../Transified/SEU337+2.p success 7.49 0.17system 0:08.15elapsed 93%CPU (0avgtext+0avgdata 373536maxresident)k
+../../Transified/SEU338+1.p fail
+../../Transified/SEU338+2.p fail
+../../Transified/SEU339+2.p success 11.74 0.38system 0:12.49elapsed 97%CPU (0avgtext+0avgdata 352000maxresident)k
+../../Transified/SEU340+2.p fail
+../../Transified/SEU341+2.p success 0.70 0.01system 0:00.83elapsed 85%CPU (0avgtext+0avgdata 137056maxresident)k
+../../Transified/SEU342+2.p fail
+../../Transified/SEU343+2.p fail
+../../Transified/SEU344+2.p success 7.82 0.20system 0:08.38elapsed 95%CPU (0avgtext+0avgdata 345536maxresident)k
+../../Transified/SEU345+2.p fail
+../../Transified/SEU346+2.p fail
+../../Transified/SEU347+2.p fail
+../../Transified/SEU348+2.p success 61.34 1.29system 1:03.19elapsed 99%CPU (0avgtext+0avgdata 1389472maxresident)k
+../../Transified/SEU349+2.p fail
+../../Transified/SEU350+2.p success 7.63 0.18system 0:08.15elapsed 95%CPU (0avgtext+0avgdata 386512maxresident)k
+../../Transified/SEU351+2.p fail
+../../Transified/SEU352+2.p fail
+../../Transified/SEU353+2.p success 7.56 0.18system 0:08.15elapsed 95%CPU (0avgtext+0avgdata 378528maxresident)k
+../../Transified/SEU354+2.p success 1.48 0.05system 0:01.70elapsed 90%CPU (0avgtext+0avgdata 197840maxresident)k
+../../Transified/SEU355+2.p success 5.22 0.20system 0:05.66elapsed 95%CPU (0avgtext+0avgdata 350544maxresident)k
+../../Transified/SEU356+2.p fail
+../../Transified/SEU357+2.p success 259.38 4.71system 4:23.54elapsed 100%CPU (0avgtext+0avgdata 2447712maxresident)k
+../../Transified/SEU358+2.p fail
+../../Transified/SEU359+2.p success 14.04 0.41system 0:14.84elapsed 97%CPU (0avgtext+0avgdata 361760maxresident)k
+../../Transified/SEU360+2.p fail
+../../Transified/SEU361+2.p success 7.54 0.16system 0:08.07elapsed 95%CPU (0avgtext+0avgdata 354224maxresident)k
+../../Transified/SEU362+2.p success 7.66 0.17system 0:08.20elapsed 95%CPU (0avgtext+0avgdata 350080maxresident)k
+../../Transified/SEU363+2.p fail
+../../Transified/SEU364+2.p fail
+../../Transified/SEU365+2.p fail
+../../Transified/SEU366+2.p fail
+../../Transified/SEU367+2.p fail
+../../Transified/SEU368+2.p fail
+../../Transified/SEU369+2.p fail
+../../Transified/SEU370+2.p fail
+../../Transified/SEU371+2.p success 20.31 0.46system 0:21.30elapsed 97%CPU (0avgtext+0avgdata 1181200maxresident)k
+../../Transified/SEU372+2.p success 9.42 0.20system 0:09.96elapsed 96%CPU (0avgtext+0avgdata 389360maxresident)k
+../../Transified/SEU373+2.p success 4.40 0.07system 0:04.71elapsed 94%CPU (0avgtext+0avgdata 371056maxresident)k
+../../Transified/SEU374+2.p success 0.18 0.00system 0:00.30elapsed 64%CPU (0avgtext+0avgdata 44320maxresident)k
+../../Transified/SEU375+2.p success 0.18 0.00system 0:00.29elapsed 64%CPU (0avgtext+0avgdata 45264maxresident)k
+../../Transified/SEU376+2.p fail
+../../Transified/SEU377+2.p fail
+../../Transified/SEU378+2.p fail
+../../Transified/SEU379+2.p fail
+../../Transified/SEU380+2.p fail
+../../Transified/SEU381+2.p fail
+../../Transified/SEU382+2.p success 0.18 0.00system 0:00.30elapsed 63%CPU (0avgtext+0avgdata 44352maxresident)k
+../../Transified/SEU383+2.p fail
+../../Transified/SEU384+2.p fail
+../../Transified/SEU385+2.p fail
+../../Transified/SEU386+2.p fail
+../../Transified/SEU387+2.p success 14.28 0.22system 0:14.97elapsed 96%CPU (0avgtext+0avgdata 473808maxresident)k
+../../Transified/SEU388+2.p success 77.11 1.08system 1:18.66elapsed 99%CPU (0avgtext+0avgdata 1428960maxresident)k
+../../Transified/SEU389+2.p fail
+../../Transified/SEU390+2.p fail
+../../Transified/SEU391+2.p success 244.47 4.13system 4:08.24elapsed 100%CPU (0avgtext+0avgdata 2813408maxresident)k
+../../Transified/SEU392+2.p fail
+../../Transified/SEU393+2.p fail
+../../Transified/SEU394+2.p success 0.23 0.00system 0:00.35elapsed 65%CPU (0avgtext+0avgdata 51744maxresident)k
+../../Transified/SEU395+2.p success 7.86 0.19system 0:08.43elapsed 95%CPU (0avgtext+0avgdata 394784maxresident)k
+../../Transified/SEU396+2.p fail
+../../Transified/SEU397+2.p fail
+../../Transified/SEU398+2.p fail
+../../Transified/SEU399+2.p fail
+../../Transified/SEU400+2.p fail
+../../Transified/SEU401+2.p fail
+../../Transified/SEU402+2.p fail
+../../Transified/SEU403+2.p fail
+../../Transified/SEU404+2.p fail
+../../Transified/SEU405+2.p fail
+../../Transified/SEU445+1.p success 66.64 1.34system 1:08.39elapsed 99%CPU (0avgtext+0avgdata 3945984maxresident)k
+../../Transified/SEU446+1.p success 63.65 1.81system 1:05.99elapsed 99%CPU (0avgtext+0avgdata 3833888maxresident)k
+../../Transified/SWV001-1.p success 0.02 0.00system 0:00.14elapsed 17%CPU (0avgtext+0avgdata 13808maxresident)k
+../../Transified/SWV365+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13456maxresident)k
+../../Transified/SWV366+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14304maxresident)k
+../../Transified/SWV367+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13584maxresident)k
+../../Transified/SWV369+1.p success 0.00 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14192maxresident)k
+../../Transified/SWV370+1.p success 0.01 0.00system 0:00.11elapsed 13%CPU (0avgtext+0avgdata 14400maxresident)k
+../../Transified/SWV371+1.p success 0.02 0.00system 0:00.19elapsed 12%CPU (0avgtext+0avgdata 16032maxresident)k
+../../Transified/SWV372+1.p success 0.02 0.00system 0:00.20elapsed 16%CPU (0avgtext+0avgdata 16800maxresident)k
+../../Transified/SWV372+2.p fail
+../../Transified/SWV373+1.p success 0.00 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14048maxresident)k
+../../Transified/SWV374+1.p success 0.20 0.01system 0:00.41elapsed 52%CPU (0avgtext+0avgdata 24464maxresident)k
+../../Transified/SWV376+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 14128maxresident)k
+../../Transified/SWV377+1.p success 0.01 0.00system 0:00.23elapsed 6%CPU (0avgtext+0avgdata 14208maxresident)k
+../../Transified/SWV378+1.p success 54.37 0.80system 0:55.86elapsed 98%CPU (0avgtext+0avgdata 1351184maxresident)k
+../../Transified/SWV379+1.p success 4.52 0.06system 0:04.82elapsed 95%CPU (0avgtext+0avgdata 149600maxresident)k
+../../Transified/SWV380+1.p success 6.49 0.04system 0:06.90elapsed 94%CPU (0avgtext+0avgdata 177168maxresident)k
+../../Transified/SWV381+1.p success 0.07 0.02system 0:00.32elapsed 29%CPU (0avgtext+0avgdata 21088maxresident)k
+../../Transified/SWV381+2.p fail
+../../Transified/SWV381+3.p fail
+../../Transified/SWV381+4.p fail
+../../Transified/SWV383+1.p success 0.01 0.00system 0:00.14elapsed 8%CPU (0avgtext+0avgdata 13888maxresident)k
+../../Transified/SWV384+1.p success 0.01 0.00system 0:00.15elapsed 10%CPU (0avgtext+0avgdata 14608maxresident)k
+../../Transified/SWV385+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13872maxresident)k
+../../Transified/SWV386+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13280maxresident)k
+../../Transified/SWV387+1.p success 0.01 0.00system 0:00.12elapsed 9%CPU (0avgtext+0avgdata 13904maxresident)k
+../../Transified/SWV388+1.p success 0.00 0.00system 0:00.10elapsed 8%CPU (0avgtext+0avgdata 13328maxresident)k
+../../Transified/SWV389+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14096maxresident)k
+../../Transified/SWV390+1.p success 0.07 0.00system 0:00.27elapsed 28%CPU (0avgtext+0avgdata 18784maxresident)k
+../../Transified/SWV391+1.p success 0.20 0.01system 0:00.39elapsed 54%CPU (0avgtext+0avgdata 29936maxresident)k
+../../Transified/SWV392+1.p success 0.01 0.00system 0:00.13elapsed 9%CPU (0avgtext+0avgdata 13008maxresident)k
+../../Transified/SWV393+1.p fail
+../../Transified/SWV394+1.p success 83.92 0.77system 1:25.07elapsed 99%CPU (0avgtext+0avgdata 1349360maxresident)k
+../../Transified/SWV395+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13232maxresident)k
+../../Transified/SWV396+1.p success 91.16 1.52system 1:33.05elapsed 99%CPU (0avgtext+0avgdata 1661984maxresident)k
+../../Transified/SWV397+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13888maxresident)k
+../../Transified/SWV398+1.p success 60.27 1.13system 1:01.91elapsed 99%CPU (0avgtext+0avgdata 1264272maxresident)k
+../../Transified/SWV399+1.p success 0.04 0.00system 0:00.21elapsed 20%CPU (0avgtext+0avgdata 17296maxresident)k
+../../Transified/SWV400+1.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 13040maxresident)k
+../../Transified/SWV401+1.p success 2.68 0.04system 0:02.88elapsed 94%CPU (0avgtext+0avgdata 80576maxresident)k
+../../Transified/SWV402+1.p success 0.00 0.00system 0:00.11elapsed 6%CPU (0avgtext+0avgdata 13088maxresident)k
+../../Transified/SWV403+1.p success 0.16 0.00system 0:00.37elapsed 44%CPU (0avgtext+0avgdata 22992maxresident)k
+../../Transified/SWV404+1.p success 265.59 5.65system 4:30.86elapsed 100%CPU (0avgtext+0avgdata 1358272maxresident)k
+../../Transified/SWV405+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 13824maxresident)k
+../../Transified/SWV406+1.p success 0.02 0.00system 0:00.22elapsed 14%CPU (0avgtext+0avgdata 16848maxresident)k
+../../Transified/SWV407+1.p success 62.11 0.58system 1:03.27elapsed 99%CPU (0avgtext+0avgdata 1317376maxresident)k
+../../Transified/SWV408+1.p success 0.01 0.00system 0:00.11elapsed 10%CPU (0avgtext+0avgdata 14400maxresident)k
+../../Transified/SWV408+2.p success 2.33 0.01system 0:02.51elapsed 93%CPU (0avgtext+0avgdata 83440maxresident)k
+../../Transified/SWV409+1.p success 0.52 0.01system 0:00.72elapsed 72%CPU (0avgtext+0avgdata 45664maxresident)k
+../../Transified/SWV410+1.p success 0.00 0.00system 0:00.11elapsed 7%CPU (0avgtext+0avgdata 12992maxresident)k
+../../Transified/SWV411+1.p success 0.00 0.00system 0:00.12elapsed 6%CPU (0avgtext+0avgdata 13776maxresident)k
+../../Transified/SWV412+1.p success 0.00 0.00system 0:00.11elapsed 7%CPU (0avgtext+0avgdata 13120maxresident)k
+../../Transified/SWV413+1.p success 0.00 0.00system 0:00.11elapsed 7%CPU (0avgtext+0avgdata 13136maxresident)k
+../../Transified/SWV414+1.p success 0.01 0.00system 0:00.10elapsed 11%CPU (0avgtext+0avgdata 13488maxresident)k
+../../Transified/SWV415+1.p success 0.03 0.01system 0:00.22elapsed 19%CPU (0avgtext+0avgdata 18352maxresident)k
+../../Transified/SWV415+2.p success 0.04 0.00system 0:00.24elapsed 18%CPU (0avgtext+0avgdata 18736maxresident)k
+../../Transified/SWV416+1.p success 0.02 0.00system 0:00.21elapsed 16%CPU (0avgtext+0avgdata 17952maxresident)k
+../../Transified/SWV416+2.p fail
+../../Transified/SWV417+1.p success 0.02 0.00system 0:00.20elapsed 16%CPU (0avgtext+0avgdata 16240maxresident)k
+../../Transified/SWV919-1.p success 90.16 0.86system 1:31.45elapsed 99%CPU (0avgtext+0avgdata 1668608maxresident)k
+../../Transified/SWV921-1.p success 6.51 0.10system 0:06.95elapsed 95%CPU (0avgtext+0avgdata 395824maxresident)k
+../../Transified/SWV922-1.p fail
+../../Transified/SWV923-1.p fail
+../../Transified/SWV924-1.p fail
+../../Transified/SWV926-1.p success 0.10 0.01system 0:00.23elapsed 51%CPU (0avgtext+0avgdata 27264maxresident)k
+../../Transified/SWV934-1.p fail
+../../Transified/SWV935-1.p fail
+../../Transified/SWV936-1.p fail
+../../Transified/SWV938-1.p success 6.20 0.11system 0:06.85elapsed 92%CPU (0avgtext+0avgdata 324400maxresident)k
+../../Transified/SWV939-1.p success 0.04 0.00system 0:00.18elapsed 27%CPU (0avgtext+0avgdata 17792maxresident)k
+../../Transified/SWV940-1.p fail
+../../Transified/SWV941-1.p fail
+../../Transified/SWV942-1.p fail
+../../Transified/SWV943-1.p success 0.01 0.00system 0:00.17elapsed 11%CPU (0avgtext+0avgdata 15808maxresident)k
+../../Transified/SWV944-1.p fail
+../../Transified/SWV945-1.p fail
+../../Transified/SWV946-1.p fail
+../../Transified/SWV947-1.p fail
+../../Transified/SWV948-1.p success 0.99 0.02system 0:01.22elapsed 83%CPU (0avgtext+0avgdata 141520maxresident)k
+../../Transified/SWV949-1.p success 0.02 0.00system 0:00.13elapsed 15%CPU (0avgtext+0avgdata 15216maxresident)k
+../../Transified/SWV950-1.p fail
+../../Transified/SWV951-1.p success 0.01 0.00system 0:00.15elapsed 12%CPU (0avgtext+0avgdata 15872maxresident)k
+../../Transified/SWV952-1.p fail
+../../Transified/SWV954-1.p success 0.20 0.00system 0:00.41elapsed 50%CPU (0avgtext+0avgdata 50784maxresident)k
+../../Transified/SWV955-1.p success 0.27 0.00system 0:00.49elapsed 57%CPU (0avgtext+0avgdata 80048maxresident)k
+../../Transified/SWV956-1.p fail
+../../Transified/SWV957-1.p success 0.00 0.01system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14256maxresident)k
+../../Transified/SWV958-1.p success 0.26 0.01system 0:00.47elapsed 58%CPU (0avgtext+0avgdata 81968maxresident)k
+../../Transified/SWV959-1.p success 2.16 0.06system 0:02.67elapsed 83%CPU (0avgtext+0avgdata 189728maxresident)k
+../../Transified/SWV960-1.p fail
+../../Transified/SWV961-1.p success 0.09 0.00system 0:00.30elapsed 29%CPU (0avgtext+0avgdata 19408maxresident)k
+../../Transified/SWV962-1.p success 0.02 0.00system 0:00.16elapsed 14%CPU (0avgtext+0avgdata 16864maxresident)k
+../../Transified/SWV963-1.p success 0.09 0.00system 0:00.32elapsed 30%CPU (0avgtext+0avgdata 25952maxresident)k
+../../Transified/SWV964-1.p fail
+../../Transified/SWV965-1.p fail
+../../Transified/SWV966-1.p success 0.01 0.00system 0:00.15elapsed 13%CPU (0avgtext+0avgdata 14800maxresident)k
+../../Transified/SWV967-1.p fail
+../../Transified/SWV968-1.p success 0.01 0.00system 0:00.25elapsed 8%CPU (0avgtext+0avgdata 14784maxresident)k
+../../Transified/SWV969-1.p fail
+../../Transified/SWV970-1.p fail
+../../Transified/SWV971-1.p fail
+../../Transified/SWV972-1.p success 0.15 0.01system 0:00.35elapsed 46%CPU (0avgtext+0avgdata 34000maxresident)k
+../../Transified/SWV974-1.p fail
+../../Transified/SWV975-1.p fail
+../../Transified/SWV976-1.p fail
+../../Transified/SWV977-1.p fail
+../../Transified/SWV978-1.p fail
+../../Transified/SWV979-1.p fail
+../../Transified/SWV980-1.p fail
+../../Transified/SWV981-1.p fail
+../../Transified/SWV982-1.p success 0.02 0.00system 0:00.15elapsed 15%CPU (0avgtext+0avgdata 16912maxresident)k
+../../Transified/SWV983-1.p fail
+../../Transified/SWV984-1.p fail
+../../Transified/SWV987-1.p fail
+../../Transified/SWV988-1.p fail
+../../Transified/SWV989-1.p success 33.00 0.51system 0:34.42elapsed 97%CPU (0avgtext+0avgdata 1247712maxresident)k
+../../Transified/SWV990-1.p success 33.01 0.65system 0:34.43elapsed 97%CPU (0avgtext+0avgdata 943808maxresident)k
+../../Transified/SWV992-1.p fail
+../../Transified/SWV993-1.p fail
+../../Transified/SWV994-1.p fail
+../../Transified/SWV995-1.p success 0.06 0.00system 0:00.20elapsed 38%CPU (0avgtext+0avgdata 19120maxresident)k
+../../Transified/SYN548+1.p success 0.06 0.00system 0:00.21elapsed 35%CPU (0avgtext+0avgdata 25024maxresident)k
+../../Transified/SYN549+1.p success 0.19 0.00system 0:00.32elapsed 61%CPU (0avgtext+0avgdata 29216maxresident)k
+../../Transified/SYN550+1.p success 0.00 0.01system 0:00.14elapsed 13%CPU (0avgtext+0avgdata 14416maxresident)k
+../../Transified/SYN553-1.p success 0.00 0.00system 0:00.14elapsed 8%CPU (0avgtext+0avgdata 13440maxresident)k
+../../Transified/SYN563-1.p success 9.34 0.07system 0:09.66elapsed 97%CPU (0avgtext+0avgdata 204128maxresident)k
+../../Transified/SYN585-1.p success 0.00 0.00system 0:00.13elapsed 8%CPU (0avgtext+0avgdata 13152maxresident)k
+../../Transified/TOP030+1.p fail
+../../Transified/TOP031+1.p fail
+../../Transified/TOP044+1.p fail
+ALG221+1.p fail 263.36 6.70system 5:00.26elapsed 89%CPU (0avgtext+0avgdata 10665728maxresident)k
+ANA001-1.p fail 300.40 1.00system 5:00.16elapsed 100%CPU (0avgtext+0avgdata 3585840maxresident)k
+ANA005-3.p fail 295.50 5.99system 5:00.16elapsed 100%CPU (0avgtext+0avgdata 6747232maxresident)k
+ANA005-4.p fail 266.35 9.01system 5:00.24elapsed 91%CPU (0avgtext+0avgdata 5795888maxresident)k
+ANA005-5.p fail 268.79 6.57system 5:00.21elapsed 91%CPU (0avgtext+0avgdata 6654032maxresident)k
+COL096-2.p fail 263.36 7.66system 5:00.17elapsed 90%CPU (0avgtext+0avgdata 7167888maxresident)k
+COL097-2.p fail 297.22 4.72system 5:00.08elapsed 100%CPU (0avgtext+0avgdata 8576672maxresident)k
+LAT364+1.p fail 245.54 6.47system 5:00.22elapsed 83%CPU (0avgtext+0avgdata 13541360maxresident)k
+SET086-7.p fail 296.89 4.98system 5:00.15elapsed 100%CPU (0avgtext+0avgdata 7075552maxresident)k
+SET087-7.p fail 295.68 6.17system 5:00.03elapsed 100%CPU (0avgtext+0avgdata 7128912maxresident)k
+SET088-7.p fail 264.39 6.44system 5:00.17elapsed 90%CPU (0avgtext+0avgdata 7076896maxresident)k
+SET089-7.p fail 294.35 7.08system 5:00.07elapsed 100%CPU (0avgtext+0avgdata 7332080maxresident)k
+SET091-7.p fail 265.58 5.30system 5:00.18elapsed 90%CPU (0avgtext+0avgdata 6487936maxresident)k
+SET092-7.p fail 295.66 6.00system 5:00.02elapsed 100%CPU (0avgtext+0avgdata 8152096maxresident)k
+SET100-7.p fail 266.69 4.15system 5:00.19elapsed 90%CPU (0avgtext+0avgdata 7743712maxresident)k
+SET109-7.p fail 296.82 4.98system 5:00.17elapsed 100%CPU (0avgtext+0avgdata 6647632maxresident)k
+SET110-7.p fail 265.24 5.61system 5:00.22elapsed 90%CPU (0avgtext+0avgdata 6553936maxresident)k
+SET111-7.p fail 267.20 3.51system 5:00.20elapsed 90%CPU (0avgtext+0avgdata 7558016maxresident)k
+SET112-7.p fail 297.40 4.05system 5:00.17elapsed 100%CPU (0avgtext+0avgdata 7533408maxresident)k
+SET113-7.p fail 265.08 5.71system 5:00.18elapsed 90%CPU (0avgtext+0avgdata 7589248maxresident)k
+SET114-7.p fail 265.08 5.48system 5:00.21elapsed 90%CPU (0avgtext+0avgdata 7532000maxresident)k
+SET115-7.p fail 264.87 6.08system 5:00.20elapsed 90%CPU (0avgtext+0avgdata 6829184maxresident)k
+SET116-7.p fail 264.87 6.08system 5:00.20elapsed 90%CPU (0avgtext+0avgdata 6829184maxresident)k
+SWV004-1.p fail 297.20 4.90system 5:00.14elapsed 100%CPU (0avgtext+0avgdata 1982816maxresident)k
+SWV368+1.p fail 265.55 5.16system 5:00.20elapsed 90%CPU (0avgtext+0avgdata 7580224maxresident)k
+SWV375+1.p fail 264.00 6.88system 5:00.21elapsed 90%CPU (0avgtext+0avgdata 7684688maxresident)k
+SWV382+1.p fail 265.48 5.48system 5:00.22elapsed 90%CPU (0avgtext+0avgdata 5315760maxresident)k
+SWV417+2.p fail 296.82 4.91system 4:59.98elapsed 100%CPU (0avgtext+0avgdata 7360848maxresident)k
