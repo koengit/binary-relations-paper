@@ -371,9 +371,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 % ------------------------------------------------------------------------------
 % - experimental results
 
-%KOEN: what tptp version did you use to generate the lagom stora problems?
-
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \setlength{\tabcolsep}{5.2pt}
 \begin{tabular}{lr||rrr||rrr||rrr||rrr}
@@ -391,12 +389,16 @@ maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & 
 \label{fig:overview}
 \end{figure}
 
+%KOEN: what tptp version did you use to generate the lagom stora problems?
+
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options) and Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), and two SMT-solvers, Z3 4.4.2 \cite{Z3} and CVC4 1.4 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem.
 %NOT TRUE ANYMORE:
 %For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses %the time limit to control its search strategies.
 
 We started from a set of 11674 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work.
+
+The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
 \begin{figure}[t]
 \begin{center}
