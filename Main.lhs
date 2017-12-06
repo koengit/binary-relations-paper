@@ -282,9 +282,9 @@ R_ symmetric     -->   §
 R_ transitive    §
 T[.. R(x,y) ..]  §     T[.. rep(x)=rep(y) ..]
 \end{code}
-To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactically; in the transformation, all occurrences of |e| should be replaced.
+To explain the above notation: We have two theories, one on the left-hand side of the arrow, and one on the right-hand side of the arrow. The proposed transformation transforms any theory that looks like the left-hand side into a theory that looks like the right-hand side. We write |T[.. e ..]| for theories in which |e| occurs syntactically; in the transformation, all occurrences of |e| should be replaced.
 
-We call the above transformation {\em equalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
+We call the above transformation {\em equalification}. This transformation may be beneficial because reasoning about the equivalence relation now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have model of the LHS theory.
 
@@ -292,7 +292,7 @@ In the transformation, we also remove the axioms for reflexivity, symmetry, and 
 
 \paragraph{Pequalification} There are commonly occurring binary relations called {\em partial equivalence relations} that almost behave as equivalence relations, but not quite. In particular, they do not have to obey the axiom of reflexivity. Can we do something for these too?
 
-It turns out that a set with a partial equivalence relation |R_| can be partitioned into two subsets: (1) one subset on which |R_| is an actual equivalence relation, and (2) one subset of elements which are not related to anything, not even themselves.
+A set with a partial equivalence relation |R_| can be partitioned into two subsets: (1) one subset on which |R_| is an actual equivalence relation, and (2) one subset of elements which are not related to anything, not even themselves.
 
 Thus, an alternative way of handling partial equivalence relations |R_| is to create two new symbols, |rep_| and |P_|, and replace all occurrences of |R_| with a formula involving |rep_| and |P|:
 \begin{code}
@@ -339,7 +339,7 @@ R_ asymmetric       -->   forall x,y. rep(x)=rep(y) => x=y
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
-However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and ordification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (There may be a practical performance difference, which is not something we have investigated.)
+However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and ordification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (We found no performance difference in practice between these choices.)
 
 \paragraph{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
 
@@ -526,7 +526,7 @@ We compared ordification and transification on the 328 problems containing total
 
 \section{Discussion, Conclusions, and Future Work}
 
-We have presented 5 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, transification, ordification, and maxification. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
+We have presented 6 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, ordification, maxification, transification, and treflexification. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
 
 For users of reasoning tools that create their own theories, it is clear that they should consider using one of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, there exist 18 TPTP problems that are now solvable that weren't previously.
 
@@ -535,10 +535,6 @@ For implementers of reasoning tools, our conclusions are less clear. For some co
 \paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper. In personal communication with some of the authors, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
 
 \paragraph{Future Work} There is a lot of room for improvements and other future work. There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective. But there are also other, non-transitive relations that are of interest.
-
-Ordification uses total orders as the base-transformation, and treats strict total orders as negated total orders. We would like to investigate more in which cases it may be beneficial to treat strict total orders differently from total orders, and when to use $<$ on |RR| instead of |<=|.
-
-We would also like to investigate the effect of our transformations on Satisfiable and CounterSatisfiable problems. What would be the effect on finite model finders? Some transformations change the number of variables per clause, which will influence the performance of finite model finders. What happens to saturation-based tools? Is it easier or harder to saturate a problem after transformation? Evaluating these questions is hard, because we did not find many satisfiable problems in the TPTP that contained relevant relations (see Fig.\ \ref{fig:occurs2}). Instead, we considered using Unsatisfiable problems, and measuring the time it takes to show the absence of models up to a certain size.
 
 There are other kinds of relations than binary relations. For example, we can have an ternary relation that behaves as an equivalence relation in its 2nd and 3rd argument. An alternative treatment of this relation would be to introduce a binary function symbol |rep_|. We do not know whether or not this occurs often, and if it is a good idea to treat higher-arity relational symbols specially in this way.
 
