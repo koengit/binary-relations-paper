@@ -1,21 +1,25 @@
-\documentclass{article}
-\usepackage{onecolceurws}
+\documentclass[smallcondensed,draft]{svjour3}
+%                             ^^^^^ replace draft with final for final version
+%\usepackage{onecolceurws} % removed by Koen because it interacts with svjour3
+%\usepackage{subcaption} % removed by Koen because svjour3 complained
+\usepackage{anyfontsize} % added by Koen because some font sizes were not available
 \usepackage{amssymb}
 \usepackage{mathabx}
-\usepackage{subcaption}
 \usepackage{graphicx}
 %include polycode.fmt
 
 \def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
 
-\renewcommand{\paragraph}[1]{\vspace{0.2cm}\noindent {\bf #1} $\;\;$}
+%\renewcommand{\paragraph}[1]{\vspace{0.2cm}\noindent {\bf #1} $\;\;$}
 
 % ------------------------------------------------------------------------------
 % - title and stuff
 
+\journalname{Journal of Automated Reasoning}
+
 \title{Handling Common Transitive Relations\\in First-Order Automated Reasoning}
 
-%\titlerunning{Handling Common Transitive Relations}
+\titlerunning{Handling Common Transitive Relations}
 
 \author{
   Koen Claessen
@@ -23,11 +27,11 @@
   Ann Lilliestr{\"o}m
 }
 
-%\authorrunning{Claessen, Lilliestr{\"o}m}
+\authorrunning{Claessen, Lilliestr{\"o}m}
 
-\institution{
-  Chalmers University of Technology\\
-  {\sf \{koen,annl\}@@chalmers.se}
+\institute{
+  Chalmers University of Technology
+  \email{\{koen,annl\}@@chalmers.se}
 }
 
 \begin{document}
