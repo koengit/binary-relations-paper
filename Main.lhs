@@ -1,5 +1,4 @@
-\documentclass[smallcondensed,draft]{svjour3}
-%                             ^^^^^ replace draft with final for final version
+\documentclass[smallcondensed,final]{svjour3}
 %\usepackage{onecolceurws} % removed by Koen because it interacts with svjour3
 %\usepackage{subcaption} % removed by Koen because svjour3 complained
 \usepackage{anyfontsize} % added by Koen because some font sizes were not available
@@ -30,7 +29,7 @@
 \authorrunning{Claessen, Lilliestr{\"o}m}
 
 \institute{
-  Chalmers University of Technology
+  Chalmers University of Technology,
   \email{\{koen,annl\}@@chalmers.se}
 }
 
@@ -93,7 +92,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em reflexive, transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain binary relations.
+We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain types of binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
@@ -101,7 +100,7 @@ We present a number of alternative ways of handling transitive binary relations 
 
 \section{Introduction}
 
-Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these two advantages by far outweigh the cost of implementation.
+Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these clearly motivate the cost of implementation.
 
 Other common concepts for which there exists built-in support in many tools are associative, commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
 
@@ -129,7 +128,7 @@ The intuition here is that |rep_| is now the representative function of the rela
 
 In general, when considering alternative treatments, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
 
-For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) general {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
+For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) general {\em transitive relations} and {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
@@ -179,6 +178,8 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \label{fig:occurs}
 \end{figure}
 
+\comment{TODO: update figures in Fig.\ref{fig:occurs} for new TPTP}
+
 When we investigated the number of occurrences of these properties in a subset of the TPTP problem library\footnote{For the statistics in this paper, we decided to only look at unsorted TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained one binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties, but were instead instances of two new properties. Both of these were quite esoteric and did not seem to have a standard name in mathematics.
 
 The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and also occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of {\em total} relations is the same as for {\em asymmetric} relations; if a relation is total, the negated relation is asymmetric and vice-versa.
@@ -189,12 +190,13 @@ Using this notation, we can for example say that |total| is equivalent with |asy
 
 Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. (However, as we have already seen, some of these are equivalent to others.)
 
-This paper will look at 5 kinds of different binary relations, which are defined as combinations of basic properties:
+This paper will look at 6 kinds of different binary relations, which are defined as combinations of basic properties:
 \begin{code}
 equivalence relation            ==  {reflexive, symmetric, transitive}
 partial equivalence relation    ==  {symmetric, transitive}
 total order                     ==  {total, antisymmetric, transitive}
 strict total order              ==  {antisymmetric^~, asymmetric, transitive}
+transitive relation             ==  {transitive}
 reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
 As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
@@ -213,6 +215,8 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \caption{Number of occurrences of binary relations in TPTP, divided up into Theorem/Unsatisfiable/Unknown/Open problems + Satisfiable/CounterSatisfiable problems. }
 \label{fig:occurs2}
 \end{figure}
+
+\comment{TODO: update figures in Fig.\ref{fig:occurs2} for transitive relations AND new TPTP}
 
 In Fig.\ \ref{fig:occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
 
