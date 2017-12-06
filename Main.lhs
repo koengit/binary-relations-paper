@@ -16,9 +16,9 @@
 
 \journalname{Journal of Automated Reasoning}
 
-\title{Handling Common Transitive Relations\\in First-Order Automated Reasoning}
+\title{Handling Transitive Relations\\in First-Order Automated Reasoning}
 
-\titlerunning{Handling Common Transitive Relations}
+\titlerunning{Handling Transitive Relations}
 
 \author{
   Koen Claessen
@@ -29,7 +29,7 @@
 \authorrunning{Claessen, Lilliestr{\"o}m}
 
 \institute{
-  Chalmers University of Technology,
+  Chalmers University of Technology, Gothenburg, Sweden,
   \email{\{koen,annl\}@@chalmers.se}
 }
 
