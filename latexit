@@ -3,7 +3,7 @@
 if lhs2TeX Main.lhs > main.tex
 then
 
-if echo q | pdflatex main.tex
+if pdflatex main.tex < /dev/null
 then
 	bibtex main
 	pdflatex main.tex	&& ( grep -s "Rerun to get" main.log && pdflatex main.tex || true )
@@ -11,12 +11,14 @@ then
         echo "+++ lhs2TeX, pdflatex completed"
 else
 
+echo ""
 echo "*** pdflatex failed"
 
 fi
 
 else
 
+echo ""
 echo "*** lhs2tex failed"
 
 fi
