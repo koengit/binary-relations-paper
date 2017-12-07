@@ -164,14 +164,14 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
-4945 & reflexive \\
-2082 & euclidean \\
-1874 & antisymmetric \\
-1567 & transitive \\
-784  & asymmetric \\
-784  & total \\
-388  & symmetric \\
-3    & coreflexive \\
+6598 & reflexive \\
+2976 & transitive \\
+2483 & antisymmetric \\
+2136 & euclidean \\
+2108 & total \\
+2108 & asymmetric \\
+1487 & symmetric \\
+80 & coreflexive \\
 (163 & other)
 \end{tabular}
 \end{center}
@@ -180,9 +180,7 @@ Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of 
 \label{fig:occurs}
 \end{figure}
 
-\comment{TODO: update figures in Fig.\ref{fig:occurs} for new TPTP}
-
-When we investigated the number of occurrences of these properties in a subset of the TPTP problem library\footnote{For the statistics in this paper, we decided to only look at unsorted TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained one binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties, but were instead instances of two new properties. Both of these were quite esoteric and did not seem to have a standard name in mathematics.
+When we investigated the number of occurrences of these properties in a subset of the TPTP problem library (v7.0.0)\footnote{For the statistics in this paper, we decided to only look at unsorted TPTP problems with 10.000 clauses or less.} \cite{tptp}, we ended up with the table in Fig.\ \ref{fig:occurs}. The table was constructed by gathering all clauses from all TPTP problems (after clausification), and keeping every clause that only contained one binary relation symbol and, possibly, equality. Each such clause was then categorized as an expression of a basic property of a binary relation symbol. We found only 163 such clauses that did not fit any of the 8 properties we chose as basic properties, but were instead instances of two new properties. Both of these were quite esoteric and did not seem to have a standard name in mathematics.
 
 The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and also occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of {\em total} relations is the same as for {\em asymmetric} relations; if a relation is total, the negated relation is asymmetric and vice-versa.
 
@@ -207,18 +205,17 @@ As a side note, in mathematics, strict total orders are sometimes defined using 
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{rl}
-430+18 & equivalence relations \\
-181+7 & partial equivalence relations \\
-328+7 & (strict) total orders \\
-573+20 & reflexive, transitive relations (excluding the above)\\
+500+48 & equivalence relations \\
+154+2 & partial equivalence relations \\
+250+4 & (strict) total orders \\
+806+15 & reflexive, transitive relations (excluding the above) \\
+1128+69 & transitive relations (excluding the above) \\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
 \caption{Number of occurrences of binary relations in TPTP, divided up into Theorem/Unsatisfiable/Unknown/Open problems + Satisfiable/CounterSatisfiable problems. }
 \label{fig:occurs2}
 \end{figure}
-
-\comment{TODO: update figures in Fig.\ref{fig:occurs2} for transitive relations AND new TPTP}
 
 In Fig.\ \ref{fig:occurs2}, we display the number of binary relations we have found in (our subset of) the TPTP for each category. The next section describes how we found these.
 
