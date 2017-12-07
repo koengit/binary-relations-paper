@@ -37,6 +37,17 @@ main =
                 | l <- lines s
                 , let [file,st] = words l
                 ]
+         
+         isSAT file =
+           case M.lookup file stat of
+             Just "CounterSatisfiable" -> True
+             Just "Open" -> False
+             Just "Satisfiable" -> True
+             Just "Theorem" -> False
+             Just "Unknown" -> False
+             Just "Unsatisfiable" -> False
+             x -> error (show (file,x))
+
      putStrLn ("% found " ++ show (M.size stat) ++ " problem files")
   
      putStrLn ""
@@ -63,7 +74,13 @@ main =
      putStrLn ""
      putStrLn ("% TABLE 2")
      sequence_
-       [ putStrLn (show (length rs) ++ " & " ++ rtype ++ " \\\\")
+       [ putStrLn ( show (length [ r | (file,r) <- rs, not (isSAT file) ])
+                 ++ "+"
+                 ++ show (length [ r | (file,r) <- rs, isSAT file ])
+                 ++ " & "
+                 ++ rtype
+                 ++ " \\\\"
+                  )
        | (rtype, _) <- rels
        , Just rs <- [M.lookup rtype rtypes]
        ]
