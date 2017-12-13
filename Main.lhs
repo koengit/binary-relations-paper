@@ -371,14 +371,13 @@ T[..  R(x,y)   ..   §     T[..  Q(x,y) && (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
 
-We call this transformation {\em transification}. It can be applied to any theory that involves a transitivity axiom. We add for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
+We call this transformation {\em transification}. It can be applied to any theory that involves a transitivity axiom. We add for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|. 
 
 Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) Assume we have a model of the RHS theory. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(x,y) & Q(r,x) => Q(r,y)| implies |Q(x,y)|, which then becomes trivial. Thus we also have a model of the LHS theory. 
 
-This transformation can also be seen as performing a resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b.
+To realise why this transformation is sound, we can see it as performing a resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b (or |Q(x,a) => Q(x,b)| when setting |Q(x,y) := R(x,y)|).
 
-
-\paragraph{Treflexification} The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each {\em positive occurrence} of the relational symbol.
+\paragraph{Treflexification} The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It works in a similar way to the transification transformation introduced above. But instead of keeping a literal |Q(x,y)| for each positive literal |R(x,y)|, we simply add the specialized transitivity clause |forall r . Q(r,x) => Q(r,y)|. We also keep a clause for reflexivity.
 
 As such, an alternative way of handling reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |~Q_|:
 \begin{code}
@@ -388,13 +387,11 @@ T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
 
-
 Note that the resulting theory does not blow-up; only clauses with a positive occurrence of |R_| gets one extra literal per occurrence.
 
-We replace any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
+Any positive occurrence of |R(x,y)| is in this transformation replaced with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|. By keeping reflexivity in the transformed theory, we keep completeness.
 
-Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
-
+Similarly to the transification transformation above, |Q_| does not have to be transitive in the RHS theory. Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
 
 
 % ------------------------------------------------------------------------------
