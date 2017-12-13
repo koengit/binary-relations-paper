@@ -536,7 +536,7 @@ We compared ordification and transification on the 328 problems containing total
 
 \section{Discussion and Conclusions}
 
-We have presented 6 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, ordification, maxification, transification, and treflexification. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
+We have presented 6 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, ordification, maxification, detransification, and detransification with reflexivity. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
 
 For users of reasoning tools that create their own theories, it is clear that they should consider using one of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, there exist 18 TPTP problems that are now solvable that weren't previously.
 
