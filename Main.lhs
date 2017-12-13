@@ -355,47 +355,40 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 
 (It may be the case that maxification can also be used to express orders that are weaker than total orders. At the time of this writing, we have not figured out how to do this.)
 
-%   ------------------------------------------------------------------------------
-%   - transitive reflexive
+% ------------------------------------------------------------------------------
+% - detransification
 
 \section{Handling transitive relations}
 
-The treatments introduced so far all make use of built-in concepts of the reasoning tool, and they can be applied only to special cases of transitive relations. In this section we propose a different approach. Theories including a transitivity axiom are transformed into theories without that transitivity axiom. Instead, transitivity is specialized at each positive occurrence of the relational symbol. These transformations may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''. The transformations only work on problems where every occurrence of |R_| is either positive or negative (and not both, such as under an equivalence operator). If this is not the case, the problem has to be translated into one where this is the case. This can for example be done by means of clausification.
+The treatments introduced so far all make use of built-in concepts of the reasoning tool, and they can be applied only to special cases of transitive relations. In this section we propose a more general approach, in which theories with a transitivity axiom are transformed into theories without that transitivity axiom. To this end, transitivity is specialized at each {\em positive occurrence} of the relational symbol. Such transformations may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''.
 
-\paragraph{Transification} 
+The transformations presented in this subsection only work on problems where every occurrence of |R_| is either positive or negative (and not both, such as under an equivalence operator). If this is not the case, the problem has to be translated into one where this is the case. This can for example be done by means of clausification.
 
-An alternative way of handling transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with formulas involving |Q_|; the negative occurrences are simply replaced by |~Q_|:
+\paragraph{Detransification} 
+A general way of handling any transitive relation |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_| (see below); the negative occurrences are simply replaced by |~Q_|:
 \begin{code}
-R_ transitive       -->   
-T[..  R(x,y)   ..   §     T[..  Q(x,y) && (forall r . Q(r,x) => Q(r,y))  ..
-      ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
+R_ transitive       §   
+T[..  R(x,y)   ..   -->   T[..  ( Q(x,y) && (forall r . Q(r,x) => Q(r,y)) )  ..
+      ~R(x,y)  ..]  §           ~Q(x,y)                                      ..]
 \end{code}
+We call this transformation {\em detransification}. It can be applied to any theory that involves a transitivity axiom. The transformation removes the transitivity, but adds for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
 
-We call this transformation {\em transification}. It can be applied to any theory that involves a transitivity axiom. We add for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
+Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is transitive. Now, set |Q(x,y) := R(x,y)|. We have to show that |R(x,y)| implies |Q(x,y)|, which is trivial, and |forall r . Q(r,x) => Q(r,y)|, which is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) Assume we have a model of the RHS theory. Now, set |R(x,y) := Q(x,y) && forall r . Q(r,x) => Q(r,y)|. We have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |Q(x,y) && forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which then becomes trivial. |R_| is also transitive (by transitivity of implication). Thus we also have a model of the LHS theory. 
 
-Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) Assume we have a model of the RHS theory. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(x,y) & Q(r,x) => Q(r,y)| implies |Q(x,y)|, which then becomes trivial. Thus we also have a model of the LHS theory. 
+Detransification can be seen as performing one resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b.
 
-This transformation can also be seen as performing a resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b.
-
-
-\paragraph{Treflexification} The last transformation we present is designed as an alternative treatment for any relation that is reflexive and transitive. It does not make use of any built-in concept in the tool. Instead, it transforms theories with a transitivity axiom into theories without that transitivity axiom. Instead, transitivity is {\em specialized} at each {\em positive occurrence} of the relational symbol.
-
-As such, an alternative way of handling reflexive, transitive relations |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_|; the negative occurrences are simply replaced by |~Q_|:
+\paragraph{Detransification with reflexivity} Detransification can be simplified for transitive relations that are also reflexive. In particular, we can simplify the formula with which we replace positive occurrences of the relation symbol |R_|:
 \begin{code}
 R_ reflexive        §     Q_ reflexive
 R_ transitive       -->   
 T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
+We now {\em replace} any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|. The part that we leave out here (namely |Q(x,y)|) is implicitly implied by the fact that |R_| is transitive.
 
+It is possible to apply the above transformation directly on clausified problems without the risk of a blow-up in size; only clauses with a positive occurrence of |R_| get one extra literal per occurrence.
 
-Note that the resulting theory does not blow-up; only clauses with a positive occurrence of |R_| gets one extra literal per occurrence.
-
-We replace any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
-
-Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
-
-
+The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
 
 % ------------------------------------------------------------------------------
 % - experimental results
