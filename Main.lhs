@@ -73,6 +73,8 @@
 
 %format rep  = "rep\hspace{-0.1cm}"
 %format rep_ = "rep"
+%format repinv  = "rep^{-1}\hspace{-0.1cm}"
+%format repinv_ = "rep^{-1}"
 
 %format max  = "max\hspace{-0.1cm}"
 %format max_ = "max"
@@ -321,7 +323,7 @@ rep_ : A -> RR
 We then replace all occurrences of |R_| with a formula involving |rep_| in the following way:
 \begin{code}
 R_ total          §
-R_ antisymmetric  -->   forall x,y. rep(x)=rep(y) => x=y
+R_ antisymmetric  -->   rep_ injective
 R_ transitive     §
 T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
@@ -331,10 +333,20 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 
 \paragraph{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. The transformation can therefore be used for any tool that supports |QQ| or |RR| or both, and should choose whichever comparison operator is cheapest if there is a choice. Using integer arithmetic would however not have been correct.
 
+\paragraph{Note on injectivity} The transformation requires an axiom that expresses that |rep_| is injective. There are two natural ways in which this can be expressed. Here is a direct axiom:
+\begin{code}
+forall x,y. rep(x)=rep(y) => x=y
+\end{code}
+And here is an axiom that makes use of a helper function |repinv_| which plays the role of |rep_|s inverse:
+\begin{code}
+forall x. repinv(rep(x))=x
+\end{code}
+These two are logically equivalent. %TODO: say which one works better
+
 \paragraph{Note on strict total orders} One may have expected to have a transformation specifically targeted to strict total orders, i.e. something like:
 \begin{code}
 R_ antisymmetric^~  §          
-R_ asymmetric       -->   forall x,y. rep(x)=rep(y) => x=y
+R_ asymmetric       -->   rep_ injective
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
