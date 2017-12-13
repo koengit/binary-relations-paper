@@ -544,7 +544,7 @@ For implementers of reasoning tools, our conclusions are less clear. For some co
 
 \section{Future Work}
 
-There is a lot of room for improvements and other future work. There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective. But there are also other, non-transitive relations that are of interest.
+There are many other relations that are more or less common that could benefit from an alternative treatment like the transformations described in this paper. In particular, maxification seems to be an idea that could be applied to binary relations that are weaker than total orders, which may make this treatment more effective. But there are also other, non-transitive relations that are of interest.
 
 There are other kinds of relations than binary relations. For example, we can have an ternary relation that behaves as an equivalence relation in its 2nd and 3rd argument. An alternative treatment of this relation would be to introduce a binary function symbol |rep_|. We do not know whether or not this occurs often, and if it is a good idea to treat higher-arity relational symbols specially in this way.
 
