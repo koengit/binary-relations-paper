@@ -267,7 +267,8 @@ In order to avoid generating inconsistent sets |{prop1, .., propn}| (that would 
 
 This procedure generates a complete list of minimal implications. It works well in practice, especially if all guesses made by the SAT-solver are maximized according to their size. The vast majority of the time is spent on the implication proofs, and no significant time is spent in the SAT-solver.
 
-To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and then compute which other properties they imply, using the pre-generated table. In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties.
+To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and then compute which other properties they imply, using the pre-generated table. % TODO the below text is new, Koen please read  
+Certain properties can be derived for a binary relation |R_2| if |R_2| is implied by another binary relation |R_1|, and |R_1| has that property. This holds for reflexivity, totality and seriality. Similarly, if |R_2| is antisymmetric or coreflexive, the same property can be derived for |R_1|. When having derived a new property of a relation in this way, we iterate the procedure of finding implied properties using the precomputed table until no new information is gained.  In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties. 
 
 In the following three sections, we describe how to deal with equivalence relations, total orders, and general transitive relations, respectively.
 
@@ -306,6 +307,10 @@ Here, |P_| is the predicate that indicates the subset on which |R_| behaves as a
 We call this transformation {\em pequalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be a representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. This |R_| is symmetric and transitive, and therefore we have model of the LHS theory.
+% TODO the below text is new, Koen please read  
+Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both x and y are in the set defined by |P_|. (This holds also when x equals y). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
+
+
 
 % ------------------------------------------------------------------------------
 % - dealing with total orders
@@ -402,31 +407,57 @@ Similarly to the transification transformation above, |Q_| does not have to be t
 % - experimental results
 
 \begin{figure}[t]
-\begin{center}
 \setlength{\tabcolsep}{5.2pt}
-\begin{tabular}{lr||rrr||rrr||rrr||rrr}
-  & & \multicolumn{3}{c}{E} & \multicolumn{3}{c}{Vampire}&\multicolumn{3}{c}{Z3} &\multicolumn{3}{c}{CVC4} \\
+\begin{tabular}{lr||rrr||rrr||rrr}
+  & & \multicolumn{3}{c||}{E} & \multicolumn{3}{c||}{Vampire} & \multicolumn{3}{c}{Spass} \\
 \hline 
-equalification & (430) & 422 & +4  & \underline{-33} & 428 & +0  & -2 & 362 & +50 & \underline{-3} & 370 & +18 & \underline{-39} \\
-pequalification & (181) & 96 & +0 & -34 & 93 & {\bf +4} & -9 & 38 & +9 & \underline{-4} & 59 & +1  &  \underline{-11} \\
-transification  & (573) & 324 & +2 & -26 & 308 & {\bf +26} & -11 & 234 & +10 & -46 & 255 & +13 & -42 \\
-ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} \\
-maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} \\
+&&&&&&&&&&\\
+equalification & (477) & 434 & +39  & \underline{-38} & 451 & +24  & -7 & 388 & +54 & \underline{-46}\\
+\hspace{0.1cm}with idempotency &   &   &  +38  & \underline{-56} &  & +24  & -6 &   & +52 & \underline{-43}\\
+pequalification & (656) & 531 & +39 & -69 & 543 &  +29 & -8 & 455 & +56 & \underline{-48}\\
+\hspace{0.1cm}with idempotency &  &  &  +37  & -95  &  &  +30 & -13 & & +54 & \underline{-45}\\
+detransification  & (2048) & 1490 & +49 & -101 & 1559 &  +62 & -21 & 1203 & +126 & -90\\
+\hspace{0.1cm}with reflexivity & (1400) & 1032 & +40 & -89 & 1079 &  +56 & -20 &869 & +67 & -90\\
+ordification & (326) & 272 & n/a & n/a & 295 &  +0& -1 & 243 & n/a & n/a\\
+%ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} & 0 & 0 & 0\\
+%maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} & 0 & 0 & 0\\
 \end{tabular}
-\end{center}
-\vspace{-0.5cm}
-\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses). A {\bf +value} in boldface indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover. An underlined \underline{-value} indicates that time slicing (running both methods in 50\% of the time each) solves a strictly larger superset of problems with that combination of treatment and theorem prover.}
+%\end{center}
+%\vspace{-0.5cm}
 \label{fig:overview}
 \end{figure}
+\begin{figure}[t]
+\setlength{\tabcolsep}{5.2pt}
+\begin{tabular}{lr||rrr||rrr}
+  & & \multicolumn{3}{c||}{Z3} &\multicolumn{3}{c}{CVC4}  \\
+\hline 
+&&&&&&&\\
+equalification & (477) & 362 & +88 & \underline{-7} & 382 & +64 & -20\\
+\hspace{0.1cm}with idempotency &   &   & +86  & -11 &  & +64 & \underline{-22}\\
+pequalification & (656) & 400 &  +88  & -8  & 433 & +74 & -25\\
+\hspace{0.1cm}with idempotency &  & & +83 & \underline{-21}  &  & +73 & -26\\
+detransification  & (2048) & 1196 & +114 & -58 & 1387 & +102 & -31\\
+\hspace{0.1cm}with reflexivity & (1400) & 878 & +66 & -135 & 1011 & +43 & -110\\
+ordification  & (326) & 236 & +50 & -1 & 288 & +1 & -1\\
+%ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} & 0 & 0 & 0\\
+%maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} & 0 & 0 & 0\\
+\end{tabular}
+%\vspace{-0.5cm}
+\caption{Table showing for each theorem prover the number of test problems solved before the transformation,  how many new problems are solved after the transformation, and the number of problems that could be solved before but not after the transformation. (Total number of applicable problems for each transformation in parentheses). A {\bf +value} in boldface indicates that there were hard problems (Rating 1.0) solved with that combination of treatment and theorem prover. An underlined \underline{-value} indicates that time slicing (running both methods in 50\% of the time each) solves a strictly larger superset of problems with that combination of treatment and theorem prover.
+%- All except Trans_Ref for z3 solve problems with rating 1!
+}
+\label{fig:overview}
+\end{figure}
+
 
 %KOEN: what tptp version did you use to generate the lagom stora problems?
 
 \section{Experimental results}
-We evaluate the effects of the different axiomatizations using two different resolution based theorem provers, E 1.9 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options) and Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), and two SMT-solvers, Z3 4.4.2 \cite{Z3} and CVC4 1.4 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem.
+We evaluate the effects of the different axiomatizations using three different resolution based theorem provers, E 2.0 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options), Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), Spass 3.9 \cite{spass}  and two SMT-solvers, Z3 4.5 \cite{Z3} and CVC4 1.5 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem.
 %NOT TRUE ANYMORE:
 %For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses %the time limit to control its search strategies.
 
-We started from a set of 11674 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work.
+We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work.
 
 The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
@@ -447,7 +478,7 @@ The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
 \subsection{Equivalence relations}
 
-Equivalence relations were present in 430 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 430 problems, there are only 23 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining 407 problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
+Equivalence relations were present in 477 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 477 problems, there are only 29 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
 As can be seen in Fig. \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
