@@ -593,6 +593,10 @@ There are other kinds of relations than binary relations. For example, we can ha
 
 Lastly, we would like to look at how these ideas could be used inside a theorem prover; as soon as the prover discovers that a relation is an equivalence relation or a total order, one of our transformations could be applied, on the fly. The details of how to do this remain to be investigated.
 
+\section*{Acknowledgments}
+
+We thank Nicholas Smallbone for discussions and useful suggestions on earlier versions of this paper.
+
 % ------------------------------------------------------------------------------
 % - references
 
