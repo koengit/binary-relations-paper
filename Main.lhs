@@ -65,8 +65,10 @@
 %format P  = "P\hspace{-0.1cm}"
 %format P_ = "P"
 
-%format R  = "R\hspace{-0.1cm}"
-%format R_ = "R"
+%format R   = "R\hspace{-0.1cm}"
+%format R1_ = "R_1"
+%format R2_ = "R_2"
+%format R_  = "R"
 
 %format Q  = "Q\hspace{-0.1cm}"
 %format Q_ = "Q"
@@ -268,7 +270,7 @@ In order to avoid generating inconsistent sets |{prop1, .., propn}| (that would 
 This procedure generates a complete list of minimal implications. It works well in practice, especially if all guesses made by the SAT-solver are maximized according to their size. The vast majority of the time is spent on the implication proofs, and no significant time is spent in the SAT-solver.
 
 To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and then compute which other properties they imply, using the pre-generated table. % TODO the below text is new, Koen please read  
-Certain properties can be derived for a binary relation |R_2| if |R_2| is implied by another binary relation |R_1|, and |R_1| has that property. This holds for reflexivity, totality and seriality. Similarly, if |R_2| is antisymmetric or coreflexive, the same property can be derived for |R_1|. When having derived a new property of a relation in this way, we iterate the procedure of finding implied properties using the precomputed table until no new information is gained.  In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties. 
+Certain properties can be derived for a binary relation |R2_| if |R2_| is implied by another binary relation |R1_|, and |R1_| has that property. This holds for reflexivity, totality and seriality. Similarly, if |R2_| is antisymmetric or coreflexive, the same property can be derived for |R1_|. When having derived a new property of a relation in this way, we iterate the procedure of finding implied properties using the precomputed table until no new information is gained.  In this way, we never have to do any theorem proving in order to detect a binary relation with certain properties. 
 
 In the following three sections, we describe how to deal with equivalence relations, total orders, and general transitive relations, respectively.
 
