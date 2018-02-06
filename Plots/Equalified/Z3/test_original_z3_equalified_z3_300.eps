@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
-%%Title: test_original_z3_equalified_z3_300.eps
-%%Creator: gnuplot 5.0 patchlevel 0
-%%CreationDate: Fri May  6 14:22:05 2016
+%%Title: test_original_Z3_Equalified_Z3_300.eps
+%%Creator: gnuplot 5.0 patchlevel 3
+%%CreationDate: Thu Feb  1 14:21:28 2018
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 410 302
 %%EndComments
@@ -48,7 +48,7 @@ gnudict begin
   } if
 } def
 %
-% Gnuplot Prolog Version 5.0 (Dec 2014)
+% Gnuplot Prolog Version 5.1 (Oct 2015)
 %
 %/SuppressPDFMark true def
 %
@@ -97,8 +97,9 @@ gnudict begin
 /LC7 {1 0.3 0} def
 /LC8 {0.5 0.5 0.5} def
 % Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
 /LTw {PL [] 1 setgray} def
-/LTb {BL [] LCb DL} def
+/LTb {PL [] LCb DL} def
 /LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
 /LT0 {PL [] LC0 DL} def
 /LT1 {PL [2 dl1 3 dl2] LC1 DL} def
@@ -463,17 +464,16 @@ systemdict /pdfmark known not {
   userdict /pdfmark systemdict /cleartomark get put
 } if
 SDict begin [
-  /Title (test_original_z3_equalified_z3_300.eps)
+  /Title (test_original_Z3_Equalified_Z3_300.eps)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 5.0 patchlevel 0)
+  /Creator (gnuplot 5.0 patchlevel 3)
   /Author (annl)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Fri May  6 14:22:05 2016)
+  /CreationDate (Thu Feb  1 14:21:28 2018)
   /DOCINFO pdfmark
 end
 } ifelse
-end
 %
 % Support for boxed text - Ethan A Merritt May 2005
 %
@@ -499,6 +499,10 @@ end
 /Boxing false def
 /textshow { ExtendTextBox Gshow } def
 %
+% redundant definitions for compatibility with prologue.ps older than 5.0.2
+/LTB {BL [] LCb DL} def
+/LTb {PL [] LCb DL} def
+end
 %%EndProlog
 %%Page: 1 1
 gnudict begin
@@ -512,13 +516,16 @@ newpath
 BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
 1.000 UL
 LTb
+LCb setrgbcolor
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 576 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 576 M
 63 0 V
 4184 0 R
@@ -529,6 +536,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 844 M
 31 0 V
 4216 0 R
@@ -544,11 +552,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 1465 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 1465 M
 63 0 V
 4184 0 R
@@ -559,6 +569,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 1732 M
 31 0 V
 4216 0 R
@@ -574,11 +585,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 2354 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 2354 M
 63 0 V
 4184 0 R
@@ -589,6 +602,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 2621 M
 31 0 V
 4216 0 R
@@ -604,11 +618,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 3243 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 3243 M
 63 0 V
 4184 0 R
@@ -619,6 +635,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 3510 M
 31 0 V
 4216 0 R
@@ -634,11 +651,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 4131 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 4131 M
 63 0 V
 4184 0 R
@@ -649,6 +668,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 4399 M
 31 0 V
 4216 0 R
@@ -660,11 +680,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1719 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1719 576 M
 0 63 V
 0 4184 R
@@ -675,6 +697,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1987 576 M
 0 31 V
 0 4216 R
@@ -690,11 +713,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 2608 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 2608 576 M
 0 63 V
 0 4184 R
@@ -705,6 +730,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 2875 576 M
 0 31 V
 0 4216 R
@@ -720,11 +746,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 3497 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 3497 576 M
 0 63 V
 0 4184 R
@@ -735,6 +763,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 3764 576 M
 0 31 V
 0 4216 R
@@ -750,11 +779,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 4386 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 4386 576 M
 0 63 V
 0 4184 R
@@ -765,6 +796,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 4653 576 M
 0 31 V
 0 4216 R
@@ -780,12 +812,14 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 5274 576 M
 0 4184 V
 0 63 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 5274 576 M
 0 63 V
 0 4184 R
@@ -796,6 +830,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 5542 576 M
 0 31 V
 0 4216 R
@@ -805,6 +840,8 @@ LTb
 0 4216 R
 0 -31 V
 stroke
+LTB
+LCb setrgbcolor
 1719 4823 N
 0 -4247 V
 4247 0 V
@@ -819,11 +856,13 @@ LCb setrgbcolor
 5966 4823 L
 stroke
 LTb
+LT2
 LCb setrgbcolor
 5698 576 M
 0 4247 V
 stroke
 LTb
+LT2
 LCb setrgbcolor
 1719 4555 M
 4247 0 V
@@ -839,416 +878,486 @@ LCb setrgbcolor
 4247 0 V
 stroke
 LTb
+LCb setrgbcolor
+LCb setrgbcolor
 1197 2699 M
 currentpoint gsave translate -270 rotate 0 0 moveto
-[ [(Times-Roman) 180.0 0.0 true true 0 (equalified-z3)]
+[ [(Times-Roman) 180.0 0.0 true true 0 (Equalified-Z3)]
 ] -60.0 MCshow
 grestore
+LTb
+LCb setrgbcolor
 3842 126 M
-[ [(Times-Roman) 180.0 0.0 true true 0 (original-z3)]
+[ [(Times-Roman) 180.0 0.0 true true 0 (original-Z3)]
 ] -60.0 MCshow
+LTb
 % Begin plot #1
 1.000 UP
 1.000 UL
 LTb
+LT1
 LCb setrgbcolor
-1900 757 Crs
-1987 757 Crs
-1789 844 Crs
-1900 646 Crs
-1987 757 Crs
-1900 757 Crs
-1987 646 Crs
-2116 757 Crs
-1789 757 Crs
-2057 646 Crs
-1987 757 Crs
-1987 844 Crs
-1789 757 Crs
-1987 757 Crs
-1900 914 Crs
-1987 757 Crs
-1900 757 Crs
-1789 757 Crs
-1789 646 Crs
-2057 973 Crs
-1900 757 Crs
-1900 757 Crs
-1900 844 Crs
-1900 646 Crs
-2057 757 Crs
-2254 1148 Crs
-1900 757 Crs
-1900 757 Crs
-2213 914 Crs
-2057 844 Crs
-2057 757 Crs
-2168 844 Crs
-2835 757 Crs
-1789 757 Crs
-2116 844 Crs
-1900 757 Crs
-1789 646 Crs
-1987 646 Crs
-1987 757 Crs
-1789 646 Crs
-1987 757 Crs
-1900 757 Crs
-1987 646 Crs
-2116 646 Crs
-1789 757 Crs
-2168 973 Crs
-1900 757 Crs
-1900 646 Crs
-2254 844 Crs
-3825 757 Crs
-1789 646 Crs
-2168 1070 Crs
-1900 757 Crs
-2057 757 Crs
-2254 757 Crs
-2355 646 Crs
-2168 844 Crs
-2116 844 Crs
-1789 757 Crs
-1987 914 Crs
-2057 844 Crs
-2213 646 Crs
-2116 1025 Crs
-2057 844 Crs
-2168 646 Crs
-2291 1415 Crs
-2168 844 Crs
-5966 646 Crs
-2213 4257 Crs
-2168 844 Crs
-2254 1212 Crs
-2213 844 Crs
-1987 757 Crs
-2057 1268 Crs
-2057 844 Crs
-1987 973 Crs
-2057 757 Crs
-2459 646 Crs
-1987 1111 Crs
-2168 757 Crs
-2502 646 Crs
-1900 646 Crs
-1987 844 Crs
-1987 757 Crs
-2116 844 Crs
-2116 844 Crs
-2116 914 Crs
-1987 844 Crs
-1900 757 Crs
-1789 646 Crs
-1987 844 Crs
-1900 914 Crs
-1987 757 Crs
-1900 757 Crs
-1789 646 Crs
-1789 646 Crs
-1789 646 Crs
-1789 844 Crs
-1789 646 Crs
-1789 844 Crs
-1900 646 Crs
-1900 757 Crs
-1900 646 Crs
-1900 757 Crs
-1987 646 Crs
-5464 757 Crs
-2213 646 Crs
-1900 757 Crs
-1900 646 Crs
-1900 973 Crs
-2254 1070 Crs
-1789 757 Crs
-1900 646 Crs
-1789 646 Crs
-1789 757 Crs
-1900 757 Crs
-1789 844 Crs
-1900 757 Crs
-1900 646 Crs
-1900 844 Crs
-1900 757 Crs
-1900 757 Crs
-1900 646 Crs
-1789 646 Crs
-1900 757 Crs
-1987 646 Crs
-1900 646 Crs
-1987 844 Crs
-2168 844 Crs
-1900 914 Crs
-1987 973 Crs
-2254 646 Crs
-1900 844 Crs
-2057 844 Crs
-1900 646 Crs
-1789 757 Crs
-1987 973 Crs
-1987 914 Crs
-1900 1070 Crs
-2057 757 Crs
-2057 757 Crs
-1900 914 Crs
-1789 646 Crs
-2291 1025 Crs
-2057 914 Crs
-1987 757 Crs
-1900 646 Crs
-1900 844 Crs
-2116 844 Crs
-1987 757 Crs
-2254 844 Crs
-2213 1495 Crs
-1900 646 Crs
-1789 757 Crs
-2057 757 Crs
-1987 844 Crs
-1987 646 Crs
-1789 914 Crs
-2057 914 Crs
-1987 914 Crs
-2057 757 Crs
-1900 757 Crs
-1987 844 Crs
-1987 757 Crs
-2057 914 Crs
-1789 757 Crs
-2057 914 Crs
-1987 914 Crs
-2057 914 Crs
-1789 757 Crs
-1987 844 Crs
-1987 757 Crs
-1900 757 Crs
-1900 914 Crs
-1987 914 Crs
-1987 646 Crs
-2057 914 Crs
-2057 757 Crs
-1789 914 Crs
-2057 844 Crs
-1987 914 Crs
-2057 844 Crs
-1987 757 Crs
-2057 844 Crs
-1900 757 Crs
-1987 914 Crs
-1900 844 Crs
-2057 757 Crs
-1900 914 Crs
-2057 844 Crs
-2459 1025 Crs
-1789 914 Crs
-1900 757 Crs
-2057 914 Crs
-2057 757 Crs
-1789 757 Crs
-1987 757 Crs
-1987 757 Crs
-1900 914 Crs
-4330 1433 Crs
-2817 1415 Crs
-2057 1572 Crs
-1900 973 Crs
-2057 2026 Crs
-1987 914 Crs
-2057 3029 Crs
-1900 973 Crs
-1987 757 Crs
-1987 757 Crs
-1987 844 Crs
-1987 914 Crs
-1900 757 Crs
-1987 844 Crs
-5966 4823 Crs
-1987 844 Crs
-5966 4823 Crs
-1789 646 Crs
-2481 646 Crs
-1900 646 Crs
-5966 4823 Crs
-5966 4823 Crs
-1900 757 Crs
-1900 757 Crs
-5966 4823 Crs
-5966 4823 Crs
-5966 4823 Crs
-5966 4823 Crs
-1789 844 Crs
-5966 4823 Crs
-1789 914 Crs
-2665 4823 Crs
-1789 844 Crs
-3341 4823 Crs
-1789 757 Crs
-1987 646 Crs
-1900 646 Crs
-4759 646 Crs
-2691 757 Crs
-2558 646 Crs
-1987 914 Crs
-3244 646 Crs
-5966 1636 Crs
-3307 646 Crs
-3016 1700 Crs
-5966 4823 Crs
-5966 646 Crs
-3071 757 Crs
-2116 844 Crs
-1789 646 Crs
-1789 757 Crs
-3361 646 Crs
-5966 1572 Crs
-5966 4823 Crs
-5966 646 Crs
-2481 1148 Crs
-2459 757 Crs
-4721 973 Crs
-5966 646 Crs
-2522 1070 Crs
-2057 1025 Crs
-3461 2712 Crs
-4079 757 Crs
-3005 646 Crs
-4559 646 Crs
-5966 4823 Crs
-5966 757 Crs
-5966 757 Crs
-1987 646 Crs
-1900 757 Crs
-1789 844 Crs
-3852 646 Crs
-4330 646 Crs
-2912 844 Crs
-3966 646 Crs
-2213 646 Crs
-2355 757 Crs
-5463 757 Crs
-2958 646 Crs
-5188 1509 Crs
-2384 646 Crs
-5966 844 Crs
-5966 646 Crs
-5966 4823 Crs
-5966 844 Crs
-5966 757 Crs
-5966 844 Crs
-5966 844 Crs
-5966 757 Crs
-5966 757 Crs
-5966 757 Crs
-5966 757 Crs
-5966 1535 Crs
-5966 1709 Crs
-5966 1338 Crs
-1900 844 Crs
-5966 646 Crs
-1987 844 Crs
-5966 757 Crs
-2576 1656 Crs
-5966 646 Crs
-1900 646 Crs
-3071 757 Crs
-3098 844 Crs
-5966 757 Crs
-1900 757 Crs
-5966 757 Crs
-4885 1070 Crs
-1987 2979 Crs
-1789 3199 Crs
-1900 3376 Crs
-1987 2964 Crs
-5966 757 Crs
-5966 646 Crs
-5966 973 Crs
-5966 973 Crs
-5966 757 Crs
-5966 757 Crs
-3628 757 Crs
-5966 4823 Crs
-5966 4823 Crs
-5966 973 Crs
-5966 973 Crs
-2291 844 Crs
-1900 844 Crs
-5966 4823 Crs
-1900 844 Crs
-2522 646 Crs
-5966 1725 Crs
-5069 2318 Crs
-4485 2269 Crs
-1900 1509 Crs
-5966 2712 Crs
-5966 757 Crs
-4246 757 Crs
-3200 757 Crs
-3903 757 Crs
-3158 844 Crs
-3183 757 Crs
-3625 757 Crs
-3976 844 Crs
-3066 757 Crs
-3680 844 Crs
-3089 757 Crs
-4636 757 Crs
-5273 844 Crs
-2946 844 Crs
-3429 757 Crs
-4006 646 Crs
-2502 757 Crs
-3648 757 Crs
-4048 757 Crs
-4586 757 Crs
-3979 757 Crs
-4123 646 Crs
-3057 646 Crs
-4068 844 Crs
-4272 757 Crs
-4630 844 Crs
-3299 757 Crs
-2291 1626 Crs
-5966 1535 Crs
-5966 1495 Crs
-5966 4823 Crs
-2384 1025 Crs
-5966 757 Crs
-4078 646 Crs
-5966 844 Crs
-4647 844 Crs
-5234 844 Crs
-4957 844 Crs
-5966 844 Crs
-5966 844 Crs
-5966 914 Crs
-5966 757 Crs
-2749 1241 Crs
-2703 1111 Crs
-3692 973 Crs
-3080 1070 Crs
-2994 1398 Crs
-5966 1665 Crs
-5966 1656 Crs
-3229 1241 Crs
-2057 844 Crs
-2057 2026 Crs
-2541 1148 Crs
-2522 844 Crs
-2168 973 Crs
-5042 4823 Crs
-3601 1560 Crs
-2558 844 Crs
-5966 1946 Crs
-2727 1111 Crs
+5966 4823 Pls
+3244 2054 Pls
+5966 3515 Pls
+5966 4823 Pls
+5966 4823 Pls
+5966 4823 Pls
+1719 576 Pls
+1719 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 576 Pls
+1719 576 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 576 Pls
+1719 576 Pls
+1987 1000 Pls
+1987 844 Pls
+1719 844 Pls
+1719 576 Pls
+2143 576 Pls
+1987 576 Pls
+1987 576 Pls
+1719 576 Pls
+1719 576 Pls
+1987 844 Pls
+1719 576 Pls
+1719 844 Pls
+1719 576 Pls
+1987 844 Pls
+1719 844 Pls
+2254 844 Pls
+1987 844 Pls
+1719 576 Pls
+2143 1000 Pls
+2143 844 Pls
+1987 576 Pls
+2143 844 Pls
+2143 844 Pls
+1987 1111 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1719 844 Pls
+1719 576 Pls
+1987 844 Pls
+1719 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+2143 1111 Pls
+2143 844 Pls
+1719 844 Pls
+2143 1111 Pls
+1719 576 Pls
+1987 576 Pls
+2143 1000 Pls
+2411 844 Pls
+1987 844 Pls
+2143 576 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+2522 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+2254 576 Pls
+1987 844 Pls
+2143 1000 Pls
+2254 576 Pls
+1987 576 Pls
+2143 844 Pls
+1987 844 Pls
+1987 576 Pls
+2143 3733 Pls
+1987 576 Pls
+1987 576 Pls
+2254 1000 Pls
+1987 844 Pls
+2411 844 Pls
+2254 1535 Pls
+2143 576 Pls
+1987 576 Pls
+1987 576 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+2143 576 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1719 844 Pls
+1719 844 Pls
+1719 844 Pls
+1719 576 Pls
+1719 576 Pls
+1719 844 Pls
+1987 576 Pls
+1719 844 Pls
+1987 576 Pls
+2254 844 Pls
+1719 576 Pls
+5966 576 Pls
+1987 576 Pls
+1987 844 Pls
+1987 576 Pls
+1719 1197 Pls
+2254 844 Pls
+1719 576 Pls
+1987 576 Pls
+1987 576 Pls
+1719 576 Pls
+1719 576 Pls
+1719 576 Pls
+1719 576 Pls
+1987 844 Pls
+1719 576 Pls
+1719 844 Pls
+1987 576 Pls
+1719 844 Pls
+1987 844 Pls
+1719 576 Pls
+1719 844 Pls
+2143 844 Pls
+1987 844 Pls
+1987 844 Pls
+2738 844 Pls
+2254 844 Pls
+1987 576 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1719 844 Pls
+1719 576 Pls
+1987 844 Pls
+1719 844 Pls
+1719 844 Pls
+1987 576 Pls
+1987 844 Pls
+1719 844 Pls
+5966 1566 Pls
+2678 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+2143 844 Pls
+1987 844 Pls
+2709 844 Pls
+2254 1000 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 576 Pls
+1719 844 Pls
+1719 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 576 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1719 844 Pls
+1987 576 Pls
+5966 1819 Pls
+2340 844 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1987 576 Pls
+1987 844 Pls
+5966 2430 Pls
+5966 2449 Pls
+1987 1502 Pls
+1987 844 Pls
+1987 2268 Pls
+1987 844 Pls
+1987 2443 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+1719 844 Pls
+1987 844 Pls
+1987 844 Pls
+2340 1111 Pls
+5966 1111 Pls
+5966 4823 Pls
+5966 1197 Pls
+5966 1646 Pls
+2340 1268 Pls
+5966 3608 Pls
+5966 1268 Pls
+2764 1465 Pls
+5966 1268 Pls
+5966 2740 Pls
+5966 2647 Pls
+5966 1465 Pls
+5966 2143 Pls
+5966 2909 Pls
+2411 1327 Pls
+5966 1379 Pls
+5966 1465 Pls
+5966 1465 Pls
+5966 3928 Pls
+5966 4823 Pls
+5966 3010 Pls
+5966 4823 Pls
+5966 3952 Pls
+5966 3117 Pls
+5966 3117 Pls
+5966 1465 Pls
+5033 1379 Pls
+5966 1732 Pls
+4706 3034 Pls
+5966 3496 Pls
+5966 3499 Pls
+5966 3588 Pls
+3554 2019 Pls
+5966 4823 Pls
+5966 4823 Pls
+2875 1566 Pls
+5966 4441 Pls
+5966 3493 Pls
+5966 3495 Pls
+5966 3493 Pls
+5966 3948 Pls
+1987 844 Pls
+5966 4823 Pls
+1719 576 Pls
+2678 576 Pls
+1987 576 Pls
+5966 4823 Pls
+5966 4823 Pls
+1987 576 Pls
+5966 4823 Pls
+5966 4823 Pls
+5966 4823 Pls
+5966 4823 Pls
+1719 1268 Pls
+2764 4823 Pls
+1987 4823 Pls
+2608 4823 Pls
+1987 576 Pls
+1987 1000 Pls
+5966 4823 Pls
+1719 576 Pls
+1987 576 Pls
+1719 1000 Pls
+2254 576 Pls
+2789 844 Pls
+2143 844 Pls
+5966 576 Pls
+5966 1535 Pls
+4049 844 Pls
+2608 1535 Pls
+5966 4823 Pls
+5966 844 Pls
+2143 844 Pls
+1987 844 Pls
+1719 576 Pls
+4249 844 Pls
+2856 576 Pls
+5966 4823 Pls
+5966 4823 Pls
+5966 576 Pls
+3123 844 Pls
+2567 576 Pls
+4586 1111 Pls
+5966 844 Pls
+2645 844 Pls
+2608 844 Pls
+4195 2707 Pls
+4915 576 Pls
+4069 576 Pls
+2143 576 Pls
+5966 4823 Pls
+4539 576 Pls
+5966 576 Pls
+1987 576 Pls
+1719 576 Pls
+1719 844 Pls
+3748 576 Pls
+4041 576 Pls
+1719 844 Pls
+2254 844 Pls
+2608 576 Pls
+2340 576 Pls
+2254 576 Pls
+4238 844 Pls
+4752 844 Pls
+3977 1502 Pls
+3894 576 Pls
+5966 576 Pls
+5966 576 Pls
+5966 4823 Pls
+5966 844 Pls
+5966 844 Pls
+5966 576 Pls
+5966 576 Pls
+5966 576 Pls
+5966 576 Pls
+5966 844 Pls
+5966 844 Pls
+2411 844 Pls
+5966 1502 Pls
+5966 2062 Pls
+1719 576 Pls
+5008 1111 Pls
+1987 576 Pls
+1719 576 Pls
+5966 576 Pls
+1987 844 Pls
+5966 576 Pls
+2411 1197 Pls
+1719 844 Pls
+2789 844 Pls
+2789 576 Pls
+5966 844 Pls
+5123 576 Pls
+1987 844 Pls
+5966 844 Pls
+5966 1000 Pls
+1987 3234 Pls
+1719 3038 Pls
+1719 1769 Pls
+1987 3169 Pls
+5966 844 Pls
+5966 576 Pls
+5966 844 Pls
+5966 844 Pls
+5966 844 Pls
+5966 576 Pls
+5966 576 Pls
+5966 4823 Pls
+5966 4823 Pls
+5966 844 Pls
+5966 844 Pls
+1987 1197 Pls
+1719 844 Pls
+5191 4823 Pls
+1987 576 Pls
+3032 576 Pls
+3005 4823 Pls
+5966 4823 Pls
+5966 4823 Pls
+3592 844 Pls
+1987 2054 Pls
+5966 2150 Pls
+3685 844 Pls
+2835 576 Pls
+4913 576 Pls
+4589 844 Pls
+2522 844 Pls
+5966 844 Pls
+5598 844 Pls
+2522 576 Pls
+4611 844 Pls
+2470 844 Pls
+5308 844 Pls
+2470 576 Pls
+3882 1000 Pls
+3704 844 Pls
+3477 576 Pls
+3005 844 Pls
+3721 844 Pls
+5966 576 Pls
+4664 844 Pls
+5162 844 Pls
+2522 844 Pls
+4061 844 Pls
+4508 844 Pls
+3621 844 Pls
+5966 576 Pls
+2522 844 Pls
+2143 844 Pls
+2254 1424 Pls
+5966 1595 Pls
+5966 1502 Pls
+4161 4823 Pls
+2411 1000 Pls
+5966 844 Pls
+5966 844 Pls
+5966 844 Pls
+5966 576 Pls
+5966 844 Pls
+5966 576 Pls
+5966 576 Pls
+4330 844 Pls
+5966 844 Pls
+2912 844 Pls
+2875 1424 Pls
+2835 1111 Pls
+2946 4823 Pls
+3699 844 Pls
+3359 1424 Pls
+5966 1692 Pls
+5966 1713 Pls
+5966 1197 Pls
+1987 844 Pls
+1987 2037 Pls
+2608 1197 Pls
+2522 844 Pls
+2143 844 Pls
+3567 1379 Pls
+5966 1535 Pls
+2567 844 Pls
+5966 1937 Pls
+2608 1000 Pls
 % End plot #1
 2.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
-LTb
+LTB
+LCb setrgbcolor
 1719 4823 N
 0 -4247 V
 4247 0 V
@@ -1258,6 +1367,7 @@ Z stroke
 1.000 UP
 1.000 UL
 LTb
+LCb setrgbcolor
 stroke
 grestore
 end

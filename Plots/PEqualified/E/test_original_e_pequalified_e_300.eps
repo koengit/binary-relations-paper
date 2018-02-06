@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
-%%Title: test_original_e_pequalified_e_300.eps
-%%Creator: gnuplot 5.0 patchlevel 0
-%%CreationDate: Thu Apr 14 10:49:17 2016
+%%Title: test_original_E_PEqualified_E_300.eps
+%%Creator: gnuplot 5.0 patchlevel 3
+%%CreationDate: Thu Feb  1 14:16:53 2018
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 410 302
 %%EndComments
@@ -48,7 +48,7 @@ gnudict begin
   } if
 } def
 %
-% Gnuplot Prolog Version 5.0 (Dec 2014)
+% Gnuplot Prolog Version 5.1 (Oct 2015)
 %
 %/SuppressPDFMark true def
 %
@@ -97,8 +97,9 @@ gnudict begin
 /LC7 {1 0.3 0} def
 /LC8 {0.5 0.5 0.5} def
 % Default dash patterns (version 5.0)
+/LTB {BL [] LCb DL} def
 /LTw {PL [] 1 setgray} def
-/LTb {BL [] LCb DL} def
+/LTb {PL [] LCb DL} def
 /LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
 /LT0 {PL [] LC0 DL} def
 /LT1 {PL [2 dl1 3 dl2] LC1 DL} def
@@ -463,17 +464,16 @@ systemdict /pdfmark known not {
   userdict /pdfmark systemdict /cleartomark get put
 } if
 SDict begin [
-  /Title (test_original_e_pequalified_e_300.eps)
+  /Title (test_original_E_PEqualified_E_300.eps)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 5.0 patchlevel 0)
+  /Creator (gnuplot 5.0 patchlevel 3)
   /Author (annl)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Thu Apr 14 10:49:17 2016)
+  /CreationDate (Thu Feb  1 14:16:53 2018)
   /DOCINFO pdfmark
 end
 } ifelse
-end
 %
 % Support for boxed text - Ethan A Merritt May 2005
 %
@@ -499,6 +499,10 @@ end
 /Boxing false def
 /textshow { ExtendTextBox Gshow } def
 %
+% redundant definitions for compatibility with prologue.ps older than 5.0.2
+/LTB {BL [] LCb DL} def
+/LTb {PL [] LCb DL} def
+end
 %%EndProlog
 %%Page: 1 1
 gnudict begin
@@ -512,13 +516,16 @@ newpath
 BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
 1.000 UL
 LTb
+LCb setrgbcolor
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 576 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 576 M
 63 0 V
 4184 0 R
@@ -529,6 +536,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 844 M
 31 0 V
 4216 0 R
@@ -544,11 +552,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 1465 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 1465 M
 63 0 V
 4184 0 R
@@ -559,6 +569,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 1732 M
 31 0 V
 4216 0 R
@@ -574,11 +585,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 2354 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 2354 M
 63 0 V
 4184 0 R
@@ -589,6 +602,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 2621 M
 31 0 V
 4216 0 R
@@ -604,11 +618,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 3243 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 3243 M
 63 0 V
 4184 0 R
@@ -619,6 +635,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 3510 M
 31 0 V
 4216 0 R
@@ -634,11 +651,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 4131 M
 4247 0 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 4131 M
 63 0 V
 4184 0 R
@@ -649,6 +668,7 @@ stroke
 ] -60.0 MRshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 4399 M
 31 0 V
 4216 0 R
@@ -660,11 +680,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 1809 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 1809 576 M
 0 63 V
 0 4184 R
@@ -675,6 +697,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 2077 576 M
 0 31 V
 0 4216 R
@@ -690,11 +713,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 2698 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 2698 576 M
 0 63 V
 0 4184 R
@@ -705,6 +730,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 2965 576 M
 0 31 V
 0 4216 R
@@ -720,11 +746,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 3587 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 3587 576 M
 0 63 V
 0 4184 R
@@ -735,6 +763,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 3854 576 M
 0 31 V
 0 4216 R
@@ -750,11 +779,13 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 4476 576 M
 0 4247 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 4476 576 M
 0 63 V
 0 4184 R
@@ -765,6 +796,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 4743 576 M
 0 31 V
 0 4216 R
@@ -780,12 +812,14 @@ LTb
 stroke
 0.500 UL
 LTa
+LCa setrgbcolor
 5364 576 M
 0 4184 V
 0 63 V
 stroke
 1.000 UL
 LTb
+LCb setrgbcolor
 5364 576 M
 0 63 V
 0 4184 R
@@ -796,6 +830,7 @@ stroke
 ] -60.0 MCshow
 1.000 UL
 LTb
+LCb setrgbcolor
 5632 576 M
 0 31 V
 0 4216 R
@@ -805,6 +840,8 @@ LTb
 0 4216 R
 0 -31 V
 stroke
+LTB
+LCb setrgbcolor
 1809 4823 N
 0 -4247 V
 4247 0 V
@@ -819,11 +856,13 @@ LCb setrgbcolor
 6056 4823 L
 stroke
 LTb
+LT2
 LCb setrgbcolor
 5788 576 M
 0 4247 V
 stroke
 LTb
+LT2
 LCb setrgbcolor
 1809 4555 M
 4247 0 V
@@ -839,112 +878,398 @@ LCb setrgbcolor
 4247 0 V
 stroke
 LTb
+LCb setrgbcolor
+LCb setrgbcolor
 963 2699 M
 currentpoint gsave translate -270 rotate 0 0 moveto
-[ [(Times-Roman) 180.0 0.0 true true 0 (pequalified-e)]
+[ [(Times-Roman) 180.0 0.0 true true 0 (PEqualified-E)]
 ] -60.0 MCshow
 grestore
+LTb
+LCb setrgbcolor
 3932 126 M
-[ [(Times-Roman) 180.0 0.0 true true 0 (original-e)]
+[ [(Times-Roman) 180.0 0.0 true true 0 (original-E)]
 ] -60.0 MCshow
+LTb
 % Begin plot #1
 1.000 UP
 1.000 UL
 LTb
+LT1
 LCb setrgbcolor
-1809 576 Crs
-1809 576 Crs
-2344 1111 Crs
-2501 1379 Crs
-2768 2829 Crs
-2344 1902 Crs
-2077 1646 Crs
-1809 2373 Crs
-2077 1732 Crs
-2501 2714 Crs
-1809 576 Crs
-3763 4823 Crs
-3974 4823 Crs
-4209 4823 Crs
-4757 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-1809 576 Crs
-6056 4823 Crs
-6056 4823 Crs
-2735 2727 Crs
-2344 1732 Crs
-5061 4823 Crs
-4270 4823 Crs
-4458 4823 Crs
-2077 1424 Crs
-2077 1769 Crs
-3213 2494 Crs
-4263 4823 Crs
-1809 1902 Crs
-4577 4823 Crs
-2233 1535 Crs
-5410 4823 Crs
-2612 2730 Crs
-1809 1926 Crs
-5440 4823 Crs
-6056 4823 Crs
-4900 4823 Crs
-6056 4823 Crs
-1809 1803 Crs
-2077 1595 Crs
-2077 1692 Crs
-3252 4823 Crs
-4598 4823 Crs
-1809 1465 Crs
-5525 4823 Crs
-5525 4823 Crs
-2233 4275 Crs
-4919 4823 Crs
-4946 4823 Crs
-5490 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-5035 4823 Crs
-6056 4823 Crs
-1809 4102 Crs
-1809 4119 Crs
-1809 4823 Crs
-2077 4823 Crs
-2077 4823 Crs
-2077 4823 Crs
-6056 4823 Crs
-5741 4823 Crs
-3491 4823 Crs
-3036 4823 Crs
-6056 4823 Crs
-1809 4823 Crs
-2077 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-2077 4823 Crs
-2077 4823 Crs
-1809 4823 Crs
-1809 576 Crs
-1809 2086 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-6056 4823 Crs
-5614 4823 Crs
-4914 2607 Crs
-2233 844 Crs
-2077 844 Crs
-1809 844 Crs
+2344 576 Pls
+2430 844 Pls
+2768 1646 Pls
+2233 1000 Pls
+1809 2094 Pls
+1809 844 Pls
+2501 1111 Pls
+4696 4199 Pls
+2828 1535 Pls
+2828 1595 Pls
+5244 4823 Pls
+3036 4823 Pls
+5739 4823 Pls
+3733 4823 Pls
+3943 4823 Pls
+3809 4823 Pls
+4039 4823 Pls
+6056 4823 Pls
+5445 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+2698 2690 Pls
+2344 1692 Pls
+4595 4823 Pls
+3826 4823 Pls
+4452 4823 Pls
+2077 1379 Pls
+2233 1692 Pls
+2233 2461 Pls
+3882 4823 Pls
+2233 1862 Pls
+4549 4823 Pls
+2430 1465 Pls
+3834 4823 Pls
+2560 2701 Pls
+2077 1937 Pls
+6056 4823 Pls
+5523 4823 Pls
+4885 4823 Pls
+6056 4823 Pls
+1809 1769 Pls
+1809 1646 Pls
+2077 1646 Pls
+2560 4823 Pls
+4806 4823 Pls
+2233 1621 Pls
+5493 4823 Pls
+5482 4823 Pls
+2344 4823 Pls
+4974 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+5024 4823 Pls
+6056 4823 Pls
+2077 2205 Pls
+1809 4823 Pls
+3135 4823 Pls
+2077 4823 Pls
+2077 4823 Pls
+2077 4823 Pls
+4509 4823 Pls
+4271 4823 Pls
+2430 4823 Pls
+2077 4823 Pls
+6056 4823 Pls
+1809 4823 Pls
+1809 4823 Pls
+4912 4823 Pls
+6056 4823 Pls
+1809 4823 Pls
+2077 4823 Pls
+1809 4823 Pls
+1809 2070 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+6056 4823 Pls
+5366 4823 Pls
+4854 2996 Pls
+1809 576 Pls
+2657 576 Pls
+1809 576 Pls
+2965 576 Pls
+2501 844 Pls
+1809 576 Pls
+1809 576 Pls
+2077 576 Pls
+2698 1000 Pls
+4018 1379 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+2077 576 Pls
+2077 576 Pls
+1809 576 Pls
+1809 576 Pls
+2077 576 Pls
+1809 576 Pls
+1809 576 Pls
+3002 576 Pls
+2560 1000 Pls
+3501 1327 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+2077 576 Pls
+1809 576 Pls
+2501 2187 Pls
+2077 576 Pls
+4386 576 Pls
+1809 576 Pls
+1809 576 Pls
+2077 1111 Pls
+1809 576 Pls
+1809 844 Pls
+1809 844 Pls
+2077 1000 Pls
+2077 2193 Pls
+2077 576 Pls
+1809 576 Pls
+2233 1111 Pls
+2233 576 Pls
+2077 576 Pls
+2077 1000 Pls
+1809 576 Pls
+2077 1000 Pls
+2077 576 Pls
+1809 576 Pls
+2430 1889 Pls
+2984 1834 Pls
+2344 576 Pls
+2344 576 Pls
+2946 2475 Pls
+2430 844 Pls
+2077 844 Pls
+3402 1980 Pls
+2233 576 Pls
+2501 1980 Pls
+1809 576 Pls
+3363 4823 Pls
+1809 576 Pls
+1809 576 Pls
+1809 1000 Pls
+1809 576 Pls
+2233 576 Pls
+2077 576 Pls
+1809 576 Pls
+2903 844 Pls
+2233 844 Pls
+1809 844 Pls
+2233 576 Pls
+2077 576 Pls
+2077 1000 Pls
+3342 576 Pls
+2430 576 Pls
+1809 576 Pls
+1809 576 Pls
+3438 576 Pls
+2768 1535 Pls
+1809 576 Pls
+2501 576 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+1809 576 Pls
+4488 576 Pls
+3830 576 Pls
+6056 576 Pls
+6056 576 Pls
+6056 576 Pls
+3019 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 576 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 844 Pls
+6056 1000 Pls
+6056 844 Pls
+6056 844 Pls
+6056 1000 Pls
+6056 844 Pls
+6056 1000 Pls
+3261 1000 Pls
+2233 844 Pls
+6056 1000 Pls
+4399 844 Pls
+6056 1000 Pls
+4306 1000 Pls
+6056 1000 Pls
+6056 1111 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1000 Pls
+6056 1197 Pls
+6056 1268 Pls
+6056 2615 Pls
+1809 1000 Pls
+1809 1111 Pls
+3676 4823 Pls
+5562 3741 Pls
+6056 4823 Pls
+2233 576 Pls
+3192 2169 Pls
+2799 1379 Pls
+3830 1692 Pls
+4592 3319 Pls
+2799 1465 Pls
+5257 2774 Pls
+2077 844 Pls
+2077 844 Pls
+2077 844 Pls
+1809 576 Pls
+4754 4823 Pls
+1809 1000 Pls
+2657 1000 Pls
+5452 4041 Pls
+3295 2019 Pls
+4896 844 Pls
+4899 844 Pls
+1809 1111 Pls
+3389 1268 Pls
+2233 576 Pls
+6056 1327 Pls
+4713 1000 Pls
+2879 576 Pls
+2903 576 Pls
+5008 4823 Pls
+2344 576 Pls
+2077 844 Pls
+1809 844 Pls
+3408 576 Pls
+2854 1566 Pls
+2612 1751 Pls
+2560 2300 Pls
+1809 844 Pls
+2903 4823 Pls
+2879 4823 Pls
+2925 576 Pls
+2077 3001 Pls
+2077 3009 Pls
+1809 844 Pls
+5532 4823 Pls
+3992 4823 Pls
+3036 4823 Pls
+5039 4823 Pls
+5596 4823 Pls
+4045 3986 Pls
+4039 4823 Pls
+2077 1502 Pls
+4032 4823 Pls
+4402 4823 Pls
+4037 4823 Pls
+4556 4823 Pls
+4036 4823 Pls
+4558 4823 Pls
+4033 4823 Pls
+4394 4823 Pls
+3203 2295 Pls
+6056 4823 Pls
+6056 4823 Pls
+5050 4823 Pls
+5421 1621 Pls
+1809 844 Pls
+6056 2326 Pls
+3651 576 Pls
+3261 576 Pls
+4032 1670 Pls
+2879 1713 Pls
+2077 576 Pls
+2612 576 Pls
+5396 4823 Pls
+5364 4823 Pls
+2854 1000 Pls
+4934 4823 Pls
+2560 1595 Pls
+2233 576 Pls
+2077 576 Pls
+1809 576 Pls
+4316 2478 Pls
+4276 2484 Pls
+6056 844 Pls
+6056 844 Pls
+2925 576 Pls
+2828 844 Pls
+2965 844 Pls
+3822 3096 Pls
+3901 1646 Pls
+1809 1000 Pls
+1809 576 Pls
+3988 1834 Pls
+3763 1803 Pls
+2612 576 Pls
+2344 4146 Pls
+3559 1111 Pls
+3515 844 Pls
+1809 576 Pls
+2799 844 Pls
+4155 844 Pls
+3147 4823 Pls
+2698 576 Pls
+2657 576 Pls
+2612 576 Pls
+2698 576 Pls
+2344 576 Pls
+2233 576 Pls
+2077 576 Pls
+2077 1692 Pls
+2612 576 Pls
+2698 576 Pls
+2698 576 Pls
+2698 576 Pls
+2657 576 Pls
+4030 1000 Pls
+4033 576 Pls
+2768 576 Pls
+2768 576 Pls
+4040 1535 Pls
+2501 2330 Pls
+2612 2304 Pls
+2828 4823 Pls
+2560 2563 Pls
+2560 4823 Pls
+2560 2411 Pls
+2612 4823 Pls
+2560 2494 Pls
+2560 4823 Pls
+2560 2258 Pls
+2077 844 Pls
+2077 1000 Pls
+2430 3620 Pls
+2077 1000 Pls
+2233 576 Pls
+3396 3518 Pls
+3389 3517 Pls
+3233 576 Pls
+1809 576 Pls
+2612 1197 Pls
+2077 3269 Pls
+4813 576 Pls
+1809 844 Pls
+1809 3771 Pls
+2077 4823 Pls
+2077 576 Pls
+2430 1566 Pls
+3703 576 Pls
 % End plot #1
 2.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
-LTb
+LTB
+LCb setrgbcolor
 1809 4823 N
 0 -4247 V
 4247 0 V
@@ -954,6 +1279,7 @@ Z stroke
 1.000 UP
 1.000 UL
 LTb
+LCb setrgbcolor
 stroke
 grestore
 end

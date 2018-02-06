@@ -411,34 +411,66 @@ Similarly to the transification transformation above, |Q_| does not have to be t
 \begin{tabular}{lr||rrr||rrr||rrr}
   & & \multicolumn{3}{c||}{E} & \multicolumn{3}{c||}{Vampire} & \multicolumn{3}{c}{Spass} \\
 \hline 
-&&&&&&&&&&\\
-equalification & (477) & 434 & +39  & \underline{-38} & 451 & +24  & -7 & 388 & +54 & \underline{-46}\\
-\hspace{0.1cm}with idempotency &   &   &  +38  & \underline{-56} &  & +24  & -6 &   & +52 & \underline{-43}\\
-pequalification & (656) & 531 & +39 & -69 & 543 &  +29 & -8 & 455 & +56 & \underline{-48}\\
-\hspace{0.1cm}with idempotency &  &  &  +37  & -95  &  &  +30 & -13 & & +54 & \underline{-45}\\
-detransification  & (2048) & 1490 & +49 & -101 & 1559 &  +62 & -21 & 1203 & +126 & -90\\
-\hspace{0.1cm}with reflexivity & (1400) & 1032 & +40 & -89 & 1079 &  +56 & -20 &869 & +67 & -90\\
-ordification & (326) & 272 & n/a & n/a & 295 &  +0& -1 & 243 & n/a & n/a\\
+&&&&&&&&&&\\  
+equalification & (436) & 427 & +5  & -38 & 434 & +0  & -7 & 385 & +16 & -46\\
+\hspace{0.1cm}with idempotency &   &   &  +4  & -56 &  & +0  & -6 &   & +14 & -43\\&&&&&&&&&\\
+pequalification & (617) & 524 & +5 & -69 & 526 &  +5 & -8 & 452 & +18 & -48\\
+\hspace{0.2cm}on EQ & (436) & 427 & +5 & -33 & 451 & +0 & -2 & 388 & +16 &-46 \\
+\hspace{0.2cm}on PEQ & (181) & 97 & +0 & -36 & 92 & +5 & -6 & 67 & +2 & -2  \\
+\hspace{0.1cm}with idempotency &  &  &  +3  & -95  &  &  +6 & -13 & & +16 & -45\\
+\hspace{0.3cm}on EQ & (436) & 427 & +3 & -59 & 451 &+0& -7 & 388 & +14 & -40 \\
+\hspace{0.3cm}on PEQ & (181) & 97 & +0 & -36 & 92 & +6 & -6 & 67 &+2 & -5 \\&&&&&&&&&\\
+ordification & (326) & 272 & n/a & n/a & 295 &  +0& -1 & 243 & n/a & n/a\\&&&&&&&&&\\
+detransification  & (2007) & 1483 & \bf{+15} & -101 & 1542 &  \bf{+38} & -21 & 1200 & +88 & -90\\
+\hspace{0.2cm}on EQ& (436) & 427 & +4 & -24 & 451 & +0 & -0& 388& +15 & -32 \\
+\hspace{0.2cm}on PEQ& (181) &97&\bf{+1}&-8&92&+5&-0&67 &+8 & -0\\
+\hspace{0.2cm}on TO& (326) &272&+2&-25&295&+0&-2&243&+9 & -34\\
+\hspace{0.2cm}on R& (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
+\hspace{0.2cm}on $R\complement$ & (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
+
+\hspace{0.1cm}with reflexivity & (1359) & 1025 & +6 & -89 & 1062 &  \bf{+32} & -0 &866 & +29 & -90\\
+\hspace{0.3cm}on EQ & (436) & 427&+3&-30&434&+0&-0&385&+14&-44\\
+\hspace{0.3cm}on TO & (326 )& 272&+2&-34&295&+0&-0&243&+5&-31\\
+\vspace{0.3cm}
 %ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} & 0 & 0 & 0\\
 %maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} & 0 & 0 & 0\\
 \end{tabular}
 %\end{center}
 %\vspace{-0.5cm}
-\label{fig:overview}
-\end{figure}
-\begin{figure}[t]
-\setlength{\tabcolsep}{5.2pt}
+
+%\setlength{\tabcolsep}{5.2pt}
 \begin{tabular}{lr||rrr||rrr}
   & & \multicolumn{3}{c||}{Z3} &\multicolumn{3}{c}{CVC4}  \\
 \hline 
 &&&&&&&\\
-equalification & (477) & 362 & +88 & \underline{-7} & 382 & +64 & -20\\
-\hspace{0.1cm}with idempotency &   &   & +86  & -11 &  & +64 & \underline{-22}\\
-pequalification & (656) & 400 &  +88  & -8  & 433 & +74 & -25\\
-\hspace{0.1cm}with idempotency &  & & +83 & \underline{-21}  &  & +73 & -26\\
-detransification  & (2048) & 1196 & +114 & -58 & 1387 & +102 & -31\\
-\hspace{0.1cm}with reflexivity & (1400) & 878 & +66 & -135 & 1011 & +43 & -110\\
-ordification  & (326) & 236 & +50 & -1 & 288 & +1 & -1\\
+equalification & (436) & 354 & +60 & -7 & 370 & +35 & -20\\
+\hspace{0.1cm}with idempotency &   &   & +59  & -11 &  & +35 & -22\\&&&&&&\\
+
+pequalification & (617) & 392  &  +66  & -8  & 343  & +45 & -25\\
+
+\hspace{0.2cm}on EQ & (436) & 354 & +59 & -4 & 370 & +36 & -21 \\
+\hspace{0.2cm}on PEQ & (181) & 38 & +7 & -4 & 51 & +9 & -4   \\
+
+\hspace{0.1cm}with idempotency &  &  & +61 & -21  &  & +44 & -26\\
+
+\hspace{0.2cm}on EQ & (436) & 354 & +56 & -17 & 370 & +35 & -22\\
+\hspace{0.2cm}on PEQ & (181) & 38 & +5 & -4 & 51 & +9 & -4 \\&&&&&&\\
+
+ordification  & (326) & 255 & +31 & -1 & 289 & +0 & -1\\&&&&&&\\
+
+detransification  & (2007) & 1196 & +92 & -58 & 1387 & \bf{+73} & -31\\ 
+\hspace{0.2cm}on EQ& (436) & 354 & +53 & -8 & 370 & +31 & -8 \\
+\hspace{0.2cm}on PEQ& (181) &38&+17&-0&51&+16&-0\\
+\hspace{0.2cm}on TO& (326) &255&+0&-26&289&+1&-3\\
+\hspace{0.2cm}on R& (1359)&878&+69&-46&999&\bf{+44}&-24\\&&&&&&\\
+
+\hspace{0.1cm}with reflexivity & (1359) & 870 & +66 & -135 & 999 & +40 & -110\\ 
+\hspace{0.3cm}on EQ& (436) & 354&+57&-22&370&+32&-45\\
+\hspace{0.3cm}on TO& (326 )& 255&+0&-71&289&+3&-8\\
+
+
+
+
 %ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} & 0 & 0 & 0\\
 %maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} & 0 & 0 & 0\\
 \end{tabular}
@@ -453,11 +485,11 @@ ordification  & (326) & 236 & +50 & -1 & 288 & +1 & -1\\
 %KOEN: what tptp version did you use to generate the lagom stora problems?
 
 \section{Experimental results}
-We evaluate the effects of the different axiomatizations using three different resolution based theorem provers, E 2.0 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options), Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), Spass 3.9 \cite{spass}  and two SMT-solvers, Z3 4.5 \cite{Z3} and CVC4 1.5 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem.
+We evaluate the effects of the different axiomatizations using three different resolution based theorem provers, E 2.0 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options), Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), Spass 3.9 \cite{spass}  (with the \textit{Auto} option, which activates chaining in the presence of transitive predicates), and two SMT-solvers, Z3 4.5 \cite{Z3} and CVC4 1.5 \cite{CVC4}. The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz. We use a time limit of 5 minutes on each problem.
 %NOT TRUE ANYMORE:
 %For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses %the time limit to control its search strategies.
 
-We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work.
+We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work. %TODO: not future work anymore
 
 The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
@@ -469,6 +501,7 @@ The experimental results are summarized in Fig.\ \ref{fig:overview}.
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Spass/test_original_spass_equalified_spass_300.eps}
 \end{center}
 \caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
@@ -504,7 +537,7 @@ Total orders were found in 328 problems. The majority are in the SWV category, a
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \begin{center}
-%\includegraphics[scale=0.55,trim=20mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
+\includegraphics[scale=0.55,trim=20mm 0mm 30mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}
 \includegraphics[scale=0.55,trim=7mm 0mm 30mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
 \includegraphics[scale=0.55,trim=7mm 0mm 40mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}
 \end{center}
@@ -547,7 +580,7 @@ Both Z3 and CVC4 perform worse after the transformation, but time slicing can be
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/OnlyTransify/E/test_original_e_transified_e_300.eps}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Transified/E/test_original_e_transified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Vampire/test_original_vampire_transified_vampire_300.eps}\\
@@ -555,6 +588,20 @@ Both Z3 and CVC4 perform worse after the transformation, but time slicing can be
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/CVC4/test_original_cvc4_transified_cvc4_300.eps}
 \end{center}
 \caption{Effects of transification, using E, Vampire, Z3 and CVC4 }
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\end{figure}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Trans_Ref/E/test_original_e_transified_e_300.eps}
+%\includegraphics[scale=0.22]{Plots/Equalified/E/}
+%\begin{figure}[t]
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Vampire/test_original_vampire_transified_vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_z3_transified_z3_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_cvc4_transified_cvc4_300.eps}
+\end{center}
+\caption{Effects of transification with reflexivity, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \end{figure}

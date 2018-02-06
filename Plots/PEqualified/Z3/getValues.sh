@@ -6,29 +6,17 @@ TIMEOUT=300
 TIMEBORDER=`expr $TIMEOUT '*' 2`
 HALF=`expr $TIMEOUT / 2`
 PLOT="test_$1_$2_$TIMEOUT.eps"
-
-stripzeroes()
-{
-  sed 's/^0*\(.\)/\1/'
-}
-
 value()
 {
-  if [ "$1" = fail ] 
-  then 
-    echo $TIMEBORDER
-  else
-    minutes=$(echo $2 | sed 's/m.*//' | stripzeroes)
-    seconds=$(echo $2 | sed 's/.*m//;s/\..*//' | stripzeroes)
-    millis=$(echo $2 | sed 's/.*\.//;s/s//' | stripzeroes)
-    ((time=$minutes*60000+$seconds*1000+$millis))
-    if (($time > $TIMEOUT*1000))
-    then
-      echo $TIMEBORDER
-    else 
-      echo $time / 1000 | bc -l
-    fi
-  fi
+	if [ "$1" = fail ] 
+	then 
+		echo $TIMEBORDER
+	elif  (( $(echo "$2 > $TIMEOUT" | bc -l ) ))  
+	then
+		echo $TIMEBORDER
+	else 
+		echo $2
+	fi
 }
 
 
@@ -36,8 +24,10 @@ value()
 cat $1 | while read FILE   
 		do  
 			ROW=($FILE) 
-            ROW2=($(grep $(basename ${ROW[0]/.p/}) $2))
-			echo `value "${ROW[1]}" "${ROW[2]}"` `value "${ROW2[1]}" "${ROW2[2]}"`
+			ROW2=($(grep $(basename ${ROW[0]/.p/}) $2))
+			if [ -n "$ROW2" ]; then
+			  echo `value "${ROW[1]}" "${ROW[2]}"` `value "${ROW2[1]}" "${ROW2[2]}"`
+			 fi		
 		done > $DATA
 
 		
