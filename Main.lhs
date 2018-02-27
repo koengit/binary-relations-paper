@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{mathabx}
 \usepackage{graphicx}
+\usepackage{multirow}
 %include polycode.fmt
 
 \def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
@@ -422,17 +423,17 @@ pequalification & (617) & 524 & +5 & -69 & 526 &  +5 & -8 & 452 & +18 & -48\\
 \hspace{0.1cm}with idempotency &  &  &  +3  & -95  &  &  +6 & -13 & & +16 & -45\\
 \hspace{0.3cm}on EQ & (436) & 427 & +3 & -59 & 451 &+0& -7 & 388 & +14 & -40 \\
 \hspace{0.3cm}on PEQ & (181) & 97 & +0 & -36 & 92 & +6 & -6 & 67 &+2 & -5 \\&&&&&&&&&\\
-ordification & (326) & 272 & n/a & n/a & 295 &  +0& -1 & 243 & n/a & n/a\\&&&&&&&&&\\
+ordification & (326) & 272 & n/a & n/a & 295 &  +1& -0 & 243 & n/a & n/a\\&&&&&&&&&\\
 detransification  & (2007) & 1483 & \bf{+15} & -101 & 1542 &  \bf{+38} & -21 & 1200 & +88 & -90\\
 \hspace{0.2cm}on EQ& (436) & 427 & +4 & -24 & 451 & +0 & -0& 388& +15 & -32 \\
 \hspace{0.2cm}on PEQ& (181) &97&\bf{+1}&-8&92&+5&-0&67 &+8 & -0\\
-\hspace{0.2cm}on TO& (326) &272&+2&-25&295&+0&-2&243&+9 & -34\\
+\hspace{0.2cm}on TO& (326) &272&+2&-25&296&+0&-2&243&+9 & -34\\
 \hspace{0.2cm}on R& (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
-\hspace{0.2cm}on $R\complement$ & (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
+\hspace{0.2cm}on R\textsuperscript{C} & (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
 
 \hspace{0.1cm}with reflexivity & (1359) & 1025 & +6 & -89 & 1062 &  \bf{+32} & -0 &866 & +29 & -90\\
 \hspace{0.3cm}on EQ & (436) & 427&+3&-30&434&+0&-0&385&+14&-44\\
-\hspace{0.3cm}on TO & (326 )& 272&+2&-34&295&+0&-0&243&+5&-31\\
+\hspace{0.3cm}on TO & (326 )& 272&+2&-34&296&+0&-0&243&+5&-31\\
 \vspace{0.3cm}
 %ordification  & (328) & & n/a & & 296 & {\bf +16} & \underline{-12} & 238 & {\bf +51} & \underline{-13} & 267 & {\bf +13} &  \underline{-15} & 0 & 0 & 0\\
 %maxification  & (328) & 273 & +1 & -23 & 296 & +2 & -0 & 238 & +1 & -41 & 267 & +4 & \underline{-0} & 0 & 0 & 0\\
@@ -458,7 +459,7 @@ pequalification & (617) & 392  &  +66  & -8  & 343  & +45 & -25\\
 \hspace{0.2cm}on EQ & (436) & 354 & +56 & -17 & 370 & +35 & -22\\
 \hspace{0.2cm}on PEQ & (181) & 38 & +5 & -4 & 51 & +9 & -4 \\&&&&&&\\
 
-ordification  & (326) & 255 & +31 & -1 & 289 & +0 & -1\\&&&&&&\\
+ordification  & (326) & 236 & +50 & -1 & 288 & +1 & -1\\&&&&&&\\
 
 detransification  & (2007) & 1196 & +92 & -58 & 1387 & \bf{+73} & -31\\ 
 \hspace{0.2cm}on EQ& (436) & 354 & +53 & -8 & 370 & +31 & -8 \\
@@ -491,20 +492,67 @@ We evaluate the effects of the different axiomatizations using three different r
 %NOT TRUE ANYMORE:
 %For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses %the time limit to control its search strategies.
 
-We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work. %TODO: not future work anymore
+We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem, Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. In total, 2007 problems were found to include one or more transitive relations and could thus be used with at least one of the presented transformations.
+Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work. %TODO: not future work anymore(?)
 
 The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
-\begin{figure}[t]
+In order to analyse how properties of a problem in combination with a transformation and prover may have an impact on the results, we partition the test problems into different subsets. These are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if there are several relations having different properties. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation by syntactic inspection, using the table in \ref{fig:imps}, is found to be total (or strictly total, as in the case of a negated total order) (Fig. \ref{fig:subsets1}), and one where this was not the case (this does not necessarily mean that the relation is non total)(Fig. \ref{fig:subsets2}). We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P. 
+
+The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they have a transitive relation that is found to be reflexive and/or symmetric. \ref{fig:subsets1} shows what transformation is applicable for each subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric, has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram.
+
+We partition the total relations into two sets of problems: total (or strictly total) orders, and other. \ref{fig:subsets2}
+
+% \begingroup
+\begin{figure}
+\def\mca#1{\multicolumn{1}{c}{#1}}
+\renewcommand{\arraystretch}{2.25}
 \begin{center}
+\begin{tabular}{r||p{8em}||p{8em}||}
+  \mca{} & \multicolumn{2}{c}{Total\textsuperscript{C}} \\\cline{2-3}
+%  \multirow{6}{*}{Reflexive}               & Equivalences & Partial orders  \\\cline{2-3}
+   Reflexive               & \bf{Equivalences} & \bf{Partial orders}  \\\cline{2-3}
+                 & Detransification & Detransification \\
+                 & Detransification with reflexivity & Detransification with reflexivity \\
+   & Equalification & Detransification\\
+                 & Pequalification &  \\\cline{2-3} 
+ % \multirow{3}{*}{Reflexive\textsuperscript{C}} & Partial equivalences &  \\\cline{2-3}
+ {Reflexive\textsuperscript{C}} & \bf{Partial equivalences} &  \bf{Strict Partial orders}\\ % \cline{2-3}
+                                               & Pequalification  & Detransification\\
+                                               & Detransification & \\\cline{2-3}
+   \mca{} & \mca{Symmetric} & \mca{Symmetric\textsuperscript{C}}
+\end{tabular}
+%\label{fig:subsets1}
+%\end{figure}
+
+%\begin{figure}
+\begin{tabular}{r||c||}
+  \mca{} & \multicolumn{1}{c}{Total/Strictly Total} \\\cline{2-2}
+  \multirow{2}{*}{Antisymmetric/Strictly Antisymmetric} & \bf{(Strict) Total Orders} \\
+                         & Ordification \\
+                          & Detransification \\\cline{2-2} 
+  Antisymmetric\textsuperscript{C} & \bf{Other} \\
+                               & Detransification \\\cline{2-2} 
+  \mca{} & \mca{} 
+\label{fig:subsets}
+\end{tabular}
+\end{center}
+%\endgroup
+\label{fig:subsets}
+\label{fig:subsets2}
+\end{figure}
+
+
+
+
+\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Spass/test_original_spass_equalified_spass_300.eps}
-\end{center}
 \caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
@@ -513,26 +561,32 @@ The experimental results are summarized in Fig.\ \ref{fig:overview}.
 
 \subsection{Equivalence relations}
 
-Equivalence relations were present in 477 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 477 problems, there are only 29 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
+Equivalence relations were present in 436 of the test problems. The majority of these problems appear in the GEO and SYN categories. Interestingly, among these 436 problems, there are only 29 problems whose equivalence relations are axiomatized with transitivity axioms. The remaining problems axiomatize equivalence relations with euclidean and reflexivity axioms, as discussed in section \ref{sec:discovery}. The number of equivalence relations in each problem ranges from 1 to 40, where problems with many equivalence relations all come from the SYN category. There is no clear correspondence between the number of equivalence relations in a problem and the performance of the prover prior to and after the transformation. 
 
 \paragraph{Equalification}
 As can be seen in Fig. \ref{fig:overview}, equalification performs very well with Z3, and somewhat well with CVC4, while it worsens the results of the resolution based provers, which already performed well on the original problems. %TODO : Koen - why may this be? 
-Using a time slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, solves a strict superset of problems than the original for all of the theorem provers used in the evaluation. Fig. \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
+Using a time slicing strategy, which runs the prover on the original problem for half the time and on the transformed problem for the second half, solves a strict superset of problems than the original for all of the theorem provers used in the evaluation.  %TODO : THIS IS NOT TRUE ANYMORE!! 
+Adding an axiom of idempotency for the  |rep_| function, i.e. 
+\begin{code}
+rep(rep(x)) = rep(x)
+\end{code}
+with the intent of helping theorem prover to (...?) did not improve the results but instead made each of the theorem provers perform slightly worse.
+%TODO: fill in the (...) and discuss why it made it worse.
+
+Fig. \ref{fig:e_equalified} shows in more detail the effect on solving times for the different theorem provers.
 %TODO: for the camera ready version we should make the time slicing squares the biggest possible size.
 
 %TODO KOEN: i don't like the word treatment. it sounds like a cream you put on your skin.
 
 \paragraph{Pequalification}
-In 181 of the test problems, relations that are transitive and symmetric, but not reflexive, were found. The majority of these problems are in the CAT and FLD categories of TPTP. All of the tested theorem provers perform worse on these problems compared to the problems with true equivalence relations. This is also the case after performing pequalification. Pequalification turns out to be particularly bad for E, which solves 34 fewer problems after the transformation. Pequalification makes Z3 perform only slightly better and Vampire and CVC4 slightly worse.
+In 181 of the test problems, relations that are transitive and symmetric, but not reflexive, were found. The majority of these problems are in the CAT and FLD categories of TPTP. All of the tested theorem provers perform worse on this set of problems compared to the problems with true equivalence relations. After applying the pequalification transformation to the problems, the resolution based provers perform worse or about the same compared to prior to the transformation, while the SMT solvers perform slightly better. We also tested pequalification on problems that are reflexive, and compared its result to equalification. Pequalification turned out to perform about the same or slightly better than equalification on the test problems. As with equalification, adding the idempotency axiom generally worsened the results.
 %When the differences to the performance is small, it is hard to know if the effect is due to the new axiomatisation, or to other reasons.
 %For example, we have observed that simply shuffling the axioms of a theory can cause the results to deviate in a similar way. 
 %TODO Koen can we say anything more here?
+%No hard problems were solved (FLD041-2 not solved anymore..)
 
-\paragraph{Hard problems solved using Pequalification}
-After Pequalification, one problem with rating 1.0 (FLD041-2) is solved by Vampire. Rating 1.0 means that no known current theorem prover solves the problem in reasonable time.
-
-\subsection{Total orders}
-Total orders were found in 328 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 77 of the problems, the total order is positively axiomatized, and in the other 251 problems it is negative (and thus axiomatized as a strict total order). There is never more than one order present in any of the problems. 
+\subsection{Total orders} %NUM924+1 and NUM924+2 are not among hte test problems anymore (they were there in the last version). Status: contradictory axioms
+Total orders were found in 326 problems. The majority are in the SWV category, and the remaining in HWV, LDA and NUM.  In 76 of the problems, the total order is positively axiomatized, and in the other 250 problems it is negative (and thus axiomatized as a strict total order). There is never more than one order present in any of the problems. 
 
 \begin{figure}[t]
 %\includegraphics[scale=0.40,trim=20mm 00mm 30mm 0mm]{Plots/Ordified/E/test_original_e_ordified_e_300.eps}
@@ -549,15 +603,19 @@ Total orders were found in 328 problems. The majority are in the SWV category, a
 \end{figure}
 
 \paragraph{Ordification}
-For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs well for Z3, while for Vampire and CVC4 it is good for some problems and bad for some.
-Fig.\ \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3.
+For each of the problems, we ran the theorem provers with built-in support for arithmetic on the problems before and after applying ordification. Vampire was run on a version in TFF format \cite{TFF}, and Z3 and CVC4 on a version in SMT format \cite{SMT-LIB}. The original problems were also transformed into TFF and SMT in order to achieve a relevant comparison. Ordification performs very well for Z3, while it shows no significant difference for Vampire and CVC4.
+Fig.\ \ref{fig:ordified} shows how solving times are affected, and the diagrams also show great potential for time slicing, in particular for Vampire and Z3. %TODO NOT REALLY TRUE ANYMORE...
 
-\paragraph{Hard problems solved using Ordification}
-After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and CVC4 solves 13 of them. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it. After ordification, all three provers were able to solve it in less than a second.
+
+%TODO: NO HARD PROBLEMS SOLVED ANYMORE! THERE WAS A BUG IN ORDIFICATION PREVIOUSLY, WHERE  $LESSEQ WAS ALWAYS USED...
+
+%\paragraph{Hard problems solved using Ordification}
+%After Ordification, 15 problems, all from the SWV category, with rating 1.0 are solved. (SWV004-1, SWV035+1, SWV040+1, SWV044+1, SWV049+1, SWV079+1, %SWV100+1, SWV101+1, SWV108+1, SWV110+1, SWV113+1, SWV118+1, SWV120+1, SWV124+1, SWV130+1) Vampire and Z3 each solve 14 hard problems and %CVC4 solves 13 of them. One problem (SWV004-1) is even categorized as Unknown, which means that no prover has ever solved it. After ordification, all three provers %were able to solve it in less than a second.
 
 \paragraph{Maxification}
 Maxification, our second possible treatment of total orders, turned out to be disadvantageous to E and Z3, while having a small positive effect on Vampire and CVC4 (see Fig.\ \ref{fig:overview}).
 %TODO Koen what may be a reason for this?
+%TODO what about Spass?
 
 %\begin{figure}[t]
 %\includegraphics[scale=0.70,trim=10mm 00mm 20mm 0mm]{Plots/Maxified/E/test_original_e_maxified_e_300.eps}
@@ -573,7 +631,7 @@ Maxification, our second possible treatment of total orders, turned out to be di
 
 
 \subsection{Transitive and Reflexive relations}
-573 test problems include relations that are transitive and reflexive, excluding equivalence relations and total orders. In all of them, transitivity occurs syntactically as an axiom. The problems come from a variety of categories, but a vast majority are in SET, SEU and SWV.  Only about half of the original problems were solved by each theorem prover, which may indicate that transitivity axioms are difficult for current theorem provers to deal with.  We evaluate the performance of the theorem provers before and after transification. Problems that include equivalence relations and total orders are excluded, as the corresponding methods equalification and ordification give better results and should be preferred. Vampire benefits the most from transification, and solves 32 new problems after the transformation, while 10 previously solvable problems become unsolvable within the time limit. For E, the effect of transification is almost exclusively negative.
+1359 test problems include relations that are transitive and reflexive, including equivalence relations and total orders.The problems come from a variety of categories, but a vast majority are in SET, SEU and SWV.   We evaluate the performance of the theorem provers before and after transification. Vampire benefits the most from transification, and solves 32 new problems after the transformation, while no problems that were solved prior to the transformation are lost. For E, the effect of transification is almost exclusively negative.
 %TODO what to write here?? 
 Vampire also has a significantly worse performance than E overall on the original problems that include relations that are transitive and reflexive.
 Both Z3 and CVC4 perform worse after the transformation, but time slicing can be a good way to improve the results. 
@@ -581,29 +639,29 @@ Both Z3 and CVC4 perform worse after the transformation, but time slicing can be
 %TODO KOEN: who uses chaining? is Vampire better on transified problems because it doesn't use chaining?
 
 \begin{figure}[t]
-\begin{center}
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Transified/E/test_original_e_transified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Vampire/test_original_vampire_transified_vampire_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Z3/test_original_z3_transified_z3_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Spass/test_original_spass_transified_spass_300.eps} \\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/CVC4/test_original_cvc4_transified_cvc4_300.eps}
-\end{center}
 \caption{Effects of transification, using E, Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \end{figure}
 
 \begin{figure}[t]
-\begin{center}
+%\begin{center}
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Trans_Ref/E/test_original_e_transified_e_300.eps}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\begin{figure}[t]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Vampire/test_original_vampire_transified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_z3_transified_z3_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Spass/test_original_spass_transified_spass_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_z3_transified_z3_300.eps} \\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_cvc4_transified_cvc4_300.eps}
-\end{center}
-\caption{Effects of transification with reflexivity, using E, Vampire, Z3 and CVC4 }
+%\end{center}
+\caption{Effects of transification with reflexivity, using E, Vampire, Spass, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \end{figure}
@@ -617,6 +675,14 @@ Since all equivalence relations are transitive and reflexive, the method for tra
 
 \paragraph{Ordification and Transification}
 We compared ordification and transification on the 328 problems containing total orders. Transification seems to make these problems generally more difficult for theorem provers to solve, while ordification instead improved the results on many of the problems.  Transification makes the theorem prover perform worse on these problems also for E, which cannot make use of ordification since it does not provide support for arithmetic.
+
+
+
+
+
+
+
+
 
 %(equalification: win 50 lose 3, transification: win 46, lose 27)
 

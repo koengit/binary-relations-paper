@@ -595,7 +595,7 @@ GEO268+3.p success 0.01 0.00system 0:00.02elapsed 59%CPU (0avgtext+0avgdata 1649
 GEO269+3.p success 0.01 0.00system 0:00.03elapsed 66%CPU (0avgtext+0avgdata 15872maxresident)k
 GEO499+1.p success 0.24 0.00system 0:00.32elapsed 77%CPU (0avgtext+0avgdata 42016maxresident)k
 GEO500+1.p success 33.01 0.48system 0:33.39elapsed 100%CPU (0avgtext+0avgdata 681584maxresident)k
-GEO501+1.p fail
+GEO501+1.p 
 GEO502+1.p success 4.47 0.05system 0:04.51elapsed 100%CPU (0avgtext+0avgdata 183664maxresident)k
 GEO503+1.p fail
 GEO504+1.p success 0.11 0.00system 0:00.12elapsed 93%CPU (0avgtext+0avgdata 25008maxresident)k
@@ -608,7 +608,7 @@ GEO510+1.p fail
 GEO511+1.p success 56.59 0.94system 0:57.47elapsed 100%CPU (0avgtext+0avgdata 807168maxresident)k
 GEO512+1.p success 77.66 0.82system 1:18.21elapsed 100%CPU (0avgtext+0avgdata 805312maxresident)k
 GEO513+1.p fail
-GEO514+1.p fail
+GEO514+1.p 
 GEO515+1.p fail
 GEO516+1.p fail
 GEO517+1.p success 231.66 2.26system 3:53.59elapsed 100%CPU (0avgtext+0avgdata 2419840maxresident)k
@@ -1260,7 +1260,7 @@ SEU311+2.p fail
 SEU312+2.p fail
 SEU313+2.p fail
 SEU314+2.p fail
-SEU315+2.p fail% Vfail
+SEU315+2.p fail
 SEU316+2.p fail
 SEU317+2.p fail
 SEU318+2.p fail
@@ -1735,6 +1735,7 @@ SWV990-1.p success 2.66 0.08system 0:02.82elapsed 96%CPU (0avgtext+0avgdata 1851
 SWV992-1.p fail
 SWV993-1.p fail
 SWV994-1.p fail
+% SZS status Timeout for SWV994-1
 SWV995-1.p success 0.41 0.01system 0:00.45elapsed 94%CPU (0avgtext+0avgdata 74464maxresident)k
 SYN014-2.p success 0.00 0.00system 0:00.01elapsed 50%CPU (0avgtext+0avgdata 14752maxresident)k
 SYN015-2.p success 0.01 0.00system 0:00.03elapsed 51%CPU (0avgtext+0avgdata 17296maxresident)k
