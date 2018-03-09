@@ -52,7 +52,7 @@ set arrow from $TINY,$HALF to $TIMEBORDER,$HALF nohead ls 1
 set xlabel '"`echo $1 | sed 's!\_!-!g'`"'
 set ylabel '"`echo $2 | sed 's!\_!-!g'`"'
 set size square
-plot [$TINY:$TIMEBORDER][$TINY:$TIMEBORDER] '"$DATA"' ls 2 with points title ''
+plot [$TINY:$TIMEBORDER][$TINY:$TIMEBORDER] '"$DATA"' with points pointtype 2 title ''
 " > gnuplot.in
 
 gnuplot gnuplot.in
