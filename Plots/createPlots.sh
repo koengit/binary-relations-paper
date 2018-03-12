@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for i in E Spass CVC4 Z3 Vampire ;  do
-	for j in PEqualified Transified Equalified ; do
+	for j in Trans_Ref Ordified PEqualified Transified Equalified  ; do
 #		for k in subset_notransaxiom ; do
 
 #			comm -23 $j $k 
