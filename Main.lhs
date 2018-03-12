@@ -772,7 +772,7 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_Z3_Transified_Z3_300.eps} \\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_CVC4_Transified_CVC4_300.eps}
 \caption{Effects of transification with reflexivity, using E, Vampire, Spass, Z3 and CVC4 }
-\label{fig:transrefplots}_Vampire
+\label{fig:transrefplots}
 \end{figure}
 
 \begin{figure}[h!]
