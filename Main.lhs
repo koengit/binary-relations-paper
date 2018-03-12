@@ -710,7 +710,7 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
                  \multicolumn{4}{||l||}{\bf{Total Orders (326)}}  \\
                  \cline{1-4}
                  Vampire & 295 & +1 & -0   \\
-                 CVC4    & 370 & +1 & -1   \\
+                 CVC4    & 370 & +23 & -1   \\
                  Z3         & 354 & +50 & -1   \\
                  \cline{1-4} 
 \end{tabular} 
@@ -728,6 +728,8 @@ We can compare ordification with detransification, which is the only other trans
 For the 140 problems with a partial equivalence and a strict partial order, we found that applying detransification on all of the transitive relations gave the best results. 
 For the 14 problems with equivalence relation and a partial order, applying equalification on the equivalence relation and detransification on the partial order was the best, in particular for the SMT-solvers. 
 The 2 remaining problems with multiple kinds of transitive relations are both labelled as Unknown, and were not solved before nor after any choice of transformation.
+
+\subsection{Time-slicing}
 
 \subsection{"Recipes"}
 
@@ -754,41 +756,41 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 \appendix
 
 \begin{figure}[t!]
-\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Transified/E/test_original_e_transified_e_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Vampire/test_original_vampire_transified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Spass/test_original_spass_transified_spass_300.eps} 
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Z3/test_original_z3_transified_z3_300.eps} \\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/CVC4/test_original_cvc4_transified_cvc4_300.eps}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Transified/E/test_original_E_Transified_E_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Vampire/test_original_Vampire_Transified_Vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Spass/test_original_Spass_Transified_Spass_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Z3/test_original_Z3_Transified_Z3_300.eps} \\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/CVC4/test_original_CVC4_Transified_CVC4_300.eps}
 \caption{Effects of transification, using E, Vampire, Spass, Z3 and CVC4 }
 \label{fig:transplots}
 \end{figure}
 
 \begin{figure}[t!]
-\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Trans_Ref/E/test_original_e_transified_e_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Vampire/test_original_vampire_transified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Spass/test_original_spass_transified_spass_300.eps} 
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_z3_transified_z3_300.eps} \\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_cvc4_transified_cvc4_300.eps}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Trans_Ref/E/test_original_E_Transified_E_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Vampire/test_original_Vampire_Transified_Vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Spass/test_original_Spass_Transified_Spass_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_Z3_Transified_Z3_300.eps} \\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_CVC4_Transified_CVC4_300.eps}
 \caption{Effects of transification with reflexivity, using E, Vampire, Spass, Z3 and CVC4 }
-\label{fig:transrefplots}
+\label{fig:transrefplots}_Vampire
 \end{figure}
 
 \begin{figure}[h!]
-\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_e_equalified_e_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_vampire_equalified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Spass/test_original_spass_equalified_spass_300.eps}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Equalified/E/test_original_E_Equalified_E_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Vampire/test_original_Vampire_Equalified_Vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_Z3_Equalified_Z3_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_CVC4_Equalified_CVC4_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Spass/test_original_Spass_Equalified_Spass_300.eps}
 \caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
 \label{fig:equalifiedplots}
 \end{figure}
 
 \begin{figure}[h!]
-\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/PEqualified/E/test_original_e_pequalified_e_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Vampire/test_original_vampire_pequalified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Z3/test_original_z3_pequalified_z3_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/CVC4/test_original_cvc4_pequalified_cvc4_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Spass/test_original_spass_pequalified_spass_300.eps}
+\includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/PEqualified/E/test_original_E_PEqualified_e_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Vampire/test_original_Vampire_PEqualified_Vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Z3/test_original_Z3_PEqualified_Z3_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/CVC4/test_original_CVC4_PEqualified_CVC4_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Spass/test_original_Spass_PEqualified_Spass_300.eps}
 \caption{The time taken to solve problems, with and without pequalification, using E, Vampire, Spass, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
@@ -796,9 +798,9 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 \end{figure}
 
 \begin{figure}[h!]
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Z3/test_original_z3_ordified_z3_300.eps}
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/CVC4/test_original_cvc4_ordified_cvc4_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Vampire/test_original_Vampire_ordified_Vampire_300.eps}\\
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_CVC4_300.eps}\\
 \caption{The time taken to solve problems, with and without ordification, using Vampire, Z3 and CVC4 }
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
