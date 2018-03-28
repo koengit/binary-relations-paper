@@ -439,14 +439,14 @@ pequalification & (617) & 524 & +5 & -69 & 526 &  +5 & -8 & 452 & +18 & -48\\
 %\hspace{0.3cm}on EQ & (436) & 427 & +3 & -59 & 451 &+0& -7 & 388 & +14 & -40 \\
 %\hspace{0.3cm}on PEQ & (181) & 97 & +0 & -36 & 92 & +6 & -6 & 67 &+2 & -5 \\&&&&&&&&&\\
 ordification & (326) & 272 & n/a & n/a & 295 &  +1& -0 & 243 & n/a & n/a\\&&&&&&&&&\\
-detransification  & (2007) & 1483 & \bf{+15} & -101 & 1542 &  \bf{+38} & -21 & 1200 & +88 & -90\\
+detransification  & (2007) & 1483 & \bf{+16} & -97 & 1542 &  \bf{+39} & -21 & 1200 & +91 & -91\\
 %\hspace{0.2cm}on EQ& (436) & 427 & +4 & -24 & 451 & +0 & -0& 388& +15 & -32 \\
 %\hspace{0.2cm}on PEQ& (181) &97&\bf{+1}&-8&92&+5&-0&67 &+8 & -0\\
 %\hspace{0.2cm}on TO& (326) &272&+2&-25&296&+0&-2&243&+9 & -34\\
 %\hspace{0.2cm}on R& (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
 %\hspace{0.2cm}on R\textsuperscript{C} & (1359)&1025&+10&-69&1062&\bf{+33}&-10&869& +40&-81\\
 
-\hspace{0.1cm}with reflexivity & (1359) & 1025 & +6 & -89 & 1062 &  \bf{+32} & -0 &866 & +29 & -90\\
+\hspace{0.1cm}with reflexivity & (1359) & 1025 & +6 & -89 & 1062 &  \bf{+32} & -20 &866 & +29 & -90\\
 %\hspace{0.3cm}on EQ & (436) & 427&+3&-30&434&+0&-0&385&+14&-44\\
 %\hspace{0.3cm}on TO & (326 )& 272&+2&-34&296&+0&-0&243&+5&-31\\
 \vspace{0.3cm}
@@ -474,7 +474,7 @@ pequalification & (617) & 392  &  +66  & -8  & 343  & +45 & -25\\
 
 ordification  & (326) & 236 & +50 & -1 & 267 & +23 & -1\\&&&&&&\\
 
-detransification  & (2007) & 1196 & +92 & -58 & 1387 & \bf{+73} & -31\\ 
+detransification  & (2007) & 1196 & +95 & -33 & 1375 & \bf{+73} & -31\\ 
 %\hspace{0.2cm}on EQ& (436) & 354 & +53 & -8 & 370 & +31 & -8 \\
 %\hspace{0.2cm}on PEQ& (181) &38&+17&-0&51&+16&-0\\
 %\hspace{0.2cm}on TO& (326) &255&+0&-26&289&+1&-3\\
@@ -558,22 +558,22 @@ Fig. \ref{fig:detranssubsets} presents the results of detransification on each o
 \begin{figure}[h!]
 \def\mca#1{\multicolumn{1}{c}{#1}}
 \renewcommand{\arraystretch}{2.25}
-\begin{center}
+%\begin{center}
 \begin{tabular}{|| l l l l || l l l l ||}
                  \cline{1-8}
                  \multicolumn{4}{||l||}{\bf{Equivalences (436)}} & \multicolumn{4}{l||}{\bf{Partial Orders (540)}} \\
                  \cline{1-8}
                  E            & 427 & +4 & -24 & E  & 281 & +4 & -15  \\
-                 Vampire & 434 & +0 & -0 & Vampire & 287 & \bf{+33} & -6  \\
-                 Spass    & 385 & +15 & -32 &  Spass   & 201 & +15 & -15 \\
+                 Vampire & 434 & +0 & -0 & Vampire & 287 & \bf{+34} & -6  \\
+                 Spass    & 385 & +15 & -32 &  Spass   & 201 & +15 & -16 \\
                  CVC4    & 370 & +31 & -8 &   CVC4  & 292 & \bf{+13} & -10 \\
-                 Z3         & 354 & +53 & -8 &   Z3   & 215  & +18 & -10  \\
+                 Z3         & 354 & +54 & -8 &   Z3   & 215  & +19 & -10  \\
                  \cline{1-8} 
                  \multicolumn{4}{||l||}{\bf{Partial Equivalences (181)}} & \multicolumn{4}{l||}{\bf{Strict Partial Orders (607)}} \\
                  \cline{1-8}
-                 E & 97 & \bf{+1} & -8 & E & 421 & \bf{+5}  & -31  \\
+                 E & 97 & \bf{+1} & -9 & E & 421 & \bf{+5}  & -32  \\
                  Vampire & 92 & +5 & -0 & Vampire & 444 & +5 & -11  \\
-                 Spass & 67 & +8 & -0 & Spass & 299 & +48 & -9  \\
+                 Spass & 67 & +8 & -0 & Spass & 299 & +48 & -10  \\
                  CVC4 & 51 & +16 & -0 & CVC4 & 341 & +29 & -7  \\
                  Z3 & 38 & +18 & -0 & Z3 & 290 & +24 & -12  \\\cline{1-8} 
 \end{tabular}  \\
@@ -582,20 +582,20 @@ Fig. \ref{fig:detranssubsets} presents the results of detransification on each o
                  \cline{1-8}
                  \multicolumn{4}{||l||}{\bf{Total Orders (326)}}  &   \multicolumn{4}{||l||}{\bf{Other (73)}}  \\
                  \cline{1-8}
-                  E           & 272 & +2 & -25 &  E & 57 & +0 & -7   \\
+                  E           & 272 & +3 & -20 &  E & 57 & +0 & -7   \\
                  Vampire & 296 & +0 & -2 &  Vampire & 58 & +0 & -2    \\
-                 Spass    & 243 & +9 & -34 &  Spass & 47 & +2 & -0   \\
+                 Spass    & 243 & +12 & -33 &  Spass & 47 & +2 & -0   \\
                  CVC4    & 289 & +1 & -3 &   CVC4 & 55 & +2 & -3  \\
-                 Z3         & 255 & +0 & -26 &    Z3 & 51 & +0 & -2    \\
+                 Z3         & 255 & +0 & -1 &    Z3 & 51 & +0 & -2    \\
                  \cline{1-8} 
 \end{tabular}
-\end{center}
+%\end{center}
 \caption{The effect of detransification on each subset}
 \label{fig:detranssubsets}
 \end{figure}
 
 \subsection{Detransification with reflexivity}
-Detransification with reflexivity is applicable only on transitive relations that are reflexive. It shows worse results than detransification without reflexivity on all subsets for most provers. This is especially the case for the SMT-solvers, for which many problems become unsolvable. Only Vampire is slightly better with the reflexivity version, and solves in total 32 new problems (all with partial orders), while it loses none. The results on each applicable subset is shown in Fig. \ref{fig:detransreflsubsets}
+The use of detransification with reflexivity is limited to transitive relations that are reflexive. It shows worse results than detransification without reflexivity on all applicable subsets for all of the tested tools. This is especially true for the SMT-solvers, for which many problems become unsolvable. The results on each applicable subset is shown in Fig. \ref{fig:detransreflsubsets}
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l l l || l l l l ||}
@@ -603,7 +603,7 @@ Detransification with reflexivity is applicable only on transitive relations tha
                  \multicolumn{4}{||l||}{\bf{Equivalences (436)}} & \multicolumn{4}{l||}{\bf{Partial Orders (540)}} \\
                  \cline{1-8}
                  E            & 427 & +3 & -30 & E  & 281 & +1 & -20  \\
-                 Vampire & 434 & +0 & -0 & Vampire & 287 & \bf{+32} & -0  \\
+                 Vampire & 434 & +0 & -4 & Vampire & 287 & \bf{+32} & -8  \\
                  Spass    & 385 & +14 & -44 &  Spass   & 201 & +8 & -16 \\
                  CVC4    & 370 & +32 & -45 &   CVC4  & 292 & +5 & -55 \\
                  Z3         & 354 & +57 & -22 &   Z3   & 215  & +12 & -41  \\
@@ -615,7 +615,7 @@ Detransification with reflexivity is applicable only on transitive relations tha
                  \multicolumn{4}{||l||}{\bf{Total Orders (326)}}  &   \multicolumn{4}{||l||}{\bf{Other (73)}}  \\
                  \cline{1-8}
                   E           & 272 & +2 & -34 &  E & 57 & +0 & -7   \\
-                 Vampire & 296 & +0 & -0 &  Vampire & 58 & +0 & -0    \\
+                 Vampire & 296 & +0 & -2 &  Vampire & 58 & +0 & -6    \\
                  Spass    & 243 & +5 & -31 &  Spass & 47 & +2 & -0   \\
                  CVC4    & 289 & +3 & -8 &   CVC4 & 55 & +2 & -4  \\
                  Z3         & 255 & +0 & -71 &    Z3 & 51 & +0 & -3    \\
@@ -702,7 +702,7 @@ equalification is slightly worse or about the same compared to pequalification.
 \end{figure}
 
 \subsection{Ordification}
-Since ordification uses arithmetic, it is only applicable with Vampire (in TFF format) and Z3 and CVC4 (in SMT format). The original problems were transformed into TFF and SMT as well, in order to achieve a fair comparison. It is applicable only on the set of problems containing total orders. Ordification improved the results significantly for Z3, while CVC4 and Vampire perform about the same as before the transformation.
+Since ordification uses arithmetic, it is only applicable with Vampire (in TFF format) and Z3 and CVC4 (in SMT format). The original problems were transformed into TFF and SMT as well, in order to achieve a fair comparison. It is applicable only on the set of problems containing total orders. Ordification improved the results significantly for both Z3 and CVC4, while Vampire performs about the same as before the transformation.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l l l ||}
@@ -710,8 +710,8 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
                  \multicolumn{4}{||l||}{\bf{Total Orders (326)}}  \\
                  \cline{1-4}
                  Vampire & 295 & +1 & -0   \\
-                 CVC4    & 370 & +23 & -1   \\
-                 Z3         & 354 & +50 & -1   \\
+                 CVC4    & 288 & +1 & -1   \\
+                 Z3         & 254 & +50 & -1   \\
                  \cline{1-4} 
 \end{tabular} 
 \label{fig:ordsubset}
@@ -730,8 +730,172 @@ For the 14 problems with equivalence relation and a partial order, applying equa
 The 2 remaining problems with multiple kinds of transitive relations are both labelled as Unknown, and were not solved before nor after any choice of transformation.
 
 \subsection{Time-slicing}
+As can be seen in the plots in Fig. \ref{fig:transplots} - \ref{fig:ordifiedplots}, the majority of both the original and transformed problems are solved in less than half of the given 5 minute time-limit. Hence, a strategy which spends half of the time on each version of the problem can often improve the results. In some cases, spending one third of the time on the original problem and two different transformations turns out to be the best. Other splitting strategies may also be advantageous.  For example, while E showed limited positive effects of the transformations, the few problems that did benefit were solved very quickly, in under 10 seconds. It can thus pay off to give a short time-out to E on the transformed problem and spend the remaining time on the original problem.
 
-\subsection{"Recipes"}
+\subsection{Optimal strategies}
+
+We present for each tool an optimal strategy, that is given by identifying for each subset the transformation that maximises the total number of solved problems. Since the results are based on the limited set of problems in the current TPTP library, we do not provide a universal method, but rather an idea of how parameters can be tuned to improve the results. 
+
+\subsubsection{E}
+E did not have any major benefits from any of the transformations. However, with time-slicing we can avoid a lot of the bad effects of a transformation, while still keeping the results that were improved. Fig. \ref{fig:eq} - \ref{fig:ord} show the subsets on which there was a transformation that solved new problems. By picking the transformation that gives the highest number of solved problems, we can deduce an optimal strategy, where we gain 11 solved problems while restricting the number of lost problems to 7.  For problems with partial orders slicing between no transformation and detransification gives the best results. For problems with equivalence relations, the best results were given by splitting between no transformation, either equalification or pequalification, and detransification, allowing a third of the time on each version. On the remaining subsets there is no transformation that increases the success rate compared to the original.
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Equivalences (436)}}  \\
+                 \cline{1-2}
+                 original & 427   \\
+                 equalification & 394 (+5 - 38) \\
+                 pequalification &  399 (+5 -33) \\
+                 detransification & 407 (+4 -24)\\
+                   with reflexivity & 400 (+3 -30)\\
+                   original/(p)equalification & 430 (+7  -4)\\
+                   /detransification & \\
+                 \cline{1-2} 
+\end{tabular} 
+\label{fig:e_eq}
+\end{figure}
+
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
+                 \cline{1-2}
+                 original & 97   \\
+                 pequalification & 61 (+0 -36)\\
+                 detransification & 89 (+1 -9)\\
+                 original/detransification& 93 (+1  -5)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:e_peq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
+                 \cline{1-2}
+                 original & 281   \\
+                 detransification & 270 (+4 -15)\\
+                 original/detransification & 282 (+4  -3)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:e_pos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
+                 \cline{1-2}
+                 original & 272   \\
+                 detransification & 255 (+3 -20)\\
+                 original/detransification & 272 (+3  -3)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:e_ord}
+\end{figure}
+
+\subsubsection{Vampire}
+For Vampire, detransification is the best choice for both partial orders and partial equivalence relations. A majority of the problems solved after detransification but not before took a long time, making time-slicing less favorable. For the other subsets, Vampire is the most successful on the original problems. In total, we gain 39 problems and lose 6.
+
+%%TODO: Ordification gives +1, but compared to the tffified original... what to write about that?
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
+                 \cline{1-2}
+                 original & 92   \\
+                 pequalification & 91 (+5 -6)\\
+                 detransification & 97 (+5 -0)\\
+                 original/detransification& 93 (+1  -0)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:vamp_peq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
+                 \cline{1-2}
+                 original & 287   \\
+                 detransification & 315 (+34 -6)\\
+                 original/detransification & 304 (+23  -6)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:vamp_pos}
+\end{figure}
+
+\subsubsection{Spass}
+
+For Spass, the right transformation can make a rather big difference. 
+
+% FIX TABLES AFTER HERE
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Equivalences (436)}}  \\
+                 \cline{1-2}
+                 original & 385   \\
+                 equalification & 355 (+16 - 46) \\
+                 pequalification &  355 (+16 -46) \\
+                 detransification & 392 (+15 -8)\\
+                   with reflexivity & 391 (+14 -8)\\
+                 original/(p)equalification & 397 (+16  -4)\\
+                 original/(p)equalification & 398 (+18  -5)\\
+                 /detransification & \\
+                 \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_eq}
+\end{figure}
+
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
+                 \cline{1-2}
+                 original & 67   \\
+                 pequalification & 61 (+0 -36)\\
+                 detransification & 75 (+8 -0)\\
+                 original/detransification& 93 (+1  -5)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_peq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
+                 \cline{1-2}
+                 original & 281   \\
+                 detransification & 270 (+4 -15)\\
+                 original/detransification & 282 (+4  -3)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_pos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
+                 \cline{1-2}
+                 original & 272   \\
+                 detransification & 255 (+3 -20)\\
+                 original/detransification & 272 (+3  -3)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_ord}
+\end{figure}
+
+
+
 
 \section{Discussion and Conclusions}
 
