@@ -97,7 +97,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em transitive relations}. We show how such relations can be discovered syntactically in an input theory. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain types of binary relations.
+We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em transitive relations} in general. We show how such relations can be discovered syntactically in an input theory, and how they can be expressed in alternative ways. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain types of binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
@@ -113,9 +113,9 @@ This paper is concerned with investigating what kind of special treatment we cou
 \begin{code}
 forall x,y,z . R(x,y) && R(y,z) => R(x,z)
 \end{code}
-can lead to an expensive proof exploration in resolution and superposition based theorem provers, and can generate a huge number of instances in instance-based provers and SMT-solvers. Transitive relations are also common enough to motivate special built-in support. However, as far as we know, chaining is not implemented in any of the major first-order reasoning tools (at least not in E \cite{E}, Vampire \cite{Vampire}, Z3 \cite{Z3}, and CVC4 \cite{CVC4}, which were used in this paper).
+can lead to an expensive proof exploration in resolution and superposition based theorem provers, and can generate a huge number of instances in instance-based provers and SMT-solvers. Transitive relations are also common enough to motivate special built-in support. However, as far as we know, out of all the major first-order reasoning tools, chaining has only been implemented in SPASS \cite{spass}.
 
-As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the handling of these relations, and (2) how a preprocessing tool may be able to do this automatically. Adding built-in reasoning support in the tools themselves is not a main concern of this paper.
+As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the handling of these relations, and (2) how a preprocessing tool may be able to do this automatically.
 
 By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
 
@@ -133,11 +133,11 @@ The intuition here is that |rep_| is now the representative function of the rela
 
 In general, when considering alternative treatments, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
 
-For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) general {\em transitive relations} and {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found well-known ways but also novel ways of dealing with these.
+For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) general {\em transitive relations} and {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found ways of dealing with these that worked well in practice.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
-\paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining is not implemented in any of the reasoning tools we considered for this paper. In personal communication with some of the authors, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
+\paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining has only been implemented in one of the reasoning tools we considered for this paper. In personal communication with some of the authors of the other tools, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
 
 % ------------------------------------------------------------------------------
 % - properties of binary relations
@@ -204,21 +204,21 @@ strict total order              ==  {antisymmetric^~, asymmetric, transitive}
 transitive relation             ==  {transitive}
 reflexive, transitive relation  ==  {reflexive, transitive}
 \end{code}
-As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when you clausify this property in the presence of transitivity, you end up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
+As a side note, in mathematics, strict total orders are sometimes defined using a property called {\em trichotomous}, which means that exactly one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. However, when this property is clausified in the presence of transitivity, one ends up with |antisymmetric^~| which says that at least one of |R(x,y)|, |x=y|, or |R(y,x)| must be true. There seems to be no standard name in mathematics for the property |antisymmetric^~|, which is why we use this name.
 
 % \comment{Should I include sat/csat/unknown/open in the table?}
 \begin{figure}[t]
 \begin{center}
-\begin{tabular}{rl}
-500+48 & equivalence relations \\
-154+2 & partial equivalence relations \\
-250+4 & (strict) total orders \\
-806+15 & reflexive, transitive relations (excluding the above) \\
-1128+69 & transitive relations (excluding the above) \\
+\begin{tabular}{rrl}
+500 & +48 & equivalence relations \\
+154 & +2 & partial equivalence relations \\
+250 & +4 & (strict) total orders \\
+806 & +15 & reflexive, transitive relations (excluding the above) \\
+1128& +69 & transitive relations (excluding the above) \\
 \end{tabular}
 \end{center}
 \vspace{-0.5cm}
-\caption{Number of occurrences of binary relations in TPTP, divided up into Theorem/Unsatisfiable/Unknown/Open problems + Satisfiable/CounterSatisfiable problems. }
+\caption{Number of occurrences of binary relations in TPTP, divided up into Theorem/Unsatisfiable/Unknown/Open problems +Satisfiable/CounterSatisfiable problems. }
 \label{fig:occurs2}
 \end{figure}
 
@@ -270,8 +270,9 @@ In order to avoid generating inconsistent sets |{prop1, .., propn}| (that would 
 
 This procedure generates a complete list of minimal implications. It works well in practice, especially if all guesses made by the SAT-solver are maximized according to their size. The vast majority of the time is spent on the implication proofs, and no significant time is spent in the SAT-solver.
 
-To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and then compute which other properties they imply, using the pre-generated table. % TODO the below text is new, Koen please read  
-Also, certain properties can be derived for a binary relation |R2_| if |R2_| is implied by another binary relation |R1_|, and |R1_| has that property. This holds for reflexivity, totality and seriality. Similarly, if |R2_| is antisymmetric or coreflexive, the same property can be derived for |R1_|. When having derived a new property of a relation in this way, we iterate the procedure of finding implied properties using the precomputed table until no new information is gained.  In this way, we never have to do any actual theorem proving in order to detect a binary relation with certain properties. 
+To detect a binary relation |R_| with certain properties in a given theory, we simply gather all basic properties about |R_| that occur in the theory, and then compute which other properties they imply, using the pre-generated table.
+
+Also, certain properties can be derived for a binary relation |R2_| if |R2_| is implied by another binary relation |R1_|, and |R1_| has that property. This holds for reflexivity, totality and seriality. Similarly, if |R2_| is antisymmetric or coreflexive, the same property can be derived for |R1_|. When having derived a new property of a relation in this way, we iterate the procedure of finding implied properties using the precomputed table until no new information is gained.  In this way, we never perform full theorem proving, but we nonetheless detect many binary relations with certain properties. 
 
 In the following three sections, we describe how to deal with equivalence relations, total orders, and general transitive relations, respectively.
 
@@ -310,10 +311,8 @@ Here, |P_| is the predicate that indicates the subset on which |R_| behaves as a
 We call this transformation {\em pequalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
 The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be a representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. This |R_| is symmetric and transitive, and therefore we have model of the LHS theory.
-% TODO the below text is new, Koen please read  
-Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both x and y are in the set defined by |P_|. (This holds also when x equals y). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
 
-
+Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both |x| and |y| are in the set defined by |P_|. (This holds also when |x| equals |y|). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
 
 % ------------------------------------------------------------------------------
 % - dealing with total orders
@@ -376,7 +375,7 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 % ------------------------------------------------------------------------------
 % - detransification
 
-\section{Handling transitive relations}
+\section{Handling transitive relations in general}
 
 The treatments introduced so far all make use of built-in concepts of the reasoning tool, and they can be applied only to special cases of transitive relations. In this section we propose a more general approach, in which theories with a transitivity axiom are transformed into theories without that transitivity axiom. To this end, transitivity is specialized at each {\em positive occurrence} of the relational symbol. Such transformations may be beneficial because reasoning about transitivity in a naive way can be very expensive for theorem provers, because from transitivity there are many possible conclusions to draw that trigger each other ``recursively''.
 
@@ -419,8 +418,7 @@ We evaluate the effects of the different axiomatizations using three different r
 %NOT TRUE ANYMORE:
 %For Vampire, no time limit is passed directly to the theorem prover but instead the process is terminated once the time limit has passed. This was done to keep solving times more stable, since Vampire uses %the time limit to control its search strategies.
 
-We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem or Unknown or Open (leaving out the very large theories). For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. In total, 2007 problems were found to include one or more transitive relations and could thus be used with at least one of the presented transformations. 130 of these problems are listed as Unknown, and an additional 172 problems have rating 1.0. No problem in the resulting set of problems is listed as Open.
-Evaluation of reasoning tools on Satisfiable and CounterSatisfiable problems is left as future work. %TODO: not future work anymore(?)
+We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem or Unknown or Open (leaving out the very large theories)\footnote{We have also evaluated the transformations on Satisfiable/Countersatisfiable problems, but there were too few problems for the results to be significant, and the results were also mostly negative.} For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. In total, 2007 problems were found to include one or more transitive relations and could thus be used with at least one of the presented transformations. 130 of these problems are listed as Unknown, and an additional 172 problems have rating 1.0. No problem in the resulting set of problems is listed as Open.
 
 The experimental results are summarized in Fig. \ref{fig:overview}.
 
