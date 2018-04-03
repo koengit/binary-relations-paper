@@ -496,12 +496,9 @@ detransification  & (2007) & 1196 & +95 & -33 & 1375 & \bf{+73} & -31\\
 \label{fig:overview}
 \end{figure}
 
-Overall, the results vary between each transformation and reasoning tool. For many of the transformations, we don't gain any solved problems without also losing some. For Spass and CVC4, this was the case for all of the transformations. A time-slicing strategy can be advantageous, were the reasoning tool is run on both the original and the transformed problem, with a suitably chosen time-limit for each. 
-Z3 turns out to work really well on ordified problems, where it can make use of its built in strategies for arithmetic. E did not benefit from any of the transformations, and a large portion of the problems became unsolvable. One may have expected better results for equalification, since introducing equality in place of each occurrence of an equivalence relation seems suitable for an equational theorem prover. However, E performs well already on the untreated problems with equivalence relations, leaving little room for improvement. Vampire has the least difference in performance before and after the transformations, demonstrating its stability as a theorem prover. 
+Overall, the results vary between each transformation and reasoning tool. For many of the transformations, we do not gain any solved problems without also losing some.  A time-slicing strategy can be advantageous, were the reasoning tool is run on both the original and the transformed problem, with a suitably chosen time-limit for each.  Z3 turns out to work really well on ordified problems, where it can make use of its built in strategies for arithmetic. E did not benefit from any of the transformations, and a large portion of the problems became unsolvable. One may have expected better results for equalification, since introducing equality in place of each occurrence of an equivalence relation seems suitable for an equational theorem prover. However, E performs well already on the untreated problems with equivalence relations, leaving little room for improvement. Vampire has the least difference in performance before and after the transformations, demonstrating its stability as a theorem prover. 
 
-In order to make a comparison between the transformations and evaluate what transformation works best for each kind of transitive relation, we partition the test problems into different subsets (Fig. 
-
-\ref{fig:subsets}). These subsets are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if the problem includes several transitive relations having different properties. This is the case for 156 problems. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation is found to be total (or strictly total, as in the case of a negated total order), and one where this was not the case. We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P.
+In order to make a comparison between the transformations and evaluate what transformation works best for each kind of transitive relation, we partition the test problems into different subsets (Fig. \ref{fig:subsets}). These subsets are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if the problem includes several transitive relations having different properties. This is the case for 156 problems. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation is found to be total (or strictly total, as in the case of a negated total order), and one where this was not the case. We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P.
 
 The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they have a transitive relation that is found to be reflexive and/or symmetric. The problems with total relations are partitioned into two sets: problems with one or more total order (i.e. total, transitive and antisymmetric), and problems with relations that are total and transitive but lack the antisymmetry property (labelled as "other" in the diagram). Fig. \ref{fig:subsets} shows each subset with its number of problems and number of rating 1 problems, and what transformation is applicable for each subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram. The number of rating 1 problems in each subset can give an indication of the difficulty of dealing with different kinds of transitive relations. Problems with equivalence relations are solvable much more often than problems with partial equivalence relations, However it is hard to tell if the difficulty of a problem is related to the transitive relation or has other reasons. 
 
@@ -663,9 +660,7 @@ Comparing pequalification with detransification, detransification is clearly muc
 
 \subsection{Equalification}
 
-results after adding the idempotency axiom follows the same pattern as for pequalification:
-making the results slightly worse. the most significant change is for E.
-equalification is slightly worse or about the same compared to pequalification.
+Equalification is applicable only to problems that contain equivalence relations. It performs slightly worse or about the same compared to pequalification, which is more general. Like pequalification, it shows the best results together with the SMT solvers. Adding an idempotency axiom typically makes the results slightly worse, with E showing the most significant change. The results of equalification and equalification with idempotency are presented in Fig. \ref{fig:eqsubsets} - \ref{fig:eqsubsetsidem}.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l l l ||}
@@ -679,7 +674,7 @@ equalification is slightly worse or about the same compared to pequalification.
                  Z3         & 354 & +60 & -7   \\
                  \cline{1-4} 
 \end{tabular} 
-\label{fig:peqsubsetsidem}
+\label{fig:eqsubsets}
 \caption{The effect of equalification on the applicable subset}
 \end{figure}
 
@@ -695,7 +690,7 @@ equalification is slightly worse or about the same compared to pequalification.
                  Z3         & 354 & +59 & -11   \\
                  \cline{1-4} 
 \end{tabular} 
-\label{fig:peqsubsetsidem}
+\label{fig:eqsubsetsidem}
 \caption{The effect of equalification with idempotency on the applicable subset}
 \end{figure}
 
@@ -716,7 +711,7 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
 \caption{The effect of ordification on the applicable subset}
 \end{figure}
 
-We can compare ordification with detransification, which is the only other transformation that is applicable on total orders. Similarly to ordification, detransification does not have any significant impact on the results for either of CVC4 or Vampire on total orders. For Z3, ordification is clearly the best choice. Note however that Z3 shows worse results than CVC4 and Vampire prior to the transformation. After ordification, the three tools solve about the same number of problems.
+We can compare ordification with detransification, which is the only other transformation that is applicable on total orders. Similarly to ordification, detransification does not have any significant impact on the results for either of CVC4 or Vampire on total orders. For Z3, ordification is clearly the best choice. Note however that Z3 shows worse results than CVC4 and Vampire prior to the transformation. After ordification, the three tools solve about the same number of problems. The results are presented in Fig. \ref{fig:ordsubset}.
 
 \subsection{Problems with more than one kind of transitive relation}
 156 of the problems in our evaluation contain more than one kind of transitive relation. 140 of them contain a partial equivalence relation and a strict partial order. 14 contain an equivalence relation and a partial order, and two problems contain a partial equivalence relation and a relation that is total and transitive. Almost 50\% of these problems are hard, with rating 1 in the TPTP.
