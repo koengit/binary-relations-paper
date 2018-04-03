@@ -1082,7 +1082,7 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
 
 We have presented 6 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, ordification, maxification, detransification, and detransification with reflexivity. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
 
-For users of reasoning tools that create their own theories, it is clear that they should consider using one of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, there exist 18 TPTP problems that are now solvable that weren't previously.
+For users of reasoning tools that create their own theories, it is clear that they should consider using one or more of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, there exist 18 TPTP problems that are now solvable that weren't previously.
 
 For implementers of reasoning tools, our conclusions are less clear. For some combinations of treatments and provers (such as transification for Vampire, and equalification for Z3), overall results are clearly better, and we would thus recommend these treatments as preprocessors for these provers. Some more combinations of treatments and provers lend themselves to a time slicing strategy that can solve strictly more problems, and could thusly be integrated in a natural way in provers that already have the time slicing machinery in place.
 
@@ -1097,10 +1097,6 @@ Lastly, we would like to look at how these ideas could be used inside a theorem 
 \section*{Acknowledgments}
 
 We thank Nicholas Smallbone for discussions and useful suggestions on earlier versions of this paper.
-
-\appendix
-
-hihi
 
 % ------------------------------------------------------------------------------
 % - references
