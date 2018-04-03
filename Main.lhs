@@ -718,26 +718,27 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
 \caption{The effect of ordification on the applicable subset}
 \end{figure}
 
-
-
 We can compare ordification with detransification, which is the only other transformation that is applicable on total orders. Similarly to ordification, detransification does not have any significant impact on the results for either of CVC4 or Vampire on total orders. For Z3, ordification is clearly the best choice. Note however that Z3 shows worse results than CVC4 and Vampire prior to the transformation. After ordification, the three tools solve about the same number of problems.
 
 \subsection{Problems with more than one kind of transitive relation}
 156 of the problems in our evaluation contain more than one kind of transitive relation. 140 of them contain a partial equivalence relation and a strict partial order. 14 contain an equivalence relation and a partial order, and two problems contain a partial equivalence relation and a relation that is total and transitive. Almost 50\% of these problems are hard, with rating 1 in the TPTP.
 
 For the 140 problems with a partial equivalence and a strict partial order, we found that applying detransification on all of the transitive relations gave the best results. 
-For the 14 problems with equivalence relation and a partial order, applying equalification on the equivalence relation and detransification on the partial order was the best, in particular for the SMT-solvers. 
-The 2 remaining problems with multiple kinds of transitive relations are both labelled as Unknown, and were not solved before nor after any choice of transformation.
+For the 14 problems with equivalence relation and a partial order, applying equalification on the equivalence relation and detransification on the partial order was the best, in particular for the SMT-solvers. The 2 remaining problems with multiple kinds of transitive relations are both labelled as Unknown, and were not solved before nor after any choice of transformation.
 
 \subsection{Time-slicing}
-As can be seen in the plots in Fig. \ref{fig:transplots} - \ref{fig:ordifiedplots}, the majority of both the original and transformed problems are solved in less than half of the given 5 minute time-limit. Hence, a strategy which spends half of the time on each version of the problem can often improve the results. In some cases, spending one third of the time on the original problem and two different transformations turns out to be the best. Other splitting strategies may also be advantageous.  For example, while E showed limited positive effects of the transformations, the few problems that did benefit were solved very quickly, in under 10 seconds. It can thus pay off to give a short time-out to E on the transformed problem and spend the remaining time on the original problem.
+
+As can be seen in Fig. \ref{fig:transplots} - \ref{fig:ordifiedplots}, a large portion of problems where the transformed version is solved but not the original, are solved in under ten seconds. At the same time, not many of the original problems are solved in the time frame of 290-300 seconds. It can thus often be advantageous to spend 10 seconds on each problem produced by an applicable transformation, and the remaining time on the original problem. This is true for all the tools tested except Vampire, which solved most of its new problems towards the end of the five minutes. Where there are more than one applicable transformation, it can pay off to give 10 seconds to each before trying the original problem.
 
 \subsection{Optimal strategies}
 
 We present for each tool an optimal strategy, that is given by identifying for each subset the transformation that maximises the total number of solved problems. Since the results are based on the limited set of problems in the current TPTP library, we do not provide a universal method, but rather an idea of how parameters can be tuned to improve the results. 
 
+ %TODO: metnion that we leave out transification with reflexivity and eq/peq with idempotency (and pequalificaiton for equivalence relations, because the results is so similar to equalificaiton)
+
+
 \subsubsection{E}
-E did not have any major benefits from any of the transformations. However, with time-slicing we can avoid a lot of the bad effects of a transformation, while still keeping the results that were improved. Fig. \ref{fig:eq} - \ref{fig:ord} show the subsets on which there was a transformation that solved new problems. By picking the transformation that gives the highest number of solved problems, we can deduce an optimal strategy, where we gain 11 solved problems while restricting the number of lost problems to 7.  For problems with partial orders slicing between no transformation and detransification gives the best results. For problems with equivalence relations, the best results were given by splitting between no transformation, either equalification or pequalification, and detransification, allowing a third of the time on each version. On the remaining subsets there is no transformation that increases the success rate compared to the original.
+E did not have any major benefits from any of the transformations. However, with time-slicing we can avoid a lot of the bad effects of a transformation, while still keeping the results that were improved. For E, the best results were achieved when allowing 10 seconds on each transformed problem and the remaining time on the original problem. This is based on a time-limit of 5 minutes. Fig. \ref{fig:eq} - \ref{fig:ord} show the subsets on which there was a transformation that solved new problems.With this strategy, we gain a total of 10 solved problems, 7 with equivalence relations and 3 with partial orders. On the remaining subsets there is no transformation that increases the success rate compared to the original, but splitting does not decrease it. 
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -748,27 +749,12 @@ E did not have any major benefits from any of the transformations. However, with
                  equalification & 394 (+5 - 38) \\
                  pequalification &  399 (+5 -33) \\
                  detransification & 407 (+4 -24)\\
-                   with reflexivity & 400 (+3 -30)\\
-                   original/(p)equalification & 430 (+7  -4)\\
-                   /detransification & \\
+                   % with reflexivity & 400 (+3 -30)\\
+                   original 270 / equalification 10 & 434 (+7  -0)\\
+                    pequalification 10 / detransification 10 & \\
                  \cline{1-2} 
 \end{tabular} 
 \label{fig:e_eq}
-\end{figure}
-
-
-\begin{figure}[h!]
-\begin{tabular}{|| l l ||}
-                 \cline{1-2}
-                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
-                 \cline{1-2}
-                 original & 97   \\
-                 pequalification & 61 (+0 -36)\\
-                 detransification & 89 (+1 -9)\\
-                 original/detransification& 93 (+1  -5)\\
-                   \cline{1-2} 
-\end{tabular} 
-\label{fig:e_peq}
 \end{figure}
 
 \begin{figure}[h!]
@@ -778,27 +764,14 @@ E did not have any major benefits from any of the transformations. However, with
                  \cline{1-2}
                  original & 281   \\
                  detransification & 270 (+4 -15)\\
-                 original/detransification & 282 (+4  -3)\\
+                 original 290 / detransification 10 & 284 (+3  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:e_pos}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{tabular}{|| l l ||}
-                 \cline{1-2}
-                 \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
-                 \cline{1-2}
-                 original & 272   \\
-                 detransification & 255 (+3 -20)\\
-                 original/detransification & 272 (+3  -3)\\
-                   \cline{1-2} 
-\end{tabular} 
-\label{fig:e_ord}
-\end{figure}
-
 \subsubsection{Vampire}
-For Vampire, detransification is the best choice for both partial orders and partial equivalence relations. A majority of the problems solved after detransification but not before took a long time, making time-slicing less favorable. For the other subsets, Vampire is the most successful on the original problems. In total, we gain 39 problems and lose 6.
+For Vampire, detransification is the best choice for both partial orders and partial equivalence relations. A majority of the problems solved after detransification but not before took a long time, making time-slicing less favorable. For the other subsets, Vampire is the most successful on the original problems. Using detransification on partial equivalences and partial orders, and no transformation otherwise,  we gain 39 solved problems and lose 6.
 
 %%TODO: Ordification gives +1, but compared to the tffified original... what to write about that?
 
@@ -810,7 +783,7 @@ For Vampire, detransification is the best choice for both partial orders and par
                  original & 92   \\
                  pequalification & 91 (+5 -6)\\
                  detransification & 97 (+5 -0)\\
-                 original/detransification& 93 (+1  -0)\\
+                 original 290 / detransification 10 & 96 (+4  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:vamp_peq}
@@ -823,17 +796,14 @@ For Vampire, detransification is the best choice for both partial orders and par
                  \cline{1-2}
                  original & 287   \\
                  detransification & 315 (+34 -6)\\
-                 original/detransification & 304 (+23  -6)\\
+                 original 290 /detransification 10 & 301 (+14  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:vamp_pos}
 \end{figure}
 
 \subsubsection{Spass}
-
-For Spass, the right transformation can make a rather big difference. 
-
-% FIX TABLES AFTER HERE
+For Spass, detransification on its own is the most successful on non-symmetric transitive relations, i.e. partial equivalences and strict partial orders, and the "other" category with total, transitive relations. The new solved problems with a partial equivalence also had a strict partial order, and thus are contained in the 48 new problems that were solved in the partial orders subset. For the other kinds of relations, splitting between each of the applicable transformations gives the best results. Using detransification on non-symmetric transitive relations, and splitting with each applicable transformation on the other subsets, we gain 76 solved problems, while losing 11.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -842,17 +812,15 @@ For Spass, the right transformation can make a rather big difference.
                  \cline{1-2}
                  original & 385   \\
                  equalification & 355 (+16 - 46) \\
-                 pequalification &  355 (+16 -46) \\
+ %                pequalification &  355 (+16 -46) \\
                  detransification & 392 (+15 -8)\\
-                   with reflexivity & 391 (+14 -8)\\
-                 original/(p)equalification & 397 (+16  -4)\\
-                 original/(p)equalification & 398 (+18  -5)\\
-                 /detransification & \\
+ %                  with reflexivity & 391 (+14 -8)\\
+                 original 270 / equalification 10 & 403 (+18  -0)\\
+                 pequalification 10 / detransification 10& \\
                  \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_eq}
 \end{figure}
-
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -862,7 +830,8 @@ For Spass, the right transformation can make a rather big difference.
                  original & 67   \\
                  pequalification & 61 (+0 -36)\\
                  detransification & 75 (+8 -0)\\
-                 original/detransification& 93 (+1  -5)\\
+                 original 280 /  pequalification 10  & 69 (+3  -1)\\
+                  /detransification 10 & \\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_peq}
@@ -873,9 +842,9 @@ For Spass, the right transformation can make a rather big difference.
                  \cline{1-2}
                  \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
                  \cline{1-2}
-                 original & 281   \\
-                 detransification & 270 (+4 -15)\\
-                 original/detransification & 282 (+4  -3)\\
+                 original & 201   \\
+                 detransification & 200 (+15 -16)\\
+                 original 290 / detransification 10 & 208 (+7  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_pos}
@@ -884,14 +853,228 @@ For Spass, the right transformation can make a rather big difference.
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
                  \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Strict Partial Orders (607)}}  \\
+                 \cline{1-2}
+                 original & 299   \\
+                 detransification & 337 (+48 -10)\\
+                 original 290 /detransification 10 & 322 (+24 -1)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_spos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
                  \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
                  \cline{1-2}
-                 original & 272   \\
-                 detransification & 255 (+3 -20)\\
-                 original/detransification & 272 (+3  -3)\\
+                 original & 243   \\
+                 detransification & 222 (+12 -33)\\
+                 original 290 / detransification 10 & 245 (+2  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_ord}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Other (73)}}  \\
+                 \cline{1-2}
+                 original & 47   \\
+                 detransification & 49 (+2 -0)\\
+                 original 290 /detransification 10 & 73 (+0  -0)\\
+                  \cline{1-2} 
+\end{tabular} 
+\label{fig:spass_other}
+\end{figure}
+
+\subsubsection{Z3}
+For total orders, ordification is the best strategy, but splitting between the untransformed problem and 10 seconds each on the ordified and detransified problem gives almost as good results. For the other subsets, splitting between all applicable transformations, with 10 seconds on each, and the remaining time on the untransformed problem is the optimal strategy. For equivalence relations, it pays off to use both equalification and pequalification as well as detransification when splitting. In this way, we solve 124 new problems compared to the original, and lose none. 21 of the newly solved problems are in overlapping subsets (containing more than one kind of transitive relation).
+
+%TODO: what about ordification - here we compare it to the original (+31) and before to the smtified original (+50)...
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Equivalences (436)}}  \\
+                 \cline{1-2}
+                 original & 354   \\
+                 equalification & 407 (+60 - 7) \\
+                 pequalification &  409 (+59 -4) \\
+                 detransification & 400 (+54 -8)\\
+          %         with reflexivity & 389 (+57 -22)\\
+       %          original 290 / (p)equalification 10 & 412 (+58  -0)\\
+          %       original 290 / detransification 10 & 406 (+52 -0)\\
+                 original 270 / equalification 10 & 417 (+63  -0)\\
+                 pequalification 10 /detransification 10& \\ 
+                 \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_eq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
+                 \cline{1-2}
+                 original & 38   \\
+                 pequalification & 43 (+9 -4)\\
+                 detransification & 56 (+18 -0)\\
+             %    original 290 /detransification 10 & 55 (+17  -0)\\
+                 original 280 /detransification 10  & 57 (+19 -0) \\
+                 pequalification 10 \\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_peq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
+                 \cline{1-2}
+                 original & 215   \\
+                 detransification & 224 (+19 -10)\\
+                 original 290 /detransification 10 & 229 (+14  -0)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_pos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Strict Partial Orders (607)}}  \\
+                 \cline{1-2}
+                 original & 290   \\
+                 detransification & 302 (+24 -12)\\
+                 original 290 /detransification 10 & 312 (+22 -0)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_spos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
+                 \cline{1-2}
+                 original & 255   \\
+                 detransification & 254 (+0 -1)\\
+                 ordification & 285 (+31 -1)\\
+                 original 290 /detransification 10 & 282 (+27  -0)\\
+                  ordification 10\\
+                    \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_ord}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Other (73)}}  \\
+                 \cline{1-2}
+                 original & 51   \\
+                 detransification & 49 (+0 -2)\\
+                 original 290 /detransification 10 & 51 (+0  -0)\\
+                  \cline{1-2} 
+\end{tabular} 
+\label{fig:z3_other}
+\end{figure}
+
+
+
+\subsubsection{CVC4}
+Similarly to Spass, problems that contain a non-symmetric transitive relation (strict partial orders and partial equivalences) are best solved using detransification. For the other subsets, splitting between the untransformed problem and 10 seconds each for the applicable transformations gives the best results. 19 of the newly solved problems are overlapping; 16 problems have both a partial equivalence and a strict partial order. 3 of the problems have an equivalence relation and a partial order. The total gain of the optimal strategy is 78 problems, and the loss is 7 problems.
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Equivalences (436)}}  \\
+                 \cline{1-2}
+                 original & 370   \\
+                 equalification & 385 (+35 - 20) \\
+                 pequalification &  385 (+36 -21) \\
+                 detransification & 393 (+31 -8)\\
+                   with reflexivity & 357 (+32 -45)\\
+    %             original 290 / equalification 10 & 405 (+35  -0)\\
+      %           original 290 / detransification 10 & 396 (+26 -0)\\
+                 original 270 / equalification 10 & 410 (+40  -0)\\
+                 pequalification 10 /detransification 10& \\
+                 \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_eq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Equivalences (181)}}  \\
+                 \cline{1-2}
+                 original & 51   \\
+                 pequalification & 56 (+9 -4)\\
+                 detransification & 67 (+16 -0)\\
+         %%        original 290 / detransification 10 & 64 (+13  -0)\\
+                 original 280 / detransification 10  & 65 (+14 -0) \\
+                 pequalification 10 \\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_peq}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Partial Orders (540)}}  \\
+                 \cline{1-2}
+                 original & 292   \\
+                 detransification & 295 (+13 -10)\\
+                 original 290 / detransification 10 & 302 (+10  -0)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_pos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Strict Partial Orders (607)}}  \\
+                 \cline{1-2}
+                 original & 341   \\
+                 detransification & 363 (+29 -7)\\
+                 original 290 / detransification 10 & 360 (+19 -0)\\
+                   \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_spos}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Total Orders (326)}}  \\
+                 \cline{1-2}
+                 original & 289   \\
+                 detransification & 287 (+1 -3)\\
+                 ordification & 285 (+1 -1)\\
+                 original 290 / detransification 10 & 290 (+1  -0)\\
+                  ordification 10  & \\  
+                  \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_ord}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{tabular}{|| l l ||}
+                 \cline{1-2}
+                 \multicolumn{2}{||l||}{\bf{Other (73)}}  \\
+                 \cline{1-2}
+                 original & 55   \\
+                 detransification & 54 (+2 -3)\\
+                 original 290 /detransification 10 & 56 (+1  -0)\\
+                  \cline{1-2} 
+\end{tabular} 
+\label{fig:cvc4_other}
 \end{figure}
 
 
