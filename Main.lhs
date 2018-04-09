@@ -470,9 +470,9 @@ pequalification & (617) & 392  &  +66  & -8  & 343  & +45 & -25\\
 %\hspace{0.2cm}on EQ & (436) & 354 & +56 & -17 & 370 & +35 & -22\\
 %\hspace{0.2cm}on PEQ & (181) & 38 & +5 & -4 & 51 & +9 & -4 \\&&&&&&\\
 
-ordification  & (326) & 236 & +50 & -1 & 267 & +23 & -1\\&&&&&&\\
+ordification  & (326) & 236 & \bf{+50} & -1 & 267 & +23 & -1\\&&&&&&\\
 
-detransification  & (2007) & 1196 & +95 & -33 & 1375 & \bf{+73} & -31\\ 
+detransification  & (2007) & 1196 & +95 & -33 & 1375 & +73 & -31\\ 
 %\hspace{0.2cm}on EQ& (436) & 354 & +53 & -8 & 370 & +31 & -8 \\
 %\hspace{0.2cm}on PEQ& (181) &38&+17&-0&51&+16&-0\\
 %\hspace{0.2cm}on TO& (326) &255&+0&-26&289&+1&-3\\
@@ -496,11 +496,11 @@ detransification  & (2007) & 1196 & +95 & -33 & 1375 & \bf{+73} & -31\\
 \label{fig:overview}
 \end{figure}
 
-Overall, the results vary between each transformation and reasoning tool. For many of the transformations, we do not gain any solved problems without also losing some.  A time-slicing strategy can be advantageous, were the reasoning tool is run on both the original and the transformed problem, with a suitably chosen time-limit for each.  Z3 turns out to work really well on ordified problems, where it can make use of its built in strategies for arithmetic. E did not benefit from any of the transformations, and a large portion of the problems became unsolvable. One may have expected better results for equalification, since introducing equality in place of each occurrence of an equivalence relation seems suitable for an equational theorem prover. However, E performs well already on the untreated problems with equivalence relations, leaving little room for improvement. Vampire has the least difference in performance before and after the transformations, demonstrating its stability as a theorem prover. 
+Overall, the results vary between each transformation and reasoning tool. For many of the transformations, we do not gain any solved problems without also losing some.  A time-slicing strategy can be advantageous, were the reasoning tool is run on both the original and the transformed problem, with a suitably chosen time-limit for each.  Z3 turns out to work well on ordified problems, where it can make use of its built in strategies for arithmetic. E did not benefit from any of the transformations, and a large portion of the problems became unsolvable. One may have expected better results for equalification, since introducing equality in place of each occurrence of an equivalence relation seems suitable for an equational theorem prover. However, E performs well already on the untreated problems with equivalence relations, leaving little room for improvement. Vampire has the least difference in performance before and after the transformations,  \comment{KOEN! "demonstrating its stability as a theorem prover."}
 
-In order to make a comparison between the transformations and evaluate what transformation works best for each kind of transitive relation, we partition the test problems into different subsets (Fig. \ref{fig:subsets}). These subsets are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if the problem includes several transitive relations having different properties. This is the case for 156 problems. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation is found to be total (or strictly total, as in the case of a negated total order), and one where this was not the case. We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P.
+In order to make a comparison between the transformations and evaluate what transformation works best for each kind of transitive relation, we partition the test problems into different subsets (Fig. \ref{fig:subsets}). These subsets are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if the problem includes several transitive relations having different properties. This is the case for 156 problems. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation is found to be total \comment{KOEN! (or strictly total, as in the case of a negated total order)}, and one where this was not the case. We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P.
 
-The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they have a transitive relation that is found to be reflexive and/or symmetric. The problems with total relations are partitioned into two sets: problems with one or more total order (i.e. total, transitive and antisymmetric), and problems with relations that are total and transitive but lack the antisymmetry property (labelled as "other" in the diagram). Fig. \ref{fig:subsets} shows each subset with its number of problems and number of rating 1 problems, and what transformation is applicable for each subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram. The number of rating 1 problems in each subset can give an indication of the difficulty of dealing with different kinds of transitive relations. Problems with equivalence relations are solvable much more often than problems with partial equivalence relations, However it is hard to tell if the difficulty of a problem is related to the transitive relation or has other reasons. 
+The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they have a transitive relation that is found to be reflexive and/or symmetric. The problems with total relations are partitioned into two sets: problems with one or more total order (i.e. total, transitive and antisymmetric), and problems with relations that are total and transitive but lack the antisymmetry property (labelled as "other" in the diagram). Fig. \ref{fig:subsets} shows each subset with its number of problems and number of rating 1 problems, and what transformation is applicable for each subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram. The number of rating 1 problems in each subset can give an indication of the difficulty of dealing with different kinds of transitive relations. Problems with equivalence relations typically less difficult than problems with partial equivalence relations, However it is hard to tell if the difficulty of a problem is related to the transitive relation or has other reasons. 
 
 % \begingroup
 
@@ -548,7 +548,7 @@ The problems in Total\textsuperscript{C} are further divided into four groups, d
 \subsection{Detransification}
 Detransification is the only transformation applicable on all 2007 test problems with transitive relations. As can be seen in Fig. \ref{fig:overview}, the benefits of detransification varies with the theorem prover and problem. The SMT-solvers profit the most from this transformation, however, big differences can be seen in the different subsets.  Fig. \ref{fig:transplots} presents an overview of the effects on solving times for each theorem prover in the evaluation. For all of the theorem provers, detransification lets us prove some problems that we could not previously, but some problems also become unsolvable within the time limit.
 
-Fig. \ref{fig:detranssubsets} presents the results of detransification on each of the subsets defined in Fig. \ref{fig:subsets}. Here we can get an indication of what problems detransification is useful for and what kind of problems tend to become harder after the transformation. For E, the results generally become worse after detransification, even though some new problems become solvable, including a couple with rating 1. For Vampire, detransification improves the results on problems with partial orders and partial equivalence relations. These subsets have a relatively low success rate before the transformations.  On the other subsets, the results stay fairly stable. For Spass, partial equivalences and strict partial orders benefit the most from detransification, while the other subsets show mixed results. Both SMT-solvers, Z3 and CVC4, show improved results on the transformed equivalence relations and partial equivalence relations, which have in common that they are transitive and symmetric. The theorem provers performed well on these problems already before the transformation and thus have less room for improvement. For partial orders and strict partial orders, the results are mixed, however more is gained than what is lost. Total orders and other transitive relations do not benefit from detransification using any of the reasoning tools in our evaluation.
+Fig. \ref{fig:detranssubsets} presents the results of detransification on each of the subsets defined in Fig. \ref{fig:subsets}. Here we can get an indication of what problems detransification is useful for and what kind of problems tend to become harder after the transformation. For E, the results generally become worse after detransification, even though some new problems become solvable, including one with rating 1. For Vampire, detransification improves the results on problems with partial orders and partial equivalence relations. These subsets have a relatively low success rate before the transformations.  On the other subsets, the results stay fairly stable. For Spass, partial equivalences and strict partial orders benefit the most from detransification, while the other subsets show mixed results. Both SMT-solvers, Z3 and CVC4, show improved results on the transformed equivalence relations and partial equivalence relations, which both make use of the tools' built-in equality reasoning. The theorem provers performed well on these problems already before the transformation and thus have less room for improvement. For partial orders and strict partial orders, the results are mixed, however more is gained than what is lost. Total orders and other transitive relations do not benefit from detransification using any of the reasoning tools in our evaluation.
 
 \begin{figure}[h!]
 \def\mca#1{\multicolumn{1}{c}{#1}}
@@ -660,7 +660,7 @@ Comparing pequalification with detransification, detransification is clearly muc
 
 \subsection{Equalification}
 
-Equalification is applicable only to problems that contain equivalence relations. It performs slightly worse or about the same compared to pequalification, which is more general. Like pequalification, it shows the best results together with the SMT solvers. Adding an idempotency axiom typically makes the results slightly worse, with E showing the most significant change. The results of equalification and equalification with idempotency are presented in Fig. \ref{fig:eqsubsets} - \ref{fig:eqsubsetsidem}.
+Equalification is applicable only to problems that contain equivalence relations. It performs slightly worse or about the same compared to pequalification, which is more general. Like pequalification, it shows the best results combined with the SMT solvers. Adding an idempotency axiom typically makes the results slightly worse, with E showing the most significant change. The results of equalification and equalification with idempotency are presented in Fig. \ref{fig:eqsubsets} - \ref{fig:eqsubsetsidem}.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l l l ||}
@@ -695,7 +695,7 @@ Equalification is applicable only to problems that contain equivalence relations
 \end{figure}
 
 \subsection{Ordification}
-Since ordification uses arithmetic, it is only applicable with Vampire (in TFF format) and Z3 and CVC4 (in SMT format). The original problems were transformed into TFF and SMT as well, in order to achieve a fair comparison. It is applicable only on the set of problems containing total orders. Ordification improved the results significantly for both Z3 and CVC4, while Vampire performs about the same as before the transformation.
+Since ordification uses arithmetic, it is only applicable with Vampire (in TFF format) and Z3 and CVC4 (in SMT format). \comment{KOEN: Should we do this?} The original problems were transformed into TFF and SMT as well, in order to achieve a fair comparison. It is applicable only on the set of problems containing total orders. Ordification improved the results significantly for both Z3 and CVC4, while Vampire performs about the same as before the transformation.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l l l ||}
@@ -714,21 +714,20 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
 We can compare ordification with detransification, which is the only other transformation that is applicable on total orders. Similarly to ordification, detransification does not have any significant impact on the results for either of CVC4 or Vampire on total orders. For Z3, ordification is clearly the best choice. Note however that Z3 shows worse results than CVC4 and Vampire prior to the transformation. After ordification, the three tools solve about the same number of problems. The results are presented in Fig. \ref{fig:ordsubset}.
 
 \subsection{Problems with more than one kind of transitive relation}
-156 of the problems in our evaluation contain more than one kind of transitive relation. 140 of them contain a partial equivalence relation and a strict partial order. 14 contain an equivalence relation and a partial order, and two problems contain a partial equivalence relation and a relation that is total and transitive. Almost 50\% of these problems are hard, with rating 1 in the TPTP.
+156 of the problems in our evaluation contain more than one kind of transitive relation. 140 of them contain a partial equivalence relation and a strict partial order. 14 contain an equivalence relation and a partial order, and two problems contain a partial equivalence relation and a relation that is total and transitive. Almost half of these problems are hard, with rating 1 in the TPTP.
 
-For the 140 problems with a partial equivalence and a strict partial order, we found that applying detransification on all of the transitive relations gave the best results. 
+For the 140 problems with a partial equivalence and a strict partial order, we found that applying detransification to all of the transitive relations gave the best results. 
 For the 14 problems with equivalence relation and a partial order, applying equalification on the equivalence relation and detransification on the partial order was the best, in particular for the SMT-solvers. The 2 remaining problems with multiple kinds of transitive relations are both labelled as Unknown, and were not solved before nor after any choice of transformation.
 
 \subsection{Time-slicing}
 
-As can be seen in Fig. \ref{fig:transplots} - \ref{fig:ordifiedplots}, a large portion of problems where the transformed version is solved but not the original, are solved in under ten seconds. At the same time, not many of the original problems are solved in the time frame of 290-300 seconds. It can thus often be advantageous to spend 10 seconds on each problem produced by an applicable transformation, and the remaining time on the original problem. This is true for all the tools tested except Vampire, which solved most of its new problems towards the end of the five minutes. Where there are more than one applicable transformation, it can pay off to give 10 seconds to each before trying the original problem.
+As can be seen in Fig. \ref{fig:transplots} - \ref{fig:ordifiedplots}, problems are typically solved within the first half of the five minute time-limit or less. By splitting the time equally between the untransformed version of the problem and the applicable transformations can thus in many cases improve the success rate. This was the case for Spass, CVC4 and Z3. For Vampire (which has its own built-in time-slicing strategies), many problems were solved towards the end of the five minutes, and time-slicing between transformations was thus less favourable. For E, whose advantages of the transformations were quite limited, the problems that did become solvable after a transformation were solved in a relatively short time. The best results were achieved by allowing 10 seconds on each applicable transformation, and the remaining time on the original problem.
 
 \subsection{Optimal strategies}
 
 We present for each tool an optimal strategy, that is given by identifying for each subset the transformation that maximises the total number of solved problems. Since the results are based on the limited set of problems in the current TPTP library, we do not provide a universal method, but rather an idea of how parameters can be tuned to improve the results. 
 
  %TODO: metnion that we leave out transification with reflexivity and eq/peq with idempotency (and pequalificaiton for equivalence relations, because the results is so similar to equalificaiton)
-
 
 \subsubsection{E}
 E did not have any major benefits from any of the transformations. However, with time-slicing we can avoid a lot of the bad effects of a transformation, while still keeping the results that were improved. For E, the best results were achieved when allowing 10 seconds on each transformed problem and the remaining time on the original problem. This is based on a time-limit of 5 minutes. Fig. \ref{fig:eq} - \ref{fig:ord} show the subsets on which there was a transformation that solved new problems.With this strategy, we gain a total of 10 solved problems, 7 with equivalence relations and 3 with partial orders. On the remaining subsets there is no transformation that increases the success rate compared to the original, but splitting does not decrease it. 
@@ -764,9 +763,7 @@ E did not have any major benefits from any of the transformations. However, with
 \end{figure}
 
 \subsubsection{Vampire}
-For Vampire, detransification is the best choice for both partial orders and partial equivalence relations. A majority of the problems solved after detransification but not before took a long time, making time-slicing less favorable. For the other subsets, Vampire is the most successful on the original problems. Using detransification on partial equivalences and partial orders, and no transformation otherwise,  we gain 39 solved problems and lose 6.
-
-%%TODO: Ordification gives +1, but compared to the tffified original... what to write about that?
+For Vampire, detransification is the best choice for both partial orders and partial equivalence relations. A majority of the problems solved after detransification but not before took a long time, making time-slicing less favorable. For the other subsets, Vampire is the most successful on the original problems. Using detransification on partial equivalences and partial orders, and no transformation otherwise, we gain 39 solved problems and lose 6.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -777,6 +774,7 @@ For Vampire, detransification is the best choice for both partial orders and par
                  pequalification & 91 (+5 -6)\\
                  detransification & 97 (+5 -0)\\
                  original 290 / detransification 10 & 96 (+4  -0)\\
+                 original 150 / detransification 150 & 92 (+1 -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:vamp_peq}
@@ -790,14 +788,15 @@ For Vampire, detransification is the best choice for both partial orders and par
                  original & 287   \\
                  detransification & 315 (+34 -6)\\
                  original 290 /detransification 10 & 301 (+14  -0)\\
+                 original 150 / detransification 150 & 308 (+24 -3)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:vamp_pos}
 \end{figure}
 
 \subsubsection{Spass}
-For Spass, detransification on its own is the most successful on non-symmetric transitive relations, i.e. partial equivalences and strict partial orders, and the "other" category with total, transitive relations. The new solved problems with a partial equivalence also had a strict partial order, and thus are contained in the 48 new problems that were solved in the partial orders subset. For the other kinds of relations, splitting between each of the applicable transformations gives the best results. Using detransification on non-symmetric transitive relations, and splitting with each applicable transformation on the other subsets, we gain 76 solved problems, while losing 11.
-
+For Spass, the best results for transitive and reflexive relations (i.e. equivalences and partial orders) were given by spending 10 seconds on each of the applicable transformations, and the remaining time on the original problem. For the remaining subsets, splitting evenly between the applicable transformations and untransformed problems solves the most problems. The 8 new solved problems with a partial equivalence also have a strict partial order, and thus are contained in the 43 new problems that were solved in the partial orders subset.   In total, the optimal strategy solves 75 new problems, while it loses 15.
+ 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
                  \cline{1-2}
@@ -810,6 +809,8 @@ For Spass, detransification on its own is the most successful on non-symmetric t
  %                  with reflexivity & 391 (+14 -8)\\
                  original 270 / equalification 10 & 403 (+18  -0)\\
                  pequalification 10 / detransification 10& \\
+                 original 75 / equalification 75 & 398 (+18  -5)\\
+                 pequalification 75 / detransification 75& \\
                  \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_eq}
@@ -825,6 +826,8 @@ For Spass, detransification on its own is the most successful on non-symmetric t
                  detransification & 75 (+8 -0)\\
                  original 280 /  pequalification 10  & 69 (+3  -1)\\
                   /detransification 10 & \\
+                 original 100 /  pequalification 100  & 75 (+8  -0)\\
+                  /detransification 100 & \\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_peq}
@@ -838,6 +841,7 @@ For Spass, detransification on its own is the most successful on non-symmetric t
                  original & 201   \\
                  detransification & 200 (+15 -16)\\
                  original 290 / detransification 10 & 208 (+7  -0)\\
+                 original 150 / detransification 150 & 204 (+11  -8)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_pos}
@@ -851,6 +855,7 @@ For Spass, detransification on its own is the most successful on non-symmetric t
                  original & 299   \\
                  detransification & 337 (+48 -10)\\
                  original 290 /detransification 10 & 322 (+24 -1)\\
+                 original 150 /detransification 150 & 339 (+43 - 3)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_spos}
@@ -864,6 +869,7 @@ For Spass, detransification on its own is the most successful on non-symmetric t
                  original & 243   \\
                  detransification & 222 (+12 -33)\\
                  original 290 / detransification 10 & 245 (+2  -0)\\
+                  original 150 / detransification 150 & 251 (+12  -4)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_ord}
@@ -876,16 +882,17 @@ For Spass, detransification on its own is the most successful on non-symmetric t
                  \cline{1-2}
                  original & 47   \\
                  detransification & 49 (+2 -0)\\
-                 original 290 /detransification 10 & 73 (+0  -0)\\
+                 original 290 /detransification 10 & 47 (+0  -0)\\
+                 original 150 /detransification 150 & 48 (+1 -0)\\	
                   \cline{1-2} 
 \end{tabular} 
 \label{fig:spass_other}
 \end{figure}
 
 \subsubsection{Z3}
-For total orders, ordification is the best strategy, but splitting between the untransformed problem and 10 seconds each on the ordified and detransified problem gives almost as good results. For the other subsets, splitting between all applicable transformations, with 10 seconds on each, and the remaining time on the untransformed problem is the optimal strategy. For equivalence relations, it pays off to use both equalification and pequalification as well as detransification when splitting. In this way, we solve 124 new problems compared to the original, and lose none. 21 of the newly solved problems are in overlapping subsets (containing more than one kind of transitive relation).
+For Z3, the best strategy is to split the time evenly between the original problem and all of the applicable transformations. Spending 10 seconds on each applicable transformation and the remaining time on the original problem gives very similar results. In total, we solve 135 new problems compared to the original, and lose 6. 21 of the newly solved problems are in overlapping subsets (containing more than one kind of transitive relation).
 
-%TODO: what about ordification - here we compare it to the original (+31) and before to the smtified original (+50)...
+\comment{KOEN: what about ordification - here we compare it to the original (+31) and before to the smtified original (+50)...}
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -901,6 +908,8 @@ For total orders, ordification is the best strategy, but splitting between the u
           %       original 290 / detransification 10 & 406 (+52 -0)\\
                  original 270 / equalification 10 & 417 (+63  -0)\\
                  pequalification 10 /detransification 10& \\ 
+                 original 75 / equalification 75 & 417 (+64  -1)\\
+                 pequalification 75 /detransification 75& \\ 
                  \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_eq}
@@ -917,6 +926,8 @@ For total orders, ordification is the best strategy, but splitting between the u
              %    original 290 /detransification 10 & 55 (+17  -0)\\
                  original 280 /detransification 10  & 57 (+19 -0) \\
                  pequalification 10 \\
+                 original 100 /detransification 100  & 59 (+21 -0) \\
+                 pequalification 100 \\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_peq}
@@ -930,6 +941,7 @@ For total orders, ordification is the best strategy, but splitting between the u
                  original & 215   \\
                  detransification & 224 (+19 -10)\\
                  original 290 /detransification 10 & 229 (+14  -0)\\
+                 original 150 /detransification 150 & 230 (+18  -3)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_pos}
@@ -943,6 +955,7 @@ For total orders, ordification is the best strategy, but splitting between the u
                  original & 290   \\
                  detransification & 302 (+24 -12)\\
                  original 290 /detransification 10 & 312 (+22 -0)\\
+                 original 150 /detransification 150 & 311 (+23 -2)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_spos}
@@ -958,6 +971,9 @@ For total orders, ordification is the best strategy, but splitting between the u
                  ordification & 285 (+31 -1)\\
                  original 290 /detransification 10 & 282 (+27  -0)\\
                   ordification 10\\
+                 original 100 /detransification 100 & 285 (+30  -0)\\
+                  ordification 100\\
+
                     \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_ord}
@@ -971,6 +987,8 @@ For total orders, ordification is the best strategy, but splitting between the u
                  original & 51   \\
                  detransification & 49 (+0 -2)\\
                  original 290 /detransification 10 & 51 (+0  -0)\\
+                 original 150 /detransification 150 & 51 (+0  -0)\\
+
                   \cline{1-2} 
 \end{tabular} 
 \label{fig:z3_other}
@@ -979,7 +997,7 @@ For total orders, ordification is the best strategy, but splitting between the u
 
 
 \subsubsection{CVC4}
-Similarly to Spass, problems that contain a non-symmetric transitive relation (strict partial orders and partial equivalences) are best solved using detransification. For the other subsets, splitting between the untransformed problem and 10 seconds each for the applicable transformations gives the best results. 19 of the newly solved problems are overlapping; 16 problems have both a partial equivalence and a strict partial order. 3 of the problems have an equivalence relation and a partial order. The total gain of the optimal strategy is 78 problems, and the loss is 7 problems.
+ For CVC4, splitting evenly between the original problem and all of the applicable transformations gives the best reuslts. 19 of the newly solved problems are overlapping; 16 problems have both a partial equivalence and a strict partial order. 3 of the problems have an equivalence relation and a partial order. The total gain of the optimal strategy is 83 problems, and the loss is 2 problems.
 
 \begin{figure}[h!]
 \begin{tabular}{|| l l ||}
@@ -995,6 +1013,8 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
       %           original 290 / detransification 10 & 396 (+26 -0)\\
                  original 270 / equalification 10 & 410 (+40  -0)\\
                  pequalification 10 /detransification 10& \\
+                 original 75 / equalification 75 & 412 (+42  -0)\\
+                 pequalification 75 /detransification 75& \\
                  \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_eq}
@@ -1008,9 +1028,10 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
                  original & 51   \\
                  pequalification & 56 (+9 -4)\\
                  detransification & 67 (+16 -0)\\
-         %%        original 290 / detransification 10 & 64 (+13  -0)\\
                  original 280 / detransification 10  & 65 (+14 -0) \\
                  pequalification 10 \\
+                 original 100 / detransification 100  & 67 (+16 -0) \\
+                 pequalification 100 \\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_peq}
@@ -1024,6 +1045,7 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
                  original & 292   \\
                  detransification & 295 (+13 -10)\\
                  original 290 / detransification 10 & 302 (+10  -0)\\
+                 original 150 / detransification 150 & 304 (+12  -0)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_pos}
@@ -1037,6 +1059,7 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
                  original & 341   \\
                  detransification & 363 (+29 -7)\\
                  original 290 / detransification 10 & 360 (+19 -0)\\
+                 original 150 / detransification 150 & 368 (+29 -1)\\
                    \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_spos}
@@ -1052,6 +1075,8 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
                  ordification & 285 (+1 -1)\\
                  original 290 / detransification 10 & 290 (+1  -0)\\
                   ordification 10  & \\  
+                  original 100 / detransification 100 & 290 (+1  -0)\\
+                  ordification 100  & \\  
                   \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_ord}
@@ -1065,19 +1090,18 @@ Similarly to Spass, problems that contain a non-symmetric transitive relation (s
                  original & 55   \\
                  detransification & 54 (+2 -3)\\
                  original 290 /detransification 10 & 56 (+1  -0)\\
+                 original 150 /detransification 150 & 56 (+2  -1)\\
                   \cline{1-2} 
 \end{tabular} 
 \label{fig:cvc4_other}
 \end{figure}
 
 
-
-
 \section{Discussion and Conclusions}
 
 We have presented 6 transformations that can be applied to theories with certain transitive relations: equalification, pequalification, ordification, maxification, detransification, and detransification with reflexivity. We have also created a method for syntactic discovery of binary relations where these transformations are applicable.
 
-For users of reasoning tools that create their own theories, it is clear that they should consider using one or more of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. In particular, there exist 18 TPTP problems that are now solvable that weren't previously.
+For users of reasoning tools that create their own theories, it is clear that they should consider using one or more of the proposed alternative treatments when writing theories. For all of our methods, there are existing theories for which some provers performed better on these theories than others. \comment{KOEN: Not true! There are three. Should we list them? In particular, there exist 18 TPTP problems that are now solvable that weren't previously.}
 
 For implementers of reasoning tools, our conclusions are less clear. For some combinations of treatments and provers (such as transification for Vampire, and equalification for Z3), overall results are clearly better, and we would thus recommend these treatments as preprocessors for these provers. Some more combinations of treatments and provers lend themselves to a time slicing strategy that can solve strictly more problems, and could thusly be integrated in a natural way in provers that already have the time slicing machinery in place.
 
