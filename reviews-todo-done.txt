@@ -105,13 +105,6 @@ Also, only informal arguments are given for the correctness of a number of the t
   in the tables on pages 15 to 17. Is there a reason? Again add column
   headings to make the meaning of the numbers clear.
 
---
-
-+ Page 19, line 49:
-  "give the best reuslts"
-  should be
-  "give the best results"
-
 --------------------------------------------------------------------------------
 Related work
 
@@ -193,6 +186,13 @@ each file and try to identify the axioms?
   "We leave out detransification"
   should be
   "We omit detransification"
+
+--
+
++ Page 19, line 49:
+  "give the best reuslts"
+  should be
+  "give the best results"
 
 --
 

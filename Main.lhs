@@ -947,7 +947,7 @@ For Z3, the best strategy is to split the time evenly between the original probl
 
 
 \subsubsection{CVC4}
- For CVC4, splitting evenly between the original problem and all of the applicable transformations gives the best reuslts. 19 of the newly solved problems are overlapping; 16 problems have both a partial equivalence and a strict partial order. 3 of the problems have an equivalence relation and a partial order. The total gain of the optimal strategy is 83 problems, and the loss is 2 problems.
+ For CVC4, splitting evenly between the original problem and all of the applicable transformations gives the best results. 19 of the newly solved problems are overlapping; 16 problems have both a partial equivalence and a strict partial order. 3 of the problems have an equivalence relation and a partial order. The total gain of the optimal strategy is 83 problems, and the loss is 2 problems.
 
 \begin{figure}[h!]
 \def\mca#1{\multicolumn{1}{c}{#1}}
