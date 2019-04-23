@@ -10,13 +10,6 @@ The paper has no formal preliminaries. It would help to have (at least) a cursor
 
 --
 
-2) I do not understand how was Table 2 computed (paragraph 30-39, page
-9). Please explain this more clearly. Did you use the process
-described in Sec. 3 to classify the relations? Or did you just take
-each file and try to identify the axioms?
-
---
-
 3) When proving that the transformations preserve satisfiability,
 please provide more formal proofs. Intuitively it is clear why the
 transformations are correct, but I believe that the journal version
@@ -191,9 +184,18 @@ Although indirectly related, it may also help to cite other techniques for prepr
 ================================================================================
 DONE
 
+--
+
 1) Please provide proper definitions, with quantifiers, for negated
 and flipped versions of a property. What is a "flipped" relation is
 never even informally described (page 9, lines 46-49).
+
+--
+
+2) I do not understand how was Table 2 computed (paragraph 30-39, page
+9). Please explain this more clearly. Did you use the process
+described in Sec. 3 to classify the relations? Or did you just take
+each file and try to identify the axioms?
 
 --
 
