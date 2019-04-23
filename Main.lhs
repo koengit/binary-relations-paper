@@ -97,7 +97,7 @@
 % - abstract
 
 \begin{abstract}
-We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em transitive relations} in general. We show how such relations can be discovered syntactically in an input theory, and how they can be expressed in alternative ways. We experimentally evaluate different treatments on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain types of binary relations.
+We present a number of alternative ways of handling transitive binary relations that commonly occur in first-order problems, in particular {\em equivalence relations}, {\em total orders}, and {\em transitive relations} in general. We show how such relations can be discovered syntactically in an input theory, and how they can be expressed in alternative ways. We experimentally evaluate different such ways on problems from the TPTP, using resolution-based reasoning tools as well as instance-based tools. Our conclusions are that (1) it is beneficial to consider different treatments of binary relations as a user, and that (2) reasoning tools could benefit from using a preprocessor or even built-in support for certain types of binary relations.
 \end{abstract}
 
 % ------------------------------------------------------------------------------
