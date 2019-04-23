@@ -99,13 +99,6 @@ Also, only informal arguments are given for the correctness of a number of the t
 
 --
 
-+ Page 18, line 17:
-  "We leave out detransification"
-  should be
-  "We omit detransification"
-
---
-
 + Page 18 to 21, tables:
   "equalification 394 (+5 -38)"
   The presentation of results in these tables is different to the one used
@@ -193,6 +186,13 @@ each file and try to identify the axioms?
      specifying that R has the diamond property. Given that these clauses
      contain the Skolem symbol f, I suspect that this has not been counted
      as `other' property of a binary relation?
+
+--
+
++ Page 18, line 17:
+  "We leave out detransification"
+  should be
+  "We omit detransification"
 
 --
 
