@@ -74,16 +74,6 @@ Also, only informal arguments are given for the correctness of a number of the t
 
 --
 
-+ Page 12, lines 22-24:
-  "The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor
-   with 24 GB physical memory, running at 2.4 GHz."
-  should
-  "The experiments were performed on PC with a 2xQuad Core Intel Xeon E5620
-   processor at 2.4 GHz and 24 GB physical memory."
-  Also state the operating system and version used.
-
---
-
 + Page 15 to 17, tables:
   "E  427 +4 -24"
   Add column headings to all tables so that the meaning of the numbers
@@ -189,6 +179,16 @@ each file and try to identify the axioms?
   "give the best reuslts"
   should be
   "give the best results"
+
+--
+
++ Page 12, lines 22-24:
+  "The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor
+   with 24 GB physical memory, running at 2.4 GHz."
+  should
+  "The experiments were performed on PC with a 2xQuad Core Intel Xeon E5620
+   processor at 2.4 GHz and 24 GB physical memory."
+  Also state the operating system and version used.
 
 --
 
