@@ -72,8 +72,6 @@ Also, only informal arguments are given for the correctness of a number of the t
    graphs require more explanation. It should be possible to look at a table or
    graph and understand what it shows.
 
---
-
 + Page 15 to 17, tables:
   "E  427 +4 -24"
   Add column headings to all tables so that the meaning of the numbers
