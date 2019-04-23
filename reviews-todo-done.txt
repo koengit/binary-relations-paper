@@ -89,15 +89,11 @@ Also, only informal arguments are given for the correctness of a number of the t
   Add column headings to all tables so that the meaning of the numbers
   becomes clear.
 
---
-
 + Page 17 onward:
   "As can be seen in Fig. 18 - 22, problems are typically solved within the
    first half of the five minute time-limit or less."
   Figures 18-22 need more explanation. Explain first what data they show and
   how, then state what your interpretation of the data is.
-
---
 
 + Page 18 to 21, tables:
   "equalification 394 (+5 -38)"
