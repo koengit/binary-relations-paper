@@ -82,6 +82,7 @@
 %format max  = "max\hspace{-0.1cm}"
 %format max_ = "max"
 
+%format propp = prop"\hspace{-0.1cm}"
 %format prop1 = prop"_1"
 %format propa = prop"_a"
 %format propb = prop"_b"
@@ -189,8 +190,22 @@ When we investigated the number of occurrences of these properties in a subset o
 
 The table also contains occurrences where a {\em negated relation} was stated to have a certain property, and also occurrences where a {\em flipped relation} (a relation with its arguments swapped) was stated to have a certain property, and also occurrences of combined negated and flipped relations. This explains for example why the number of occurrences of {\em total} relations is the same as for {\em asymmetric} relations; if a relation is total, the negated relation is asymmetric and vice-versa.
 
-We adopt the following notation. Given a property of binary relations |prop|, we introduce its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |~R_|. Similarly, we introduce the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for the flipped version of |R_|.
-
+We adopt the following notation. Given a relation |R_|, the {\em negated version} of |R_|, denoted |R_^~|, is defined as follows:
+\begin{code}
+forall x,y . R_^~(x,y) <=> ~R(x,y)
+\end{code}
+The  {\em flipped version} of |R_|, denoted |R_^^|, is defined as follows:
+\begin{code}
+forall x,y . R_^^(x,y) <=> R(y,x)
+\end{code}
+We lift these two notions to properties of relations as follows. Given a property of binary relations |prop|, we introduce its {\em negated version}, which is denoted by |prop^~|. The property |prop^~| holds for |R_| if and only if |prop| holds for |R_^~|:
+\begin{code}
+prop^~[R_] <=> propp[R_^~]
+\end{code}
+Similarly, we introduce the {\em flipped version} of a property |prop|, which is denoted by |prop^^|. The property |prop^^| holds for |R_| if and only if |prop| holds for |R_^^|:
+\begin{code}
+prop^^[R_] <=> propp[R_^^]
+\end{code}
 Using this notation, we can for example say that |total| is equivalent with |asymmetric^~|. Sometimes the property we call |euclidean| here is called |right euclidean|; the corresponding variant |left euclidean| can be denoted |euclidean^^|. Note that |prop^~| is not the same as |~prop|! For example, a relation |R_| can be |reflexive|, or |reflexive^~| (which means that |~R_| is reflexive), or |~reflexive|, which means that |R_| is not reflexive.
 
 Using this notation on the 8 original basic properties from Fig.\ \ref{fig:props}, we end up with 32 new basic properties that we can use. (However, as we have already seen, some of these are equivalent to others.)

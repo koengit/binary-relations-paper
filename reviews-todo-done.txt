@@ -10,12 +10,6 @@ The paper has no formal preliminaries. It would help to have (at least) a cursor
 
 --
 
-1) Please provide proper definitions, with quantifiers, for negated
-and flipped versions of a property. What is a "flipped" relation is
-never even informally described (page 9, lines 46-49).
-
---
-
 2) I do not understand how was Table 2 computed (paragraph 30-39, page
 9). Please explain this more clearly. Did you use the process
 described in Sec. 3 to classify the relations? Or did you just take
@@ -191,6 +185,15 @@ Torlak et al, "Kodkod: a relation finite model finder", TACAS 2007
 There are also reasoners for description logics, which involve reasoning about relations, see e.g. Konclude, Chainsaw, etc. 
 
 Although indirectly related, it may also help to cite other techniques for preprocessing first-order axiomatizations that have been in this spirit of this paper, for example "Preprocessing techniques for first-order clausification" Hoder et al.
+
+--
+
+================================================================================
+DONE
+
+1) Please provide proper definitions, with quantifiers, for negated
+and flipped versions of a property. What is a "flipped" relation is
+never even informally described (page 9, lines 46-49).
 
 --
 
