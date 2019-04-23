@@ -8,7 +8,7 @@
 \usepackage{multirow}
 %include polycode.fmt
 
-\def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
+%\def\comment#1{$\Rightarrow$ {\em #1} $\Leftarrow$}
 
 %\renewcommand{\paragraph}[1]{\vspace{0.2cm}\noindent {\bf #1} $\;\;$}
 
@@ -492,7 +492,6 @@ The problems in Total\textsuperscript{C} are further divided into four groups, d
   Antisymmetric\textsuperscript{C} & \bf{Other (73/12)} \\%\cline{2-2}
                                & Detransification \\\cline{2-2} 
   \mca{} & \mca{} 
-\label{fig:subsets}
 \end{tabular}
 %\end{center}
 %\endgroup
