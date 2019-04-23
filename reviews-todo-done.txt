@@ -71,35 +71,6 @@ Also, only informal arguments are given for the correctness of a number of the t
 
 --
 
-+ Page 3:
-  "Fig. 2 Number of occurrences of binary relation properties in TPTP"
-  "When we investigated the number of occurrences of these properties
-   in a subset of the TPTP problem library (v7.0.0) [6], we ended up
-   with the table in Fig. 2. The table was constructed by gathering all
-   clauses from all TPTP problems (after clausification), and keeping
-   every clause that only contained one binary relation symbol and,
-   possibly, equality. Each such clause was then categorized as an
-   expression of a basic properties of a binary symbol."
-  There seems to be some ambiguity in this description. Consider,
-  for example, the following cases:
-  a. A TPTP problem contains
-     -R(x,y) v -R(y,z) v R(x,z)
-     -S(x,y) v -S(y,z) v S(x,z)
-     for two relations R and S. Is this counted as two occurrences of
-     binary relation properties?
-  b. A TPTP problem contains
-      -R(x,y) v S(x,y)
-     where R is reflexive. Then S is also reflexive. I suspect you only
-     recognise the property of R but not that of S.
-  c. A TPTP problem contains
-      -R(x,y) v -R(x,z) v R(y,f(x,y,z))
-      -R(x,y) v -R(x,z) v R(z,f(x,y,z))
-     specifying that R has the diamond property. Given that these clauses
-     contain the Skolem symbol f, I suspect that this has not been counted
-     as `other' property of a binary relation?
-
---
-
 + Page 7, lines 39-40:
   "We write T[..e..] for theories in which e occurs syntactically; in the
    transformation, all occurrences of e should be replaced."
@@ -196,6 +167,35 @@ never even informally described (page 9, lines 46-49).
 9). Please explain this more clearly. Did you use the process
 described in Sec. 3 to classify the relations? Or did you just take
 each file and try to identify the axioms?
+
+--
+
++ Page 3:
+  "Fig. 2 Number of occurrences of binary relation properties in TPTP"
+  "When we investigated the number of occurrences of these properties
+   in a subset of the TPTP problem library (v7.0.0) [6], we ended up
+   with the table in Fig. 2. The table was constructed by gathering all
+   clauses from all TPTP problems (after clausification), and keeping
+   every clause that only contained one binary relation symbol and,
+   possibly, equality. Each such clause was then categorized as an
+   expression of a basic properties of a binary symbol."
+  There seems to be some ambiguity in this description. Consider,
+  for example, the following cases:
+  a. A TPTP problem contains
+     -R(x,y) v -R(y,z) v R(x,z)
+     -S(x,y) v -S(y,z) v S(x,z)
+     for two relations R and S. Is this counted as two occurrences of
+     binary relation properties?
+  b. A TPTP problem contains
+      -R(x,y) v S(x,y)
+     where R is reflexive. Then S is also reflexive. I suspect you only
+     recognise the property of R but not that of S.
+  c. A TPTP problem contains
+      -R(x,y) v -R(x,z) v R(y,f(x,y,z))
+      -R(x,y) v -R(x,z) v R(z,f(x,y,z))
+     specifying that R has the diamond property. Given that these clauses
+     contain the Skolem symbol f, I suspect that this has not been counted
+     as `other' property of a binary relation?
 
 --
 
