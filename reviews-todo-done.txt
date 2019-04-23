@@ -1,0 +1,197 @@
+================================================================================
+TODO
+
+--------------------------------------------------------------------------------
+Changes to the text
+
+--
+
+The paper has no formal preliminaries. It would help to have (at least) a cursory introduction to the terminologies used by this paper concerning first-order logic, formulas, quantification, and so on. In particular, the terminology "theory" to refer to a set of axioms is not entirely standard (often theory is used to refer to a signature + a set of intended models).
+
+--
+
+1) Please provide proper definitions, with quantifiers, for negated
+and flipped versions of a property. What is a "flipped" relation is
+never even informally described (page 9, lines 46-49).
+
+--
+
+2) I do not understand how was Table 2 computed (paragraph 30-39, page
+9). Please explain this more clearly. Did you use the process
+described in Sec. 3 to classify the relations? Or did you just take
+each file and try to identify the axioms?
+
+--
+
+3) When proving that the transformations preserve satisfiability,
+please provide more formal proofs. Intuitively it is clear why the
+transformations are correct, but I believe that the journal version
+should be based on more formal arguments. The current description just
+feels like mixing of the syntax and semantics. Moreover, you are
+missing some corner cases that are mainly trivial, but I think that
+the reader would feel more comfortable knowing that the
+transformations are formally proved correct. Consider, for example, a
+proof of "pequalification". What if a model interprates R as an empty
+relation - how is in that case interprated the rep function?
+
+&
+
+Also, only informal arguments are given for the correctness of a number of the transformations in this paper (including equalification, pequalification, ordification and so on). Since this is a journal submission, I think further details on the arguments for the correctness of these transformations is appropriate. Concretely, it would be good to state formally (as theorems with proofs) the correctness of each of the transformations.
+
+&
+
+1. I would prefer a more formal presentation of the correctness results for the
+   transformations. For each transformation there should be a theorem stating its
+   correctness and a proof of the theorem.
+2, The correctness proof for the detransification transformation (pages 11-12) needs
+   to be revised. See additional comments below.
+
+&
+
+  Page 11, lines 12-15:
+  "R transitive
+   T[..R(x,y) ..     ->  T[.. (Q(x,y) & (\forall r. Q(r,x) => Q(r,y))..
+       -R(x,y)..]              -Q(x,y) ..]"
+  I understand the notation introduced on page 7 to mean that both positive
+  and negative occurrences of a formula e are replaced. However, on page 11
+  a distinction is probably made between positive and negative occurrences
+  of R(x,y). A different notation is needed for the latter.
+
+  Also, why is (\forall r. Q(r,x) => Q(r,y)) not an axiom, that is, why is
+  the transformation not
+   R transitive          (\forall r. Q(r,x) => Q(r,y))
+   T[..R(x,y) ..     ->  T[.. (Q(x,y)  ..
+       -R(x,y)..]              -Q(x,y) ..]"
+  This seems to be how (\forall r. Q(r,x) => Q(r,y)) is used in the proof
+  of the correctness of the transformation.
+
++ Page 11, lines 26-30:
+  "We have to show that -Q(x,y) implies -R(x,y), which is the same as showing
+   that Q(x,y) & \forall r . Q(r,x) => Q(r,y) implies Q(x,y), which then
+   becomes trivial. R is also transitive (by transitivity of implication).
+   Thus we also have a model of the LHS theory."
+  This proof seems incorrect. For any formula F, Q(x,y) & F would imply Q(x,y).
+
++ Page 12, lines 10-13:
+  "Finally, we have to show that -Q(x,y) implies -R(x,y) ..."
+  The same comment applies here.
+
+--
+
+3. The presentation of the experimental results needs to improve. Tables and
+   graphs require more explanation. It should be possible to look at a table or
+   graph and understand what it shows.
+
+--
+
++ Page 3:
+  "Fig. 2 Number of occurrences of binary relation properties in TPTP"
+  "When we investigated the number of occurrences of these properties
+   in a subset of the TPTP problem library (v7.0.0) [6], we ended up
+   with the table in Fig. 2. The table was constructed by gathering all
+   clauses from all TPTP problems (after clausification), and keeping
+   every clause that only contained one binary relation symbol and,
+   possibly, equality. Each such clause was then categorized as an
+   expression of a basic properties of a binary symbol."
+  There seems to be some ambiguity in this description. Consider,
+  for example, the following cases:
+  a. A TPTP problem contains
+     -R(x,y) v -R(y,z) v R(x,z)
+     -S(x,y) v -S(y,z) v S(x,z)
+     for two relations R and S. Is this counted as two occurrences of
+     binary relation properties?
+  b. A TPTP problem contains
+      -R(x,y) v S(x,y)
+     where R is reflexive. Then S is also reflexive. I suspect you only
+     recognise the property of R but not that of S.
+  c. A TPTP problem contains
+      -R(x,y) v -R(x,z) v R(y,f(x,y,z))
+      -R(x,y) v -R(x,z) v R(z,f(x,y,z))
+     specifying that R has the diamond property. Given that these clauses
+     contain the Skolem symbol f, I suspect that this has not been counted
+     as `other' property of a binary relation?
+
+--
+
++ Page 7, lines 39-40:
+  "We write T[..e..] for theories in which e occurs syntactically; in the
+   transformation, all occurrences of e should be replaced."
+
+--
+
++ Page 12, lines 22-24:
+  "The experiments were performed on a 2xQuad Core Intel Xeon E5620 processor
+   with 24 GB physical memory, running at 2.4 GHz."
+  should
+  "The experiments were performed on PC with a 2xQuad Core Intel Xeon E5620
+   processor at 2.4 GHz and 24 GB physical memory."
+  Also state the operating system and version used.
+
+--
+
++ Page 15 to 17, tables:
+  "E  427 +4 -24"
+  Add column headings to all tables so that the meaning of the numbers
+  becomes clear.
+
+--
+
++ Page 17 onward:
+  "As can be seen in Fig. 18 - 22, problems are typically solved within the
+   first half of the five minute time-limit or less."
+  Figures 18-22 need more explanation. Explain first what data they show and
+  how, then state what your interpretation of the data is.
+
+--
+
++ Page 18, line 17:
+  "We leave out detransification"
+  should be
+  "We omit detransification"
+
+--
+
++ Page 18 to 21, tables:
+  "equalification 394 (+5 -38)"
+  The presentation of results in these tables is different to the one used
+  in the tables on pages 15 to 17. Is there a reason? Again add column
+  headings to make the meaning of the numbers clear.
+
+--
+
++ Page 19, line 49:
+  "give the best reuslts"
+  should be
+  "give the best results"
+
+--------------------------------------------------------------------------------
+Related work
+
+--
+
+4) For the journal paper the authors should have position their work
+more in the context of the related work. In my original review I
+pointed out to [A], where the authors have investigated the use of the
+chaining calculus and you can see that there were lemmas that heavily
+depended on the ordering relations (Table 2). While Saturate, an
+experimental prover that implemented chaining calculus, would prove
+some formulas within a couple of seconds, a fully-fledged first-order
+reasoner, like SPASS would not find the proof even after two hours.
+
+[A] Thomas Hillenbrand, Ruzica Piskac, Uwe Waldmann, Christoph
+Weidenbach: From Search to Computation: Redundancy Criteria and
+Simplification at Work. Programming Logics 2013: 169-193
+
+--
+
+Firstly, the paper provides extremely little related work (only seven references, mostly to tools). The paper should consider related work on automated reasoning tools that have dedicated support for reasoning about relations:
+Meng et al, "Relational Constraint Solving in SMT", CADE 2017
+Cristia et al, "A Decision Procedure for Sets, Binary Relations and Partial Functions" CAV 2016
+Torlak et al, "Kodkod: a relation finite model finder", TACAS 2007
+There are also reasoners for description logics, which involve reasoning about relations, see e.g. Konclude, Chainsaw, etc. 
+
+Although indirectly related, it may also help to cite other techniques for preprocessing first-order axiomatizations that have been in this spirit of this paper, for example "Preprocessing techniques for first-order clausification" Hoder et al.
+
+--
+
+
