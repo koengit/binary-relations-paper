@@ -35,6 +35,9 @@ Also, only informal arguments are given for the correctness of a number of the t
 
 &
 
++ Page 7, lines 39-40:
+  "We write T[..e..] for theories in which e occurs syntactically; in the
+   transformation, all occurrences of e should be replaced."
   Page 11, lines 12-15:
   "R transitive
    T[..R(x,y) ..     ->  T[.. (Q(x,y) & (\forall r. Q(r,x) => Q(r,y))..
@@ -68,12 +71,6 @@ Also, only informal arguments are given for the correctness of a number of the t
 3. The presentation of the experimental results needs to improve. Tables and
    graphs require more explanation. It should be possible to look at a table or
    graph and understand what it shows.
-
---
-
-+ Page 7, lines 39-40:
-  "We write T[..e..] for theories in which e occurs syntactically; in the
-   transformation, all occurrences of e should be replaced."
 
 --
 
