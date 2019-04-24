@@ -22,14 +22,6 @@ The paper has no formal preliminaries. It would help to have (at least) a cursor
   a distinction is probably made between positive and negative occurrences
   of R(x,y). A different notation is needed for the latter.
 
-  Also, why is (\forall r. Q(r,x) => Q(r,y)) not an axiom, that is, why is
-  the transformation not
-   R transitive          (\forall r. Q(r,x) => Q(r,y))
-   T[..R(x,y) ..     ->  T[.. (Q(x,y)  ..
-       -R(x,y)..]              -Q(x,y) ..]"
-  This seems to be how (\forall r. Q(r,x) => Q(r,y)) is used in the proof
-  of the correctness of the transformation.
-
 --
 
 3) When proving that the transformations preserve satisfiability,
@@ -67,6 +59,16 @@ Also, only informal arguments are given for the correctness of a number of the t
 + Page 12, lines 10-13:
   "Finally, we have to show that -Q(x,y) implies -R(x,y) ..."
   The same comment applies here.
+
+&
+
+  Also, why is (\forall r. Q(r,x) => Q(r,y)) not an axiom, that is, why is
+  the transformation not
+   R transitive          (\forall r. Q(r,x) => Q(r,y))
+   T[..R(x,y) ..     ->  T[.. (Q(x,y)  ..
+       -R(x,y)..]              -Q(x,y) ..]"
+  This seems to be how (\forall r. Q(r,x) => Q(r,y)) is used in the proof
+  of the correctness of the transformation.
 
 --
 
