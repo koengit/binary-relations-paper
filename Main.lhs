@@ -396,10 +396,10 @@ The treatments introduced so far all make use of built-in concepts of the reason
 The transformations presented in this subsection only work on problems where every occurrence of |R_| is either positive or negative (and not both, such as under an equivalence operator). If this is not the case, the problem has to be translated into one where this is the case. This can for example be done by means of clausification.
 
 \paragraph{Detransification} 
-A general way of handling any transitive relation |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_| (see below); the negative occurrences are simply replaced by |~Q_|:
+A general way of handling any transitive relation |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_| (see below, positive occurrences are denoted by |+R_|); the negative occurrences are simply replaced by |~Q_|:
 \begin{code}
 R_ transitive       §   
-T[..  R(x,y)   ..   -->   T[..  ( Q(x,y) && (forall r . Q(r,x) => Q(r,y)) )  ..
+T[..  +R(x,y)  ..   -->   T[..  ( Q(x,y) && (forall r . Q(r,x) => Q(r,y)) )  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                                      ..]
 \end{code}
 We call this transformation {\em detransification}. It can be applied to any theory that involves a transitivity axiom. The transformation removes the transitivity, but adds for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
@@ -412,7 +412,7 @@ Detransification can be seen as performing one resolution step with each positiv
 \begin{code}
 R_ reflexive        §     Q_ reflexive
 R_ transitive       -->   
-T[..  R(x,y)   ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
+T[..  +R(x,y)  ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
 We now {\em replace} any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|. The part that we omit here (namely |Q(x,y)|) is implicitly implied by the fact that |R_| is reflexive.
