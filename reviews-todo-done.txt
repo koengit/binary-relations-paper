@@ -10,6 +10,28 @@ The paper has no formal preliminaries. It would help to have (at least) a cursor
 
 --
 
++ Page 7, lines 39-40:
+  "We write T[..e..] for theories in which e occurs syntactically; in the
+   transformation, all occurrences of e should be replaced."
+  Page 11, lines 12-15:
+  "R transitive
+   T[..R(x,y) ..     ->  T[.. (Q(x,y) & (\forall r. Q(r,x) => Q(r,y))..
+       -R(x,y)..]              -Q(x,y) ..]"
+  I understand the notation introduced on page 7 to mean that both positive
+  and negative occurrences of a formula e are replaced. However, on page 11
+  a distinction is probably made between positive and negative occurrences
+  of R(x,y). A different notation is needed for the latter.
+
+  Also, why is (\forall r. Q(r,x) => Q(r,y)) not an axiom, that is, why is
+  the transformation not
+   R transitive          (\forall r. Q(r,x) => Q(r,y))
+   T[..R(x,y) ..     ->  T[.. (Q(x,y)  ..
+       -R(x,y)..]              -Q(x,y) ..]"
+  This seems to be how (\forall r. Q(r,x) => Q(r,y)) is used in the proof
+  of the correctness of the transformation.
+
+--
+
 3) When proving that the transformations preserve satisfiability,
 please provide more formal proofs. Intuitively it is clear why the
 transformations are correct, but I believe that the journal version
@@ -34,26 +56,6 @@ Also, only informal arguments are given for the correctness of a number of the t
    to be revised. See additional comments below.
 
 &
-
-+ Page 7, lines 39-40:
-  "We write T[..e..] for theories in which e occurs syntactically; in the
-   transformation, all occurrences of e should be replaced."
-  Page 11, lines 12-15:
-  "R transitive
-   T[..R(x,y) ..     ->  T[.. (Q(x,y) & (\forall r. Q(r,x) => Q(r,y))..
-       -R(x,y)..]              -Q(x,y) ..]"
-  I understand the notation introduced on page 7 to mean that both positive
-  and negative occurrences of a formula e are replaced. However, on page 11
-  a distinction is probably made between positive and negative occurrences
-  of R(x,y). A different notation is needed for the latter.
-
-  Also, why is (\forall r. Q(r,x) => Q(r,y)) not an axiom, that is, why is
-  the transformation not
-   R transitive          (\forall r. Q(r,x) => Q(r,y))
-   T[..R(x,y) ..     ->  T[.. (Q(x,y)  ..
-       -R(x,y)..]              -Q(x,y) ..]"
-  This seems to be how (\forall r. Q(r,x) => Q(r,y)) is used in the proof
-  of the correctness of the transformation.
 
 + Page 11, lines 26-30:
   "We have to show that -Q(x,y) implies -R(x,y), which is the same as showing
