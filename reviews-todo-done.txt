@@ -6,8 +6,6 @@ Changes to the text
 
 --
 
-The paper has no formal preliminaries. It would help to have (at least) a cursory introduction to the terminologies used by this paper concerning first-order logic, formulas, quantification, and so on. In particular, the terminology "theory" to refer to a set of axioms is not entirely standard (often theory is used to refer to a signature + a set of intended models).
-
 --------------------------------------------------------------------------------
 Related work
 
