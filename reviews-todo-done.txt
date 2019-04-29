@@ -10,26 +10,11 @@ The paper has no formal preliminaries. It would help to have (at least) a cursor
 
 --
 
-3. The presentation of the experimental results needs to improve. Tables and
-   graphs require more explanation. It should be possible to look at a table or
-   graph and understand what it shows.
-
-+ Page 15 to 17, tables:
-  "E  427 +4 -24"
-  Add column headings to all tables so that the meaning of the numbers
-  becomes clear.
-
 + Page 17 onward:
   "As can be seen in Fig. 18 - 22, problems are typically solved within the
    first half of the five minute time-limit or less."
   Figures 18-22 need more explanation. Explain first what data they show and
   how, then state what your interpretation of the data is.
-
-+ Page 18 to 21, tables:
-  "equalification 394 (+5 -38)"
-  The presentation of results in these tables is different to the one used
-  in the tables on pages 15 to 17. Is there a reason? Again add column
-  headings to make the meaning of the numbers clear.
 
 --------------------------------------------------------------------------------
 Related work
@@ -63,6 +48,23 @@ Although indirectly related, it may also help to cite other techniques for prepr
 
 ================================================================================
 DONE
+
+--
+
+3. The presentation of the experimental results needs to improve. Tables and
+   graphs require more explanation. It should be possible to look at a table or
+   graph and understand what it shows.
+
++ Page 15 to 17, tables:
+  "E  427 +4 -24"
+  Add column headings to all tables so that the meaning of the numbers
+  becomes clear.
+
++ Page 18 to 21, tables:
+  "equalification 394 (+5 -38)"
+  The presentation of results in these tables is different to the one used
+  in the tables on pages 15 to 17. Is there a reason? Again add column
+  headings to make the meaning of the numbers clear.
 
 --
 

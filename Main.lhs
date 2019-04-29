@@ -608,7 +608,7 @@ Fig. \ref{fig:detranssubsets} presents the results of detransification on each o
                  \cline{1-4}\cline{6-9} 
 \end{tabular}
 %\end{center}
-\caption{The effect of detransification on each subset}
+\caption{The effect of detransification on each subset (original number of problems solved; number of extra problems after the transformation; number of lost problems)}
 \label{fig:detranssubsets}
 \end{figure}
 
@@ -642,7 +642,7 @@ The use of detransification with reflexivity is limited to transitive relations 
                  Z3         & 255 & +0 & -71 &  &  Z3 & 51 & +0 & -3    \\
                  \cline{1-4}\cline{6-9} 
 \end{tabular}
-\caption{The effect of detransification with reflexivity on each applicable subset}
+\caption{The effect of detransification with reflexivity on each applicable subset (original number of problems solved; number of extra problems after the transformation; number of lost problems)}
 \label{fig:detransreflsubsets}
 \end{figure}
 
@@ -664,7 +664,7 @@ Comparing pequalification with detransification, detransification is clearly muc
                  \cline{1-4}\cline{6-9}
                  
 \end{tabular} 
-\caption{The effect of pequalification/pequalification with idempotency on each applicable subset}
+\caption{The effect of pequalification/pequalification with idempotency on each applicable subset (original number of problems solved; number of extra problems after the transformation; number of lost problems)}
 \label{fig:peqsubsets}
 \end{figure}
 
@@ -685,7 +685,7 @@ Equalification is applicable only to problems that contain equivalence relations
                  Z3         & 354 & +60/+59 & -7/-11   \\
                  \cline{1-4} 
 \end{tabular} 
-\caption{The effect of equalification/equalification with idempotency on the applicable subset}
+\caption{The effect of equalification/equalification with idempotency on the applicable subset (original number of problems solved; number of extra problems  after the transformation; number of lost problems)}
 \label{fig:eqsubsets}
 \end{figure}
 
@@ -702,7 +702,7 @@ Since ordification uses arithmetic, it is only applicable with Vampire (in TFF f
                  Z3         & 254 & +50 & -1   \\
                  \cline{1-4} 
 \end{tabular} 
-\caption{The effect of ordification on the applicable subset}
+\caption{The effect of ordification on the applicable subset (original number of problems solved; number of extra problems after the transformation; number of lost problems)}
 \label{fig:ordsubset}
 \end{figure}
 
@@ -760,7 +760,7 @@ E did not have any major benefits from any of the transformations. However, with
                  original 150 / detransification 150 & 282 (+4 -3)\\
                    \cline{1-2} 
 \end{tabular} 
-\caption{Results of E by subset and strategy}
+\caption{Results of E by subset and strategy (number of problems solved; number of extra/lost problems in parentheses)}
 \label{fig:e_subs}
 \end{figure}
 
@@ -792,7 +792,7 @@ For Vampire, detransification is the best choice for both partial orders and par
                  original 150 / detransification 150 & 308 (+24 -3)\\
                    \cline{1-2} 
 \end{tabular} 
-\caption{Results of Vampire by subset and strategy}
+\caption{Results of Vampire by subset and strategy (number of problems solved; number of extra/lost problems in parentheses)}
 \label{fig:vamp_pos}
 \end{figure}
 
@@ -894,7 +894,7 @@ For Spass, the best results for transitive and reflexive relations (i.e. equival
                   \cline{1-2} 
                   \mca{} & \mca{}
 \end{tabular} 
-\caption{Results of Spass by subset and strategy}
+\caption{Results of Spass by subset and strategy (number of problems solved; number of extra/lost problems in parentheses)}
 \label{fig:spass_other}
 \end{figure}
 
@@ -992,7 +992,7 @@ For Z3, the best strategy is to split the time evenly between the original probl
                   \cline{1-2} 
                   \mca{} & \mca{}
 \end{tabular} 
-\caption{Results of Z3 by subset and strategy}
+\caption{Results of Z3 by subset and strategy (number of problems solved; number of extra/lost problems in parentheses)}
 \label{fig:z3_ord}
 \end{figure}
 
@@ -1092,7 +1092,7 @@ For Z3, the best strategy is to split the time evenly between the original probl
                   \cline{1-2} 
                   \mca{} & \mca{}
 \end{tabular} 
-\caption{Results of CVC4 by subset and strategy}
+\caption{Results of CVC4 by subset and strategy (number of problems solved; number of extra/lost problems in parentheses)}
 \label{fig:cvc4_other}
 \end{figure}
 
