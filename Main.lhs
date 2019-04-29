@@ -63,10 +63,19 @@
 %format QQ     = "\mathbb{Q}"
 %format -->    = "~~~~~\rightarrowtriangle~~~~~"
 
+%format §§      = "\hspace{-0.05cm}"
+
 %format P  = "P\hspace{-0.1cm}"
 %format P_ = "P"
 
+%format m  = "m\hspace{-0.1cm}"
+%format m_ = "m"
+
+%format m1  = m'"\hspace{-0.1cm}"
+%format m1_ = m'
+
 %format R   = "R\hspace{-0.1cm}"
+%format pR  = "+\hspace{-0.1cm}"R
 %format R1_ = "R_1"
 %format R2_ = "R_2"
 %format R_  = "R"
@@ -93,6 +102,10 @@
 %format a2 = a"_2"
 %format ai = a"_i"
 %format an = a"_n"
+
+%format endproof = "\Box"
+
+%format != = "\models "
 
 % ------------------------------------------------------------------------------
 % - abstract
@@ -306,7 +319,15 @@ To explain the above notation: We have two theories, one on the left-hand side o
 
 We call the above transformation {\em equalification}. This transformation may be beneficial because reasoning about the equivalence relation now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms.
 
-The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as an equivalence relation. Let |rep_| be the representative function of |R_|, in other words we have |R(x,y) <=> rep(x)=rep(y)|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)=rep(y)|. It is clear that |R_| is reflexive, symmetric, and transitive, and therefore we have a model of the LHS theory.
+The transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of equalification] Two theories |H| and |H'| that respectively match the LHS and RHS of equalification, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is an equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep) §§(x)=m1(rep) §§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+\end{proof}
 
 In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Fig.\ \ref{fig:imps}).
 
@@ -324,7 +345,15 @@ Here, |P_| is the predicate that indicates the subset on which |R_| behaves as a
 
 We call this transformation {\em pequalification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning instead of reasoning about an unknown symbol using axioms. However, there is also a clear price to pay since the size of the problem grows considerably.
 
-The transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a partial equivalence relation. Let |P(x):=R(x,x)|, in other words |P_| is the subset on which |R_| behaves like an equivalence relation. Let |rep_| be a representative function of |R_| on |P_|, in other words we have |(P(x) && P(y)) => (R(x,y) <=> rep(x)=rep(y))|. By the definition of |P_| we then also have |R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y))|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=P(x) && P(y) && rep(x)=rep(y)|. This |R_| is symmetric and transitive, and therefore we have a model of the LHS theory.
+The transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of pequalification] Two theories |H| and |H'| that respectively match the LHS and RHS of pequalification, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is a partial equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(P_)| |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep) §§(x)=m1(rep) §§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+\end{proof}
 
 Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both |x| and |y| are in the set defined by |P_|. (This holds also when |x| equals |y|). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
 
@@ -350,7 +379,15 @@ T[.. R(x,y) ..]   §     T[.. rep(x)<=rep(y) ..]
 \end{code}
 (Here, |<=| is the order on reals.) We call this transformation {\em ordification}. This transformation may be beneficial because the reasoning now involves built-in arithmetic reasoning instead of reasoning about an unknown symbol using axioms.
 
-The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain is countable. Also, |R_| must be interpreted as a total order. We now construct |rep_| recursively as a mapping from the model domain to |RR|, such that we have |R(x,y) <=> rep(x)<=rep(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |rep(a0):=0|. For any |n>0|, pick a value for |rep(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |rep_| is injective and we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=rep(x)<=rep(y)|. It is clear that |R_| is total and transitive, and also antisymmetric because |rep_| is injective, and therefore we have a model of the LHS theory.
+The above transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of ordification] Two theories |H| and |H'| that respectively match the LHS and RHS of ordification, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) If we have |m_ != H|, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain of |m_| is countable. Also, |m(R_)| is a total order. Let the interpretation |m1_| interpret all existing symbols as |m_| does. We now construct |m1(rep_)| recursively as a mapping from the model domain to |RR|, such that we have |m(R_)§§(x,y) <=> m1(rep_)(x)<=m1(rep_)(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |m1(rep_)(a0):=0|. For any |n>0|, pick a value for |m1(rep_)(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |m1(rep_)| is injective and we also have a model |m1_| of |H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y):=m1(rep_)(x)<=m1(rep_)(y)|. It is clear that |m(R_)| is total and transitive, and also antisymmetric because |m1(rep_)| is injective, and therefore |m_ != H|. |endproof|
+\end{proof}
 
 \paragraph{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. The transformation can therefore be used for any tool that supports |QQ| or |RR| or both, and should choose whichever comparison operator is cheapest if there is a choice. Using integer arithmetic would however not have been correct.
 
@@ -399,12 +436,20 @@ The transformations presented in this subsection only work on problems where eve
 A general way of handling any transitive relation |R_| is to create a new symbol |Q_| and replace all positive occurrences of |R_| with a formula involving |Q_| (see below, positive occurrences are denoted by |+R_|); the negative occurrences are simply replaced by |~Q_|:
 \begin{code}
 R_ transitive       §   
-T[..  +R(x,y)  ..   -->   T[..  ( Q(x,y) && (forall r . Q(r,x) => Q(r,y)) )  ..
+T[..  pR(x,y)  ..   -->   T[..  ( Q(x,y) && (forall r . Q(r,x) => Q(r,y)) )  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                                      ..]
 \end{code}
 We call this transformation {\em detransification}. It can be applied to any theory that involves a transitivity axiom. The transformation removes the transitivity, but adds for every positive occurrence of |R(x,y)| an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|.
 
-Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is transitive. Now, set |Q(x,y) := R(x,y)|. We have to show that |R(x,y)| implies |Q(x,y)|, which is trivial, and |forall r . Q(r,x) => Q(r,y)|, which is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) Assume we have a model of the RHS theory. Now, set |R(x,y) := Q(x,y) && forall r . Q(r,x) => Q(r,y)|. We have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |Q(x,y) && forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which then becomes trivial. |R_| is also transitive (by transitivity of implication). Thus we also have a model of the LHS theory. 
+Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of detransification] Two theories |H| and |H'| that respectively match the LHS and RHS of detransification, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) If we have |m_ != H|, then |m(R_)| is transitive. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(Q_)§§(x,y) := m(R_)§§(x,y)|. We have to show that |m1(R_)§§(x,y)| implies |m1(Q_)§§(x,y)|, which is trivial, and that |m1(R_)§§(x,y)| implies |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|, which is indeed the case because |m1(R_)| is transitive. Thus we have |m1_ != H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y) := ( m1(Q_)§§(x,y) && forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y) )|. We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |m(Q_)§§(x,y) && forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|. |m(R_)| is also transitive (by transitivity of implication). Thus we also have |m != H|. |endproof|
+\end{proof}
 
 Detransification can be seen as performing one resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b.
 
@@ -412,16 +457,23 @@ Detransification can be seen as performing one resolution step with each positiv
 \begin{code}
 R_ reflexive        §     Q_ reflexive
 R_ transitive       -->   
-T[..  +R(x,y)  ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
+T[..  pR(x,y)  ..   §     T[..  (forall r . Q(r,x) => Q(r,y))  ..
       ~R(x,y)  ..]  §           ~Q(x,y)                        ..]
 \end{code}
 We now {\em replace} any positive occurrence of |R(x,y)| with an implication that says ``for any |r|, if you could reach |x| from |r|, now you can reach |y| too''. Thus, we have specialized the transitivity axiom for every positive occurrence of |R_|. The part that we omit here (namely |Q(x,y)|) is implicitly implied by the fact that |R_| is reflexive.
 
-Similarly to the detransification transformation above, |Q_| does not have to be transitive in the RHS theory. Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| is reflexive and transitive. Now, set |Q(x,y) := R(x,y)|. |Q_| is obviously reflexive. We have to show that |R(x,y)| implies |forall r . Q(r,x) => Q(r,y)|. This is indeed the case because |R_| is transitive. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, then |Q_| is reflexive. Now, set |R(x,y) := forall r . Q(r,x) => Q(r,y)|. |R_| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). Finally, we have to show that |~Q(x,y)| implies |~R(x,y)|, which is the same as showing that |forall r . Q(r,x) => Q(r,y)| implies |Q(x,y)|, which is true because |Q_| is reflexive. Thus we also have a model of the RHS theory. 
+Similarly to the detransification transformation above, |Q_| does not have to be transitive in the RHS theory. Nonetheless, the transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of detransification with reflexivity] Two theories |H| and |H'| that respectively match the LHS and RHS of detransification with reflexivity, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) If we have |m_ != H|, then |m(R_)| is reflexive and transitive. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(Q_)§§(x,y) := m(R_)§§(x,y)|. |m1(Q_)| is obviously reflexive. We have to show that |m1(R_)§§(x,y)| implies |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|, which is indeed the case because |m1(R_)| is transitive. Thus we have |m1_ != H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|, then |m1(Q_)| is reflexive. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y) := ( forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y) )|. |m(R_)| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|, which is true because |m(Q_)| is reflexive. Thus we also have |m != H|. |endproof|
+\end{proof}
 
 % ------------------------------------------------------------------------------
 % - experimental results
-
 
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using three different resolution based theorem provers, E 2.0 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options), Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), Spass 3.9 \cite{spass}  (with the \textit{Auto} option, which activates chaining in the presence of transitive predicates), and two SMT-solvers, Z3 4.5 \cite{Z3} and CVC4 1.5 \cite{CVC4}. The experiments were performed on a PC with a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz, with Ubuntu 12.04. We use a time limit of 5 minutes on each problem.
