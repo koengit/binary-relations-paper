@@ -158,7 +158,7 @@ The target audience for this paper is thus both people who use reasoning tools a
 
 \section{Common properties of binary relations} \label{sec:properties}
 
-In this section, we take a look at commonly occurring properties of binary relations, which combinations of these are interesting for us to treat specially, and how we may go about discovering these.
+In this section, we take a look at commonly occurring properties of binary relations, which combinations of these are interesting for us to treat specially, and how we may go about discovering these. Note that the logic that we use throughout the paper is unsorted first-order logic with equality.
 
 \begin{figure}[t]
 \begin{center}
@@ -178,7 +178,7 @@ coreflexive    ==  forall x,y    . R(x,y) => x=y
 \label{fig:props}
 \end{figure}
 
-Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of binary relations. Each of these properties can be expressed using one logic clause, which makes it easy to syntactically identify the presence of such a property in a given theory.
+Take a look at Fig.\ \ref{fig:props}. It lists 8 basic and common properties of binary relations. Each of these properties can be expressed using one logic clause, which makes it easy to syntactically identify the presence of such a property in a given theory\footnote{Throughout the paper, we use the word theory to simply mean ``set of formulas''.}.
 
 \begin{figure}[t]
 \begin{center}
