@@ -151,7 +151,9 @@ For the purpose of this paper, we have decided to focus on three different kinds
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
-\paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining has only been implemented in one of the reasoning tools we considered for this paper. In personal communication with some of the authors of the other tools, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
+\paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining has only been implemented in one of the reasoning tools we considered for this paper (SPASS). Also more specific binary relations that the ones considered in this paper have been implemented in this way \cite{simpl}. In personal communication with some of the authors of the other tools, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
+
+Efficient reasoning procedures for binary relations have been introduced that are complete for finite models (e.g. \cite{decbinrel,relsmt}). This paper is concerned with reasoning about (transitive) binary relations in a general first-order setting.
 
 % ------------------------------------------------------------------------------
 % - properties of binary relations
@@ -324,9 +326,9 @@ The transformation is correct, meaning that it preserves (non-)satisfiability:
 \begin{theorem}[Correctness of equalification] Two theories |H| and |H'| that respectively match the LHS and RHS of equalification, are equisatisfiable. 
 \end{theorem}
 \begin{proof}
-($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is an equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
+($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)|\footnote{We write |m(R_)| for the interpretation of symbol |R_| in the model |m_|.} is an equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep) §§(x)=m1(rep) §§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
 \end{proof}
 
 In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Fig.\ \ref{fig:imps}).
@@ -352,7 +354,7 @@ The transformation is correct, meaning that it preserves (non-)satisfiability:
 \begin{proof}
 ($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is a partial equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(P_)| |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep) §§(x)=m1(rep) §§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
 \end{proof}
 
 Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both |x| and |y| are in the set defined by |P_|. (This holds also when |x| equals |y|). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
