@@ -76,6 +76,7 @@
 %format m1  = m'"\hspace{-0.1cm}"
 %format m1_ = m'
 
+%format f   = "f\hspace{-0.1cm}"
 %format R   = "R\hspace{-0.1cm}"
 %format pR  = "+\hspace{-0.1cm}"R
 %format R1_ = "R_1"
@@ -121,41 +122,47 @@ We present a number of alternative ways of handling transitive binary relations 
 
 \section{Introduction}
 
-Most automated reasoning tools for first-order logic have some kind of built-in support for reasoning about equality. Equality is one of the most common binary relations, and there are great performance benefits from providing built-in support for equality. Together, these clearly motivate the cost of implementation.
+This paper explores different possible ways of speeding up the handling of commonly occurring kinds of \emph{transitive binary relations}, in the context of general first-order automated reasoning.
 
-Other common concepts for which there exists built-in support in many tools are associative, commutative operators; and real-valued, rational-valued, and integer-valued arithmetic. Again, these concepts seem to appear often enough to warrant the extra cost of implementing special support in reasoning tools.
-
-This paper is concerned with investigating what kind of special treatment we could give to commonly appearing transitive binary relations, and what effect this treatment has in practice. Adding special treatment of transitive relations to reasoning tools has been the subject of study before, in particular by means of {\em chaining} \cite{chaining}. The transitivity axiom
+As an example, consider the following set of first-order axioms for a relation symbol |R_|:
 \begin{code}
-forall x,y,z . R(x,y) && R(y,z) => R(x,z)
+forall x      .  R(x,x)
+forall x,y    .  R(x,y) => R(y,x)
+forall x,y,z  .  R(x,y) && R(y,z) => R(x,z)
+forall x      .  R(x,f(x))
 \end{code}
-can lead to an expensive proof exploration in resolution and superposition based theorem provers, and can generate a huge number of instances in instance-based provers and SMT-solvers. Transitive relations are also common enough to motivate special built-in support. However, as far as we know, out of all the major first-order reasoning tools, chaining has only been implemented in SPASS \cite{spass}.
-
-As an alternative to adding built-in support, in this paper we mainly look at (1) what a user of a reasoning tool may do herself to optimize the handling of these relations, and (2) how a preprocessing tool may be able to do this automatically.
-
-By ``treatment'' we mean any way of logically expressing the relation. For example, a possible treatment of a binary relation |R_| in a theory |T| may simply mean axiomatizing |R_| in |T|. But it may also mean transforming |T| into a satisfiability-equivalent theory |T'| where |R_| does not even syntactically appear.
-
-As an example, consider a theory |T| in which an equivalence relation |R_| occurs. One way to deal with |R_| is to simply axiomatize it, by means of reflexivity, symmetry, and transitivity:
+A possible goal we may want to prove is:
 \begin{code}
-forall x      . R(x,x)
-forall x,y    . R(x,y) => R(y,x)
-forall x,y,z  . R(x,y) && R(y,z) => R(x,z)
+forall x . R(f(f(f(x))),x)
 \end{code}
-Another way is to ``borrow'' the built-in equality treatment that exists in most theorem provers. We can do this by introducing a new symbol |rep_|, and replacing all occurrences of |R(x,y)| by the formula:
+A quick investigation of the first three axioms reveals that |R_| is an \emph{equivalence relation}, which is a binary relation that occurs quite commonly in practice in first-order problems. In this paper, we suggest that an alternative way of dealing with equivalence relations is not to axiomatize them (as we did in the example), but to choose a new function symbol |rep_|, and replace all occurrences of |R(x,y)| with the literal |rep(x)=rep(y)|. Doing so makes the problem simpler, because the three axioms for equivalence relations (reflexivity, symmetry, and transitivity) can be removed. The resulting (complete) set of axioms is:
 \begin{code}
-rep(x)=rep(y)
+forall x . rep(x)=rep(f(x))
 \end{code}
-The intuition here is that |rep_| is now the representative function of the relation |R_|. No axioms are needed. As we shall see, this alternative treatment of equivalence relations is satisfiability-equivalent with the original one, and actually is beneficial in practice in certain cases.
+The goal we need to prove becomes:
+\begin{code}
+forall x . rep(f(f(f(x))))=rep(x)
+\end{code}
+As our experimental results show, this alternative way of dealing with equivalence relations presented here is beneficial for some theorem provers, because it is easier for those provers to reason about equality and an extra function symbol than about a binary predicate symbol wth additional axioms.
 
-In general, when considering alternative treatments, we strive to make use of concepts already built-in to the reasoning tool in order to express other concepts that are not built-in.
+This paper identifies six kinds of commonly occurring binary relations (that all happen to be transitive) for which alternative treatments are proposed, that are designed to be simpler to reason about than their standard axiomatizations. The kinds of binary relations dealt with in this paper are:
+\begin{itemize}
+\item equivalence relations, and partial equivalence relations,
+\item total orders, and strict total orders,
+\item (general) transitive relations, with and without reflexivity.
+\end{itemize}
 
-For the purpose of this paper, we have decided to focus on three different kinds of transitive relations: (1) {\em equivalence relations} and {\em partial equivalence relations}, (2) {\em total orders} and {\em strict total orders}, and (3) general {\em transitive relations} and {\em reflexive, transitive relations}. The reason we decided to concentrate on these three are because (a) they appear frequently in practice, and (b) we found ways of dealing with these that worked well in practice.
+It can be very beneficial to hardcode special ways of dealing of commonly occurring functions or relations in automated reasoning tools, as demonstrated by for example equality handling, AC handling, and arithmetic operators and relations, which have native support in many reasoning tools. However, we chose to investigate alternative ways of expressing the mentioned binary relations directly in the input problem, rather than new methods that need to be built-in to theorem provers, for several reasons: (1) it is cheaper than implementing built-in methods, simply because no extra implementation effort is required, (2) it is more flexible, because one is not tied to one particular theorem prover, and (3) it is beneficial to the user of the tool (who can choose what alternative to use) as well as the implementer of the tool (who can implement automatic transformations that choose the alternative). Such automatic transformations are also described in the paper.
 
 The target audience for this paper is thus both people who use reasoning tools and people who implement reasoning tools.
 
-\paragraph{Related Work} Chaining \cite{chaining} is a family of methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. However, chaining has only been implemented in one of the reasoning tools we considered for this paper (SPASS). Also more specific binary relations that the ones considered in this paper have been implemented in this way \cite{simpl}. In personal communication with some of the authors of the other tools, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
+\paragraph{Related Work} Binary relations, and transitive relations and transitive closure in particular, have been given special treatment in automated reasoning tools in a variety of different domains. For example, Kodkod \cite{kodkod} and CVC4 \cite{relsmt} reason about relational logic for finite domains, where even transitive closure can be supported. Cristi{\'a} et al. \cite{decbinrel} present a decision procedure for sets, relations, and partial functions that is complete for finite sets. Horrock et al. propose an efficient way of dealing with transitive binary relations in the context of description logics \cite{horrock97}. Schmidt et al. present a method that translates problems in propositional modal logic with background theories (that can also include transitivity) into first-order logic \cite{schmidt07}.
 
-Efficient reasoning procedures for binary relations have been introduced that are complete for finite models (e.g. \cite{decbinrel,relsmt}). This paper is concerned with reasoning about (transitive) binary relations in a general first-order setting.
+For general first-order logic, chaining \cite{chaining} is a family of built-in methods that limit the use of transitivity-like axioms in proofs by only allowing certain chains of them to occur in proofs. The result is a complete proof system that avoids the derivation of unnecessary consequences of transitivity. Chaining has been implemented inside one of the reasoning tools we considered for this paper (SPASS \cite{spass}). Also more specific binary relations that the ones considered in this paper have been implemented in this way \cite{simpl}.
+
+In contrast, this paper presents purely preprocessing techniques for speeding up reasoning about different kinds of transitive binary relations occurring in general first-order logic. As far as we know, this is also the first paper to consider methods for dealing with (partial) equivalence relations and (strict) total orders specifically.
+
+%In personal communication with some of the authors of the other tools, chaining-like techniques have not been deemed important enough to be considered for implementation, and their preliminary experimental results were mostly negative.
 
 % ------------------------------------------------------------------------------
 % - properties of binary relations
