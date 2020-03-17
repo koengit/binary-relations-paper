@@ -1,0 +1,106 @@
+--- DONE ---
+
+1) p. 7, l. 9 ==> "we need to clean up the implications somewhat because ..."  - rephrase and state it more formally. This "somewhat" gives an idea that the implications are deleted randomly.
+
+2)  p. 9, l. 10 ==> "let m'(P) m'( rep) be a representative function of the equivalence relation m(R)". What are "m'(P) m'( rep)"? rep is a function, P is a predicate. Please describe clearly how are they interpreted in m'.
+
+3) Regarding experimental results: what are "very large theories" (p. 13, l.26) and why were they left out in the evalution?
+
+First, all the references to Figures and citations are broken.
+
+Second, the text of the paper is duplicated.
+
+the proof of Theorem 2 looks like an accidental copy of that
+   of Theorem 1.
+
+There is not yet a theorem for the Maxification transformation.
+   Such a theorem needs to be added.
+
++ Page 9, Proof of Theorem 2:
+  "Moreover, let m'(P)m'(rep) be a representative function ..."
+  m'(P)m'(rep) is not a well-formed expression, there seems to be
+  some typo here.
+
++ Page 13, Line 26:
+  "(leaving out the very large theories)^4 For"
+  should be
+  "(leaving out the very large theories)^4. For"
+
++ Page 14, Line 46:
+  "(labelled as ''other'' in the diagram)"
+  should be
+  "(labelled as ``other'' in the diagram)"
+
++ Page 8, Line 19-20:
+  "Moreover, let m(R)(x,y) be interpreted by m'(rep)(x) = m'(rep(y)."
+  I would prefer
+  "Moreover, let (x,y) \in m(R) iff  m'(rep)(x) = m'(rep(y)."
+
+4) Can you provide more detailed description of Fig. 18-22? It is not clear what are they actually representing and what are measure units?  Without those descriptions, I could not really understand Section 7.7
+
+3. I've stated in my previous review that Figures 18-22 need more
+   explanation. While the authors say that have addressed this
+   issue I do not see where this has been done.
+   At the moment I still find the figures incomprehensible. What
+   do see on the x-axis, what on the y-axis? What does a cross
+   at a particular position (x,y) indicate?
+
+Finally, the layout of the bibliography is very hard to parse (there is a set of figures with one citation at the bottom of each page).
+
+--- TODO ---
+
+(1) The work must be better motivated.
+
+Providing a motivation should not be difficult because there is various
+preceding work that shows the development of special transformations and
+calculi allows for better performance to be achieved. This could serve
+as motivation for the research, which is indeed confirmed by the results
+and most crucially include consideration of relations not previously
+subject to optimisation.
+
+(2) The related work section needs to be expanded and improved.
+
+Preceding work needs to be referenced and described in the related work
+section to make it more substantial and the paper more valuable. At the
+moment the related work section at the end of the Introduction is only
+one paragraph long and only refers to the chaining approach, with
+incomplete references ([10] should also be cited here). Relevant
+findings of [5] concerning the improvements achieved of the treatment of
+transitive relations by the chaining approach along the lines as noted
+in a previous review should be stated, so that the reader does not need
+to look up these references.
+
+References [3] and [7] deserve to be mentioned and their findings
+briefly summarized. One reviewer also suggested that Torlak et al,
+"Kodkod: a relation finite model finder", TACAS 2007 could be mentioned.
+There may be other related work on automated reasoning tools that have
+dedicated support for reasoning about relations that may be worth
+mentioning.
+
+Description logic and modal logic tableaux systems gives special
+treatment to transitive relations through the use of a propagation rule
+for transitive roles or transitive modalities rather than the standard
+transitivity rule (structural rules). The standard transitivity rules
+computes the transitive closure for a transitive relations, which is
+avoided through the use of the propagation rule. This leads to significant
+speed-up. Some references:
+
+Horrocks & Gough (1997): Description logics with transitive relations. DL Workshop Proceedings.
+
+Schmidt & Hustadt (2007): The axiomatic translation principle for modal logic. ACM Trans. Comput. Log. 8(4).
+
+The present work develops alternative approaches for equivalence
+relations and partial equivalence relations, total orders and strict
+total orders, for which there seems to be no special calculi such as the
+chaining approach. This could be observed to strengthen the motivation of
+the work.
+
+The following sentence does not add anything scientific to the paper and
+should be omitted (alternatively, actual results should be given as
+evidence, or references to such results).
+
+"In personal communication with some of the authors of the other tools,
+chaining-like techniques have not been deemed important enough to be
+considered for implementation, and their preliminary experimental
+results were mostly negative."
+

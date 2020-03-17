@@ -58,10 +58,12 @@
 %format <=>    = "\Leftrightarrow "
 
 %format §      = " "
-%format **     = "\times"
+%format **     = "\times{}"
 %format RR     = "\mathbb{R}"
 %format QQ     = "\mathbb{Q}"
 %format -->    = "~~~~~\rightarrowtriangle~~~~~"
+%format \/     = "\vee{}"
+%format :::    = "\in{}"
 
 %format §§      = "\hspace{-0.05cm}"
 
@@ -293,7 +295,7 @@ Secondly, we want to generate all implications of the form |{prop1, .., propn} =
 
 The procedure uses a simple constraint solver (a SAT-solver) to keep track of all implications it has tried so far, and consists of one main loop. At every loop iteration, the constraint solver guesses a set |{prop1, .., propn}| from the set of all properties |P-{prop}|. The procedure then asks E whether or not |{prop1, .., propn} => prop| is valid. If it is, then we look at the proof that E produces, and print the implication |{propa, .., propb} => prop|, where |{propa, .., propb}| is the subset of properties that were used in the proof. We then also tell the constraint solver never to guess a superset of |{propa, .., propb}| again. If the guessed implication can not be proven, we tell the constraint solver to never guess a subset of |{prop1, .., propn}| again. The procedure stops when no guesses that satisfy all constraints can be made anymore.
 
-After the loop terminates, we may need to clean up the implications somewhat because some implications may subsume others.
+After the loop terminates, we remove all implications that are subsumed by others.
 
 In order to avoid generating inconsistent sets |{prop1, .., propn}| (that would imply any other property), we also add the artificial inconsistent property |false| to the set, and generate implications for this property first. We exclude any found implication here from the implication sets of the real properties. 
 
@@ -328,7 +330,7 @@ The transformation is correct, meaning that it preserves (non-)satisfiability:
 \begin{proof}
 ($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)|\footnote{We write |m(R_)| for the interpretation of symbol |R_| in the model |m_|.} is an equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
 \end{proof}
 
 In the transformation, we also remove the axioms for reflexivity, symmetry, and transitivity, because they are not needed anymore. But what if |R_| is axiomatized as an equivalence relation using different axioms? Then we can remove any axiom about |R_| that is implied by reflexivity, symmetry, and transitivity. Luckily we have already computed a table of which properties imply which other ones (shown in Fig.\ \ref{fig:imps}).
@@ -352,9 +354,9 @@ The transformation is correct, meaning that it preserves (non-)satisfiability:
 \begin{theorem}[Correctness of pequalification] Two theories |H| and |H'| that respectively match the LHS and RHS of pequalification, are equisatisfiable. 
 \end{theorem}
 \begin{proof}
-($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is a partial equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(P_)| |m1(rep_)| be a representative function of the equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> rep(x)=rep(y) )|, which means that |m1_| is a model of |H'|.
+($\Rightarrow$) Assume we have |m_ != H|, then |m(R_)| is a partial equivalence relation. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(P_)| be the set of domain elements |x| for which we have |(x,x) ::: m(R_)|, i.e. the subset of the domain where |R_| is an actual equivalence relation. Let |m1(rep_)| be a representative function of the partial equivalence relation |m(R_)|. This means that we have |m1_ != ( R(x,y) <=> (P(x) && P(y) && rep(x)=rep(y)) )|, which means that |m1_| is a model of |H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_) §§(x,y)| be interpreted by |m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly reflexive, symmetric, and transitive, and therefore we have |m_ != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |m1(P_)§§(x) && m1(P_)§§(y) && m1(rep_)§§(x)=m1(rep_)§§(y)|. The relation |m(R_)| is clearly symmetric and transitive, and therefore we have |m_ != H|. |endproof|
 \end{proof}
 
 Intuitively, one can see that this transformation is correct by realising that the elements on which the relation |R_| is not reflexive cannot be related to any other elements. This is because |R(x,y)| together with symmetry and transitivity gives us |R(x,x)|. Thus, when we encounter |R(x,y)| in the LHS theory, we know that both |x| and |y| are in the set defined by |P_|. (This holds also when |x| equals |y|). Since |R_| is an equivalence relation on this set, we can use the transformation of pure equivalence relations on the subset |P_| to get |P(x) && P(y) => rep(x) = rep(y)|.
@@ -386,9 +388,9 @@ The above transformation is correct, meaning that it preserves (non-)satisfiabil
 \begin{theorem}[Correctness of ordification] Two theories |H| and |H'| that respectively match the LHS and RHS of ordification, are equisatisfiable. 
 \end{theorem}
 \begin{proof}
-($\Rightarrow$) If we have |m_ != H|, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain of |m_| is countable. Also, |m(R_)| is a total order. Let the interpretation |m1_| interpret all existing symbols as |m_| does. We now construct |m1(rep_)| recursively as a mapping from the model domain to |RR|, such that we have |m(R_)§§(x,y) <=> m1(rep_)(x)<=m1(rep_)(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |m1(rep_)(a0):=0|. For any |n>0|, pick a value for |m1(rep_)(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |m1(rep_)| is injective and we also have a model |m1_| of |H'|.
+($\Rightarrow$) If we have |m_ != H|, then without loss of generality (by L{\"o}wenheim-Skolem), we can assume that the domain of |m_| is countable. Also, |m(R_)| is a total order. Let the interpretation |m1_| interpret all existing symbols as |m_| does. We now construct |m1(rep_)| recursively as a mapping from the model domain to |RR|, such that we have |(x,y) ::: m(R_)| precisely when |m1(rep_)(x)<=m1(rep_)(y)|, in the following way. Let |{a0, a1, a2, ..}| be the domain of the model, and set |m1(rep_)(a0):=0|. For any |n>0|, pick a value for |m1(rep_)(an)| that is consistent with the total order |R_| and all earlier domain elements |ai|, for |0 <= i < n|. This can always be done because there is always extra room for a new, unique element between any two distinct values of |RR|. Thus |m1(rep_)| is injective and we also have a model |m1_| of |H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y):=m1(rep_)(x)<=m1(rep_)(y)|. It is clear that |m(R_)| is total and transitive, and also antisymmetric because |m1(rep_)| is injective, and therefore |m_ != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |m1(rep_)(x)<=m1(rep_)(y)|. It is clear that |m(R_)| is total and transitive, and also antisymmetric because |m1(rep_)| is injective, and therefore |m_ != H|. |endproof|
 \end{proof}
 
 \paragraph{Note on |QQ| vs. |RR|} The proof would have worked for |QQ| as well instead of |RR|. The transformation can therefore be used for any tool that supports |QQ| or |RR| or both, and should choose whichever comparison operator is cheapest if there is a choice. Using integer arithmetic would however not have been correct.
@@ -410,7 +412,7 @@ R_ asymmetric       -->   rep_ injective
 R_ transitive       §
 T[.. R(x,y) ..]     §     T[.. rep(x)<rep(y) ..]
 \end{code}
-However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |~R_|, and ordification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (We found no performance difference in practice between these choices.)
+However, the transformation for total orders already covers this case! Any strict total order |R_| is also recognized as a total order |R_^~|, and ordification already transforms such theories in the correct way. The only difference is that |R(x,y)| is replaced with |~(rep(x)<=rep(y))| instead of |rep(x)<rep(y)|, which is satisfiability-equivalent. (We found no performance difference in practice between these choices.)
 
 \paragraph{Maxification} Some reasoning tools do not have orders on real arithmetic built-in, but they may have other concepts that are built-in that can be used to express total orders instead. One such concept is handling of associative, commutative (AC) operators.
 
@@ -423,7 +425,15 @@ T[.. R(x,y) ..]   §     T[.. max(x,y)=y ..]
 \end{code}
 We call this transformation {\em maxification}. This transformation may be beneficial because the reasoning now involves built-in equality reasoning with AC unification (and one extra axiom) instead of reasoning about an unknown relational symbol (using three axioms).
 
-The above transformation is correct, meaning that it preserves (non-)satisfiability: ($\Rightarrow$) If we have a model of the LHS theory, then |R_| must be interpreted as a total order. Let |max_| be the maximum function associated with this order. Clearly, it must be associative and commutative, and the third axiom also holds. Moreover, we have  |R(x,y) <=> max(x,y)=y|. Thus we also have a model of the RHS theory. ($\Leftarrow$) If we have a model of the RHS theory, let |R(x,y):=max(x,y)=y|. Given the axioms in the RHS theory, |R_| is total, antisymmetric, and transitive, and therefore we have a model of the LHS theory.
+The above transformation is correct, meaning that it preserves (non-)satisfiability:
+
+\begin{theorem}[Correctness of maxification] Two theories |H| and |H'| that respectively match the LHS and RHS of maxification, are equisatisfiable. 
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) If we have |m_ != H|, then |m(R_)| must be a total order. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Let |m1(max_)| be the maximum function associated with the total order |m(R_)|. The function |m1(max_)| is associative and commutative, and we have that |m1(max_)§§(x,y)=x \/ m1(max_)§§(x,y)=y|. Moreover, we have |m1 != R(x,y) <=> max(x,y)=y|. Thus we also have a model |m1_| of |H'|.
+
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |m1(max_)§§(x,y)=y|. Now, |m(R_)| is total (because of |m1(max_)§§(x,y)=x \/ m1(max_)§§(x,y)=y|), antisymmetric (because of commutativity of |m1(max_)|), and transitive (because of associativity of |m1(max_)|), and therefore |m_ != H|. |endproof|
+\end{proof}
 
 % ------------------------------------------------------------------------------
 % - detransification
@@ -450,7 +460,7 @@ Note that in the RHS theory, |Q_| does not have to be transitive! Nonetheless, t
 \begin{proof}
 ($\Rightarrow$) If we have |m_ != H|, then |m(R_)| is transitive. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(Q_)§§(x,y) := m(R_)§§(x,y)|. We have to show that |m1(R_)§§(x,y)| implies |m1(Q_)§§(x,y)|, which is trivial, and that |m1(R_)§§(x,y)| implies |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|, which is indeed the case because |m1(R_)| is transitive. Thus we have |m1_ != H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y) := ( m1(Q_)§§(x,y) && forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y) )|. We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |m(Q_)§§(x,y) && forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|. |m(R_)| is also transitive (by transitivity of implication). Thus we also have |m != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |m1(Q_)§§(x,y) && forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|. We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |m(Q_)§§(x,y) && forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|. |m(R_)| is also transitive (by transitivity of implication). Thus we also have |m != H|. |endproof|
 \end{proof}
 
 Detransification can be seen as performing one resolution step with each positive occurrence of the relation and the transitivity axiom. A positive occurrence |R(a,b)| of a transitive relation |R_|, resolved with the transitivity axiom |R(x,y) & R(y,z) => R(x,z)| becomes |R(x,a) => R(x,b)| under the substitution y := a, z := b.
@@ -469,9 +479,9 @@ Similarly to the detransification transformation above, |Q_| does not have to be
 \begin{theorem}[Correctness of detransification with reflexivity] Two theories |H| and |H'| that respectively match the LHS and RHS of detransification with reflexivity, are equisatisfiable. 
 \end{theorem}
 \begin{proof}
-($\Rightarrow$) If we have |m_ != H|, then |m(R_)| is reflexive and transitive. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |m1(Q_)§§(x,y) := m(R_)§§(x,y)|. |m1(Q_)| is obviously reflexive. We have to show that |m1(R_)§§(x,y)| implies |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|, which is indeed the case because |m1(R_)| is transitive. Thus we have |m1_ != H'|.
+($\Rightarrow$) If we have |m_ != H|, then |m(R_)| is reflexive and transitive. Let the interpretation |m1_| interpret all existing symbols as |m_| does. Moreover, let |(x,y) ::: m1(Q_)| precisely when |m(R_)§§(x,y)|. |m1(Q_)| is obviously reflexive. We have to show that |m1(R_)§§(x,y)| implies |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|, which is indeed the case because |m1(R_)| is transitive. Thus we have |m1_ != H'|.
 
-($\Leftarrow$) Assume we have |m1_ != H'|, then |m1(Q_)| is reflexive. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |m(R_)§§(x,y) := ( forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y) )|. |m(R_)| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|, which is true because |m(Q_)| is reflexive. Thus we also have |m != H|. |endproof|
+($\Leftarrow$) Assume we have |m1_ != H'|, then |m1(Q_)| is reflexive. Let the interpretation |m_| interpret all existing symbols as |m1_| does. Moreover, let |(x,y) ::: m(R_)| precisely when |forall r . m1(Q_)§§(r,x) => m1(Q_)§§(r,y)|. |m(R_)| is reflexive (by reflexivity of implication) and transitive (by transitivity of implication). We have to show that |~m(Q_)§§(x,y)| implies |~m(R_)§§(x,y)|, which is the same as showing that |forall r . m(Q_)§§(r,x) => m(Q)§§(r,y)| implies |m(Q_)§§(x,y)|, which is true because |m(Q_)| is reflexive. Thus we also have |m != H|. |endproof|
 \end{proof}
 
 % ------------------------------------------------------------------------------
@@ -480,7 +490,7 @@ Similarly to the detransification transformation above, |Q_| does not have to be
 \section{Experimental results}
 We evaluate the effects of the different axiomatizations using three different resolution based theorem provers, E 2.0 \cite{E} (with the \textit{xAuto} and \textit{tAuto} options), Vampire 4.0 \cite{Vampire} (with the \textit{casc mode} option), Spass 3.9 \cite{spass}  (with the \textit{Auto} option, which activates chaining in the presence of transitive predicates), and two SMT-solvers, Z3 4.5 \cite{Z3} and CVC4 1.5 \cite{CVC4}. The experiments were performed on a PC with a 2xQuad Core Intel Xeon E5620 processor with 24 GB physical memory, running at 2.4 GHz, with Ubuntu 12.04. We use a time limit of 5 minutes on each problem.
 
-We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem or Unknown or Open (leaving out the very large theories)\footnote{We have also evaluated the transformations on Satisfiable/Countersatisfiable problems, but there were too few problems for the results to be significant, and the results were also mostly negative.} For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. In total, 2007 problems were found to include one or more transitive relations and could thus be used with at least one of the presented transformations. 130 of these problems are listed as Unknown, and an additional 172 problems have rating 1.0. No problem in the resulting set of problems is listed as Open.
+We started from a set of 13410 test problems from the TPTP, listed as Unsatisfiable, Theorem or Unknown or Open (leaving out the very large theories)\footnote{Theories with more than 10.000 clauses were considered "very large" and we chose to leave them out of these experiments, because they were impractical to deal with. We have also evaluated the transformations on Satisfiable/Countersatisfiable problems, but there were too few problems for the results to be significant, and the results were also mostly negative.}. For each problem, a new theory was generated for each applicable transformation. For most problems, no relation matching any of the given criteria was detected, and thus no new theories were produced for these problems. In total, 2007 problems were found to include one or more transitive relations and could thus be used with at least one of the presented transformations. 130 of these problems are listed as Unknown, and an additional 172 problems have rating 1.0. No problem in the resulting set of problems is listed as Open.
 
 The experimental results are summarized in Fig. \ref{fig:overview}.
 
@@ -527,7 +537,7 @@ Overall, the results vary between each transformation and reasoning tool. For ma
 
 In order to make a comparison between the transformations and evaluate what transformation works best for each kind of transitive relation, we partition the test problems into different subsets (Fig. \ref{fig:subsets}). These subsets are defined by the discovered properties of the transitive relation. A problem can appear in several subsets if the problem includes several transitive relations having different properties. This is the case for 156 problems. Apart from such special cases, the subsets are disjoint. Firstly, we divide the problems into two sets, one where the transitive relation is found to be total (or strictly total, as in the case of a negated total order), and one where this was not the case. We use the notation P\textsuperscript{C} to denote the subset of problems with transitive relations with no syntactic evidence of the property P.
 
-The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they contain a transitive relation that is found to be reflexive and/or symmetric. The problems containing a total relation are partitioned into two sets: problems with one or more total order (i.e. total, transitive and antisymmetric), and problems with relations that are total and transitive but lack the antisymmetry property (labelled as "other" in the diagram). Fig. \ref{fig:subsets} shows each subset with its number of problems and number of rating 1 problems, and the transformations that are applicable for that subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram. The number of rating 1 problems in each subset can give an indication of the difficulty of dealing with different kinds of transitive relations. Problems with equivalence relations are typically less difficult than problems with partial equivalence relations, however it is hard to tell if the difficulty of a problem is related to the transitive relation or has other reasons. 
+The problems in Total\textsuperscript{C} are further divided into four groups, depending on if they contain a transitive relation that is found to be reflexive and/or symmetric. The problems containing a total relation are partitioned into two sets: problems with one or more total order (i.e. total, transitive and antisymmetric), and problems with relations that are total and transitive but lack the antisymmetry property (labelled as ``other'' in the diagram). Fig. \ref{fig:subsets} shows each subset with its number of problems and number of rating 1 problems, and the transformations that are applicable for that subset. For example, a problem with a transitive relation that is in Total\textsuperscript{C}, Reflexive\textsuperscript{C} and Symmetric has the applicable transformations Pequalification and Detransification, as shown in the bottom left corner of the diagram. The number of rating 1 problems in each subset can give an indication of the difficulty of dealing with different kinds of transitive relations. Problems with equivalence relations are typically less difficult than problems with partial equivalence relations, however it is hard to tell if the difficulty of a problem is related to the transitive relation or has other reasons. 
 
 % \begingroup
 
@@ -1117,17 +1127,26 @@ Lastly, we would like to look at how these ideas could be used inside a theorem 
 
 \section*{Acknowledgments}
 
-We thank Nicholas Smallbone for discussions and useful suggestions on earlier versions of this paper.
+We thank Nicholas Smallbone and the anonyous referees for discussions and useful suggestions on earlier versions of this paper.
+
+% ------------------------------------------------------------------------------
+% - references
+
+\bibliographystyle{plain}
+\bibliography{main}
+
+% ------------------------------------------------------------------------------
+% - appendix
 
 \appendix
 
 \begin{figure}[t!]
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/Transified/E/test_original_e_transified_e_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Vampire/test_original_vampire_transified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Spass/test_original_spass_transified_spass_300.eps} 
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Spass/test_original_Spass_Transified_Spass_300.eps} 
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/Z3/test_original_z3_transified_z3_300.eps} \\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Transified/CVC4/test_original_cvc4_transified_cvc4_300.eps}
-\caption{Effects of transification, using E, Vampire, Spass, Z3 and CVC4 }
+\caption{Time (in seconds) taken to solve problems, with and without transification, using E, Vampire, Spass, Z3 and CVC4. Every mark (|**|) indicates a problem run before and after the transformation.}
 \label{fig:transplots}
 \end{figure}
 
@@ -1137,7 +1156,7 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Spass/test_original_spass_transified_spass_300.eps} 
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/Z3/test_original_z3_transified_z3_300.eps} \\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Trans_Ref/CVC4/test_original_cvc4_transified_cvc4_300.eps}
-\caption{Effects of transification with reflexivity, using E, Vampire, Spass, Z3 and CVC4 }
+\caption{Time (in seconds) taken to solve problems, with and without transification with reflexivity, using E, Vampire, Spass, Z3 and CVC4. Every mark (|**|) indicates a problem run before and after the transformation. Times in seconds.}
 \label{fig:transrefplots}
 \end{figure}
 
@@ -1147,17 +1166,17 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Z3/test_original_z3_equalified_z3_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/CVC4/test_original_cvc4_equalified_cvc4_300.eps}\\
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Equalified/Spass/test_original_spass_equalified_spass_300.eps}
-\caption{The time taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4 }
+\caption{Time (in seconds) taken to solve problems, with and without equalification, using E, Vampire, Z3 and CVC4. Every mark (|**|) indicates a problem run before and after the transformation. Times in seconds.}
 \label{fig:equalifiedplots}
 \end{figure}
 
 \begin{figure}[h!]
 \includegraphics[scale=0.65,trim=10mm 00mm 20mm 0mm]{Plots/PEqualified/E/test_original_e_pequalified_e_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Vampire/test_original_vampire_pequalified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Z3/test_original_z3_pequalified_z3_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Z3/test_original_Z3_PEqualified_Z3_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/CVC4/test_original_cvc4_pequalified_cvc4_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Spass/test_original_spass_pequalified_spass_300.eps}
-\caption{The time taken to solve problems, with and without pequalification, using E, Vampire, Spass, Z3 and CVC4 }
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/PEqualified/Spass/test_original_Spass_PEqualified_Spass_300.eps}
+\caption{Time (in seconds) taken to solve problems, with and without pequalification, using E, Vampire, Spass, Z3 and CVC4. Every mark (|**|) indicates a problem run before and after the transformation. Times in seconds.}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \label{fig:pequalifiedplots}
@@ -1165,19 +1184,13 @@ We thank Nicholas Smallbone for discussions and useful suggestions on earlier ve
 
 \begin{figure}[h!]
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Vampire/test_original_vampire_ordified_vampire_300.eps}\\
-\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Z3/test_original_z3_ordified_z3_300.eps}
+\includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/Z3/test_original_Z3_ordified_Z3_300.eps}
 \includegraphics[scale=0.65,trim=10mm 0mm 20mm 0mm]{Plots/Ordified/CVC4/test_original_CVC4_ordified_cvc4_300.eps}\\
-\caption{The time taken to solve problems, with and without ordification, using Vampire, Z3 and CVC4 }
+\caption{Time (in seconds) taken to solve problems, with and without ordification, using Vampire, Z3 and CVC4. Every mark (|**|) indicates a problem run before and after the transformation. Times in seconds.}
 %\includegraphics[scale=0.22]{Plots/Equalified/E/}
 %\end{figure}
 \label{fig:ordifiedplots}
 \end{figure}
-
-% ------------------------------------------------------------------------------
-% - references
-
-\bibliographystyle{plain}
-\bibliography{main}
 
 \end{document}
 
